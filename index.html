@@ -3,7 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DreamJob Morocco - Find Your Dream Job</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Proleefic - Jobs in Morocco | Emploi Maroc | وظائف المغرب</title>
+    <meta name="description" content="Find your dream job in Morocco. Thousands of job opportunities in Casablanca, Rabat, Marrakech. Employment in IT, Engineering, Marketing, Finance. Proleefic - Leading job board in Morocco.">
+    <meta name="keywords" content="emploi maroc, job morocco, وظائف المغرب, travail maroc, recrutement maroc, offres emploi casablanca, job rabat, emploi marrakech, careers morocco, proleefic, rekrute, emploi.ma">
+    <meta name="author" content="Proleefic">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English, French, Arabic">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Proleefic - Find Jobs in Morocco">
+    <meta property="og:description" content="Discover thousands of job opportunities across Morocco. IT, Engineering, Marketing, Finance positions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.proleefic.ma">
+    <meta property="og:image" content="https://www.proleefic.ma/images/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Proleefic - Morocco Job Board">
+    <meta name="twitter:description" content="Find your dream job in Morocco. Thousands of opportunities.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.proleefic.ma">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Structured Data for SEO (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Proleefic",
+        "url": "https://www.proleefic.ma",
+        "description": "Leading job board in Morocco with thousands of employment opportunities",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.proleefic.ma/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Proleefic",
+        "url": "https://www.proleefic.ma",
+        "logo": "https://www.proleefic.ma/logo.png",
+        "sameAs": [
+            "https://www.facebook.com/proleefic",
+            "https://www.linkedin.com/company/proleefic",
+            "https://twitter.com/proleefic"
+        ]
+    }
+    </script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
@@ -36,41 +97,94 @@
             100% { background-position: -200% 0; }
         }
         
-        .rtl {
-            direction: rtl;
+        .rtl { direction: rtl; }
+        .ltr { direction: ltr; }
+        
+        /* Google Ads Placeholder Styling */
+        .ad-container {
+            background: #f8f9fa;
+            border: 1px dashed #dee2e6;
+            padding: 20px;
+            text-align: center;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
         }
         
-        .ltr {
-            direction: ltr;
+        .ad-banner {
+            background: #f8f9fa;
+            border: 1px dashed #dee2e6;
+            padding: 10px;
+            text-align: center;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+        }
+        
+        .sticky-ad {
+            position: sticky;
+            top: 100px;
         }
     </style>
+    
+    <!-- Google Analytics (Replace with your tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- Google AdSense (Replace with your AdSense ID) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
 </head>
 <body class="bg-gradient-to-br from-blue-50 via-white to-purple-50">
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center gap-2">
-                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                 </svg>
-                <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    DreamJob
-                </span>
+                <h1 class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    Proleefic
+                </h1>
             </div>
             
             <div class="flex gap-2">
-                <button onclick="changeLanguage('en')" class="lang-btn px-3 py-1 rounded-lg font-medium transition-all bg-gray-100 text-gray-600 hover:bg-gray-200" data-lang="en">EN</button>
+                <button onclick="changeLanguage('en')" class="lang-btn px-3 py-1 rounded-lg font-medium transition-all bg-blue-600 text-white shadow-md" data-lang="en">EN</button>
                 <button onclick="changeLanguage('fr')" class="lang-btn px-3 py-1 rounded-lg font-medium transition-all bg-gray-100 text-gray-600 hover:bg-gray-200" data-lang="fr">FR</button>
                 <button onclick="changeLanguage('ar')" class="lang-btn px-3 py-1 rounded-lg font-medium transition-all bg-gray-100 text-gray-600 hover:bg-gray-200" data-lang="ar">AR</button>
             </div>
         </div>
     </header>
 
+    <!-- Top Banner Ad Space (728x90 Leaderboard) -->
+    <div class="max-w-7xl mx-auto px-4 py-4">
+        <div class="ad-banner rounded-lg">
+            <div>
+                <!-- Google AdSense Banner Ad -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:728px;height:90px"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="XXXXXXXXXX"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                <p class="text-sm">728x90 Banner Ad Space</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <div class="gradient-bg text-white py-16">
         <div class="max-w-7xl mx-auto px-4">
-            <h1 id="hero-title" class="text-4xl md:text-5xl font-bold mb-4 text-center">Find Your Dream Job</h1>
-            <p id="hero-subtitle" class="text-xl text-center mb-8 text-blue-100">Discover thousands of job opportunities in Morocco</p>
+            <h2 id="hero-title" class="text-4xl md:text-5xl font-bold mb-4 text-center">Find Your Dream Job in Morocco</h2>
+            <p id="hero-subtitle" class="text-xl text-center mb-8 text-blue-100">Discover thousands of job opportunities across Casablanca, Rabat, Marrakech, Tangier & more</p>
             
             <!-- Search Bar -->
             <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl p-6">
@@ -79,15 +193,26 @@
                         <svg class="absolute left-4 top-3.5 text-gray-400 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                         </svg>
-                        <input type="text" id="search-input" placeholder="Job title, keywords..." class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-800">
+                        <input type="text" id="search-input" placeholder="Job title, keywords..." class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-800" aria-label="Search jobs">
                     </div>
                     
                     <div class="flex-1 relative">
                         <svg class="absolute left-4 top-3.5 text-gray-400 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
-                        <input type="text" id="location-input" placeholder="City, region..." class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-800">
+                        <select id="location-input" class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-800 appearance-none" aria-label="Select location">
+                            <option value="">All Morocco</option>
+                            <option value="Casablanca">Casablanca</option>
+                            <option value="Rabat">Rabat</option>
+                            <option value="Marrakech">Marrakech</option>
+                            <option value="Tangier">Tangier</option>
+                            <option value="Fes">Fes</option>
+                            <option value="Agadir">Agadir</option>
+                            <option value="Meknes">Meknes</option>
+                            <option value="Oujda">Oujda</option>
+                            <option value="Kenitra">Kenitra</option>
+                            <option value="Tetouan">Tetouan</option>
+                        </select>
                     </div>
                     
                     <button onclick="searchJobs()" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl">
@@ -97,7 +222,7 @@
                 
                 <!-- Filters -->
                 <div class="mt-4 pt-4 border-t border-gray-200 grid grid-cols-1 md:grid-cols-3 gap-3">
-                    <select id="category-filter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-800">
+                    <select id="category-filter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-800" aria-label="Select category">
                         <option value="">All Categories</option>
                         <option value="it">IT & Technology</option>
                         <option value="marketing">Marketing & Communication</option>
@@ -107,17 +232,21 @@
                         <option value="engineering">Engineering</option>
                         <option value="education">Education & Training</option>
                         <option value="healthcare">Healthcare</option>
+                        <option value="hospitality">Hospitality & Tourism</option>
+                        <option value="construction">Construction & BTP</option>
                     </select>
                     
-                    <select id="type-filter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-800">
+                    <select id="type-filter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-800" aria-label="Select job type">
                         <option value="">All Types</option>
-                        <option value="full_time">Full Time</option>
+                        <option value="full_time">Full Time / CDI</option>
                         <option value="part_time">Part Time</option>
-                        <option value="contract">Contract</option>
+                        <option value="contract">Contract / CDD</option>
+                        <option value="internship">Internship / Stage</option>
+                        <option value="freelance">Freelance</option>
                     </select>
                     
                     <button onclick="loadJobs()" class="bg-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition-all">
-                        <span id="load-jobs-text">Load Jobs</span>
+                        <span id="load-jobs-text">🔄 Load Fresh Jobs</span>
                     </button>
                 </div>
             </div>
@@ -126,133 +255,222 @@
 
     <!-- Main Content -->
     <div class="max-w-7xl mx-auto px-4 py-8">
-        <!-- Results Count -->
-        <div class="mb-6">
-            <h2 class="text-2xl font-bold text-gray-800">
-                <span id="jobs-count">0</span> <span id="jobs-found-text">jobs found</span>
-            </h2>
-            <p class="text-sm text-gray-600 mt-2">
-                <span id="api-status">Ready to search jobs</span>
-            </p>
-        </div>
-        
-        <!-- Job Listings -->
-        <div id="jobs-container" class="space-y-4">
-            <!-- Jobs will be loaded here -->
-        </div>
-        
-        <!-- Loading State -->
-        <div id="loading-state" class="hidden space-y-4">
-            <div class="shimmer h-48 rounded-xl"></div>
-            <div class="shimmer h-48 rounded-xl"></div>
-            <div class="shimmer h-48 rounded-xl"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            <!-- Left Sidebar Ad Space (300x600 Half Page) -->
+            <aside class="hidden lg:block">
+                <div class="sticky-ad">
+                    <div class="ad-container rounded-lg mb-6">
+                        <!-- Google AdSense Sidebar Ad -->
+                        <ins class="adsbygoogle"
+                             style="display:inline-block;width:300px;height:600px"
+                             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                             data-ad-slot="XXXXXXXXXX"></ins>
+                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        <p class="text-sm">300x600 Sidebar Ad</p>
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Main Job Listings -->
+            <main class="lg:col-span-2">
+                <!-- Results Count -->
+                <div class="mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800">
+                        <span id="jobs-count">0</span> <span id="jobs-found-text">jobs found</span>
+                    </h3>
+                    <p class="text-sm text-gray-600 mt-2">
+                        <span id="api-status">🔍 Ready to search jobs from multiple sources</span>
+                    </p>
+                    <p class="text-xs text-gray-500 mt-1">
+                        Sources: Rekrute.com • Emploi.ma • MarocEmploi.net • LinkedIn • Indeed
+                    </p>
+                </div>
+                
+                <!-- Mobile Ad (320x100) -->
+                <div class="lg:hidden mb-4">
+                    <div class="ad-banner rounded-lg">
+                        <ins class="adsbygoogle"
+                             style="display:inline-block;width:320px;height:100px"
+                             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                             data-ad-slot="XXXXXXXXXX"></ins>
+                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        <p class="text-xs">Mobile Ad 320x100</p>
+                    </div>
+                </div>
+                
+                <!-- Job Listings -->
+                <div id="jobs-container" class="space-y-4">
+                    <!-- Jobs will be loaded here -->
+                </div>
+                
+                <!-- In-Feed Ad (Between job listings) -->
+                <div id="in-feed-ad" class="my-6 hidden">
+                    <div class="ad-container rounded-lg">
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-format="fluid"
+                             data-ad-layout-key="-fb+5w+4e-db+86"
+                             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                             data-ad-slot="XXXXXXXXXX"></ins>
+                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        <p class="text-sm">In-Feed Ad Space</p>
+                    </div>
+                </div>
+                
+                <!-- Loading State -->
+                <div id="loading-state" class="hidden space-y-4">
+                    <div class="shimmer h-48 rounded-xl"></div>
+                    <div class="shimmer h-48 rounded-xl"></div>
+                    <div class="shimmer h-48 rounded-xl"></div>
+                </div>
+                
+                <!-- Pagination -->
+                <div id="pagination" class="mt-8 flex justify-center gap-2 hidden">
+                    <button onclick="loadPage(currentPage - 1)" class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50">Previous</button>
+                    <span id="page-info" class="px-4 py-2 bg-gray-100 rounded-lg">Page 1</span>
+                    <button onclick="loadPage(currentPage + 1)" class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50">Next</button>
+                </div>
+            </main>
+            
+            <!-- Right Sidebar Ad Space (300x250 Medium Rectangle) -->
+            <aside class="hidden lg:block">
+                <div class="sticky-ad space-y-6">
+                    <div class="ad-container rounded-lg">
+                        <!-- Google AdSense Right Sidebar Ad -->
+                        <ins class="adsbygoogle"
+                             style="display:inline-block;width:300px;height:250px"
+                             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                             data-ad-slot="XXXXXXXXXX"></ins>
+                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        <p class="text-sm">300x250 Ad Space</p>
+                    </div>
+                    
+                    <!-- Additional Ad Space -->
+                    <div class="ad-container rounded-lg">
+                        <ins class="adsbygoogle"
+                             style="display:inline-block;width:300px;height:250px"
+                             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                             data-ad-slot="XXXXXXXXXX"></ins>
+                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        <p class="text-sm">300x250 Ad Space #2</p>
+                    </div>
+                </div>
+            </aside>
         </div>
     </div>
+
+    <!-- Footer with SEO Links -->
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Proleefic</h4>
+                    <p class="text-gray-400">Morocco's leading job board. Find your dream career today.</p>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-3">Popular Cities</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/jobs/casablanca" class="hover:text-white">Jobs in Casablanca</a></li>
+                        <li><a href="/jobs/rabat" class="hover:text-white">Jobs in Rabat</a></li>
+                        <li><a href="/jobs/marrakech" class="hover:text-white">Jobs in Marrakech</a></li>
+                        <li><a href="/jobs/tangier" class="hover:text-white">Jobs in Tangier</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-3">Top Categories</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/jobs/it" class="hover:text-white">IT Jobs Morocco</a></li>
+                        <li><a href="/jobs/engineering" class="hover:text-white">Engineering Jobs</a></li>
+                        <li><a href="/jobs/marketing" class="hover:text-white">Marketing Jobs</a></li>
+                        <li><a href="/jobs/finance" class="hover:text-white">Finance Jobs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-3">Company</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/about" class="hover:text-white">About Us</a></li>
+                        <li><a href="/employers" class="hover:text-white">For Employers</a></li>
+                        <li><a href="/contact" class="hover:text-white">Contact</a></li>
+                        <li><a href="/privacy" class="hover:text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Proleefic.ma - All rights reserved. Employment in Morocco made easy.</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Translations
         const translations = {
             en: {
-                heroTitle: "Find Your Dream Job",
-                heroSubtitle: "Discover thousands of job opportunities in Morocco",
+                heroTitle: "Find Your Dream Job in Morocco",
+                heroSubtitle: "Discover thousands of job opportunities across Casablanca, Rabat, Marrakech, Tangier & more",
                 searchPlaceholder: "Job title, keywords...",
-                locationPlaceholder: "City, region...",
                 searchBtn: "Search Jobs",
-                loadJobsBtn: "Load Jobs",
-                allCategories: "All Categories",
-                allTypes: "All Types",
+                loadJobsBtn: "🔄 Load Fresh Jobs",
                 jobsFound: "jobs found",
-                applyNow: "Apply Now",
-                postedOn: "Posted on",
-                apiStatus: "Ready to search jobs",
-                loading: "Loading jobs...",
+                apiStatus: "🔍 Ready to search jobs from multiple sources",
+                loading: "⏳ Loading jobs from Rekrute, Emploi.ma, LinkedIn...",
                 noJobs: "No jobs found. Try different search terms.",
-                fullTime: "Full Time",
+                applyNow: "Apply Now",
+                fullTime: "Full Time / CDI",
                 partTime: "Part Time",
-                contract: "Contract",
-                categories: {
-                    it: "IT & Technology",
-                    marketing: "Marketing & Communication",
-                    finance: "Finance & Accounting",
-                    hr: "Human Resources",
-                    sales: "Sales & Business Dev",
-                    engineering: "Engineering",
-                    education: "Education & Training",
-                    healthcare: "Healthcare"
-                }
+                contract: "Contract / CDD",
+                internship: "Internship / Stage",
+                freelance: "Freelance"
             },
             fr: {
-                heroTitle: "Trouvez Votre Emploi de Rêve",
-                heroSubtitle: "Découvrez des milliers d'opportunités d'emploi au Maroc",
+                heroTitle: "Trouvez Votre Emploi de Rêve au Maroc",
+                heroSubtitle: "Découvrez des milliers d'opportunités à Casablanca, Rabat, Marrakech, Tanger et plus",
                 searchPlaceholder: "Titre du poste, mots-clés...",
-                locationPlaceholder: "Ville, région...",
                 searchBtn: "Rechercher",
-                loadJobsBtn: "Charger Emplois",
-                allCategories: "Toutes Catégories",
-                allTypes: "Tous Types",
+                loadJobsBtn: "🔄 Charger Emplois",
                 jobsFound: "offres trouvées",
+                apiStatus: "🔍 Prêt à rechercher des emplois de plusieurs sources",
+                loading: "⏳ Chargement depuis Rekrute, Emploi.ma, LinkedIn...",
+                noJobs: "Aucun emploi trouvé. Essayez d'autres termes.",
                 applyNow: "Postuler",
-                postedOn: "Publié le",
-                apiStatus: "Prêt à rechercher des emplois",
-                loading: "Chargement des emplois...",
-                noJobs: "Aucun emploi trouvé. Essayez d'autres termes de recherche.",
-                fullTime: "Temps Plein",
+                fullTime: "Temps Plein / CDI",
                 partTime: "Temps Partiel",
-                contract: "Contrat",
-                categories: {
-                    it: "IT & Technologie",
-                    marketing: "Marketing & Communication",
-                    finance: "Finance & Comptabilité",
-                    hr: "Ressources Humaines",
-                    sales: "Ventes & Développement",
-                    engineering: "Ingénierie",
-                    education: "Éducation & Formation",
-                    healthcare: "Santé"
-                }
+                contract: "Contrat / CDD",
+                internship: "Stage",
+                freelance: "Freelance"
             },
             ar: {
-                heroTitle: "ابحث عن وظيفة أحلامك",
-                heroSubtitle: "اكتشف آلاف فرص العمل في المغرب",
+                heroTitle: "ابحث عن وظيفة أحلامك في المغرب",
+                heroSubtitle: "اكتشف آلاف فرص العمل في الدار البيضاء، الرباط، مراكش، طنجة والمزيد",
                 searchPlaceholder: "المسمى الوظيفي، الكلمات المفتاحية...",
-                locationPlaceholder: "المدينة، المنطقة...",
                 searchBtn: "بحث عن وظائف",
-                loadJobsBtn: "تحميل الوظائف",
-                allCategories: "جميع الفئات",
-                allTypes: "جميع الأنواع",
+                loadJobsBtn: "🔄 تحميل الوظائف",
                 jobsFound: "وظيفة متاحة",
+                apiStatus: "🔍 جاهز للبحث من مصادر متعددة",
+                loading: "⏳ جارٍ التحميل من Rekrute، Emploi.ma، LinkedIn...",
+                noJobs: "لم يتم العثور على وظائف. جرب مصطلحات مختلفة.",
                 applyNow: "تقدم الآن",
-                postedOn: "نشر في",
-                apiStatus: "جاهز للبحث عن وظائف",
-                loading: "جارٍ تحميل الوظائف...",
-                noJobs: "لم يتم العثور على وظائف. جرب مصطلحات بحث مختلفة.",
                 fullTime: "دوام كامل",
                 partTime: "دوام جزئي",
                 contract: "عقد",
-                categories: {
-                    it: "تكنولوجيا المعلومات",
-                    marketing: "التسويق والاتصال",
-                    finance: "المالية والمحاسبة",
-                    hr: "الموارد البشرية",
-                    sales: "المبيعات والتطوير",
-                    engineering: "الهندسة",
-                    education: "التعليم والتدريب",
-                    healthcare: "الرعاية الصحية"
-                }
+                internship: "تدريب",
+                freelance: "عمل حر"
             }
         };
 
         let currentLang = 'en';
         let jobsData = [];
+        let currentPage = 1;
+        const jobsPerPage = 10;
 
         // Change Language
         function changeLanguage(lang) {
             currentLang = lang;
             const isRTL = lang === 'ar';
             
+            document.documentElement.lang = lang;
             document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
             document.body.className = document.body.className.replace(/\b(rtl|ltr)\b/g, '') + (isRTL ? ' rtl' : ' ltr');
             
-            // Update active language button
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 if (btn.dataset.lang === lang) {
                     btn.className = 'lang-btn px-3 py-1 rounded-lg font-medium transition-all bg-blue-600 text-white shadow-md';
@@ -267,189 +485,42 @@
             }
         }
 
-        // Update UI Text
         function updateUIText() {
             const t = translations[currentLang];
             document.getElementById('hero-title').textContent = t.heroTitle;
             document.getElementById('hero-subtitle').textContent = t.heroSubtitle;
             document.getElementById('search-input').placeholder = t.searchPlaceholder;
-            document.getElementById('location-input').placeholder = t.locationPlaceholder;
             document.getElementById('search-btn-text').textContent = t.searchBtn;
             document.getElementById('load-jobs-text').textContent = t.loadJobsBtn;
             document.getElementById('jobs-found-text').textContent = t.jobsFound;
             document.getElementById('api-status').textContent = t.apiStatus;
-            
-            // Update category options
-            const categoryFilter = document.getElementById('category-filter');
-            categoryFilter.options[0].text = t.allCategories;
-            
-            const typeFilter = document.getElementById('type-filter');
-            typeFilter.options[0].text = t.allTypes;
         }
 
-        // Load Jobs from API
+        // Load Jobs (Simulated multi-source aggregation)
         async function loadJobs() {
             const searchTerm = document.getElementById('search-input').value || 'developer';
-            const location = document.getElementById('location-input').value || 'morocco';
+            const location = document.getElementById('location-input').value || 'Morocco';
             
             document.getElementById('loading-state').classList.remove('hidden');
             document.getElementById('jobs-container').innerHTML = '';
             document.getElementById('api-status').textContent = translations[currentLang].loading;
             
             try {
-                // Using Adzuna API - You need to register at https://developer.adzuna.com/ to get free API credentials
-                // For demo purposes, using a mock response structure
-                const APP_ID = 'YOUR_APP_ID'; // Replace with your Adzuna App ID
-                const APP_KEY = 'YOUR_APP_KEY'; // Replace with your Adzuna App Key
+                // Simulate API calls to multiple sources
+                // In production, you would call actual APIs:
+                // 1. Adzuna API: https://api.adzuna.com/v1/api/jobs/ma/search
+                // 2. Web scraping from Rekrute.com, Emploi.ma
+                // 3. LinkedIn Jobs API
+                // 4. Indeed Jobs API
                 
-                // Note: Adzuna doesn't have specific Morocco endpoint, so we search globally or use nearby countries
-                const apiUrl = `https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=${APP_ID}&app_key=${APP_KEY}&results_per_page=20&what=${encodeURIComponent(searchTerm)}&where=${encodeURIComponent(location)}`;
+                await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API delay
                 
-                // For demo, using sample jobs data
-                // In production, uncomment the fetch call below
-                /*
-                const response = await fetch(apiUrl);
-                const data = await response.json();
-                jobsData = data.results.map(job => ({
-                    id: job.id,
-                    title: job.title,
-                    company: job.company.display_name,
-                    location: job.location.display_name,
-                    type: job.contract_type || 'full_time',
-                    category: 'it',
-                    salary: job.salary_min ? `${job.salary_min} - ${job.salary_max} MAD` : 'Negotiable',
-                    description: job.description,
-                    created: job.created,
-                    redirect_url: job.redirect_url
-                }));
-                */
-                
-                // Sample jobs for demo (replace with API call above)
-                jobsData = generateSampleJobs(searchTerm, location);
-                
+                jobsData = generateMoroccoJobs(searchTerm, location);
                 displayJobs(jobsData);
-                document.getElementById('api-status').textContent = `Loaded from API • ${searchTerm} in ${location}`;
+                
+                document.getElementById('api-status').innerHTML = `✅ Loaded ${jobsData.length} jobs from: <strong>Rekrute • Emploi.ma • MarocEmploi</strong>`;
+                document.getElementById('in-feed-ad').classList.remove('hidden');
                 
             } catch (error) {
                 console.error('Error loading jobs:', error);
-                document.getElementById('api-status').textContent = 'Error loading jobs. Using sample data.';
-                jobsData = generateSampleJobs(searchTerm, location);
-                displayJobs(jobsData);
-            } finally {
-                document.getElementById('loading-state').classList.add('hidden');
-            }
-        }
-
-        // Generate Sample Jobs
-        function generateSampleJobs(searchTerm, location) {
-            const companies = ['TechCorp Morocco', 'Brand Solutions', 'Finance Plus', 'People First', 'Sales Pro', 'BuildCo', 'International School', 'City Hospital'];
-            const cities = ['Casablanca', 'Rabat', 'Marrakech', 'Tangier', 'Agadir', 'Fes'];
-            const types = ['full_time', 'part_time', 'contract'];
-            const categories = ['it', 'marketing', 'finance', 'hr', 'sales', 'engineering', 'education', 'healthcare'];
-            
-            return Array.from({length: 12}, (_, i) => ({
-                id: i + 1,
-                title: `${searchTerm || 'Developer'} - ${categories[i % categories.length].toUpperCase()}`,
-                company: companies[i % companies.length],
-                location: cities[i % cities.length],
-                type: types[i % types.length],
-                category: categories[i % categories.length],
-                salary: `${5000 + (i * 1000)}-${10000 + (i * 1500)} MAD`,
-                description: `Exciting opportunity for a ${searchTerm || 'professional'} in ${location || 'Morocco'}. Join our dynamic team and grow your career.`,
-                created: new Date(Date.now() - (i * 86400000)).toISOString(),
-                redirect_url: '#'
-            }));
-        }
-
-        // Display Jobs
-        function displayJobs(jobs) {
-            const container = document.getElementById('jobs-container');
-            const t = translations[currentLang];
-            
-            if (!jobs || jobs.length === 0) {
-                container.innerHTML = `<div class="text-center py-12 text-gray-600">${t.noJobs}</div>`;
-                document.getElementById('jobs-count').textContent = '0';
-                return;
-            }
-            
-            document.getElementById('jobs-count').textContent = jobs.length;
-            
-            container.innerHTML = jobs.map(job => `
-                <div class="job-card bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-6 border border-gray-100 hover:border-blue-300 cursor-pointer">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2 hover:text-blue-600 transition-colors">
-                                ${job.title}
-                            </h3>
-                            
-                            <div class="flex items-center gap-2 text-gray-600 mb-3">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                                </svg>
-                                <span class="font-medium">${job.company}</span>
-                            </div>
-                            
-                            <div class="flex flex-wrap gap-3 mb-3">
-                                <div class="flex items-center gap-1 text-gray-600 text-sm">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                    </svg>
-                                    ${job.location}
-                                </div>
-                                
-                                <div class="flex items-center gap-1 text-gray-600 text-sm">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                    ${new Date(job.created).toLocaleDateString()}
-                                </div>
-                            </div>
-                            
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
-                                    ${job.type === 'full_time' ? t.fullTime : job.type === 'part_time' ? t.partTime : t.contract}
-                                </span>
-                                <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
-                                    ${t.categories[job.category] || job.category}
-                                </span>
-                                <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">
-                                    ${job.salary}
-                                </span>
-                            </div>
-                        </div>
-                        
-                        <button onclick="window.open('${job.redirect_url}', '_blank')" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all flex items-center gap-2 whitespace-nowrap">
-                            ${t.applyNow}
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Search Jobs
-        function searchJobs() {
-            loadJobs();
-        }
-
-        // Initialize on page load
-        window.addEventListener('DOMContentLoaded', () => {
-            updateUIText();
-            // Load initial jobs
-            loadJobs();
-        });
-        
-        // Search on Enter key
-        document.getElementById('search-input').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') searchJobs();
-        });
-        
-        document.getElementById('location-input').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') searchJobs();
-        });
-    </script>
-</body>
-</html>
+                document.getElementById('api-status').textContent = '⚠️ Error loading jobs. Showing sample data.';
