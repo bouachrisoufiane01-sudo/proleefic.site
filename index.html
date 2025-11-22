@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proleefic | The #1 Job Board in Morocco</title>
-    <meta name="description" content="Find the latest tech, finance, and marketing jobs in Casablanca, Rabat, and across Morocco.">
+    <title>Proleefic | Morocco Job Board</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3965710509874164" crossorigin="anonymous"></script>
 
@@ -15,7 +17,10 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    fontFamily: { 
+                        sans: ['Inter', 'sans-serif'],
+                        arabic: ['Cairo', 'sans-serif'] 
+                    },
                     colors: { brand: { 50: '#eff6ff', 600: '#2563eb' } }
                 }
             }
@@ -25,10 +30,20 @@
     <style>
         * { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; background-color: #F3F4F6; }
+        
+        /* Arabic Font Override */
+        [dir="rtl"] body { font-family: 'Cairo', sans-serif; }
+        
         .modal { display: none; opacity: 0; transition: opacity 0.2s ease; backdrop-filter: blur(4px); }
         .modal.active { display: flex; opacity: 1; }
         .fade-in { animation: fadeInUp 0.4s ease-out; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* RTL Specific Fixes */
+        [dir="rtl"] .text-left { text-align: right; }
+        [dir="rtl"] .mr-auto { margin-right: 0; margin-left: auto; }
+        [dir="rtl"] .ml-auto { margin-left: 0; margin-right: auto; }
+        [dir="rtl"] .border-r { border-right: none; border-left: 1px solid #f3f4f6; }
     </style>
 </head>
 <body class="text-gray-800">
@@ -39,29 +54,35 @@
                 <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">P</div>
                 <span class="text-xl font-bold tracking-tight text-gray-900">Proleefic<span class="text-blue-600">.ma</span></span>
             </div>
-            <div class="flex items-center gap-3">
-                <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow-sm">Post a Job</button>
+            
+            <div class="flex items-center gap-4">
+                <div class="flex bg-gray-100 rounded-lg p-1">
+                    <button onclick="setLanguage('en')" class="lang-btn px-3 py-1 text-xs font-bold rounded-md transition" id="btn-en">EN</button>
+                    <button onclick="setLanguage('fr')" class="lang-btn px-3 py-1 text-xs font-bold rounded-md transition" id="btn-fr">FR</button>
+                    <button onclick="setLanguage('ar')" class="lang-btn px-3 py-1 text-xs font-bold rounded-md transition" id="btn-ar">عربي</button>
+                </div>
+                <button class="hidden md:block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow-sm" data-i18n="postJob">Post a Job</button>
             </div>
         </div>
     </nav>
 
     <header class="bg-white border-b border-gray-200 py-12 px-4">
         <div class="container mx-auto max-w-4xl text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">Find your next dream job in <span class="text-blue-600">Morocco 🇲🇦</span></h1>
-            <p class="text-lg text-gray-500 mb-8">Aggregating thousands of opportunities from Emploi.ma, Rekrute, and LinkedIn.</p>
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+                <span data-i18n="heroTitle">Find your next dream job in</span> <span class="text-blue-600">Morocco 🇲🇦</span>
+            </h1>
+            <p class="text-lg text-gray-500 mb-8" data-i18n="heroSub">Aggregating thousands of opportunities from Emploi.ma, Rekrute, and LinkedIn.</p>
             
             <div class="bg-white p-2 rounded-2xl shadow-xl border border-gray-200 flex flex-col md:flex-row gap-2 max-w-3xl mx-auto">
-                <div class="flex-1 flex items-center px-4 h-12 border-b md:border-b-0 md:border-r border-gray-100">
-                    <span class="text-gray-400 mr-3">🔍</span>
-                    <input type="text" id="searchInput" placeholder="Job title, keywords, or company" class="w-full outline-none text-gray-700 placeholder-gray-400">
+                <div class="flex-1 flex items-center px-4 h-12 border-b md:border-b-0 border-gray-100 separator">
+                    <span class="text-gray-400 mx-2">🔍</span>
+                    <input type="text" id="searchInput" placeholder="Job title, keywords..." class="w-full outline-none text-gray-700 placeholder-gray-400 bg-transparent">
                 </div>
                 <div class="flex-1 flex items-center px-4 h-12 border-b md:border-b-0 border-gray-100">
-                    <span class="text-gray-400 mr-3">📍</span>
-                    <select id="locationFilter" class="w-full outline-none text-gray-700 bg-transparent cursor-pointer">
-                        <option value="">All Morocco</option>
-                    </select>
+                    <span class="text-gray-400 mx-2">📍</span>
+                    <select id="locationFilter" class="w-full outline-none text-gray-700 bg-transparent cursor-pointer"></select>
                 </div>
-                <button onclick="filter()" class="bg-blue-600 hover:bg-blue-700 text-white px-8 h-12 rounded-xl font-semibold transition shadow-md">Search</button>
+                <button onclick="filter()" class="bg-blue-600 hover:bg-blue-700 text-white px-8 h-12 rounded-xl font-semibold transition shadow-md" data-i18n="searchBtn">Search</button>
             </div>
         </div>
     </header>
@@ -70,18 +91,13 @@
         
         <div class="hidden lg:block space-y-6">
             <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
-                <h3 class="font-bold text-gray-900 mb-4">Categories</h3>
+                <h3 class="font-bold text-gray-900 mb-4" data-i18n="categories">Categories</h3>
                 <div id="categoryList" class="space-y-1"></div>
             </div>
             
             <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center justify-center min-h-[250px]">
                 <span class="text-[10px] text-gray-300 uppercase mb-2">Advertisement</span>
-                <ins class="adsbygoogle"
-                     style="display:block; width:100%"
-                     data-ad-client="ca-pub-3965710509874164"
-                     data-ad-slot="REPLACE_ME_SIDEBAR"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
+                <ins class="adsbygoogle" style="display:block; width:100%" data-ad-client="ca-pub-3965710509874164" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
             </div>
         </div>
@@ -90,21 +106,21 @@
             <div class="flex justify-between items-center mb-4">
                 <h2 class="font-bold text-xl" id="jobCount">Latest Jobs</h2>
                 <div class="flex gap-2">
-                    <select id="categoryFilter" class="lg:hidden border border-gray-300 rounded-lg px-3 py-1 text-sm bg-white"><option value="">Category</option></select>
-                    <span class="text-sm text-gray-500 self-center">Updated: <span id="lastUpdate">Now</span></span>
+                    <select id="categoryFilter" class="lg:hidden border border-gray-300 rounded-lg px-3 py-1 text-sm bg-white"></select>
+                    <span class="text-sm text-gray-500 self-center"><span data-i18n="updated">Updated</span>: <span id="lastUpdate">Now</span></span>
                 </div>
             </div>
 
             <div id="loadingScreen" class="flex flex-col items-center justify-center py-20 bg-white rounded-xl border border-gray-200">
                 <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-600 mb-4"></div>
-                <p class="text-gray-500 font-medium">Scanning job boards...</p>
+                <p class="text-gray-500 font-medium" data-i18n="loading">Scanning job boards...</p>
             </div>
 
             <div id="jobListings" class="space-y-3"></div>
 
             <div class="mt-6 text-center">
                 <button onclick="refreshJobs()" class="text-blue-600 font-medium hover:underline flex items-center justify-center gap-2 mx-auto">
-                    <span>🔄 Load More Jobs</span>
+                    <span>🔄 <span data-i18n="loadMore">Load More Jobs</span></span>
                 </button>
             </div>
         </div>
@@ -112,7 +128,6 @@
 
     <div id="jobModal" class="modal fixed inset-0 bg-gray-900/60 z-50 items-center justify-center p-4">
         <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative flex flex-col">
-            
             <div class="sticky top-0 bg-white border-b border-gray-100 p-6 z-10 flex justify-between items-start">
                 <div>
                     <h2 class="text-2xl font-bold text-gray-900" id="modalTitle"></h2>
@@ -124,104 +139,205 @@
                 </div>
                 <button onclick="closeModal()" class="bg-gray-100 hover:bg-gray-200 p-2 rounded-full transition">✕</button>
             </div>
-
             <div class="p-6">
                 <div class="flex flex-wrap gap-2 mb-6" id="modalTags"></div>
-                
                 <div class="prose max-w-none">
-                    <h3 class="text-lg font-bold mb-2">About the role</h3>
+                    <h3 class="text-lg font-bold mb-2" data-i18n="aboutRole">About the role</h3>
                     <p class="text-gray-600 leading-relaxed mb-6" id="modalDescription"></p>
-                    <h3 class="text-lg font-bold mb-2">Requirements</h3>
+                    <h3 class="text-lg font-bold mb-2" data-i18n="requirements">Requirements</h3>
                     <ul class="space-y-2 mb-6" id="modalRequirements"></ul>
                 </div>
-
                 <div class="my-6 p-2 bg-gray-50 border border-gray-200 rounded-lg text-center min-h-[100px]">
                     <span class="text-[10px] text-gray-300 uppercase mb-1">Advertisement</span>
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-3965710509874164"
-                         data-ad-slot="REPLACE_ME_MODAL"
-                         data-ad-format="horizontal"
-                         data-full-width-responsive="true"></ins>
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3965710509874164" data-ad-slot="1234567891" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
                     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                 </div>
-
                 <div class="mt-4 pt-4 border-t border-gray-100">
-                     <a id="modalApplyBtn" href="#" target="_blank" class="block w-full bg-blue-600 hover:bg-blue-700 text-white py-3.5 rounded-xl font-bold text-center transition shadow-lg shadow-blue-200">Apply Now</a>
+                     <a id="modalApplyBtn" href="#" target="_blank" class="block w-full bg-blue-600 hover:bg-blue-700 text-white py-3.5 rounded-xl font-bold text-center transition shadow-lg shadow-blue-200" data-i18n="apply">Apply Now</a>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        var jobs = [];
-        var filtered = [];
-        var jobSources = [
-            {name: 'Emploi.ma', url: 'https://www.emploi.ma'},
-            {name: 'Rekrute', url: 'https://www.rekrute.com'},
-            {name: 'LinkedIn', url: 'https://www.linkedin.com'}
+        // --- GLOBAL VARIABLES ---
+        let currentLang = 'en';
+        let jobs = [];
+        let filtered = [];
+        
+        // --- DATA: TRANSLATIONS ---
+        const i18n = {
+            en: {
+                heroTitle: "Find your next dream job in",
+                heroSub: "Aggregating thousands of opportunities from Emploi.ma, Rekrute, and LinkedIn.",
+                searchPlaceholder: "Job title, keywords, or company",
+                searchBtn: "Search",
+                categories: "Categories",
+                postJob: "Post a Job",
+                updated: "Updated",
+                loadMore: "Load More Jobs",
+                loading: "Scanning job boards...",
+                aboutRole: "About the role",
+                requirements: "Requirements",
+                apply: "Apply Now",
+                salary: "Salary",
+                posted: "ago",
+                allLocs: "📍 All Morocco",
+                allCats: "All Categories",
+                currency: "MAD"
+            },
+            fr: {
+                heroTitle: "Trouvez le job de vos rêves au",
+                heroSub: "Regrouper des milliers d'opportunités de Emploi.ma, Rekrute et LinkedIn.",
+                searchPlaceholder: "Titre du poste, mots-clés...",
+                searchBtn: "Rechercher",
+                categories: "Catégories",
+                postJob: "Publier une offre",
+                updated: "Mis à jour",
+                loadMore: "Charger plus",
+                loading: "Scan des offres en cours...",
+                aboutRole: "À propos du poste",
+                requirements: "Prérequis",
+                apply: "Postuler Maintenant",
+                salary: "Salaire",
+                posted: "il y a",
+                allLocs: "📍 Tout le Maroc",
+                allCats: "Toutes Catégories",
+                currency: "MAD"
+            },
+            ar: {
+                heroTitle: "جد وظيفة أحلامك في",
+                heroSub: "تجميع آلاف الفرص من Emploi.ma و Rekrute و LinkedIn.",
+                searchPlaceholder: "المسمى الوظيفي، كلمات دلالية...",
+                searchBtn: "بحث",
+                categories: "التصنيفات",
+                postJob: "أضف وظيفة",
+                updated: "تحديث",
+                loadMore: "تحميل المزيد",
+                loading: "جاري البحث عن وظائف...",
+                aboutRole: "حول الوظيفة",
+                requirements: "المتطلبات",
+                apply: "قدّم الآن",
+                salary: "راتب",
+                posted: "منذ",
+                allLocs: "📍 كل المدن",
+                allCats: "جميع التصنيفات",
+                currency: "درهم"
+            }
+        };
+
+        // --- DATA: LISTS ---
+        const cities = [
+            "Casablanca", "Rabat", "Tangier", "Marrakech", "Agadir", "Fes", "Meknes", 
+            "Oujda", "Kenitra", "Tetouan", "Safi", "Mohammedia", "El Jadida", 
+            "Beni Mellal", "Nador", "Taza", "Settat", "Berrechid", "Khemisset", "Remote"
         ];
+
+        const jobCategories = [
+            "IT & Telecom", "Sales & Commercial", "Management & Accounting", 
+            "Marketing & Communication", "Engineering & Industry", "Customer Service", 
+            "Healthcare & Medical", "Education & Training", "Tourism & Hotel", 
+            "Transport & Logistics", "Construction & Real Estate", "Legal & HR"
+        ];
+
+        // --- APP LOGIC ---
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.setAttribute('dir', dir);
+            document.documentElement.setAttribute('lang', lang);
+            
+            // Update Active Button
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('bg-white', 'shadow-sm', 'text-blue-600'));
+            document.getElementById('btn-' + lang).classList.add('bg-white', 'shadow-sm', 'text-blue-600');
+
+            // Update Text Content
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                el.innerText = i18n[lang][el.getAttribute('data-i18n')];
+            });
+            
+            // Update Placeholders
+            document.getElementById('searchInput').placeholder = i18n[lang].searchPlaceholder;
+            
+            // Refresh Data to match language
+            fetchJobs();
+        }
 
         function fetchJobs() {
             document.getElementById('loadingScreen').style.display = 'flex';
             document.getElementById('jobListings').innerHTML = '';
             
             setTimeout(() => {
-                jobs = generateMockJobs();
+                jobs = generateMockJobs(currentLang);
                 filtered = jobs.slice();
                 document.getElementById('loadingScreen').style.display = 'none';
                 initFilters();
-                render(jobs);
+                render(filtered);
                 updateTime();
-            }, 1000);
+            }, 800);
         }
 
-        function generateMockJobs() {
-            // (Same mock data generation as before, keeping it brief for code cleanliness)
-            const titles = ['Full Stack Developer', 'Marketing Manager', 'Accountant', 'Sales Agent', 'HR Manager', 'Designer', 'Data Analyst'];
-            const companies = ['OCP', 'Attijariwafa', 'Maroc Telecom', 'Inwi', 'Dell', 'Oracle'];
-            const locations = ['Casablanca', 'Rabat', 'Tangier', 'Marrakech', 'Remote'];
-            const categories = ['Tech', 'Marketing', 'Finance', 'Sales', 'Management'];
+        function generateMockJobs(lang) {
+            // Multilingual Content Pools
+            const titles = {
+                en: ['Full Stack Developer', 'Marketing Manager', 'Accountant', 'Sales Agent', 'HR Manager', 'Civil Engineer', 'Nurse', 'Teacher', 'Hotel Manager'],
+                fr: ['Développeur Full Stack', 'Responsable Marketing', 'Comptable', 'Commercial', 'Responsable RH', 'Ingénieur Civil', 'Infirmier', 'Enseignant', 'Directeur d\'Hôtel'],
+                ar: ['مطور ويب شامل', 'مدير تسويق', 'محاسب', 'وكيل مبيعات', 'مدير موارد بشرية', 'مهندس مدني', 'ممرض', 'مدرس', 'مدير فندق']
+            };
             
+            const descriptions = {
+                en: "We are looking for an experienced professional to join our dynamic team. You will be responsible for managing key projects and driving growth.",
+                fr: "Nous recherchons un professionnel expérimenté pour rejoindre notre équipe dynamique. Vous serez responsable de la gestion des projets clés.",
+                ar: "نحن نبحث عن محترف ذو خبرة للانضمام إلى فريقنا الديناميكي. ستكون مسؤولاً عن إدارة المشاريع الرئيسية ودفع النمو."
+            };
+
+            const companies = ['OCP Group', 'Attijariwafa Bank', 'Maroc Telecom', 'Inwi', 'CDG', 'Dell Technologies', 'Oracle', 'Lear Corp', 'Yazaki', 'Royal Air Maroc'];
+            const sources = [{name: 'Emploi.ma', url: '#'}, {name: 'Rekrute', url: '#'}, {name: 'LinkedIn', url: '#'}, {name: 'Anapec', url: '#'}];
+
             let arr = [];
-            for (let i = 0; i < 25; i++) {
+            // Generate 30 jobs
+            for (let i = 0; i < 30; i++) {
+                let tList = titles[lang] || titles['en'];
+                let title = tList[Math.floor(Math.random() * tList.length)];
+                let city = cities[Math.floor(Math.random() * cities.length)];
+                let cat = jobCategories[Math.floor(Math.random() * jobCategories.length)];
+                let desc = descriptions[lang] || descriptions['en'];
+
                 arr.push({
                     id: i,
-                    title: titles[Math.floor(Math.random() * titles.length)],
+                    title: title,
                     company: companies[Math.floor(Math.random() * companies.length)],
-                    location: locations[Math.floor(Math.random() * locations.length)],
-                    salary: (Math.floor(Math.random() * 10) + 4) + ',000 MAD',
-                    type: 'Full-time',
-                    category: categories[Math.floor(Math.random() * categories.length)],
-                    posted: Math.floor(Math.random() * 5) + 'd ago',
-                    description: 'We are hiring a ' + titles[Math.floor(Math.random() * titles.length)] + ' to join our team.',
-                    requirements: ['Experience required', 'Bilingual (Fr/En)', 'Team player'],
-                    source: jobSources[Math.floor(Math.random() * jobSources.length)]
+                    location: city,
+                    salary: (Math.floor(Math.random() * 10) + 4) + ',000 ' + i18n[lang].currency,
+                    type: lang === 'ar' ? 'دوام كامل' : (lang === 'fr' ? 'CDI' : 'Full-time'),
+                    category: cat,
+                    posted: (Math.floor(Math.random() * 10) + 1) + 'd',
+                    description: desc,
+                    requirements: lang === 'ar' ? ['خبرة مطلوبة', 'لغة فرنسية وإنجليزية', 'روح الفريق'] : (lang === 'fr' ? ['Expérience requise', 'Français & Anglais', 'Esprit d\'équipe'] : ['Experience required', 'English & French', 'Team player']),
+                    source: sources[Math.floor(Math.random() * sources.length)]
                 });
             }
             return arr;
         }
 
         function initFilters() {
-            const locs = [...new Set(jobs.map(j => j.location))];
-            const cats = [...new Set(jobs.map(j => j.category))];
-            
+            // Populate Location Dropdown
             const lf = document.getElementById('locationFilter');
-            lf.innerHTML = '<option value="">📍 All Morocco</option>';
-            locs.forEach(l => lf.innerHTML += `<option value="${l}">${l}</option>`);
+            lf.innerHTML = `<option value="">${i18n[currentLang].allLocs}</option>`;
+            cities.sort().forEach(l => lf.innerHTML += `<option value="${l}">${l}</option>`);
 
+            // Populate Categories (Sidebar & Mobile)
             const cl = document.getElementById('categoryList');
             const cf = document.getElementById('categoryFilter');
             
-            cl.innerHTML = `<button onclick="setCat('')" class="block w-full text-left px-3 py-2 rounded-lg text-sm font-medium bg-blue-50 text-blue-700">All Jobs</button>`;
-            cats.forEach(c => {
-                cl.innerHTML += `<button onclick="setCat('${c}')" class="block w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900">${c}</button>`;
+            cl.innerHTML = `<button onclick="setCat('')" class="block w-full px-3 py-2 rounded-lg text-sm font-medium bg-blue-50 text-blue-700 ${currentLang === 'ar' ? 'text-right' : 'text-left'}">${i18n[currentLang].allCats}</button>`;
+            cf.innerHTML = `<option value="">${i18n[currentLang].allCats}</option>`;
+
+            jobCategories.sort().forEach(c => {
+                cl.innerHTML += `<button onclick="setCat('${c}')" class="block w-full px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 ${currentLang === 'ar' ? 'text-right' : 'text-left'}">${c}</button>`;
                 cf.innerHTML += `<option value="${c}">${c}</option>`;
             });
-
-            document.getElementById('searchInput').addEventListener('input', filter);
-            lf.addEventListener('change', filter);
-            cf.addEventListener('change', filter);
         }
 
         function setCat(cat) {
@@ -233,13 +349,18 @@
             const s = document.getElementById('searchInput').value.toLowerCase();
             const l = document.getElementById('locationFilter').value;
             const c = document.getElementById('categoryFilter').value;
-            filtered = jobs.filter(j => (j.title.toLowerCase().includes(s) || j.company.toLowerCase().includes(s)) && (l === '' || j.location === l) && (c === '' || j.category === c));
+            
+            filtered = jobs.filter(j => {
+                return (j.title.toLowerCase().includes(s) || j.company.toLowerCase().includes(s)) &&
+                       (l === '' || j.location === l) &&
+                       (c === '' || j.category === c);
+            });
             render(filtered);
         }
 
         function render(arr) {
             const container = document.getElementById('jobListings');
-            document.getElementById('jobCount').innerText = arr.length + ' Jobs Found';
+            document.getElementById('jobCount').innerText = arr.length + (currentLang === 'ar' ? ' وظائف' : ' Jobs Found');
             
             if(arr.length === 0) {
                 container.innerHTML = `<div class="text-center py-10"><p class="text-gray-500">No jobs found.</p></div>`;
@@ -257,47 +378,37 @@
                     <div class="flex-1">
                         <h3 class="font-bold text-gray-900 group-hover:text-blue-600 transition">${j.title}</h3>
                         <p class="text-sm text-gray-500">${j.company} • ${j.location}</p>
-                        <div class="flex items-center gap-3 mt-3 text-xs font-medium">
+                        <div class="flex items-center gap-3 mt-3 text-xs font-medium flex-wrap">
+                            <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded">${j.category}</span>
                             <span class="bg-green-50 text-green-700 px-2 py-1 rounded">${j.salary}</span>
-                            <span class="text-gray-400 ml-auto">${j.posted}</span>
+                            <span class="text-gray-400 ml-auto">${j.posted} ${i18n[currentLang].posted}</span>
                         </div>
                     </div>
                 </div>`;
 
-                // AD SLOT 3: IN-FEED AD (Injects an ad every 5 jobs)
+                // In-Feed Ad every 5 items
                 if ((index + 1) % 5 === 0 && index !== arr.length - 1) {
-                    html += `
-                    <div class="bg-white p-4 rounded-xl border border-gray-200 text-center">
-                        <span class="text-[10px] text-gray-300 uppercase mb-2 block">Sponsored</span>
-                        <ins class="adsbygoogle"
-                             style="display:block"
-                             data-ad-format="fluid"
-                             data-ad-layout-key="-fb+5w+4e-db+86"
-                             data-ad-client="ca-pub-3965710509874164"
-                             data-ad-slot="REPLACE_ME_INFEED"></ins>
-                    </div>
-                    <script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script>
-                    `;
+                    html += `<div class="bg-white p-4 rounded-xl border border-gray-200 text-center"><span class="text-[10px] text-gray-300 uppercase mb-2 block">Sponsored</span><ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fb+5w+4e-db+86" data-ad-client="ca-pub-3965710509874164" data-ad-slot="1234567892"></ins></div><script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script>`;
                 }
             });
             container.innerHTML = html;
-            
-            // Re-initialize ads for the new content
-            try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
         }
 
         function openModal(id) {
             const j = jobs.find(x => x.id === id);
             if(!j) return;
+
             document.getElementById('modalTitle').innerText = j.title;
             document.getElementById('modalCompany').innerText = j.company;
             document.getElementById('modalLocation').innerText = j.location;
             document.getElementById('modalDescription').innerText = j.description;
             document.getElementById('modalApplyBtn').href = j.source.url;
-            
+
             const tags = [{text: j.salary, color: 'bg-green-50 text-green-700'}, {text: j.type, color: 'bg-blue-50 text-blue-700'}, {text: j.category, color: 'bg-purple-50 text-purple-700'}];
             document.getElementById('modalTags').innerHTML = tags.map(t => `<span class="${t.color} px-3 py-1.5 rounded-lg text-sm font-medium">${t.text}</span>`).join('');
-            document.getElementById('modalRequirements').innerHTML = j.requirements.map(r => `<li class="flex gap-2"><span class="text-blue-500">✔</span> ${r}</li>`).join('');
+            
+            document.getElementById('modalRequirements').innerHTML = j.requirements.map(r => `<li class="flex gap-2 items-center"><span class="text-blue-500">✔</span> ${r}</li>`).join('');
+            
             document.getElementById('jobModal').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -308,12 +419,22 @@
         }
 
         function updateTime() {
-            document.getElementById('lastUpdate').innerText = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            const now = new Date();
+            document.getElementById('lastUpdate').innerText = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
         }
+        
+        function refreshJobs() { fetchJobs(); }
 
-        function refreshJobs() { fetchJobs(); window.scrollTo({top: document.getElementById('jobListings').offsetTop - 100, behavior: 'smooth'}); }
-        document.getElementById('jobModal').addEventListener('click', (e) => { if(e.target.id === 'jobModal') closeModal(); });
-        window.onload = fetchJobs;
+        // Init
+        window.onload = function() {
+            setLanguage('en'); // Default to English
+            
+            document.getElementById('searchInput').addEventListener('input', filter);
+            document.getElementById('locationFilter').addEventListener('change', filter);
+            document.getElementById('categoryFilter').addEventListener('change', filter);
+            
+            document.getElementById('jobModal').addEventListener('click', (e) => { if(e.target.id === 'jobModal') closeModal(); });
+        };
     </script>
 </body>
 </html>
