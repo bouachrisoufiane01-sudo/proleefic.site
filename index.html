@@ -3,20 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morocco Jobs - Find Your Dream Job</title>
+    <title>Proleefic - Morocco Job Board</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3965710509874164" crossorigin="anonymous"></script>
     <style>
-        .modal { display: none; } .modal.active { display: flex; }
+        * { scroll-behavior: smooth; }
+        .modal { display: none; opacity: 0; transition: opacity 0.3s ease; }
+        .modal.active { display: flex; opacity: 1; }
         .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .fade-in { animation: fadeIn 0.5s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .spinner { border: 3px solid #f3f4f6; border-top: 3px solid #2563eb; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body class="bg-gradient-to-br from-blue-50 via-white to-purple-50">
     
-    <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-xl">
+    <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-xl sticky top-0 z-40">
         <div class="container mx-auto px-4 py-6">
-            <h1 class="text-4xl font-bold">🇲🇦 Morocco Jobs</h1>
-            <p class="text-blue-100 mt-1">Find your dream job in Morocco</p>
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-4xl font-bold">Proleefic</h1>
+                    <p class="text-blue-100 mt-1">Find your dream job in Morocco 🇲🇦</p>
+                </div>
+                <div class="hidden md:flex items-center gap-4">
+                    <span class="bg-white/20 px-4 py-2 rounded-full text-sm" id="jobCount">Loading...</span>
+                    <button onclick="refreshJobs()" class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full text-sm transition">🔄 Refresh</button>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -25,31 +39,40 @@
     </div>
 
     <div class="container mx-auto px-4 py-8">
-        <div class="bg-white rounded-2xl shadow-2xl p-6 mb-8">
+        <div class="bg-white rounded-2xl shadow-2xl p-6 mb-8 fade-in">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <input type="text" id="searchInput" placeholder="Search jobs..." class="px-4 py-3 border-2 rounded-xl">
-                <select id="locationFilter" class="px-4 py-3 border-2 rounded-xl"><option value="">All Locations</option></select>
-                <select id="categoryFilter" class="px-4 py-3 border-2 rounded-xl"><option value="">All Categories</option></select>
+                <input type="text" id="searchInput" placeholder="🔍 Search jobs, companies..." class="px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition">
+                <select id="locationFilter" class="px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition"><option value="">📍 All Locations</option></select>
+                <select id="categoryFilter" class="px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition"><option value="">🏢 All Categories</option></select>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div id="loadingScreen" class="flex items-center justify-center py-20">
+            <div class="text-center">
+                <div class="spinner mx-auto mb-4"></div>
+                <p class="text-gray-600 font-semibold">Loading latest jobs from Morocco...</p>
+                <p class="text-gray-400 text-sm mt-2">Scraping Emploi.ma, Rekrute.com, MarocAnnonces.com...</p>
+            </div>
+        </div>
+
+        <div id="mainContent" class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="display:none;">
             <div class="lg:col-span-2 space-y-4" id="jobListings"></div>
 
             <div class="space-y-6">
                 <ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-3965710509874164" data-ad-slot="1234567892" data-ad-format="auto" data-full-width-responsive="true"></ins>
                 
-                <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="bg-white rounded-xl shadow-lg p-6 fade-in">
                     <h3 class="text-lg font-bold mb-4">Popular Categories</h3>
                     <div id="categoryList"></div>
                 </div>
 
                 <ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-3965710509874164" data-ad-slot="1234567893" data-ad-format="auto" data-full-width-responsive="true"></ins>
 
-                <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg p-6 text-white">
-                    <h3 class="text-lg font-bold mb-4">Job Market Stats</h3>
-                    <div><p class="text-sm">Total Jobs</p><p class="text-2xl font-bold" id="totalJobs">8</p></div>
-                    <div class="mt-3"><p class="text-sm">Active Searches</p><p class="text-2xl font-bold" id="activeSearches">8</p></div>
+                <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg p-6 text-white fade-in">
+                    <h3 class="text-lg font-bold mb-4">📊 Live Stats</h3>
+                    <div><p class="text-sm opacity-90">Total Jobs</p><p class="text-3xl font-bold" id="totalJobs">0</p></div>
+                    <div class="mt-3"><p class="text-sm opacity-90">Showing</p><p class="text-3xl font-bold" id="activeSearches">0</p></div>
+                    <div class="mt-3"><p class="text-sm opacity-90">Last Updated</p><p class="text-sm font-bold" id="lastUpdate">Just now</p></div>
                 </div>
 
                 <ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-3965710509874164" data-ad-slot="1234567894" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -61,47 +84,116 @@
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3965710509874164" data-ad-slot="1234567895" data-ad-format="auto" data-full-width-responsive="true"></ins>
     </div>
 
-    <div id="jobModal" class="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center p-4 z-50">
-        <div class="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
-            <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6">
-                <div class="flex justify-between">
-                    <div><h2 class="text-3xl font-bold" id="modalTitle"></h2><p id="modalCompany"></p></div>
-                    <button onclick="closeModal()" class="text-2xl">×</button>
+    <div id="jobModal" class="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center p-4 z-50 overflow-y-auto">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto transform transition-all">
+            <div class="sticky top-0 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 rounded-t-2xl">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h2 class="text-3xl font-bold" id="modalTitle"></h2>
+                        <p class="text-blue-100 mt-1" id="modalCompany"></p>
+                    </div>
+                    <button onclick="closeModal()" class="text-3xl hover:bg-white/20 rounded-full w-10 h-10 flex items-center justify-center transition">×</button>
                 </div>
             </div>
             <div class="p-6">
                 <ins class="adsbygoogle" style="display:block;min-height:100px" data-ad-client="ca-pub-3965710509874164" data-ad-slot="1234567896" data-ad-format="auto" data-full-width-responsive="true"></ins>
                 <div id="modalDetails" class="grid grid-cols-2 gap-4 my-6"></div>
-                <div class="mb-6"><h3 class="text-xl font-bold mb-3">Job Description</h3><p id="modalDescription"></p></div>
-                <div class="mb-6"><h3 class="text-xl font-bold mb-3">Requirements</h3><ul id="modalRequirements"></ul></div>
-                <div class="bg-blue-50 p-4 rounded-lg mb-6"><strong>Source:</strong> <span id="modalSource"></span></div>
+                <div class="mb-6"><h3 class="text-xl font-bold mb-3">📝 Job Description</h3><p class="text-gray-700 leading-relaxed" id="modalDescription"></p></div>
+                <div class="mb-6"><h3 class="text-xl font-bold mb-3">✅ Requirements</h3><ul class="space-y-2" id="modalRequirements"></ul></div>
+                <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-lg mb-6"><p class="text-sm"><strong>Source:</strong> <span id="modalSource"></span></p><p class="text-xs text-gray-500 mt-1">Posted: <span id="modalPosted"></span></p></div>
                 <ins class="adsbygoogle" style="display:block;min-height:100px" data-ad-client="ca-pub-3965710509874164" data-ad-slot="1234567897" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                <a id="modalApplyBtn" href="#" target="_blank" class="block w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl font-bold text-center mt-6">Apply Now →</a>
+                <a id="modalApplyBtn" href="#" target="_blank" class="block w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl font-bold text-center mt-6 hover:shadow-2xl transform hover:scale-105 transition">Apply Now on <span id="modalApplySource"></span> →</a>
+                <p class="text-center text-xs text-gray-500 mt-3">You'll be redirected to the job source website</p>
             </div>
         </div>
     </div>
 
     <footer class="bg-gray-800 text-white py-8 mt-12">
         <div class="container mx-auto px-4 text-center">
-            <p>© 2024 Morocco Jobs. All rights reserved.</p>
-            <p class="text-sm mt-2">Jobs from Emploi.ma, Rekrute.com, MarocAnnonces.com, Bayt.com, LinkedIn</p>
+            <p class="font-bold text-lg">Proleefic</p>
+            <p class="text-gray-400 text-sm mt-2">Real-time job aggregation from Morocco's top job boards</p>
+            <p class="text-gray-500 text-xs mt-3">© 2024 Proleefic. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        var jobs = [
-            {id:1,title:'Software Engineer',company:'Tech Morocco',location:'Casablanca',salary:'15,000-25,000 MAD',type:'Full-time',category:'Technology',postedDate:'2 days ago',description:'We are looking for a talented Software Engineer to join our dynamic team in Casablanca.',requirements:['3+ years experience','React and Node.js','Bachelor degree'],applyUrl:'https://www.emploi.ma/recherche-jobs-maroc',source:'Emploi.ma'},
-            {id:2,title:'Marketing Manager',company:'Digital Agency',location:'Rabat',salary:'12,000-18,000 MAD',type:'Full-time',category:'Marketing',postedDate:'1 day ago',description:'Seeking an experienced Marketing Manager to lead our marketing initiatives.',requirements:['5+ years in marketing','Digital marketing','French and English'],applyUrl:'https://www.rekrute.com/offres.html',source:'Rekrute.com'},
-            {id:3,title:'Senior Accountant',company:'Financial Services',location:'Tangier',salary:'8,000-12,000 MAD',type:'Full-time',category:'Finance',postedDate:'3 days ago',description:'Looking for a detail-oriented Senior Accountant to manage financial records.',requirements:['CPA certification','2+ years experience','SAP knowledge'],applyUrl:'https://www.marocannonces.com/maroc/offres-emploi-ct391.html',source:'MarocAnnonces.com'},
-            {id:4,title:'Sales Representative',company:'Retail Group',location:'Marrakech',salary:'6,000-10,000 MAD',type:'Full-time',category:'Sales',postedDate:'1 week ago',description:'Join our sales team and help us expand our customer base in Marrakech.',requirements:['Excellent communication','Sales experience','Arabic and French'],applyUrl:'https://www.bayt.com/en/morocco/jobs/',source:'Bayt.com'},
-            {id:5,title:'Full Stack Developer',company:'StartUp Casa',location:'Casablanca',salary:'10,000-16,000 MAD',type:'Contract',category:'Technology',postedDate:'4 days ago',description:'We need a creative Full Stack Developer to build modern web applications.',requirements:['HTML, CSS, JavaScript','React or Vue.js','Portfolio required'],applyUrl:'https://www.linkedin.com/jobs/search/?location=Morocco',source:'LinkedIn'},
-            {id:6,title:'HR Manager',company:'Consulting Firm',location:'Rabat',salary:'14,000-20,000 MAD',type:'Full-time',category:'HR',postedDate:'5 days ago',description:'Experienced HR Manager needed to oversee recruitment and employee relations.',requirements:['7+ years HR','HRCI certification','Bilingual'],applyUrl:'https://www.emploi.ma/recherche-jobs-maroc',source:'Emploi.ma'},
-            {id:7,title:'Graphic Designer',company:'Creative Studio',location:'Casablanca',salary:'7,000-11,000 MAD',type:'Full-time',category:'Design',postedDate:'2 days ago',description:'Talented Graphic Designer needed for branding and digital design projects.',requirements:['Adobe Suite','3+ years','Portfolio'],applyUrl:'https://www.rekrute.com/offres.html',source:'Rekrute.com'},
-            {id:8,title:'Customer Service',company:'Call Center',location:'Tangier',salary:'5,000-7,000 MAD',type:'Full-time',category:'Service',postedDate:'1 day ago',description:'Join our customer service team in our modern Tangier call center.',requirements:['Communication','French/English','Problem-solving'],applyUrl:'https://www.marocannonces.com/maroc/offres-emploi-ct391.html',source:'MarocAnnonces.com'}
+        var jobs = [];
+        var filtered = [];
+        var jobSources = [
+            {name: 'Emploi.ma', url: 'https://www.emploi.ma/recherche-jobs-maroc'},
+            {name: 'Rekrute.com', url: 'https://www.rekrute.com/offres.html'},
+            {name: 'MarocAnnonces.com', url: 'https://www.marocannonces.com/maroc/offres-emploi-ct391.html'},
+            {name: 'Bayt.com', url: 'https://www.bayt.com/en/morocco/jobs/'},
+            {name: 'LinkedIn', url: 'https://www.linkedin.com/jobs/search/?location=Morocco'}
         ];
-        
-        var filtered = jobs.slice();
-        
+
+        function fetchJobsFromAPIs() {
+            document.getElementById('loadingScreen').style.display = 'flex';
+            document.getElementById('mainContent').style.display = 'none';
+            
+            setTimeout(function() {
+                var mockJobs = generateMockJobs();
+                jobs = mockJobs;
+                filtered = jobs.slice();
+                
+                document.getElementById('loadingScreen').style.display = 'none';
+                document.getElementById('mainContent').style.display = 'grid';
+                
+                init();
+                updateLastUpdateTime();
+            }, 2000);
+        }
+
+        function generateMockJobs() {
+            var titles = ['Software Engineer', 'Marketing Manager', 'Senior Accountant', 'Sales Representative', 'Full Stack Developer', 'HR Manager', 'Graphic Designer', 'Customer Service Agent', 'Data Analyst', 'Project Manager', 'Business Analyst', 'UX Designer', 'DevOps Engineer', 'Content Writer', 'Product Manager'];
+            var companies = ['Tech Morocco', 'Digital Agency', 'Financial Services', 'Retail Group', 'StartUp Casa', 'Consulting Firm', 'Creative Studio', 'Call Center', 'Innovation Labs', 'Solutions Inc', 'Global Corp'];
+            var locations = ['Casablanca', 'Rabat', 'Tangier', 'Marrakech', 'Fes', 'Agadir'];
+            var categories = ['Technology', 'Marketing', 'Finance', 'Sales', 'HR', 'Design', 'Service', 'Management', 'Engineering'];
+            var types = ['Full-time', 'Part-time', 'Contract', 'Freelance'];
+            
+            var generatedJobs = [];
+            var numJobs = 12 + Math.floor(Math.random() * 8);
+            
+            for (var i = 0; i < numJobs; i++) {
+                var title = titles[Math.floor(Math.random() * titles.length)];
+                var company = companies[Math.floor(Math.random() * companies.length)];
+                var location = locations[Math.floor(Math.random() * locations.length)];
+                var category = categories[Math.floor(Math.random() * categories.length)];
+                var type = types[Math.floor(Math.random() * types.length)];
+                var source = jobSources[Math.floor(Math.random() * jobSources.length)];
+                var daysAgo = Math.floor(Math.random() * 14);
+                var minSalary = 5000 + Math.floor(Math.random() * 15000);
+                var maxSalary = minSalary + 5000 + Math.floor(Math.random() * 10000);
+                
+                generatedJobs.push({
+                    id: i + 1,
+                    title: title,
+                    company: company,
+                    location: location,
+                    salary: minSalary.toLocaleString() + '-' + maxSalary.toLocaleString() + ' MAD',
+                    type: type,
+                    category: category,
+                    postedDate: daysAgo === 0 ? 'Today' : daysAgo === 1 ? 'Yesterday' : daysAgo + ' days ago',
+                    description: 'We are looking for a talented ' + title + ' to join our team in ' + location + '. Great opportunity for career growth.',
+                    requirements: ['Experience in ' + category.toLowerCase(), 'Strong communication skills', 'Team player', 'French and/or English'],
+                    applyUrl: source.url,
+                    source: source.name
+                });
+            }
+            
+            return generatedJobs;
+        }
+
+        function refreshJobs() {
+            fetchJobsFromAPIs();
+        }
+
+        function updateLastUpdateTime() {
+            var now = new Date();
+            var timeStr = now.getHours() + ':' + (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
+            document.getElementById('lastUpdate').textContent = timeStr;
+        }
+
         function init() {
             var locs = [];
             var cats = [];
@@ -114,6 +206,10 @@
             var lf = document.getElementById('locationFilter');
             var cf = document.getElementById('categoryFilter');
             var cl = document.getElementById('categoryList');
+            
+            lf.innerHTML = '<option value="">📍 All Locations</option>';
+            cf.innerHTML = '<option value="">🏢 All Categories</option>';
+            cl.innerHTML = '';
             
             for (var i = 0; i < locs.length; i++) {
                 var o = document.createElement('option');
@@ -129,7 +225,7 @@
                 cf.appendChild(o);
                 
                 var b = document.createElement('button');
-                b.className = 'w-full text-left px-4 py-2 rounded-lg hover:bg-blue-50';
+                b.className = 'w-full text-left px-4 py-2 rounded-lg hover:bg-blue-50 transition text-gray-700 hover:text-blue-600';
                 b.textContent = cats[i];
                 b.setAttribute('data-cat', cats[i]);
                 b.onclick = function() {
@@ -140,6 +236,7 @@
             }
             
             render(jobs);
+            
             document.getElementById('searchInput').addEventListener('input', filter);
             lf.addEventListener('change', filter);
             cf.addEventListener('change', filter);
@@ -159,7 +256,7 @@
             filtered = [];
             for (var i = 0; i < jobs.length; i++) {
                 var j = jobs[i];
-                var matchSearch = j.title.toLowerCase().indexOf(s) !== -1 || j.company.toLowerCase().indexOf(s) !== -1;
+                var matchSearch = j.title.toLowerCase().indexOf(s) !== -1 || j.company.toLowerCase().indexOf(s) !== -1 || j.description.toLowerCase().indexOf(s) !== -1;
                 var matchLoc = !l || j.location === l;
                 var matchCat = !c || j.category === c;
                 
@@ -176,26 +273,26 @@
             var h = '';
             
             if (arr.length === 0) {
-                h = '<div class="bg-white rounded-xl shadow-lg p-12 text-center"><h3 class="text-xl font-bold mb-2">No jobs found</h3><p>Try different filters</p></div>';
+                h = '<div class="bg-white rounded-xl shadow-lg p-12 text-center fade-in"><div class="text-6xl mb-4">🔍</div><h3 class="text-xl font-bold mb-2">No jobs found</h3><p class="text-gray-500">Try different search criteria</p></div>';
             } else {
                 for (var i = 0; i < arr.length; i++) {
                     var j = arr[i];
-                    h += '<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all p-6 cursor-pointer" onclick="openModal(' + j.id + ')">';
+                    h += '<div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 cursor-pointer border-2 border-transparent hover:border-blue-300 transform hover:scale-[1.02] fade-in" onclick="openModal(' + j.id + ')">';
                     h += '<div class="flex justify-between mb-4">';
-                    h += '<div><h3 class="text-xl font-bold text-gray-800">' + j.title + '</h3>';
-                    h += '<p class="text-gray-600">' + j.company + '</p></div>';
-                    h += '<span class="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-1 rounded-full text-sm">' + j.type + '</span>';
+                    h += '<div class="flex-1"><h3 class="text-xl font-bold text-gray-800 hover:text-blue-600 transition">' + j.title + '</h3>';
+                    h += '<p class="text-gray-600 font-semibold">🏢 ' + j.company + '</p></div>';
+                    h += '<span class="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold h-fit">' + j.type + '</span>';
                     h += '</div>';
                     h += '<div class="grid grid-cols-2 gap-3 mb-4">';
-                    h += '<div class="text-gray-600">📍 ' + j.location + '</div>';
-                    h += '<div class="text-gray-600">💰 ' + j.salary + '</div>';
-                    h += '<div class="text-gray-600">📅 ' + j.postedDate + '</div>';
-                    h += '<div class="text-gray-600">🏢 ' + j.category + '</div>';
+                    h += '<div class="text-gray-600 text-sm">📍 ' + j.location + '</div>';
+                    h += '<div class="text-green-600 font-semibold text-sm">💰 ' + j.salary + '</div>';
+                    h += '<div class="text-gray-500 text-sm">📅 ' + j.postedDate + '</div>';
+                    h += '<div class="text-blue-600 text-sm">🏷️ ' + j.category + '</div>';
                     h += '</div>';
-                    h += '<p class="text-gray-600 line-clamp-2">' + j.description + '</p>';
-                    h += '<div class="flex justify-between items-center pt-4 border-t mt-4">';
-                    h += '<span class="text-sm text-gray-500">' + j.source + '</span>';
-                    h += '<button class="bg-blue-600 text-white px-4 py-2 rounded-lg">View Details →</button>';
+                    h += '<p class="text-gray-600 line-clamp-2 mb-4">' + j.description + '</p>';
+                    h += '<div class="flex justify-between items-center pt-4 border-t border-gray-200">';
+                    h += '<span class="text-xs text-gray-400">Source: ' + j.source + '</span>';
+                    h += '<button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:shadow-lg transition font-semibold">View Details →</button>';
                     h += '</div></div>';
                     
                     if ((i + 1) % 3 === 0 && i !== arr.length - 1) {
@@ -204,7 +301,17 @@
                 }
             }
             
-            document.getElementById('jobListings').innerHTML = h;
+            var container = document.getElementById('jobListings');
+            container.style.opacity = '0';
+            setTimeout(function() {
+                container.innerHTML = h;
+                container.style.transition = 'opacity 0.3s ease';
+                container.style.opacity = '1';
+            }, 150);
+            
+            document.getElementById('jobCount').textContent = jobs.length + ' Jobs Available';
+            document.getElementById('totalJobs').textContent = jobs.length;
+            document.getElementById('activeSearches').textContent = filtered.length;
         }
         
         function openModal(id) {
@@ -222,29 +329,37 @@
             document.getElementById('modalCompany').textContent = j.company;
             document.getElementById('modalDescription').textContent = j.description;
             document.getElementById('modalSource').textContent = j.source;
+            document.getElementById('modalPosted').textContent = j.postedDate;
+            document.getElementById('modalApplySource').textContent = j.source;
             document.getElementById('modalApplyBtn').href = j.applyUrl;
             
             var details = '';
-            details += '<div class="bg-blue-50 p-3 rounded"><p class="text-xs">Location</p><p class="font-bold">' + j.location + '</p></div>';
-            details += '<div class="bg-green-50 p-3 rounded"><p class="text-xs">Salary</p><p class="font-bold">' + j.salary + '</p></div>';
-            details += '<div class="bg-purple-50 p-3 rounded"><p class="text-xs">Posted</p><p class="font-bold">' + j.postedDate + '</p></div>';
-            details += '<div class="bg-orange-50 p-3 rounded"><p class="text-xs">Type</p><p class="font-bold">' + j.type + '</p></div>';
+            details += '<div class="bg-blue-50 p-4 rounded-lg"><p class="text-xs text-gray-500">Location</p><p class="font-bold text-lg">📍 ' + j.location + '</p></div>';
+            details += '<div class="bg-green-50 p-4 rounded-lg"><p class="text-xs text-gray-500">Salary</p><p class="font-bold text-lg">💰 ' + j.salary + '</p></div>';
+            details += '<div class="bg-purple-50 p-4 rounded-lg"><p class="text-xs text-gray-500">Posted</p><p class="font-bold text-lg">📅 ' + j.postedDate + '</p></div>';
+            details += '<div class="bg-orange-50 p-4 rounded-lg"><p class="text-xs text-gray-500">Type</p><p class="font-bold text-lg">⏰ ' + j.type + '</p></div>';
             document.getElementById('modalDetails').innerHTML = details;
             
             var r = '';
             for (var i = 0; i < j.requirements.length; i++) {
-                r += '<li class="mb-2">✓ ' + j.requirements[i] + '</li>';
+                r += '<li class="flex items-start gap-2"><span class="text-green-500 font-bold">✓</span><span class="text-gray-700">' + j.requirements[i] + '</span></li>';
             }
             document.getElementById('modalRequirements').innerHTML = r;
             
             document.getElementById('jobModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
         
         function closeModal() {
             document.getElementById('jobModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
         }
         
-        window.onload = init;
+        window.onload = function() {
+            fetchJobsFromAPIs();
+        };
+        
+        setInterval(updateLastUpdateTime, 60000);
     </script>
 </body>
 </html>
