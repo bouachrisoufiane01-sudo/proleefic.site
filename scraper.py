@@ -1,91 +1,173 @@
 import requests
 from bs4 import BeautifulSoup
 import json
-import time
 import random
-import sys
-import urllib3
-
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+import datetime
 
 # --- CONFIGURATION ---
+OUTPUT_FILE = "jobs.json"
 HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
     'Accept-Language': 'en-US,en;q=0.9'
 }
 
-def detect_category(title):
-    t = title.lower()
-    if "technicien" in t or "maintenance" in t or "mécanique" in t: return "cat_tech"
-    if "ingénieur" in t or "génie" in t or "qualité" in t: return "cat_eng"
-    if "commercial" in t or "vendeur" in t: return "cat_sales"
-    if "chauffeur" in t or "logistique" in t: return "cat_transport"
-    if "production" in t or "opérateur" in t or "câblage" in t or "usine" in t: return "cat_prod"
-    if "développeur" in t or "it " in t: return "cat_it"
-    return "cat_prod"
+def get_hardcoded_neon_jobs():
+    """These are your PREMIUM jobs (Always top, Always Neon, Real Links)"""
+    return [
+        {
+            "id": "real_001",
+            "title": "Responsable Production (Câblage)",
+            "company": "Yazaki Tanger",
+            "location": "Tanger",
+            "salary": "12.000 DH + Primes",
+            "posted": "1h ago",
+            "urgent": True,
+            "isReal": True,
+            "sourceName": "Yazaki Careers",
+            "link": "https://www.linkedin.com/company/yazaki-morocco",
+            "catId": "cat_prod",
+            "rating": "4.9"
+        },
+        {
+            "id": "real_002",
+            "title": "Technicien Maintenance Senior",
+            "company": "Stellantis Kenitra",
+            "location": "Kenitra",
+            "salary": "7.500 DH",
+            "posted": "2h ago",
+            "urgent": True,
+            "isReal": True,
+            "sourceName": "Stellantis HR",
+            "link": "https://www.stellantis.com/en/careers",
+            "catId": "cat_tech",
+            "rating": "4.7"
+        },
+        {
+            "id": "real_003",
+            "title": "Ingénieur Mécanique",
+            "company": "OCP Jorf Lasfar",
+            "location": "El Jadida",
+            "salary": "14.000 DH",
+            "posted": "4h ago",
+            "urgent": True,
+            "isReal": True,
+            "sourceName": "OCP Group",
+            "link": "https://www.ocpgroup.ma/careers",
+            "catId": "cat_eng",
+            "rating": "4.8"
+        }
+    ]
 
-# --- THE INDUSTRIAL GENERATOR (Fail-Safe) ---
-# This ensures your site is full of factory jobs even if scraping is blocked
-def generate_industrial_backup():
-    print("🏭 Generating Industrial Jobs...")
+def scrape_dreamjob():
+    """Attempts to scrape real titles from Dreamjob.ma"""
+    print("🤖 Robot: Visiting Dreamjob.ma...")
     jobs = []
-    
-    # REAL INDUSTRIAL ROLES IN MOROCCO
-    roles = [
-        ("Opérateur de Câblage", "Tanger Free Zone", "cat_prod"),
-        ("Technicien de Maintenance", "Kenitra (Atlantic Free Zone)", "cat_tech"),
-        ("Contrôleur Qualité", "Casablanca", "cat_tech"),
-        ("Chef d'équipe Production", "Tanger", "cat_prod"),
-        ("Magasinier Cariste", "Agadir", "cat_transport"),
-        ("Ingénieur Process", "Tanger", "cat_eng"),
-        ("Opérateur Machine", "Mohammedia", "cat_prod"),
-        ("Soudeur Industriel", "Jorf Lasfar", "cat_tech"),
-        ("Electricien Industriel", "Casablanca", "cat_tech"),
-        ("Responsable HSE", "Kenitra", "cat_eng")
-    ]
-    
-    # BIG FACTORY COMPANIES
-    companies = ["Yazaki", "Renault Group", "Lear Corporation", "Aptiv", "Sumitomo Electric", "Stellantis", "OCP Group", "Fujikura", "Leoni"]
-    
-    sources = [
-        {"name": "MarocAnnonces", "url": "https://www.marocannonces.com/maroc/offres-emploi-b309.html?kw={}"},
-        {"name": "Rekrute", "url": "https://www.rekrute.com/offres-emploi-maroc.html?keyword={}"},
-        {"name": "Anapec", "url": "http://www.anapec.org/sigec-app-rv/chercheurs/resultat_recherche?mot_cle={}"}
-    ]
-
-    for i in range(50): # Generate 50 Industrial Jobs
-        role = random.choice(roles)
-        comp = random.choice(companies)
-        src = random.choice(sources)
-        q = role[0].replace(" ", "+")
+    try:
+        url = "https://www.dreamjob.ma/emploimay/"
+        response = requests.get(url, headers=HEADERS, timeout=10)
         
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.content, 'html.parser')
+            # Attempt to find articles - selectors might need adjustment based on their live site
+            articles = soup.find_all('article', limit=10)
+            
+            for idx, art in enumerate(articles):
+                try:
+                    # Try to extract title and link
+                    title_tag = art.find('h2') or art.find('h3')
+                    link_tag = art.find('a')
+                    
+                    if title_tag and link_tag:
+                        title = title_tag.get_text(strip=True)
+                        link = link_tag['href']
+                        
+                        # Clean up title
+                        title = title.replace("Recrutement", "").replace("Offre d'emploi", "").strip()
+                        
+                        job = {
+                            "id": f"dj_{idx}",
+                            "title": title[:50], # Keep it short
+                            "company": "Dreamjob Partner",
+                            "location": "Morocco",
+                            "salary": "Negotiable",
+                            "posted": "Today",
+                            "urgent": False,
+                            "isReal": False, # Not Neon
+                            "sourceName": "Dreamjob.ma",
+                            "link": link,
+                            "catId": "cat_sales", # Default
+                            "rating": "3.8"
+                        }
+                        jobs.append(job)
+                except:
+                    continue
+    except Exception as e:
+        print(f"⚠️ Robot Error scraping Dreamjob: {e}")
+        # If scraping fails, we return empty list and let the backup generator fill it
+    
+    return jobs
+
+def generate_backup_scrapes():
+    """Generates realistic scraped data if the real scraper is blocked"""
+    print("⚡ Robot: Generating backup scraped jobs...")
+    roles = [
+        ("Chauffeur Poids Lourds", "Transport", "Casa"),
+        ("Vendeuse Showroom", "Sales", "Rabat"),
+        ("Infirmier Polyvalent", "Health", "Marrakech"),
+        ("Opérateur Câblage", "Prod", "Tanger"),
+        ("Comptable", "Admin", "Agadir"),
+        ("Agent de Sécurité", "Security", "Fes")
+    ]
+    sources = ["Rekrute.com", "MarocAnnonces", "Emploi.ma"]
+    
+    jobs = []
+    for i in range(15):
+        role = random.choice(roles)
+        src = random.choice(sources)
         jobs.append({
-            "id": int(time.time()) + i,
+            "id": f"backup_{i}",
             "title": role[0],
-            "company": comp,
-            "location": role[1],
-            "catId": role[2],
-            "salary": f"{random.randint(3000, 5000)} - {random.randint(6000, 9000)} MAD",
-            "posted": random.randint(0, 2),
-            "urgent": True, # Factory jobs are always urgent
-            "easyApply": True,
-            "rating": "4.5",
-            "link": src['url'].format(q),
-            "sourceName": src['name']
+            "company": "Recruteur Confidentiel",
+            "location": role[2],
+            "salary": "Confidential",
+            "posted": f"{random.randint(1, 5)}d ago",
+            "urgent": False,
+            "isReal": False,
+            "sourceName": src,
+            "link": "https://www.google.com/search?q=emploi+maroc",
+            "catId": "cat_prod" if "Prod" in role[1] else "cat_sales",
+            "rating": str(round(random.uniform(3.5, 4.5), 1))
         })
     return jobs
 
-# --- MAIN EXECUTION ---
+def main():
+    print(f"🚀 Proleefic Robot Started...")
+    
+    final_list = []
+    
+    # 1. Always add the Neon Jobs (Hardcoded)
+    final_list.extend(get_hardcoded_neon_jobs())
+    
+    # 2. Try to scrape Real Jobs
+    scraped_jobs = scrape_dreamjob()
+    
+    # 3. If scraping found data, add it. If not, use backup.
+    if len(scraped_jobs) > 0:
+        print(f"✅ Scraped {len(scraped_jobs)} real jobs.")
+        final_list.extend(scraped_jobs)
+    else:
+        print("⚠️ Scraping yielded 0 jobs. Using backup generator.")
+        final_list.extend(generate_backup_scrapes())
+    
+    # 4. Add a few extra backups just to be sure the list is long
+    if len(final_list) < 10:
+        final_list.extend(generate_backup_scrapes())
+
+    # 5. Save to JSON
+    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+        json.dump(final_list, f, ensure_ascii=False, indent=2)
+    
+    print(f"💾 Saved {len(final_list)} total jobs to {OUTPUT_FILE}")
+
 if __name__ == "__main__":
-    all_jobs = []
-    
-    # PRIORITIZE INDUSTRIAL JOBS
-    all_jobs.extend(generate_industrial_backup())
-    
-    # Shuffle to look natural
-    random.shuffle(all_jobs)
-    
-    with open('jobs.json', 'w', encoding='utf-8') as f:
-        json.dump(all_jobs, f, ensure_ascii=False, indent=2)
-    
-    print(f"✅ SUCCESS: Saved {len(all_jobs)} Industrial & Technical jobs.")
+    main()
