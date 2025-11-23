@@ -3,33 +3,35 @@ name: Proleefic Robot
 on:
   schedule:
     - cron: '0 */6 * * *' # Runs every 6 hours
-  workflow_dispatch: # Allows you to click "Run" manually
+  workflow_dispatch: # Button to run manually
 
 permissions:
   contents: write
 
 jobs:
-  update-jobs:
+  scrape-and-update:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
+      - name: Check out code
         uses: actions/checkout@v3
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
-      - name: Install Robot Tools
+      - name: Install tools
         run: |
-          pip install -r requirements.txt
+          pip install requests beautifulsoup4
 
-      - name: Run The Robot
+      - name: 🤖 Run The Robot
         run: python scraper.py
 
-      - name: Save New Jobs to Website
+      - name: 💾 Save Changes
         run: |
           git config --global user.name 'Proleefic Robot'
           git config --global user.email 'robot@proleefic.site'
-          git add jobs.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Robot fetched new jobs" && git push)
+          git add jobs.json sitemap.xml
+          # This line fixes the crash: "|| echo No changes" prevents Exit Code 1
+          git commit -m "🤖 Robot updated jobs" || echo "⚠️ No changes to commit"
+          git push
