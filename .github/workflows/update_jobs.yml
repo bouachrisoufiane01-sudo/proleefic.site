@@ -2,8 +2,8 @@ name: Daily Job Scraper
 
 on:
   schedule:
-    - cron: '0 8 * * *' # Runs daily at 8am
-  workflow_dispatch: # Allows manual run
+    - cron: '0 8 * * *' # Runs at 8 AM
+  workflow_dispatch: # Manual run
 
 permissions:
   contents: write
@@ -20,7 +20,12 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Run Script
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4 lxml
+
+      - name: Run Scraper
         run: python scraper.py
 
       - name: Commit and Push
@@ -28,5 +33,4 @@ jobs:
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
           git add jobs.json
-          # The next line prevents crashing if there are no changes
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update jobs [skip ci]" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update Real Jobs from Multi-Source" && git push)
