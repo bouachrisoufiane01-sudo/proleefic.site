@@ -5,6 +5,7 @@ import time
 import random
 import urllib3
 
+# DISABLE ANAPEC SECURITY WARNINGS (Crucial!)
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # --- CONFIGURATION ---
@@ -27,159 +28,150 @@ def detect_category(title):
     return "cat_prod"
 
 # ---------------------------------------------------------
-# SMART GENERATOR (The Safety Net)
-# This creates valid links to OTHER sites (not just LinkedIn)
+# 1. ANAPEC SCRAPER (The Government Source)
 # ---------------------------------------------------------
-def generate_smart_mix():
-    print("🧠 Generating Smart Mix (Anti-Block Strategy)...")
+def scrape_anapec():
+    print("🕷️ Scraping Anapec (Official)...")
+    jobs = []
+    # We search for generic terms to get a list
+    keywords = ["Technicien", "Ouvrier", "Ingenieur"]
+    
+    for kw in keywords:
+        url = f"http://www.anapec.org/sigec-app-rv/chercheurs/resultat_recherche?mot_cle={kw}"
+        try:
+            # verify=False is REQUIRED for Anapec
+            resp = requests.get(url, headers=get_headers(), timeout=20, verify=False)
+            soup = BeautifulSoup(resp.content, 'lxml')
+            
+            # Anapec lists jobs in a table with class 'result-search'
+            # We look for rows <tr>
+            rows = soup.find_all('tr')
+            
+            for row in rows:
+                try:
+                    cols = row.find_all('td')
+                    if len(cols) < 3: continue
+                    
+                    title = cols[1].get_text(strip=True)
+                    location = cols[2].get_text(strip=True)
+                    
+                    # Anapec links are javascript based, so we link to the main search
+                    link = "http://www.anapec.org/sigec-app-rv/chercheurs/resultat_recherche"
+                    
+                    jobs.append({
+                        "id": int(time.time()) + random.randint(1000, 9999),
+                        "title": title,
+                        "company": "Via Anapec", # Anapec hides company names
+                        "location": location,
+                        "catId": detect_category(title),
+                        "salary": "SMIG+",
+                        "posted": 0,
+                        "urgent": False,
+                        "easyApply": False,
+                        "rating": "Official",
+                        "link": link,
+                        "sourceName": "Anapec"
+                    })
+                except: continue
+        except Exception as e: 
+            print(f"⚠️ Anapec Error ({kw}): {e}")
+            
+    print(f"   -> Found {len(jobs)} Anapec jobs.")
+    return jobs
+
+# ---------------------------------------------------------
+# 2. REGIONAL SCRAPER (MarocAnnonces Cities)
+# ---------------------------------------------------------
+def scrape_regional_marocannonces():
+    print("🕷️ Scraping Regional Hubs...")
     jobs = []
     
-    # 1. MAROC ANNONCES PROFILES
-    ma_profiles = [
-        ("Technicien Spécialisé", "Casablanca"), ("Opérateur de Production", "Tanger"), 
-        ("Chauffeur Livreur", "Rabat"), ("Electricien Bâtiment", "Marrakech"),
-        ("Infirmier Polyvalent", "Fes"), ("Mécanicien Auto", "Agadir")
+    # Specific City URLs
+    regions = [
+        {"city": "Tanger", "url": "https://www.marocannonces.com/maroc/offres-emploi-tanger-b309.html"},
+        {"city": "Casablanca", "url": "https://www.marocannonces.com/maroc/offres-emploi-domaine-informatique-multimedia-internet-b309.html"},
+        {"city": "Agadir", "url": "https://www.marocannonces.com/maroc/offres-emploi-agadir-b309.html"}
     ]
-    for p in ma_profiles:
-        q = p[0].replace(" ", "%20")
-        jobs.append({
-            "id": int(time.time()) + random.randint(1, 10000),
-            "title": p[0],
-            "company": "Recruteur (MarocAnnonces)",
-            "location": p[1],
-            "catId": detect_category(p[0]),
-            "salary": "À discuter",
-            "posted": random.randint(0, 2),
-            "urgent": False,
-            "easyApply": False,
-            "rating": "N/A",
-            "link": f"https://www.marocannonces.com/maroc/offres-emploi-b309.html?kw={q}",
-            "sourceName": "MarocAnnonces"
-        })
+    
+    for reg in regions:
+        try:
+            resp = requests.get(reg['url'], headers=get_headers(), timeout=15)
+            soup = BeautifulSoup(resp.content, 'lxml')
+            items = soup.find_all('li')
+            
+            for item in items[:8]: # Top 8 per city
+                try:
+                    title_tag = item.find('h3')
+                    if not title_tag: continue
+                    title = title_tag.get_text(strip=True)
+                    
+                    link_tag = item.find('a')
+                    if not link_tag: continue
+                    full_link = "https://www.marocannonces.com/" + link_tag['href'].lstrip('/')
+                    
+                    jobs.append({
+                        "id": int(time.time()) + random.randint(10000, 99999),
+                        "title": title,
+                        "company": "Recruteur Local",
+                        "location": reg['city'],
+                        "catId": detect_category(title),
+                        "salary": "À discuter",
+                        "posted": 0,
+                        "urgent": True, # Regional jobs are usually urgent
+                        "easyApply": False,
+                        "rating": "Local",
+                        "link": full_link,
+                        "sourceName": "MarocAnnonces"
+                    })
+                except: continue
+        except: continue
+        
+    print(f"   -> Found {len(jobs)} Regional jobs.")
+    return jobs
 
-    # 2. ANAPEC PROFILES
-    anapec_profiles = [
-        ("Ouvrier Agricole", "Agadir"), ("Technicien Maintenance", "Kenitra"),
-        ("Operateur Cablage", "Tanger"), ("Soudeur", "Casablanca")
-    ]
-    for p in anapec_profiles:
+# ---------------------------------------------------------
+# 3. SMART BACKUP (If everything fails)
+# ---------------------------------------------------------
+def generate_backup_links():
+    # Only used if scraping returns 0 results
+    print("🧠 Generating Backup Links...")
+    jobs = []
+    profiles = [("Technicien Spécialisé", "Tanger"), ("Ingénieur Industriel", "Casablanca")]
+    for p in profiles:
         q = p[0].replace(" ", "+")
         jobs.append({
-            "id": int(time.time()) + random.randint(20000, 30000),
+            "id": int(time.time()) + random.randint(1, 500),
             "title": p[0],
-            "company": "Via Anapec",
+            "company": "LinkedIn Search",
             "location": p[1],
-            "catId": detect_category(p[0]),
-            "salary": "SMIG+",
-            "posted": 1,
-            "urgent": True,
-            "easyApply": False,
-            "rating": "Official",
-            "link": f"http://www.anapec.org/sigec-app-rv/chercheurs/resultat_recherche?mot_cle={q}",
-            "sourceName": "Anapec"
-        })
-
-    # 3. EMPLOI.MA PROFILES
-    emp_profiles = [
-        ("Comptable", "Rabat"), ("Assistante Direction", "Casablanca"),
-        ("Commercial Terrain", "Tanger"), ("Magasinier", "Bouskoura")
-    ]
-    for p in emp_profiles:
-        q = p[0].replace(" ", "+")
-        jobs.append({
-            "id": int(time.time()) + random.randint(40000, 50000),
-            "title": p[0],
-            "company": "Confidential",
-            "location": p[1],
-            "catId": detect_category(p[0]),
-            "salary": "Confidential",
+            "catId": "cat_tech",
+            "salary": "N/A",
             "posted": 0,
             "urgent": False,
             "easyApply": True,
-            "rating": "4.0",
-            "link": f"https://www.emploi.ma/recherche-jobs-maroc?keywords={q}",
-            "sourceName": "Emploi.ma"
+            "rating": "N/A",
+            "link": f"https://www.linkedin.com/jobs/search/?keywords={q}",
+            "sourceName": "LinkedIn"
         })
-
-    return jobs
-
-# ---------------------------------------------------------
-# REAL SCRAPERS (Try these, but don't crash if blocked)
-# ---------------------------------------------------------
-def scrape_maroc_annonces():
-    print("🕷️ Trying MarocAnnonces...")
-    jobs = []
-    try:
-        resp = requests.get("https://www.marocannonces.com/maroc/offres-emploi-b309.html", headers=get_headers(), timeout=10)
-        if resp.status_code == 200:
-            soup = BeautifulSoup(resp.content, 'lxml')
-            for item in soup.find_all('li')[:15]: # Limit to top 15 to avoid detection
-                try:
-                    title = item.find('h3').get_text(strip=True)
-                    link = "https://www.marocannonces.com/" + item.find('a')['href'].lstrip('/')
-                    loc = item.find('span', class_='location').get_text(strip=True)
-                    jobs.append({
-                        "id": int(time.time()) + random.randint(100, 9000),
-                        "title": title, "company": "Recruteur", "location": loc,
-                        "catId": detect_category(title), "salary": "N/A", "posted": 0,
-                        "urgent": False, "easyApply": False, "rating": "N/A",
-                        "link": link, "sourceName": "MarocAnnonces"
-                    })
-                except: continue
-    except: print("⚠️ MarocAnnonces blocked/failed.")
-    return jobs
-
-def scrape_rekrute():
-    print("🕷️ Trying Rekrute...")
-    jobs = []
-    try:
-        resp = requests.get("https://www.rekrute.com/offres.html", headers=get_headers(), timeout=10)
-        if resp.status_code == 200:
-            soup = BeautifulSoup(resp.content, 'lxml')
-            for item in soup.find_all('li', class_='post-item')[:10]:
-                try:
-                    title = item.find('h2').find('a').get_text(strip=True)
-                    link = "https://www.rekrute.com" + item.find('h2').find('a')['href']
-                    comp = item.find('div', class_='company-logo').find('img')['alt']
-                    jobs.append({
-                        "id": int(time.time()) + random.randint(50000, 60000),
-                        "title": title, "company": comp, "location": "Maroc",
-                        "catId": detect_category(title), "salary": "Market", "posted": 0,
-                        "urgent": True, "easyApply": True, "rating": "4.8",
-                        "link": link, "sourceName": "Rekrute"
-                    })
-                except: continue
-    except: print("⚠️ Rekrute blocked/failed.")
     return jobs
 
 # --- MAIN ---
 if __name__ == "__main__":
     all_jobs = []
     
-    # 1. Try Real Scraping First
-    all_jobs.extend(scrape_maroc_annonces())
-    all_jobs.extend(scrape_rekrute())
+    # 1. Run Scrapers
+    all_jobs.extend(scrape_anapec())
+    all_jobs.extend(scrape_regional_marocannonces())
     
-    # 2. ALWAYS Add Smart Mix (This ensures you have MarocAnnonces/Anapec even if blocked)
-    all_jobs.extend(generate_smart_mix())
+    # 2. Safety Check
+    if len(all_jobs) < 5:
+        print("⚠️ Scraping low. Adding backup links.")
+        all_jobs.extend(generate_backup_links())
     
-    # 3. Add some LinkedIn Smart Links for "High Tech"
-    profiles = [("Développeur Full Stack", "Remote"), ("Ingénieur DevOps", "Casablanca")]
-    for p in profiles:
-        q = p[0].replace(" ", "+")
-        all_jobs.append({
-            "id": int(time.time()) + random.randint(90000, 99999),
-            "title": p[0], "company": "LinkedIn Network", "location": p[1],
-            "catId": "cat_it", "salary": "Competitive", "posted": 0, "urgent": True,
-            "easyApply": True, "rating": "5.0",
-            "link": f"https://www.linkedin.com/jobs/search/?keywords={q}+Maroc",
-            "sourceName": "LinkedIn"
-        })
-
-    # Shuffle and Save
+    # 3. Shuffle & Save
     random.shuffle(all_jobs)
     
     with open('jobs.json', 'w', encoding='utf-8') as f:
         json.dump(all_jobs, f, ensure_ascii=False, indent=2)
     
-    print(f"✅ Successfully saved {len(all_jobs)} jobs (Mixed Sources).")
+    print(f"✅ DONE. Saved {len(all_jobs)} jobs.")
