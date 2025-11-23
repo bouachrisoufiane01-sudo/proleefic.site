@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Proleefic | Morocco's #1 Job Platform</title>
-    <meta name="description" content="Find production and technical jobs in Morocco. Aggregated from Rekrute, Dreamjob, and more.">
+    <meta name="description" content="Find production and technical jobs in Morocco. Build your professional CV for free.">
     
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23006233'%3E%3Cpath d='M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z'/%3E%3C/svg%3E">
 
-    <script type="application/ld+json" id="google-job-schema">{"@context":"https://schema.org/","@type":"WebSite","name":"Proleefic","url":"https://proleefic.site"}</script>
+    <script type="application/ld+json" id="google-job-schema">
+    {
+      "@context": "https://schema.org/",
+      "@type": "WebSite",
+      "name": "Proleefic",
+      "url": "https://proleefic.site"
+    }
+    </script>
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3965710509874164" crossorigin="anonymous"></script>
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -23,10 +29,7 @@
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'], arabic: ['Cairo', 'sans-serif'] },
-                    colors: { 
-                        morocco: { red: '#C1272D', green: '#006233', darkRed: '#8a1c21', darkGreen: '#004d28' },
-                        dark: { bg: '#0F172A', card: '#1E293B' }
-                    },
+                    colors: { morocco: { red: '#C1272D', green: '#006233', darkRed: '#8a1c21', darkGreen: '#004d28' }, dark: { bg: '#0F172A', card: '#1E293B' } },
                     animation: { 'fade-in': 'fadeIn 0.4s ease-out' },
                     keyframes: { fadeIn: { '0%': { opacity: '0', transform: 'translateY(10px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } } }
                 }
@@ -41,24 +44,27 @@
         .glass-nav { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(12px); border-bottom: 1px solid #e5e7eb; }
         .dark .glass-nav { background: rgba(15, 23, 42, 0.98); border-bottom: 1px solid #1e293b; }
         .input-pro { @apply w-full px-5 py-3.5 rounded-xl border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-morocco-green focus:border-transparent transition-all outline-none font-medium text-gray-900 dark:text-white; }
+        .ad-container { @apply bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl overflow-hidden flex flex-col items-center justify-center text-center relative; }
+        .ad-label { @apply text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block pt-2; }
         
         /* Job Card Styles */
         .job-real { border: 2px solid #C1272D; box-shadow: 0 0 15px rgba(193, 39, 45, 0.15); background: linear-gradient(to right, #fff, #fff5f5); }
         .dark .job-real { background: linear-gradient(to right, #1E293B, #2d1a1b); box-shadow: 0 0 20px rgba(193, 39, 45, 0.3); }
         
-        /* Sources */
+        /* Source Badges */
         .source-badge { font-size: 10px; font-weight: bold; padding: 3px 8px; border-radius: 6px; margin-left: auto; display: inline-block; border: 1px solid transparent; }
-        .src-rekrute { background: #e0f2fe; color: #0369a1; border-color: #bae6fd; } /* Blue */
-        .src-maroc { background: #fef9c3; color: #854d0e; border-color: #fde047; } /* Yellow */
-        .src-emploi { background: #f3e8ff; color: #6b21a8; border-color: #d8b4fe; } /* Purple */
-        .src-dream { background: #dcfce7; color: #15803d; border-color: #86efac; } /* Green */
-        .src-anapec { background: #ffe4e6; color: #be123c; border-color: #fda4af; } /* Red */
+        .src-rekrute { background: #e0f2fe; color: #0369a1; border-color: #bae6fd; }
+        .src-maroc { background: #fef9c3; color: #854d0e; border-color: #fde047; }
+        .src-emploi { background: #f3e8ff; color: #6b21a8; border-color: #d8b4fe; }
+        .src-dream { background: #dcfce7; color: #15803d; border-color: #86efac; }
+        .src-anapec { background: #ffe4e6; color: #be123c; border-color: #fda4af; }
 
-        /* Category Buttons (Restored) */
+        /* Categories */
         .cat-btn { @apply w-full flex items-center gap-4 px-4 py-3 rounded-xl border border-transparent hover:border-morocco-green hover:bg-green-50 dark:hover:bg-green-900/20 transition-all duration-200 group text-left bg-white dark:bg-gray-800 shadow-sm mb-2; }
         .cat-icon { @apply w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-500 group-hover:bg-white group-hover:text-morocco-green shadow-sm transition-colors text-lg; }
         .cat-active { @apply border-morocco-green bg-green-50 dark:bg-green-900/20 ring-1 ring-morocco-green; }
         
+        /* CV */
         .cv-paper { width: 210mm; min-height: 297mm; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.1); padding: 40px; margin: 0 auto; color: #333; position: relative; overflow: hidden; }
         .cv-photo-frame { width: 120px; height: 120px; object-fit: cover; border-radius: 12px; border: 4px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .cv-watermark { position: absolute; bottom: -20px; right: 20px; font-size: 180px; color: #006233; opacity: 0.08; pointer-events: none; z-index: 0; transform: rotate(-15deg); }
@@ -86,7 +92,7 @@
                     <button onclick="setLang('ar')" id="lang-ar" class="px-3 py-1 text-xs font-bold rounded-lg transition-all duration-200 hover:scale-110 hover:bg-white hover:shadow-sm hover:text-morocco-green">عربي</button>
                 </div>
                 <button onclick="toggleTheme()" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition text-gray-500"><i class="fa-solid fa-moon dark:hidden text-lg"></i><i class="fa-solid fa-sun hidden dark:inline text-yellow-400 text-lg"></i></button>
-                <button onclick="switchView('cv')" class="flex items-center gap-2 bg-purple-600 text-white px-3 py-2 rounded-lg font-bold text-xs shadow-md hover:bg-purple-700 transition"><i class="fa-solid fa-wand-magic-sparkles"></i> CV</button>
+                <button onclick="switchView('cv')" class="flex items-center gap-2 bg-purple-600 text-white px-3 py-2 rounded-lg font-bold text-xs shadow-md hover:bg-purple-700 transition"><i class="fa-solid fa-wand-magic-sparkles"></i> CV Builder</button>
                 <div id="authSection" class="flex items-center gap-3">
                     <button onclick="openAuth()" class="bg-morocco-green text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-morocco-darkGreen transition shadow-lg">Sign In</button>
                 </div>
@@ -102,6 +108,8 @@
                 <div class="bg-white dark:bg-gray-800 p-2 rounded-2xl shadow-xl shadow-green-900/5 border border-gray-200 dark:border-gray-700 flex flex-col md:flex-row gap-2">
                     <input type="text" id="mainSearch" class="flex-1 w-full px-5 py-4 rounded-xl bg-transparent outline-none font-bold text-gray-800 dark:text-white text-lg" placeholder="Job title...">
                     <div class="w-px bg-gray-200 dark:bg-gray-700 hidden md:block"></div>
+                    <select id="categoryFilter" class="flex-1 w-full px-5 py-4 rounded-xl bg-transparent outline-none font-bold text-gray-800 dark:text-white cursor-pointer"><option value="">All Sectors</option></select>
+                    <div class="w-px bg-gray-200 dark:bg-gray-700 hidden md:block"></div>
                     <select id="locationFilter" class="flex-1 w-full px-5 py-4 rounded-xl bg-transparent outline-none font-bold text-gray-800 dark:text-white cursor-pointer"><option value="">All Cities</option></select>
                     <button onclick="filter()" class="bg-morocco-green hover:bg-morocco-darkGreen text-white px-8 py-4 rounded-xl font-bold text-lg transition shadow-xl">Find</button>
                 </div>
@@ -109,8 +117,8 @@
         </div>
 
         <div class="container mx-auto px-4 mt-8">
-            <div class="bg-white dark:bg-dark-card border border-gray-100 dark:border-gray-700 rounded-xl py-4 text-center relative shadow-sm overflow-hidden">
-                <span class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block">Advertisement</span>
+            <div class="ad-container py-4 bg-white dark:bg-dark-card shadow-sm">
+                <span class="ad-label">Advertisement</span>
                 <ins class="adsbygoogle" style="display:block; width:100%; max-height:90px" data-ad-client="ca-pub-3965710509874164" data-ad-slot="1234567890" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
             </div>
@@ -118,8 +126,10 @@
 
         <div class="container mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
             <aside class="hidden lg:block lg:col-span-3 space-y-4">
-                <h3 class="font-bold text-xs uppercase text-gray-400 mb-2 tracking-wider px-2" data-i18n="categories">Sectors</h3>
-                <div id="categoryList" class="space-y-1"></div>
+                <div class="bg-white dark:bg-dark-card rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm p-5">
+                    <h3 class="font-bold text-xs uppercase text-gray-400 mb-4 tracking-wider" data-i18n="categories">Sectors</h3>
+                    <div id="categoryList" class="space-y-1"></div>
+                </div>
             </aside>
             
             <main class="lg:col-span-6 space-y-4">
@@ -131,8 +141,8 @@
             </main>
             
             <aside class="hidden lg:block lg:col-span-3 space-y-6">
-                <div class="bg-white dark:bg-dark-card rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center sticky top-24 min-h-[300px]">
-                    <span class="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block">Sponsored</span>
+                <div class="ad-container min-h-[300px] sticky top-24">
+                    <span class="ad-label">Sponsored</span>
                     <ins class="adsbygoogle" style="display:block; width:100%" data-ad-client="ca-pub-3965710509874164" data-ad-slot="1234567890" data-ad-format="rectangle" data-full-width-responsive="true"></ins>
                     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                 </div>
@@ -311,7 +321,7 @@
             'cat_call': {en:"Call Center",fr:"Centre d'Appel",ar:"مركز نداء",i:"fa-headset"}, 
             'cat_health': {en:"Healthcare",fr:"Santé",ar:"صحة",i:"fa-heart-pulse"}, 
             'cat_edu': {en:"Education",fr:"Enseignement",ar:"تعليم",i:"fa-graduation-cap"},
-            'cat_admin': {en:"Admin/HR",fr:"Admin/RH",ar:"إدارة",i:"fa-user-tie"} 
+            'cat_admin': {en:"Admin/HR",fr:"Admin/RH",ar:"إدارة",i:"fa-user-tie"}
         };
 
         window.currentLang = 'en'; window.currentUser = null; window.jobs = []; window.currentJobId = null;
@@ -359,13 +369,13 @@
         };
 
         function generateBackupData() {
-            // REAL URGENT JOBS
+            // 1. REAL JOBS (NEON)
             const realJobs = [
-                { id: 101, title: "Opérateur de Production (Câblage)", catId: "cat_prod", location: "Tanger", company: "Yazaki", salary: "SMIG + Primes", posted: "1h ago", urgent: true, isReal: true, sourceName: "Yazaki Careers", sourceStyle: "source-real", link: "https://www.linkedin.com/jobs/search/?keywords=yazaki+tanger" },
-                { id: 102, title: "Technicien Maintenance", catId: "cat_prod", location: "Kenitra", company: "Stellantis", salary: "6.500 DH", posted: "3h ago", urgent: true, isReal: true, sourceName: "Stellantis HR", sourceStyle: "source-real", link: "https://www.anapec.org/sigec-app-rv/chercheurs/resultat_recherche_offre" },
-                { id: 103, title: "Responsable Qualité", catId: "cat_eng", location: "Casablanca", company: "OCP", salary: "14.000 DH", posted: "5h ago", urgent: true, isReal: true, sourceName: "OCP Group", sourceStyle: "source-real", link: "https://www.ocpgroup.ma/careers" }
+                { id: 101, title: "Opérateur de Production (Câblage)", catId: "cat_prod", location: "Tanger", company: "Yazaki", salary: "SMIG + Primes", posted: "1h ago", urgent: true, isReal: true, sourceName: "Yazaki Careers", sourceStyle: "source-badge src-dream", link: "https://www.linkedin.com/jobs/search/?keywords=yazaki+tanger" },
+                { id: 102, title: "Technicien Maintenance", catId: "cat_prod", location: "Kenitra", company: "Stellantis", salary: "6.500 DH", posted: "3h ago", urgent: true, isReal: true, sourceName: "Stellantis HR", sourceStyle: "source-badge src-anapec", link: "https://www.anapec.org/" },
+                { id: 103, title: "Responsable Qualité", catId: "cat_eng", location: "Casablanca", company: "OCP", salary: "14.000 DH", posted: "5h ago", urgent: true, isReal: true, sourceName: "OCP Group", sourceStyle: "source-badge src-maroc", link: "https://www.ocpgroup.ma/careers" }
             ];
-            // MULTI-SOURCE SIMULATION
+            // 2. MULTI-SOURCE SIMULATION
             const sources = [
                 {name: "Rekrute", style: "src-rekrute", url: "https://www.rekrute.com/"},
                 {name: "MarocAnnonces", style: "src-maroc", url: "https://www.marocannonces.com/"},
@@ -374,9 +384,9 @@
             ];
             const roles = [
                 ["Comptable", "cat_admin", "Rabat", "Cabinet Fiduciaire"],
-                ["Chauffeur Livreur", "cat_transport", "Casa", "Jumia"],
-                ["Vendeuse", "cat_sales", "Marrakech", "Zara"],
-                ["Infirmier", "cat_health", "Agadir", "Clinique"],
+                ["Chauffeur Poids Lourds", "cat_transport", "Casa", "Logistics MA"],
+                ["Vendeur Showroom", "cat_sales", "Marrakech", "Electroplanet"],
+                ["Infirmière Polyvalente", "cat_health", "Agadir", "Clinique"],
                 ["Développeur Web", "cat_it", "Tanger", "Technopark"],
                 ["Secrétaire", "cat_admin", "Fes", "Notaire"]
             ];
@@ -401,7 +411,7 @@
 
         function renderCategories() {
             const list = document.getElementById('categoryList'); const l = window.currentLang;
-            list.innerHTML = Object.keys(catLabels).map(k => `<button onclick="filterCat('${k}')" class="cat-btn" id="btn-${k}"><div class="cat-icon"><i class="fa-solid ${catLabels[k].i}"></i></div><span class="text-sm font-bold text-gray-700 dark:text-gray-200 group-hover:text-morocco-green">${(catLabels[k] && catLabels[k][l]) ? catLabels[k][l] : k}</span></button>`).join('');
+            list.innerHTML = Object.keys(catLabels).map(k => `<button onclick="filterCat('${k}')" class="cat-btn" id="btn-${k}"><div class="cat-icon"><i class="fa-solid ${catLabels[k].i} text-xl"></i></div><span class="text-sm font-bold text-gray-700 dark:text-gray-200 group-hover:text-morocco-green">${(catLabels[k] && catLabels[k][l]) ? catLabels[k][l] : k}</span></button>`).join('');
             document.getElementById('categoryFilter').innerHTML = `<option value="">All Sectors</option>` + Object.keys(catLabels).map(k=>`<option value="${k}">${(catLabels[k] && catLabels[k][l]) ? catLabels[k][l] : k}</option>`).join('');
         }
 
