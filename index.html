@@ -245,16 +245,22 @@
         window.currentUser = null;
         window.jobs = [];
 
+        window.onload = () => { 
+            if(localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+            window.setLang(window.currentLang); 
+            // 1. LOAD BACKUP DATA FIRST (Immediate Content)
+            generateBackupData(); 
+            // 2. THEN TRY TO FETCH REAL DATA
+            window.initData();
+        };
+
         window.setLang = (lang) => {
             window.currentLang = lang; localStorage.setItem('lang', lang); document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
             document.querySelectorAll('.lang-btn').forEach(b => { b.classList.remove('bg-white', 'dark:bg-gray-700', 'text-morocco-green', 'shadow-sm'); b.classList.add('text-gray-500'); });
             const btn = document.getElementById('lang-' + lang);
             if(btn) { btn.classList.add('bg-white', 'dark:bg-gray-700', 'text-morocco-green', 'shadow-sm'); btn.classList.remove('text-gray-500'); }
-            
             document.querySelectorAll('[data-i18n]').forEach(el => { if(i18n[lang][el.getAttribute('data-i18n')]) el.innerText = i18n[lang][el.getAttribute('data-i18n')]; });
             document.querySelectorAll('[data-placeholder]').forEach(el => { if(i18n[lang][el.getAttribute('data-placeholder')]) el.placeholder = i18n[lang][el.getAttribute('data-placeholder')]; });
-            
-            renderCategories(); // Refresh Sidebar Text
             if(window.jobs.length > 0) renderJobs(window.jobs);
         };
 
@@ -268,7 +274,6 @@
             if(mode === 'login') { document.getElementById('loginForm').classList.remove('hidden'); document.getElementById('signupForm').classList.add('hidden'); document.getElementById('tab-login').classList.add('bg-white', 'text-morocco-green'); document.getElementById('tab-login').classList.remove('text-gray-500'); document.getElementById('tab-signup').classList.remove('bg-white', 'text-morocco-green'); document.getElementById('tab-signup').classList.add('text-gray-500'); }
             else { document.getElementById('loginForm').classList.add('hidden'); document.getElementById('signupForm').classList.remove('hidden'); document.getElementById('tab-signup').classList.add('bg-white', 'text-morocco-green'); document.getElementById('tab-signup').classList.remove('text-gray-500'); document.getElementById('tab-login').classList.remove('bg-white', 'text-morocco-green'); document.getElementById('tab-login').classList.add('text-gray-500'); }
         }
-        
         window.showError = (msg) => { const e = document.getElementById('authError'); e.classList.remove('hidden'); document.getElementById('authErrorMsg').innerText = msg.replace('Firebase: ', ''); }
         window.handlePasswordReset = () => { if(!auth) return; const email = document.getElementById('loginEmail').value; if(!email) return window.showError("Enter email first."); sendPasswordResetEmail(auth, email).then(() => alert("Email sent!")).catch(e => window.showError(e.message)); }
         window.handleEmailLogin = (e) => { e.preventDefault(); if(!auth) return; signInWithEmailAndPassword(auth, document.getElementById('loginEmail').value, document.getElementById('loginPass').value).then(() => window.switchView('profile')).catch(err => window.showError(err.message)); };
@@ -300,16 +305,22 @@
                 renderJobs(window.jobs);
                 console.log("Loaded from JSON");
             } catch (e) {
-                console.log("⚠️ Using Backup Data");
-                generateBackupData();
+                // Already showed backup
+                console.log("Using Backup");
             }
         };
 
         function generateBackupData() {
-            const types = [{ t: "Opérateur de Production", c: "cat_prod", sal: "3000 - 4500 MAD" }, { t: "Technicien de Maintenance", c: "cat_tech", sal: "4500 - 7000 MAD" }, { t: "Ingénieur Mécanique", c: "cat_eng", sal: "9000 - 13000 MAD" }, { t: "Développeur Full Stack", c: "cat_it", sal: "12000 MAD+" }, { t: "Commercial Terrain", c: "cat_sales", sal: "Fixed + Comm" }];
-            const companies = ['Renault', 'Yazaki', 'OCP', 'Maroc Telecom', 'Dell'];
-            const cities = ['Casablanca', 'Tanger', 'Rabat'];
-            const sources = [{ name: "LinkedIn", url: "https://www.linkedin.com/jobs/search/?keywords=Maroc" }, { name: "Rekrute", url: "https://www.rekrute.com/offres.html" }, { name: "Emploi.ma", url: "https://www.emploi.ma/" }, { name: "Anapec", url: "http://www.anapec.org/" }];
+            const types = [
+                { t: "Opérateur de Production", c: "cat_prod", sal: "3000 - 4500 MAD" }, { t: "Technicien de Maintenance", c: "cat_tech", sal: "4500 - 7000 MAD" }, 
+                { t: "Ingénieur Mécanique", c: "cat_eng", sal: "9000 - 13000 MAD" }, { t: "Développeur Full Stack", c: "cat_it", sal: "12000 MAD+" }, 
+                { t: "Commercial Terrain", c: "cat_sales", sal: "Fixed + Comm" }, { t: "Opérateur Câblage", c: "cat_prod", sal: "SMIG - 4000 MAD" },
+                { t: "Contrôleur Qualité", c: "cat_tech", sal: "4000 MAD" }, { t: "Chef d'équipe", c: "cat_prod", sal: "6000 MAD" }
+            ];
+            const companies = ['Renault', 'Yazaki', 'OCP', 'Maroc Telecom', 'Dell', 'Lear', 'Stellantis', 'Aptiv', 'Inwi'];
+            const cities = ['Casablanca', 'Tanger', 'Rabat', 'Kenitra'];
+            const sources = [{ name: "LinkedIn", url: "https://www.linkedin.com/jobs/search/?keywords=Maroc" }, { name: "Rekrute", url: "https://www.rekrute.com/offres.html" }];
+            
             const backupJobs = [];
             for(let i=0; i<30; i++) { 
                 const type = types[Math.floor(Math.random() * types.length)]; const comp = companies[Math.floor(Math.random() * companies.length)]; const src = sources[Math.floor(Math.random() * sources.length)];
@@ -324,22 +335,28 @@
             renderJobs(filtered);
         }
 
-        // SMART LOGO SYSTEM (Clearbit API + Fallback)
+        // REAL LOGO SYSTEM
         function getCompanyLogo(companyName) {
             if (!companyName) return '';
-            const domains = {
-                "Renault": "renaultgroup.com", "OCP": "ocpgroup.ma", "Maroc Telecom": "iam.ma", "Dell": "dell.com", 
-                "Yazaki": "yazaki-group.com", "Stellantis": "stellantis.com", "Attijariwafa": "attijariwafabank.com", 
-                "Inwi": "inwi.ma", "Centrale Danone": "danone.com", "BIM": "bim.ma", "Marjane": "marjane.ma",
-                "Capgemini": "capgemini.com", "Oracle": "oracle.com", "Lear": "lear.com", "Alten": "alten.com",
-                "Leyton": "leyton.com", "CGI": "cgi.com", "Orange": "orange.ma", "Anapec": "anapec.org", "LinkedIn": "linkedin.com"
+            // MAP FOR RELIABLE LOGOS (Wikipedia/Official)
+            const logoMap = {
+                "Renault": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Renault_2021_Text.svg/320px-Renault_2021_Text.svg.png",
+                "Yazaki": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Yazaki_logo.svg/320px-Yazaki_logo.svg.png",
+                "Stellantis": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Stellantis.svg/320px-Stellantis.svg.png",
+                "OCP": "https://upload.wikimedia.org/wikipedia/commons/3/36/Groupe_OCP_logo.svg",
+                "Lear": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Lear_Corporation_logo.svg/320px-Lear_Corporation_logo.svg.png",
+                "Aptiv": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Aptiv_logo.svg/320px-Aptiv_logo.svg.png",
+                "Maroc Telecom": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Maroc_Telecom_Logo.svg",
+                "Dell": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Dell_Logo.svg/300px-Dell_Logo.svg.png",
+                "Inwi": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Inwi_logo.svg/320px-Inwi_logo.svg.png",
+                "Attijariwafa": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Attijariwafa_Bank_logo.svg/320px-Attijariwafa_Bank_logo.svg.png"
             };
-            const key = Object.keys(domains).find(k => companyName.includes(k));
+            
+            const key = Object.keys(logoMap).find(k => companyName.includes(k));
             if (key) {
-                const url = `https://logo.clearbit.com/${domains[key]}`;
-                return `<div class="w-12 h-12 shrink-0 relative"><img src="${url}" class="w-full h-full object-contain rounded bg-white border border-gray-100 p-1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="w-full h-full rounded bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 flex items-center justify-center font-bold text-gray-500 text-xl uppercase hidden">${companyName.charAt(0)}</div></div>`;
+                return `<img src="${logoMap[key]}" class="w-12 h-12 rounded-lg object-contain bg-white border border-gray-100 p-1">`;
             }
-            return `<div class="w-12 h-12 shrink-0 rounded bg-gray-100 dark:bg-gray-700 flex items-center justify-center font-bold text-gray-500 text-xl uppercase border border-gray-200 dark:border-gray-600">${companyName.charAt(0)}</div>`;
+            return `<div class="w-12 h-12 rounded-lg bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 flex items-center justify-center font-bold text-gray-500 text-xl uppercase">${companyName.charAt(0)}</div>`;
         }
 
         function renderJobs(arr) {
@@ -349,7 +366,9 @@
             container.innerHTML = arr.map((j, idx) => {
                 const timeText = j.posted === 0 ? (currentLang === 'ar' ? 'اليوم' : 'Today') : `${currentLang === 'ar' ? '' : i18n[currentLang].posted} ${j.posted}d ${i18n[currentLang].ago}`;
                 let adBlock = ''; if(idx === 4) { adBlock = `<div class="ad-container py-4 my-4"><span class="ad-label">Sponsored</span><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3965710509874164" data-ad-slot="REPLACE_WITH_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script></div>`; }
-                const logoHtml = getCompanyLogo(j.company);
+                
+                const logoHtml = getCompanyLogo(j.company); // Uses the new robust map
+
                 return `${adBlock}<div class="bg-white dark:bg-dark-card p-5 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-morocco-green hover:shadow-lg transition-all animate-fade-in group relative cursor-pointer" onclick="window.open('${j.link}', '_blank')">${j.urgent ? `<span class="absolute top-0 right-0 bg-red-100 text-morocco-red text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-lg uppercase tracking-wide"><i class="fa-solid fa-fire mr-1"></i>${i18n[currentLang].urgent}</span>` : ''}<div class="flex gap-4">${logoHtml}<div class="flex-1"><h3 class="font-bold text-lg text-gray-800 dark:text-white group-hover:text-morocco-green transition-colors mb-0.5">${j.title}</h3><div class="text-sm text-gray-700 dark:text-gray-300 mb-2">${j.company} <span class="text-xs text-gray-400">★ ${j.rating}</span></div><div class="text-sm text-gray-500 mb-3 flex items-center gap-1"><i class="fa-solid fa-location-dot text-xs"></i> ${j.location}</div><div class="flex flex-wrap gap-2 mb-3"><span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-bold px-2 py-1 rounded flex items-center gap-1"><i class="fa-solid fa-money-bill-wave"></i> ${j.salary}</span></div><div class="text-xs text-gray-400 mb-4">${timeText}</div><div class="flex gap-3"><a href="${j.link}" target="_blank" onclick="event.stopPropagation()" class="flex-1 bg-morocco-green text-white text-center py-2.5 rounded-lg text-sm font-bold hover:bg-morocco-darkGreen transition shadow-sm flex items-center justify-center gap-2">${i18n[currentLang].applyOn} ${j.sourceName} <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a><button onclick="window.toggleSave(${j.id}); event.stopPropagation()" class="px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-400 hover:text-morocco-red hover:border-morocco-red transition"><i class="fa-regular fa-heart text-lg"></i></button></div></div></div></div>`;
             }).join('');
         }
@@ -357,18 +376,6 @@
         window.filter = () => { const term = document.getElementById('mainSearch').value.toLowerCase(); const loc = document.getElementById('locationFilter').value; renderJobs(window.jobs.filter(j => (j.title.toLowerCase().includes(term) || j.company.toLowerCase().includes(term)) && (loc === '' || j.location === loc))); };
         window.toggleSave = async (id) => { if(!auth || !window.currentUser) return window.openAuth(); const job = window.jobs.find(j => j.id === id); await setDoc(doc(db, 'users', window.currentUser.uid, 'saved', id.toString()), job); alert("Job Saved!"); }
         async function loadSavedJobs() { if(!auth || !window.currentUser) return; const snap = await getDocs(collection(db, 'users', window.currentUser.uid, 'saved')); const list = document.getElementById('savedContainer'); list.innerHTML = ''; snap.forEach(d => { const j = d.data(); list.innerHTML += `<div class="p-4 border rounded-xl bg-white dark:bg-gray-800 flex justify-between items-center shadow-sm"><div><div class="font-bold text-gray-800 dark:text-white">${j.title}</div><div class="text-sm text-gray-500">${j.company}</div></div><a href="${j.link}" target="_blank" class="text-morocco-green font-bold text-sm border border-morocco-green px-3 py-1 rounded hover:bg-green-50">Apply</a></div>`; }); }
-
-        function renderCategories() {
-            // Re-render just updates text since structure is hardcoded
-        }
-
-        // STARTUP
-        window.onload = () => { 
-            if(localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
-            window.setLang(window.currentLang); 
-            generateBackupData(); 
-            window.initData(); 
-        };
     </script>
 </body>
 </html>
