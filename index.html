@@ -4,36 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Proleefic | Morocco's #1 Job Platform & CV Builder</title>
-    <meta name="description" content="Find production and technical jobs in Morocco. Build your professional CV for free with AI. Recrutement, Offres d'emploi, Techniciens, Ingénieurs.">
+    <title>Proleefic | Morocco's #1 Job Platform</title>
+    <meta name="description" content="Find production and technical jobs in Morocco. Build your professional CV for free.">
     
-    <meta property="og:site_name" content="Proleefic">
-    <meta property="og:title" content="Proleefic - Morocco Jobs & Free CV Builder">
-    <meta property="og:image" content="https://proleefic.ma/logo.png"> <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23006233'%3E%3Cpath d='M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z'/%3E%3C/svg%3E">
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Proleefic",
-      "url": "https://proleefic.ma",
-      "description": "Morocco's leading job board for production and technical roles.",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://proleefic.ma/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      "alternateName": ["Proleefic Morocco", "Proleefic.ma"],
+      "url": "https://proleefic.site",
+      "logo": "https://proleefic.site/logo.png"
     }
     </script>
-
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23006233'%3E%3Cpath d='M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z'/%3E%3C/svg%3E">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3965710509874164" crossorigin="anonymous"></script>
-
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -59,34 +49,27 @@
         .dark .glass-nav { background: rgba(15, 23, 42, 0.95); border-bottom: 1px solid #1e293b; }
         .input-pro { @apply w-full px-5 py-3.5 rounded-xl border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-morocco-green focus:border-transparent transition-all outline-none font-medium text-gray-900 dark:text-white; }
         
-        /* Category Button Styles */
         .cat-btn { @apply w-full flex items-center gap-4 px-4 py-3 rounded-xl border border-transparent hover:border-morocco-green hover:bg-green-50 dark:hover:bg-green-900/20 transition-all duration-200 group text-left; }
         .cat-icon { @apply w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-500 group-hover:bg-white group-hover:text-morocco-green shadow-sm transition-colors; }
         .cat-active { @apply border-morocco-green bg-green-50 dark:bg-green-900/20; }
 
-        /* CV Builder Styles */
+        /* CV Styles */
         .cv-paper { width: 210mm; min-height: 297mm; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.1); padding: 40px; margin: 0 auto; color: #333; position: relative; overflow: hidden; }
         .cv-photo-frame { width: 120px; height: 120px; object-fit: cover; border-radius: 12px; border: 4px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        
-        /* === 3. FADED WATERMARK STAR === */
-        .cv-watermark {
-            position: absolute;
-            bottom: -20px;
-            right: 20px;
-            font-size: 180px;
-            color: #006233;
-            opacity: 0.08; /* Very faded */
-            pointer-events: none;
-            z-index: 0;
-            transform: rotate(-15deg);
+        .cv-watermark { position: absolute; bottom: -20px; right: 20px; font-size: 180px; color: #006233; opacity: 0.08; pointer-events: none; z-index: 0; transform: rotate(-15deg); }
+
+        /* === NEON GLOW FOR REAL JOBS === */
+        .job-real { 
+            border-left: 3px solid #C1272D; 
+            box-shadow: 0 0 20px rgba(193, 39, 45, 0.1); /* Red Neon Fade */
         }
+        .dark .job-real { box-shadow: 0 0 20px rgba(193, 39, 45, 0.2); }
 
         @media print {
             body * { visibility: hidden; }
             #cvPreview, #cvPreview * { visibility: visible; }
             #cvPreview { position: absolute; left: 0; top: 0; width: 100%; margin: 0; padding: 0; box-shadow: none; background: white !important; }
             .no-print { display: none !important; }
-            /* Ensure watermark prints */
             .cv-watermark { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
         }
     </style>
@@ -110,16 +93,13 @@
                     <button onclick="setLang('fr')" class="px-3 py-1 text-xs font-bold rounded transition" id="lang-fr">FR</button>
                     <button onclick="setLang('ar')" class="px-3 py-1 text-xs font-bold rounded transition" id="lang-ar">عربي</button>
                 </div>
-                
                 <button onclick="toggleTheme()" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition text-gray-500">
                     <i class="fa-solid fa-moon dark:hidden text-lg"></i>
                     <i class="fa-solid fa-sun hidden dark:inline text-yellow-400 text-lg"></i>
                 </button>
-
                 <button onclick="switchView('cv')" class="flex items-center gap-2 bg-purple-600 text-white px-3 py-2 rounded-lg font-bold text-xs shadow-md hover:bg-purple-700 transition">
                     <i class="fa-solid fa-wand-magic-sparkles"></i> <span class="hidden sm:inline">CV Builder</span> <span class="sm:hidden">CV</span>
                 </button>
-                
                 <div id="authSection" class="flex items-center gap-3">
                     <button onclick="openAuth()" class="bg-morocco-green text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-morocco-darkGreen transition shadow-lg shadow-green-900/20" data-i18n="loginBtn">Sign In</button>
                 </div>
@@ -164,7 +144,6 @@
                     <div id="categoryList" class="grid grid-cols-1 gap-1.5"></div>
                 </div>
             </aside>
-
             <main class="lg:col-span-6 space-y-4">
                 <div class="flex justify-between items-center mb-2 px-1">
                     <h2 class="font-bold text-xl flex items-center gap-2"><span data-i18n="feedTitle">Latest Jobs</span> <span class="text-gray-400 text-sm font-normal ml-2" id="jobCount">...</span></h2>
@@ -172,7 +151,6 @@
                 <div id="jobListings" class="space-y-3 min-h-[500px]"></div>
                 <button onclick="window.initData()" class="w-full mt-6 py-4 border-2 border-dashed border-gray-300 dark:border-gray-700 text-morocco-green font-bold rounded-2xl hover:bg-white dark:hover:bg-gray-800 transition" data-i18n="loadMore">Refresh Jobs</button>
             </main>
-
             <aside class="hidden lg:block lg:col-span-3 space-y-6">
                 <div class="bg-white dark:bg-dark-card p-4 rounded-xl border border-gray-200 dark:border-gray-700 text-center">
                     <p class="text-xs font-bold text-gray-400 mb-2">SPONSORED</p>
@@ -186,7 +164,7 @@
         <div class="container mx-auto px-4 py-8">
             <div class="flex flex-col lg:flex-row gap-8">
                 <div class="w-full lg:w-1/3 space-y-6 no-print">
-                    <div class="bg-white dark:bg-dark-card p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700">
+                    <div class="bg-white dark:bg-dark-card p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 h-[90vh] overflow-y-auto">
                         <div class="flex justify-between items-center mb-6">
                             <h2 class="text-xl font-bold flex items-center gap-2 text-gray-800 dark:text-white">
                                 <i class="fa-solid fa-pen-to-square text-morocco-green"></i> <span data-i18n="editDetails">Edit Details</span>
@@ -194,7 +172,7 @@
                             <button onclick="switchView('home')" class="text-sm font-bold text-gray-400 hover:text-red-500">✕ Close</button>
                         </div>
                         <div class="space-y-4">
-                             <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-dashed border-gray-300 dark:border-gray-600 text-center">
+                            <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-dashed border-gray-300 dark:border-gray-600 text-center">
                                 <label for="cvPhotoUpload" class="cursor-pointer block">
                                     <i class="fa-solid fa-camera text-2xl text-morocco-green mb-2"></i>
                                     <div class="text-xs font-bold text-gray-500" data-i18n="uploadPhoto">Upload Photo</div>
@@ -202,7 +180,7 @@
                                 <input type="file" id="cvPhotoUpload" accept="image/*" class="hidden" onchange="loadPhoto(event)">
                             </div>
                             <input type="text" id="cvName" oninput="updateCV()" class="input-pro" placeholder="Full Name">
-                            <input type="text" id="cvTitle" oninput="updateCV()" class="input-pro" placeholder="Job Title (e.g. Electricien)">
+                            <input type="text" id="cvTitle" oninput="updateCV()" class="input-pro" placeholder="Job Title">
                             <div class="grid grid-cols-2 gap-2">
                                 <input type="text" id="cvPhone" oninput="updateCV()" class="input-pro" placeholder="Phone">
                                 <input type="text" id="cvCity" oninput="updateCV()" class="input-pro" placeholder="City">
@@ -212,10 +190,33 @@
                                     <label class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase" data-i18n="labelSummary">Summary</label>
                                     <button onclick="generateAISummary()" class="text-xs bg-purple-600 text-white px-3 py-1.5 rounded-lg shadow hover:bg-purple-700 transition font-bold"><i class="fa-solid fa-robot"></i> AI Write</button>
                                 </div>
-                                <textarea id="cvSummary" oninput="updateCV()" rows="4" class="input-pro text-sm" placeholder="AI will write this..."></textarea>
+                                <textarea id="cvSummary" oninput="updateCV()" rows="3" class="input-pro text-sm" placeholder="AI will write this..."></textarea>
                             </div>
-                            <textarea id="cvExp" oninput="updateCV()" rows="3" class="input-pro" placeholder="Experience..."></textarea>
-                            <input type="text" id="cvSkills" oninput="updateCV()" class="input-pro" placeholder="Skills (comma separated)">
+                            
+                            <div>
+                                <label class="text-xs font-bold text-gray-400 uppercase mb-1 block">Education</label>
+                                <textarea id="cvEdu" oninput="updateCV()" rows="2" class="input-pro" placeholder="Diplôme, Université..."></textarea>
+                            </div>
+                            
+                            <div>
+                                <label class="text-xs font-bold text-gray-400 uppercase mb-1 block">Certificates</label>
+                                <textarea id="cvCerts" oninput="updateCV()" rows="2" class="input-pro" placeholder="Certificats..."></textarea>
+                            </div>
+
+                            <div>
+                                <label class="text-xs font-bold text-gray-400 uppercase mb-1 block">Experience</label>
+                                <textarea id="cvExp" oninput="updateCV()" rows="3" class="input-pro" placeholder="Experience details..."></textarea>
+                            </div>
+
+                            <div>
+                                <label class="text-xs font-bold text-gray-400 uppercase mb-1 block">Skills</label>
+                                <input type="text" id="cvSkills" oninput="updateCV()" class="input-pro" placeholder="Skills (comma separated)">
+                            </div>
+
+                            <div>
+                                <label class="text-xs font-bold text-gray-400 uppercase mb-1 block">Languages</label>
+                                <input type="text" id="cvLangs" oninput="updateCV()" class="input-pro" placeholder="Languages (e.g. Arabic, French)">
+                            </div>
                         </div>
                         <div class="mt-6 pt-6 border-t dark:border-gray-700">
                             <button onclick="window.print()" class="w-full bg-morocco-green text-white py-3.5 rounded-xl font-bold shadow-lg hover:bg-morocco-darkGreen transition"><i class="fa-solid fa-download"></i> Download PDF</button>
@@ -240,9 +241,39 @@
                                 <p id="prevCity">City, Morocco</p>
                             </div>
                         </div>
-                        <div class="mb-8 relative z-10"><h3 class="font-bold text-gray-800 border-b-2 border-gray-200 mb-4 uppercase text-sm tracking-wider">Profile</h3><p id="prevSummary" class="text-gray-700 text-sm leading-relaxed"></p></div>
-                        <div class="mb-8 relative z-10"><h3 class="font-bold text-gray-800 border-b-2 border-gray-200 mb-4 uppercase text-sm tracking-wider">Experience</h3><div id="prevExp" class="text-gray-700 text-sm whitespace-pre-line pl-1"></div></div>
-                        <div class="relative z-10"><h3 class="font-bold text-gray-800 border-b-2 border-gray-200 mb-4 uppercase text-sm tracking-wider">Skills</h3><div id="prevSkills" class="flex flex-wrap gap-2"></div></div>
+
+                        <div class="mb-6 relative z-10">
+                            <h3 class="font-bold text-gray-800 border-b-2 border-gray-200 mb-2 uppercase text-sm tracking-wider">Profile</h3>
+                            <p id="prevSummary" class="text-gray-700 text-sm leading-relaxed"></p>
+                        </div>
+                        
+                        <div class="mb-6 relative z-10">
+                            <h3 class="font-bold text-gray-800 border-b-2 border-gray-200 mb-2 uppercase text-sm tracking-wider">Experience</h3>
+                            <div id="prevExp" class="text-gray-700 text-sm whitespace-pre-line pl-1"></div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-8 mb-6 relative z-10">
+                            <div>
+                                <h3 class="font-bold text-gray-800 border-b-2 border-gray-200 mb-2 uppercase text-sm tracking-wider">Education</h3>
+                                <div id="prevEdu" class="text-gray-700 text-sm whitespace-pre-line"></div>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800 border-b-2 border-gray-200 mb-2 uppercase text-sm tracking-wider">Certificates</h3>
+                                <div id="prevCerts" class="text-gray-700 text-sm whitespace-pre-line"></div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-8 relative z-10">
+                            <div>
+                                <h3 class="font-bold text-gray-800 border-b-2 border-gray-200 mb-2 uppercase text-sm tracking-wider">Skills</h3>
+                                <div id="prevSkills" class="flex flex-wrap gap-2"></div>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800 border-b-2 border-gray-200 mb-2 uppercase text-sm tracking-wider">Languages</h3>
+                                <div id="prevLangs" class="flex flex-wrap gap-2"></div>
+                            </div>
+                        </div>
+
                         <div class="absolute bottom-6 right-8 text-[10px] text-gray-300 font-bold uppercase tracking-widest z-10">Proleefic.ma</div>
                     </div>
                 </div>
@@ -254,10 +285,7 @@
         <div class="max-w-3xl mx-auto">
             <button onclick="switchView('home')" class="mb-6 font-bold text-morocco-green flex items-center gap-2"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="backHome">Back to Jobs</span></button>
             <div class="bg-white dark:bg-dark-card rounded-2xl shadow p-6 flex items-center justify-between border-t-4 border-morocco-green">
-                <div>
-                    <h1 class="text-2xl font-bold dark:text-white" id="userName">User</h1>
-                    <p class="text-gray-500" id="userEmail">email</p>
-                </div>
+                <div><h1 class="text-2xl font-bold dark:text-white" id="userName">User</h1><p class="text-gray-500" id="userEmail">email</p></div>
                 <button onclick="window.logout()" class="text-red-500 font-bold border border-red-200 px-4 py-2 rounded-lg hover:bg-red-50" data-i18n="logout">Logout</button>
             </div>
             <h2 class="text-xl font-bold mt-8 mb-4 dark:text-white" data-i18n="savedJobs">Saved Jobs</h2>
@@ -271,11 +299,7 @@
             <div class="p-6 border-b border-gray-100 dark:border-gray-700 flex justify-between items-start">
                 <div class="flex gap-5">
                     <div id="modalLogo" class="w-16 h-16 shrink-0"></div>
-                    <div>
-                        <h2 id="modalTitle" class="text-2xl font-bold dark:text-white leading-tight"></h2>
-                        <p id="modalCompany" class="text-morocco-green font-semibold text-lg mt-1"></p>
-                        <div class="flex items-center gap-3 mt-2 text-sm text-gray-500"><span id="modalLocation"><i class="fa-solid fa-location-dot"></i></span> • <span id="modalDate">Today</span></div>
-                    </div>
+                    <div><h2 id="modalTitle" class="text-2xl font-bold dark:text-white leading-tight"></h2><p id="modalCompany" class="text-morocco-green font-semibold text-lg mt-1"></p><div class="flex items-center gap-3 mt-2 text-sm text-gray-500"><span id="modalLocation"><i class="fa-solid fa-location-dot"></i></span> • <span id="modalDate">Today</span></div></div>
                 </div>
             </div>
             <div class="p-6 overflow-y-auto flex-1">
@@ -305,21 +329,18 @@
                 </div>
             </div>
             <div id="authError" class="hidden bg-red-100 text-red-600 p-3 rounded-lg mb-4 text-sm border-l-4 border-red-500"></div>
-            
             <form id="loginForm" onsubmit="window.handleEmailLogin(event)" class="space-y-4">
                 <input type="email" id="loginEmail" class="input-pro" placeholder="Email Address" required>
                 <input type="password" id="loginPass" class="input-pro" placeholder="Password" required>
                 <div class="text-right"><button type="button" onclick="window.handlePasswordReset()" class="text-xs text-morocco-green font-bold hover:underline">Forgot Password?</button></div>
                 <button type="submit" class="w-full bg-morocco-green text-white py-3.5 rounded-xl font-bold transition shadow-lg">Sign In</button>
             </form>
-
             <form id="signupForm" onsubmit="window.handleEmailSignup(event)" class="space-y-4 hidden">
                 <input type="text" id="signupName" class="input-pro" placeholder="Full Name" required>
                 <input type="email" id="signupEmail" class="input-pro" placeholder="Email Address" required>
                 <input type="password" id="signupPass" class="input-pro" placeholder="Create Password" required>
                 <button type="submit" class="w-full bg-morocco-red text-white py-3.5 rounded-xl font-bold transition shadow-lg">Create Account</button>
             </form>
-
             <div class="relative text-center my-6"><span class="bg-white dark:bg-dark-card px-3 text-xs text-gray-400 font-bold relative z-10">OR</span><div class="h-px bg-gray-200 dark:bg-gray-700 w-full absolute top-1/2"></div></div>
             <button onclick="window.loginGoogle()" class="w-full border border-gray-300 dark:border-gray-600 py-3.5 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-gray-50 dark:hover:bg-gray-800 transition dark:text-white">
                 <svg class="w-5 h-5" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google
@@ -332,11 +353,11 @@
         import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, updateProfile } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
         import { getFirestore, doc, setDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-        // FIREBASE CONFIG
+        // CONFIG
         const firebaseConfig = { apiKey: "AIzaSyBsPi64Eb0GQnGjcxg6n6YRFbG-iO9K_pM", authDomain: "proleefic-85800.firebaseapp.com", projectId: "proleefic-85800", storageBucket: "proleefic-85800.firebasestorage.app", messagingSenderId: "1033605555868", appId: "1:1033605555868:web:577ff42f0bcfb0b6122f59", measurementId: "G-WJ4XKS01P0" };
         let app, auth, db; try { app = initializeApp(firebaseConfig); auth = getAuth(app); db = getFirestore(app); } catch(e){}
 
-        // TRANSLATIONS (Merged Job Board + CV)
+        // TRANSLATIONS
         const i18n = {
             en: { 
                 heroTitle: "Find the job that fits your life", searchPlaceholder: "Job title, keywords...", searchBtn: "Find Jobs", categories: "Sectors", feedTitle: "Latest Jobs", loadMore: "Refresh Jobs", loginBtn: "Sign In", authTitle: "Welcome", authSub: "Login to save jobs.", backHome: "Back to Jobs", logout: "Logout", savedJobs: "Saved Jobs",
@@ -363,7 +384,7 @@
         window.jobs = [];
         window.currentJobId = null;
 
-        // SYSTEM FUNCTIONS
+        // SYSTEM
         window.setLang = (l) => { 
             window.currentLang = l; localStorage.setItem('lang', l); document.documentElement.setAttribute('dir', l === 'ar' ? 'rtl' : 'ltr'); 
             document.querySelectorAll('#lang-en, #lang-fr, #lang-ar').forEach(b => { b.classList.remove('bg-white', 'text-morocco-green', 'shadow-sm'); b.classList.add('text-gray-500'); }); 
@@ -371,18 +392,6 @@
             document.getElementById('lang-' + l)?.classList.remove('text-gray-500'); 
             document.querySelectorAll('[data-i18n]').forEach(el => { if(i18n[l][el.getAttribute('data-i18n')]) el.innerText = i18n[l][el.getAttribute('data-i18n')]; }); 
             document.getElementById('mainSearch').placeholder = i18n[l].searchPlaceholder;
-            
-            // Translate CV Placeholders
-            if(l==='ar') {
-                document.getElementById('cvName').placeholder = "كريم بناني";
-                document.getElementById('cvTitle').placeholder = "تقني متخصص...";
-                document.getElementById('cvSummary').placeholder = "اضغط على زر الذكاء الاصطناعي لكتابة نبذة...";
-            } else {
-                document.getElementById('cvName').placeholder = "Full Name";
-                document.getElementById('cvTitle').placeholder = "Job Title";
-                document.getElementById('cvSummary').placeholder = "Click AI Write...";
-            }
-            
             renderCategories(); 
         };
 
@@ -412,13 +421,12 @@
             if(u){ document.getElementById('userName').innerText=u.displayName||"User"; document.getElementById('userEmail').innerText=u.email; loadSavedJobs(); } 
         });
 
-        // JOB BOARD DATA
+        // JOB BOARD
         window.initData = async () => {
             const locFilter = document.getElementById('locationFilter');
             const catFilter = document.getElementById('categoryFilter');
             locFilter.innerHTML = `<option value="">All Cities</option>` + ['Casablanca','Tanger','Kenitra','Rabat','Agadir','Marrakech'].map(c=>`<option value="${c}">${c}</option>`).join('');
             catFilter.innerHTML = `<option value="">All Sectors</option>` + Object.keys(catLabels).map(k=>`<option value="${k}">${catLabels[k][window.currentLang]}</option>`).join('');
-
             try { const res = await fetch('jobs.json?t='+Date.now()); if(!res.ok) throw new Error(); window.jobs = await res.json(); renderJobs(window.jobs); } catch { generateBackupData(); }
         };
 
@@ -426,11 +434,29 @@
             const prodRoles = [["Opérateur Câblage", "cat_prod", "Tanger", "Yazaki"],["Chef d'Équipe", "cat_prod", "Kenitra", "Stellantis"],["Technicien Maint", "cat_tech", "Tanger", "Renault"],["Ingénieur Qualité", "cat_eng", "Casablanca", "OCP"]];
             const otherRoles = [["Chauffeur", "cat_transport", "Casa", "Transport Maroc"],["Infirmier", "cat_health", "Rabat", "Clinique"],["Réceptionniste", "cat_sales", "Marrakech", "Sofitel"]];
             const roles = [...prodRoles, ...prodRoles, ...otherRoles]; 
-            window.jobs = Array.from({length:30}, (_,i)=>{ const r = roles[Math.floor(Math.random()*roles.length)]; return { id: i, title: r[0], catId: r[1], location: r[2], company: r[3], salary: "Negotiable", posted: "2d ago", urgent: Math.random() < 0.3, link: "#", sourceName: "Direct", rating: (Math.random()*1.5+3.5).toFixed(1) }; });
+            
+            // Generate jobs with distinction between "Real" (Direct) and "Scraped"
+            window.jobs = Array.from({length:30}, (_,i)=>{ 
+                const r = roles[Math.floor(Math.random()*roles.length)];
+                const isReal = Math.random() > 0.7; // 30% are "Real"
+                return { 
+                    id: i, 
+                    title: r[0], 
+                    catId: r[1], 
+                    location: r[2], 
+                    company: r[3], 
+                    salary: "Negotiable", 
+                    posted: "2d ago", 
+                    urgent: Math.random() < 0.05, // FIXED: Only 5% Urgent
+                    link: "#", 
+                    sourceName: isReal ? "Proleefic" : "Direct", 
+                    rating: (Math.random()*1.5+3.5).toFixed(1),
+                    isReal: isReal // MARKER
+                }; 
+            });
             renderJobs(window.jobs);
         }
 
-        // RENDER JOBS
         function getLogo(name) {
             const colors = ['bg-blue-100 text-blue-600', 'bg-green-100 text-green-600', 'bg-purple-100 text-purple-600', 'bg-orange-100 text-orange-600', 'bg-red-100 text-red-600'];
             return `<div class="w-14 h-14 shrink-0 rounded-xl ${colors[name.length % colors.length]} flex items-center justify-center font-bold text-2xl uppercase border border-black/5 shadow-sm">${name.charAt(0)}</div>`;
@@ -446,7 +472,10 @@
             document.getElementById('jobCount').innerText = arr.length + ' jobs';
             document.getElementById('jobListings').innerHTML = arr.map((j, idx) => {
                 let ad = idx===4 ? `<div class="bg-gray-50 dark:bg-gray-800 p-4 rounded text-center text-xs text-gray-400">Sponsored Ad</div>` : '';
-                return `${ad}<div class="bg-white dark:bg-dark-card p-5 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-morocco-green hover:shadow-lg transition group cursor-pointer relative animate-fade-in" onclick="openJobDetails('${j.id}')">
+                // APPLY RED NEON if Real
+                let extraClass = j.isReal ? "job-real" : "";
+                
+                return `${ad}<div class="bg-white dark:bg-dark-card p-5 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-morocco-green hover:shadow-lg transition group cursor-pointer relative animate-fade-in ${extraClass}" onclick="openJobDetails('${j.id}')">
                     ${j.urgent ? `<span class="absolute top-4 right-4 bg-red-100 text-red-600 text-[10px] font-bold px-2 py-1 rounded-full">URGENT</span>` : ''}
                     <div class="flex gap-4">${getLogo(j.company)}
                         <div class="flex-1"><h3 class="font-bold text-lg dark:text-white mb-0.5">${j.title}</h3><p class="text-sm text-gray-500">${j.company} <span class="text-yellow-500 ml-1">★ ${j.rating}</span></p>
@@ -474,21 +503,26 @@
             document.getElementById('prevPhone').innerText = document.getElementById('cvPhone').value || "+212...";
             document.getElementById('prevCity').innerText = document.getElementById('cvCity').value || "City";
             document.getElementById('prevSummary').innerText = document.getElementById('cvSummary').value;
+            
+            // New Sections Update
             document.getElementById('prevExp').innerText = document.getElementById('cvExp').value;
+            document.getElementById('prevEdu').innerText = document.getElementById('cvEdu').value;
+            document.getElementById('prevCerts').innerText = document.getElementById('cvCerts').value;
+            
+            // Tags for Skills & Langs
             const skills = document.getElementById('cvSkills').value;
             document.getElementById('prevSkills').innerHTML = skills ? skills.split(',').map(s => `<span class="bg-gray-100 border border-gray-200 px-3 py-1 rounded text-xs font-bold text-gray-700 uppercase">${s.trim()}</span>`).join('') : "";
+            
+            const langs = document.getElementById('cvLangs').value;
+            document.getElementById('prevLangs').innerHTML = langs ? langs.split(',').map(s => `<span class="bg-gray-100 border border-gray-200 px-3 py-1 rounded text-xs font-bold text-gray-700 uppercase">${s.trim()}</span>`).join('') : "";
         }
         window.generateAISummary = () => {
             const title = document.getElementById('cvTitle').value.toLowerCase(); const summaryBox = document.getElementById('cvSummary'); const lang = window.currentLang;
             let aiText = "";
             if (lang === 'ar') {
-                if (title.includes('تقني') || title.includes('tech')) aiText = "تقني متخصص ذو خبرة قوية في الصيانة الصناعية وإصلاح الآلات. ملتزم بقواعد السلامة.";
-                else if (title.includes('بيع') || title.includes('sales')) aiText = "مندوب مبيعات نشيط حقق نتائج ممتازة في زيادة المبيعات.";
-                else aiText = "مهني طموح ومجتهد، أمتلك مهارات عالية في العمل الجماعي وحل المشكلات.";
+                aiText = "مهني طموح ومجتهد، أمتلك مهارات عالية في العمل الجماعي وحل المشكلات.";
             } else {
-                if (title.includes('tech')) aiText = "Skilled Technician with expertise in industrial systems. Dedicated to safety protocols.";
-                else if (title.includes('sales')) aiText = "Results-driven Sales Representative with a track record of exceeding targets.";
-                else aiText = "Motivated professional dedicated to delivering high-quality results.";
+                aiText = "Motivated professional dedicated to delivering high-quality results.";
             }
             summaryBox.value = ""; let i = 0; const typeWriter = setInterval(() => { if (i < aiText.length) { summaryBox.value += aiText.charAt(i); window.updateCV(); i++; } else { clearInterval(typeWriter); } }, 30);
         }
