@@ -6,7 +6,7 @@
     <title>Proleefic | Morocco's #1 Job Platform</title>
     <meta name="description" content="Find jobs in Morocco. Recrutement, Offres d'emploi, Techniciens, Ingénieurs.">
     
-    <meta name="google-site-verification" content="google63de19ff922b347e" />
+    <meta name="google-site-verification" content="M-uhenO_P6Qo7uM7MJrFy99ymzklCvnOq0dN9aNdjME" />
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23006233%22><path d=%22M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z%22/></svg>">
 
@@ -242,7 +242,11 @@
         window.onload = () => { 
             if(localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
             setLang(window.currentLang); 
-            window.initData(); 
+            
+            // Force Backup Data immediately to check if UI works
+            generateBackupData(); 
+            // Then try to fetch real data
+            window.initData();
         };
 
         window.setLang = (lang) => {
@@ -276,6 +280,7 @@
             else { sec.innerHTML = `<button onclick="openAuth()" class="bg-morocco-green text-white px-5 py-2 rounded-lg font-bold text-sm hover:bg-morocco-darkGreen transition shadow-sm" data-i18n="loginBtn">${i18n[currentLang].loginBtn}</button>`; }
         });
 
+        // REAL DATA LOADING
         window.initData = async () => {
             const cities = ['Casablanca', 'Tanger', 'Kenitra', 'Rabat', 'El Jadida', 'Agadir', 'Fes']; 
             document.getElementById('locationFilter').innerHTML = `<option value="">${i18n[currentLang].whereLabel || 'All Cities'}</option>` + cities.map(c => `<option value="${c}">${c}</option>`).join('');
@@ -297,6 +302,7 @@
             }
         };
 
+        // BACKUP WITH EXTERNAL LINKS
         function generateBackupData() {
             const types = [{ t: "Opérateur de Production", c: "cat_prod", sal: "3000 - 4500 MAD" }, { t: "Technicien de Maintenance", c: "cat_tech", sal: "4500 - 7000 MAD" }, { t: "Ingénieur Mécanique", c: "cat_eng", sal: "9000 - 13000 MAD" }, { t: "Développeur Full Stack", c: "cat_it", sal: "12000 MAD+" }, { t: "Commercial Terrain", c: "cat_sales", sal: "Fixed + Comm" }];
             const companies = ['Renault', 'Yazaki', 'OCP', 'Maroc Telecom', 'Dell'];
@@ -307,6 +313,7 @@
                 const type = types[Math.floor(Math.random() * types.length)]; 
                 const comp = companies[Math.floor(Math.random() * companies.length)]; 
                 const src = sources[Math.floor(Math.random() * sources.length)];
+                
                 backupJobs.push({ 
                     id: Date.now() + i, 
                     title: type.t, 
@@ -340,14 +347,12 @@
             document.getElementById('jobCount').innerText = arr.length + ' jobs';
             container.innerHTML = arr.map((j, idx) => {
                 const timeText = j.posted === 0 ? (currentLang === 'ar' ? 'اليوم' : 'Today') : `${currentLang === 'ar' ? '' : i18n[currentLang].posted} ${j.posted}d ${i18n[currentLang].ago}`;
-                let adBlock = ''; if(idx === 4) { adBlock = `<div class="ad-container py-4 my-4"><span class="ad-label">Sponsored</span><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3965710509874164" data-ad-slot="1234567890"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script></div>`; }
+                let adBlock = ''; if(idx === 4) { adBlock = `<div class="ad-container py-4 my-4"><span class="ad-label">Sponsored</span><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3965710509874164" data-ad-slot="REPLACE_WITH_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script></div>`; }
                 return `${adBlock}<div class="bg-white dark:bg-dark-card p-5 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-morocco-green hover:shadow-lg transition-all animate-fade-in group relative" style="animation-delay: ${idx * 0.05}s">${j.urgent ? `<span class="absolute top-0 right-0 bg-red-100 text-morocco-red text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-lg uppercase tracking-wide"><i class="fa-solid fa-fire mr-1"></i>${i18n[currentLang].urgent}</span>` : ''}<div class="flex gap-4"><div class="w-12 h-12 rounded bg-white border border-gray-200 flex items-center justify-center font-bold text-gray-700 shrink-0 text-xl">${j.company[0]}</div><div class="flex-1"><h3 class="font-bold text-lg text-gray-800 dark:text-white group-hover:text-morocco-green transition-colors mb-0.5">${j.title}</h3><div class="text-sm text-gray-700 dark:text-gray-300 mb-2">${j.company} <span class="text-xs text-gray-400">★ ${j.rating}</span></div><div class="text-sm text-gray-500 mb-3 flex items-center gap-1"><i class="fa-solid fa-location-dot text-xs"></i> ${j.location}</div><div class="flex flex-wrap gap-2 mb-3"><span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-bold px-2 py-1 rounded flex items-center gap-1"><i class="fa-solid fa-money-bill-wave"></i> ${j.salary}</span></div><div class="text-xs text-gray-400 mb-4">${timeText}</div><div class="flex gap-3"><a href="${j.link}" target="_blank" class="flex-1 bg-morocco-green text-white text-center py-2.5 rounded-lg text-sm font-bold hover:bg-morocco-darkGreen transition shadow-sm flex items-center justify-center gap-2">${i18n[currentLang].applyOn} ${j.sourceName} <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a><button onclick="toggleSave(${j.id})" class="px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-400 hover:text-morocco-red hover:border-morocco-red transition"><i class="fa-regular fa-heart text-lg"></i></button></div></div></div></div>`;
             }).join('');
         }
 
         window.filter = () => { const term = document.getElementById('mainSearch').value.toLowerCase(); const loc = document.getElementById('locationFilter').value; renderJobs(window.jobs.filter(j => (j.title.toLowerCase().includes(term) || j.company.toLowerCase().includes(term)) && (loc === '' || j.location === loc))); };
-        window.filterCat = (catId) => renderJobs(window.jobs.filter(j => j.catId === catId));
-        window.setCategory = (val) => window.filterCat(val);
         window.toggleSave = async (id) => { if(!window.currentUser) return switchView('auth'); const job = window.jobs.find(j => j.id === id); await setDoc(doc(db, 'users', window.currentUser.uid, 'saved', id.toString()), job); alert("Job Saved!"); }
         async function loadSavedJobs() { if(!window.currentUser) return; const snap = await getDocs(collection(db, 'users', window.currentUser.uid, 'saved')); const list = document.getElementById('savedContainer'); list.innerHTML = ''; snap.forEach(d => { const j = d.data(); list.innerHTML += `<div class="p-4 border rounded-xl bg-white dark:bg-gray-800 flex justify-between items-center shadow-sm"><div><div class="font-bold text-gray-800 dark:text-white">${j.title}</div><div class="text-sm text-gray-500">${j.company}</div></div><a href="${j.link}" target="_blank" class="text-morocco-green font-bold text-sm border border-morocco-green px-3 py-1 rounded hover:bg-green-50">Apply</a></div>`; }); }
     </script>
