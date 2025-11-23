@@ -144,9 +144,7 @@
                 <div class="w-full lg:w-1/3 space-y-6 no-print">
                     <div class="bg-white dark:bg-dark-card p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 h-[90vh] overflow-y-auto">
                         <div class="flex justify-between items-center mb-6">
-                            <h2 class="text-xl font-bold flex items-center gap-2 text-gray-800 dark:text-white">
-                                <i class="fa-solid fa-pen-to-square text-morocco-green"></i> <span data-i18n="editDetails">Edit Details</span>
-                            </h2>
+                            <h2 class="text-xl font-bold flex items-center gap-2 text-gray-800 dark:text-white"><i class="fa-solid fa-pen-to-square text-morocco-green"></i> <span data-i18n="editDetails">Edit Details</span></h2>
                             <button onclick="switchView('home')" class="text-sm font-bold text-gray-400 hover:text-red-500">✕ Close</button>
                         </div>
                         <div class="space-y-4">
@@ -159,10 +157,7 @@
                             </div>
                             <input type="text" id="cvName" oninput="updateCV()" class="input-pro" placeholder="Full Name">
                             <input type="text" id="cvTitle" oninput="updateCV()" class="input-pro" placeholder="Job Title">
-                            <div class="grid grid-cols-2 gap-2">
-                                <input type="text" id="cvPhone" oninput="updateCV()" class="input-pro" placeholder="Phone">
-                                <input type="text" id="cvCity" oninput="updateCV()" class="input-pro" placeholder="City">
-                            </div>
+                            <div class="grid grid-cols-2 gap-2"><input type="text" id="cvPhone" oninput="updateCV()" class="input-pro" placeholder="Phone"><input type="text" id="cvCity" oninput="updateCV()" class="input-pro" placeholder="City"></div>
                             <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-xl border border-purple-100 dark:border-purple-800 relative">
                                 <div class="flex justify-between items-center mb-2">
                                     <label class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase" data-i18n="labelSummary">Summary</label>
@@ -176,24 +171,18 @@
                             <div><label class="text-xs font-bold text-gray-400 uppercase mb-1 block">Skills</label><input type="text" id="cvSkills" oninput="updateCV()" class="input-pro"></div>
                             <div><label class="text-xs font-bold text-gray-400 uppercase mb-1 block">Languages</label><input type="text" id="cvLangs" oninput="updateCV()" class="input-pro"></div>
                         </div>
-                        <div class="mt-6 pt-6 border-t dark:border-gray-700">
-                            <button onclick="window.print()" class="w-full bg-morocco-green text-white py-3.5 rounded-xl font-bold shadow-lg hover:bg-morocco-darkGreen transition"><i class="fa-solid fa-download"></i> Download PDF</button>
-                        </div>
+                        <div class="mt-6 pt-6 border-t dark:border-gray-700"><button onclick="window.print()" class="w-full bg-morocco-green text-white py-3.5 rounded-xl font-bold shadow-lg hover:bg-morocco-darkGreen transition"><i class="fa-solid fa-download"></i> Download PDF</button></div>
                     </div>
                 </div>
-
                 <div class="w-full lg:w-2/3 overflow-x-auto pb-10">
                     <div id="cvPreview" class="cv-paper rounded-none sm:rounded-lg">
                         <i class="fa-solid fa-star cv-watermark"></i>
                         <div class="border-b-4 border-gray-800 pb-8 mb-8 flex justify-between items-start gap-6 relative z-10">
                             <div class="flex gap-6 items-center">
                                 <img id="prevPhoto" src="" class="cv-photo-frame hidden">
-                                <div><h1 id="prevName" class="text-4xl font-extrabold uppercase tracking-tight text-gray-900">YOUR NAME</h1><p id="prevTitle" class="text-xl text-morocco-green font-bold mt-2 uppercase tracking-widest">JOB TITLE</p></div>
+                                <div><h1 id="prevName" class="text-4xl font-extrabold uppercase text-gray-900">YOUR NAME</h1><p id="prevTitle" class="text-xl text-morocco-green font-bold mt-2 uppercase">JOB TITLE</p></div>
                             </div>
-                            <div class="text-right text-sm text-gray-600 leading-relaxed pt-2">
-                                <p id="prevPhone" class="font-semibold">+212 600 000 000</p>
-                                <p id="prevCity">City, Morocco</p>
-                            </div>
+                            <div class="text-right text-sm text-gray-600 leading-relaxed pt-2"><p id="prevPhone" class="font-semibold">+212 600 000 000</p><p id="prevCity">City, Morocco</p></div>
                         </div>
                         <div class="mb-6 relative z-10"><h3 class="font-bold text-gray-800 border-b-2 border-gray-200 mb-2 uppercase text-sm tracking-wider">Profile</h3><p id="prevSummary" class="text-gray-700 text-sm leading-relaxed"></p></div>
                         <div class="mb-6 relative z-10"><h3 class="font-bold text-gray-800 border-b-2 border-gray-200 mb-2 uppercase text-sm tracking-wider">Experience</h3><div id="prevExp" class="text-gray-700 text-sm whitespace-pre-line pl-1"></div></div>
@@ -241,7 +230,7 @@
             <button onclick="closeAuth()" class="absolute top-4 right-4 text-gray-400 hover:text-red-500 text-xl">✕</button>
             <div class="text-center mb-6">
                 <h2 class="text-2xl font-bold dark:text-white" data-i18n="authTitle">Welcome</h2>
-                <p id="authSubMsg" class="text-sm text-gray-500 mt-1">Login to access features.</p>
+                <p id="authSubMsg" class="text-sm text-gray-500 mt-1">Login to save jobs.</p>
                 <div class="flex bg-gray-100 dark:bg-gray-800 p-1 rounded-xl mt-6">
                     <button onclick="toggleAuthMode('login')" id="tab-login" class="flex-1 py-2 text-sm font-bold rounded-lg bg-white text-morocco-green shadow-sm transition">Log In</button>
                     <button onclick="toggleAuthMode('signup')" id="tab-signup" class="flex-1 py-2 text-sm font-bold rounded-lg text-gray-500 transition">Sign Up</button>
@@ -290,15 +279,14 @@
             app = initializeApp(firebaseConfig); 
             auth = getAuth(app); 
             db = getFirestore(app);
-            setPersistence(auth, browserLocalPersistence).catch(e => console.error("Persistence warning (ignore if using local file):", e));
+            setPersistence(auth, browserLocalPersistence).catch(e => console.error(e));
         } catch(e){ console.error("Firebase Error", e); }
 
-        // LOCAL MEMORY SYSTEM (Fixed Persistence)
         function checkLocalLogin() {
             const savedUser = localStorage.getItem('proleefic_user');
             if (savedUser) {
                 const u = JSON.parse(savedUser);
-                window.currentUser = u; // Set strictly
+                window.currentUser = u; 
                 updateUIForLogin(u);
             }
         }
@@ -319,7 +307,6 @@
             window.currentLang = l; localStorage.setItem('lang', l); document.documentElement.setAttribute('dir', l === 'ar' ? 'rtl' : 'ltr'); renderCategories(); 
             document.querySelectorAll('[data-i18n]').forEach(el => { 
                 const key = el.getAttribute('data-i18n');
-                // === UNDEFINED FIX ===
                 const text = (i18n[l] && i18n[l][key]) ? i18n[l][key] : (i18n['en'][key] || key); 
                 el.innerText = text;
             }); 
@@ -344,9 +331,14 @@
         window.logout = () => { signOut(auth).then(()=>{ localStorage.removeItem('proleefic_user'); window.location.reload(); }); };
         window.showMessage = (msg) => { const b=document.getElementById('authError'); b.innerText=msg.replace('Firebase: ',''); b.classList.remove('hidden'); }
 
-        if(auth) onAuthStateChanged(auth, u => { window.currentUser=u; if(u) { localStorage.setItem('proleefic_user', JSON.stringify({email: u.email, displayName: u.displayName, uid: u.uid})); updateUIForLogin(u); } });
+        if(auth) onAuthStateChanged(auth, u => { 
+            window.currentUser=u; 
+            if(u) {
+                localStorage.setItem('proleefic_user', JSON.stringify({email: u.email, displayName: u.displayName, uid: u.uid}));
+                updateUIForLogin(u);
+            }
+        });
 
-        // === ROBOT BRAIN ===
         window.initData = async () => {
             const locFilter = document.getElementById('locationFilter');
             const catFilter = document.getElementById('categoryFilter');
@@ -357,7 +349,7 @@
 
         function generateBackupData() {
             const realJobs = [
-                { id: 101, title: "Opérateur de Production", catId: "cat_prod", location: "Tanger", company: "Yazaki", salary: "SMIG + Primes", posted: "1h ago", urgent: true, isReal: true, sourceName: "Yazaki Careers", link: "https://www.linkedin.com/jobs/search/?keywords=yazaki+tanger" },
+                { id: 101, title: "Opérateur de Production (Câblage)", catId: "cat_prod", location: "Tanger", company: "Yazaki", salary: "SMIG + Primes", posted: "1h ago", urgent: true, isReal: true, sourceName: "Yazaki Careers", link: "https://www.linkedin.com/jobs/search/?keywords=yazaki+tanger" },
                 { id: 102, title: "Technicien Maintenance", catId: "cat_prod", location: "Kenitra", company: "Stellantis", salary: "6.500 DH", posted: "3h ago", urgent: true, isReal: true, sourceName: "Stellantis HR", link: "https://www.anapec.org/sigec-app-rv/chercheurs/resultat_recherche_offre" },
                 { id: 103, title: "Responsable Qualité", catId: "cat_eng", location: "Casablanca", company: "OCP", salary: "14.000 DH", posted: "5h ago", urgent: true, isReal: true, sourceName: "OCP Group", link: "https://www.ocpgroup.ma/careers" }
             ];
@@ -424,14 +416,18 @@
             schemaScript.text = JSON.stringify(schemaData);
         }
 
+        // === FIXED: TOGGLE SAVE STRICT LOGIC ===
         window.toggleSave = async (id) => { 
-            // STRICT CHECK: If user not in local storage AND not in Firebase, block save
             const localUser = localStorage.getItem('proleefic_user');
+            
+            // STRICT CHECK: If no user in local storage AND no user in window memory
             if(!localUser && !window.currentUser) { 
-                window.closeJobModal(); 
-                document.getElementById('authSubMsg').innerText = "Please sign in to save this job.";
-                return window.openAuth(); 
+                window.closeJobModal(); // Close Job
+                document.getElementById('authSubMsg').innerText = "Please sign in to save this job."; // Specific msg
+                return window.openAuth(); // Open Login & STOP
             } 
+            
+            // If logged in, proceed
             try { 
                 const job = window.jobs.find(j=>j.id==id); 
                 if(window.currentUser) await setDoc(doc(db,'users',window.currentUser.uid,'saved',id.toString()), job); 
