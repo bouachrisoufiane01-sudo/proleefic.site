@@ -15,8 +15,8 @@
   },
   {
     "id": "real_02",
-    "title": "Technicien Maintenance Senior",
-    "company": "Stellantis",
+    "title": "Technicien Maintenance",
+    "company": "Stellantis Kenitra",
     "location": "Kenitra",
     "salary": "8.000 DH",
     "posted": "2h ago",
@@ -28,23 +28,9 @@
     "rating": "4.7"
   },
   {
-    "id": "real_03",
-    "title": "Ingénieur Qualité",
-    "company": "OCP Group",
-    "location": "Jorf Lasfar",
-    "salary": "14.000 DH",
-    "posted": "4h ago",
-    "urgent": true,
-    "isReal": true,
-    "sourceName": "OCP Careers",
-    "link": "https://www.ocpgroup.ma/careers",
-    "catId": "cat_eng",
-    "rating": "4.8"
-  },
-  {
     "id": "dj_0",
     "title": "Concours de Recrutement Préfecture Agadir Ida-Outanane 2025 ",
-    "company": "Dreamjob Recruteur",
+    "company": "Recrutement Maroc",
     "location": "Maroc",
     "salary": "Negotiable",
     "posted": "Today",
@@ -58,7 +44,7 @@
   {
     "id": "dj_1",
     "title": "Concours de Recrutement Préfecture de Rabat 2025 (49 Postes)",
-    "company": "Dreamjob Recruteur",
+    "company": "Recrutement Maroc",
     "location": "Maroc",
     "salary": "Negotiable",
     "posted": "Today",
@@ -72,7 +58,7 @@
   {
     "id": "dj_2",
     "title": "TLScontact Maroc recrute à Tanger dès maintenant",
-    "company": "Dreamjob Recruteur",
+    "company": "Recrutement Maroc",
     "location": "Maroc",
     "salary": "Negotiable",
     "posted": "Today",
@@ -86,7 +72,7 @@
   {
     "id": "dj_3",
     "title": "Aéronautique, Safran ouvre des stages PFE 2026",
-    "company": "Dreamjob Recruteur",
+    "company": "Recrutement Maroc",
     "location": "Maroc",
     "salary": "Negotiable",
     "posted": "Today",
@@ -100,7 +86,7 @@
   {
     "id": "dj_4",
     "title": "DARI COUSPATE recrute technicien comptable et chef de produi",
-    "company": "Dreamjob Recruteur",
+    "company": "Recrutement Maroc",
     "location": "Maroc",
     "salary": "Negotiable",
     "posted": "Today",
@@ -108,13 +94,13 @@
     "isReal": false,
     "sourceName": "Dreamjob.ma",
     "link": "https://www.dreamjob.ma/emploi/dari-couspate-recrute-technicien-comptable-et-chef-de-produit/",
-    "catId": "cat_tech",
+    "catId": "cat_sales",
     "rating": "4.0"
   },
   {
     "id": "dj_5",
     "title": "Stages IA – Renault Digital ouvre plusieurs opportunités",
-    "company": "Dreamjob Recruteur",
+    "company": "Recrutement Maroc",
     "location": "Maroc",
     "salary": "Negotiable",
     "posted": "Today",
@@ -128,7 +114,7 @@
   {
     "id": "dj_6",
     "title": "Une vague de recrutements chez Al Amana Microfinance",
-    "company": "Dreamjob Recruteur",
+    "company": "Recrutement Maroc",
     "location": "Maroc",
     "salary": "Negotiable",
     "posted": "Today",
@@ -142,7 +128,7 @@
   {
     "id": "dj_7",
     "title": "Liste des Convoqués Concours Ministère de la Transition Ener",
-    "company": "Dreamjob Recruteur",
+    "company": "Recrutement Maroc",
     "location": "Maroc",
     "salary": "Negotiable",
     "posted": "Today",
@@ -156,7 +142,7 @@
   {
     "id": "dj_8",
     "title": "Savoy Marrakech ouvre plusieurs postes en cuisine",
-    "company": "Dreamjob Recruteur",
+    "company": "Recrutement Maroc",
     "location": "Maroc",
     "salary": "Negotiable",
     "posted": "Today",
@@ -170,7 +156,7 @@
   {
     "id": "dj_9",
     "title": "Decathlon lance sa campagne de stages PFE 2026 à Casablanca",
-    "company": "Dreamjob Recruteur",
+    "company": "Recrutement Maroc",
     "location": "Maroc",
     "salary": "Negotiable",
     "posted": "Today",
@@ -184,7 +170,7 @@
   {
     "id": "dj_10",
     "title": "Circet Morocco recrute manager, comptable, développeur et pl",
-    "company": "Dreamjob Recruteur",
+    "company": "Recrutement Maroc",
     "location": "Maroc",
     "salary": "Negotiable",
     "posted": "Today",
@@ -198,7 +184,7 @@
   {
     "id": "dj_11",
     "title": "HPS lance une grande campagne de recrutement à Casablanca",
-    "company": "Dreamjob Recruteur",
+    "company": "Recrutement Maroc",
     "location": "Maroc",
     "salary": "Negotiable",
     "posted": "Today",
@@ -212,7 +198,7 @@
   {
     "id": "dj_12",
     "title": "SCIF recrute – opportunités en maintenance et ingénierie",
-    "company": "Dreamjob Recruteur",
+    "company": "Recrutement Maroc",
     "location": "Maroc",
     "salary": "Negotiable",
     "posted": "Today",
@@ -226,7 +212,7 @@
   {
     "id": "dj_13",
     "title": "Concours de Recrutement AMMPS 2025 (162 Postes)",
-    "company": "Dreamjob Recruteur",
+    "company": "Recrutement Maroc",
     "location": "Maroc",
     "salary": "Negotiable",
     "posted": "Today",
@@ -240,7 +226,7 @@
   {
     "id": "dj_14",
     "title": "Hydro Advisor lance une campagne urgente de recrutement",
-    "company": "Dreamjob Recruteur",
+    "company": "Recrutement Maroc",
     "location": "Maroc",
     "salary": "Negotiable",
     "posted": "Today",
