@@ -9,7 +9,14 @@
     
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23006233'%3E%3Cpath d='M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z'/%3E%3C/svg%3E">
 
-    <script type="application/ld+json" id="google-job-schema">{"@context":"https://schema.org/","@type":"WebSite","name":"Proleefic","url":"https://proleefic.site"}</script>
+    <script type="application/ld+json" id="google-job-schema">
+    {
+      "@context": "https://schema.org/",
+      "@type": "WebSite",
+      "name": "Proleefic",
+      "url": "https://proleefic.site"
+    }
+    </script>
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3965710509874164" crossorigin="anonymous"></script>
 
@@ -27,8 +34,7 @@
                         morocco: { red: '#C1272D', green: '#006233', darkRed: '#8a1c21', darkGreen: '#004d28' },
                         dark: { bg: '#0F172A', card: '#1E293B' }
                     },
-                    animation: { 'fade-in': 'fadeIn 0.4s ease-out' },
-                    keyframes: { fadeIn: { '0%': { opacity: '0', transform: 'translateY(10px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } } }
+                    animation: { 'fade-in': 'fadeIn 0.4s ease-out' }
                 }
             }
         }
@@ -81,6 +87,7 @@
                     <button onclick="setLang('fr')" id="lang-fr" class="px-3 py-1 text-xs font-bold rounded-lg transition-all duration-200 hover:scale-110 hover:bg-white hover:shadow-sm hover:text-morocco-green">FR</button>
                     <button onclick="setLang('ar')" id="lang-ar" class="px-3 py-1 text-xs font-bold rounded-lg transition-all duration-200 hover:scale-110 hover:bg-white hover:shadow-sm hover:text-morocco-green">عربي</button>
                 </div>
+                
                 <button onclick="toggleTheme()" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition text-gray-500"><i class="fa-solid fa-moon dark:hidden text-lg"></i><i class="fa-solid fa-sun hidden dark:inline text-yellow-400 text-lg"></i></button>
                 <button onclick="switchView('cv')" class="flex items-center gap-2 bg-purple-600 text-white px-3 py-2 rounded-lg font-bold text-xs shadow-md hover:bg-purple-700 transition"><i class="fa-solid fa-wand-magic-sparkles"></i> CV Builder</button>
                 <div id="authSection" class="flex items-center gap-3">
@@ -314,8 +321,6 @@
         
         window.toggleTheme = () => { document.documentElement.classList.toggle('dark'); localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light'); };
         window.switchView = (v) => { document.querySelectorAll('.view-section').forEach(e => e.classList.add('hidden-view')); document.getElementById(v+'View').classList.remove('hidden-view'); window.scrollTo(0,0); };
-        
-        // === AUTH STRICT CHECK ===
         window.openAuth = (msg = null) => { 
             document.getElementById('authView').classList.remove('hidden-view'); 
             if(msg) document.getElementById('authSubMsg').innerText = msg;
@@ -404,30 +409,34 @@
             document.getElementById('modalDesc').innerText = `We are hiring a ${j.title} to join our team in ${j.location}.`; 
             document.getElementById('modalApplyBtn').href = j.link; 
             document.getElementById('modalLogo').innerHTML = getLogo(j.company).replace('w-14','w-16').replace('h-14','h-16'); 
-            document.getElementById('saveBtn').innerHTML = '<i class="fa-regular fa-heart text-xl"></i>';
-            document.getElementById('jobDetailModal').classList.remove('hidden-view');
             
+            // GOOGLE SEO UPDATE
             const schemaScript = document.getElementById('google-job-schema');
             const schemaData = JSON.parse(schemaScript.text);
             schemaData.title = j.title;
             schemaData.description = `We are hiring a ${j.title} at ${j.company}.`;
             schemaData.jobLocation.address.addressLocality = j.location;
             schemaData.hiringOrganization.name = j.company;
+            
+            // Add Job ID to URL for Deep Linking SEO
+            const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?job_id=' + j.id;
+            window.history.pushState({path:newUrl},'',newUrl);
             schemaScript.text = JSON.stringify(schemaData);
+
+            document.getElementById('saveBtn').innerHTML = '<i class="fa-regular fa-heart text-xl"></i>';
+            document.getElementById('jobDetailModal').classList.remove('hidden-view');
         }
 
-        // === FIXED: TOGGLE SAVE STRICT LOGIC ===
+        // === STRICT SAVE LOGIC ===
         window.toggleSave = async (id) => { 
             const localUser = localStorage.getItem('proleefic_user');
             
-            // STRICT CHECK: If no user in local storage AND no user in window memory
+            // If NOT logged in, BLOCK and open Login Modal
             if(!localUser && !window.currentUser) { 
-                window.closeJobModal(); // Close Job
-                document.getElementById('authSubMsg').innerText = "Please sign in to save this job."; // Specific msg
-                return window.openAuth(); // Open Login & STOP
+                window.closeJobModal(); 
+                return window.openAuth("Please sign in to save this job."); 
             } 
             
-            // If logged in, proceed
             try { 
                 const job = window.jobs.find(j=>j.id==id); 
                 if(window.currentUser) await setDoc(doc(db,'users',window.currentUser.uid,'saved',id.toString()), job); 
@@ -462,10 +471,20 @@
 
         window.onload = () => { 
             if(localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark'); 
-            checkLocalLogin(); // Check local storage for persistence
+            checkLocalLogin(); 
             window.setLang(window.currentLang); 
             window.initData(); 
             window.updateCV(); 
+            
+            // AUTO-OPEN JOB FROM URL FOR GOOGLE
+            const urlParams = new URLSearchParams(window.location.search);
+            const jobId = urlParams.get('job_id');
+            if(jobId) {
+                setTimeout(() => {
+                    const job = window.jobs.find(j => j.id == jobId);
+                    if(job) openJobDetails(job.id);
+                }, 1000); // Wait for jobs to load
+            }
         };
     </script>
 </body>
