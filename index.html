@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proleefic | Morocco's #1 Job Platform</title>
+    <meta name="description" content="Find jobs in Morocco. Recrutement, Offres d'emploi, Techniciens, Ingénieurs.">
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23006233%22><path d=%22M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z%22/></svg>">
 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3965710509874164" crossorigin="anonymous"></script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -35,6 +38,8 @@
         .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid #e5e7eb; }
         .dark .glass-nav { background: rgba(15, 23, 42, 0.95); border-bottom: 1px solid #1e293b; }
         .input-pro { @apply w-full px-5 py-3.5 rounded-xl border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-morocco-green focus:border-transparent transition-all outline-none font-medium text-gray-900 dark:text-white; }
+        .ad-container { @apply bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl overflow-hidden flex flex-col items-center justify-center text-center relative; }
+        .ad-label { @apply text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block pt-2; }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
         .dark ::-webkit-scrollbar-thumb { background: #475569; }
@@ -88,6 +93,14 @@
             </div>
         </div>
 
+        <div class="container mx-auto px-4 mt-6">
+            <div class="ad-container py-4">
+                <span class="ad-label">Advertisement</span>
+                <ins class="adsbygoogle" style="display:block; width:100%; max-height:150px" data-ad-client="ca-pub-3965710509874164" data-ad-slot="REPLACE_WITH_SLOT_ID" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+        </div>
+
         <div class="container mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
             <aside class="hidden lg:block lg:col-span-3 space-y-6">
                 <div class="bg-white dark:bg-dark-card rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden">
@@ -105,12 +118,10 @@
             </main>
 
             <aside class="hidden lg:block lg:col-span-3 space-y-6">
-                <div class="bg-white dark:bg-dark-card p-5 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
-                    <h3 class="font-bold mb-4 text-sm uppercase text-gray-500" data-i18n="hiringNow">Hiring Now</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3"><img src="https://logo.clearbit.com/renaultgroup.com" class="w-10 h-10 rounded border p-1"><div><div class="font-bold text-sm">Renault</div><div class="text-xs text-morocco-green">24 jobs</div></div></div>
-                        <div class="flex items-center gap-3"><img src="https://logo.clearbit.com/ocpgroup.ma" class="w-10 h-10 rounded border p-1"><div><div class="font-bold text-sm">OCP</div><div class="text-xs text-morocco-green">12 jobs</div></div></div>
-                    </div>
+                <div class="ad-container min-h-[300px] sticky top-24">
+                    <span class="ad-label">Sponsored</span>
+                    <ins class="adsbygoogle" style="display:block; width:100%" data-ad-client="ca-pub-3965710509874164" data-ad-slot="REPLACE_WITH_SLOT_ID" data-ad-format="rectangle" data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                 </div>
             </aside>
         </div>
@@ -122,13 +133,11 @@
                 <div class="w-14 h-14 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4 text-morocco-green text-2xl"><i class="fa-solid fa-user-shield"></i></div>
                 <h2 class="text-3xl font-bold mb-2 dark:text-white" data-i18n="authTitle">Welcome Back</h2>
                 <p class="text-gray-500 text-sm mb-6" data-i18n="authSub">Access your profile, save jobs, and apply instantly.</p>
-                
                 <div class="flex p-1 bg-gray-100 dark:bg-gray-800 rounded-xl mb-6">
                     <button onclick="toggleAuthMode('login')" id="tab-login" class="flex-1 py-2.5 rounded-lg text-sm font-bold shadow-sm bg-white dark:bg-gray-700 text-morocco-green transition-all">Log In</button>
                     <button onclick="toggleAuthMode('signup')" id="tab-signup" class="flex-1 py-2.5 rounded-lg text-sm font-bold text-gray-500 hover:text-gray-900 dark:hover:text-white transition-all">Sign Up</button>
                 </div>
             </div>
-
             <div class="px-8 pb-8">
                 <div id="authError" class="hidden bg-red-50 text-red-600 text-sm p-3 rounded-lg mb-4 border border-red-100 flex items-center gap-2"><i class="fa-solid fa-circle-exclamation"></i> <span id="authErrorMsg">Error</span></div>
                 <div id="authSuccess" class="hidden bg-green-50 text-green-600 text-sm p-3 rounded-lg mb-4 border border-green-100 flex items-center gap-2"><i class="fa-solid fa-check-circle"></i> <span id="authSuccessMsg">Success</span></div>
@@ -172,10 +181,12 @@
     </div>
 
     <script type="module">
+        // 1. FIREBASE IMPORTS
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, updateProfile } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
         import { getFirestore, doc, setDoc, deleteDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
+        // 2. CONFIGURATION
         const firebaseConfig = {
             apiKey: "AIzaSyBsPi64Eb0GQnGjcxg6n6YRFbG-iO9K_pM",
             authDomain: "proleefic-85800.firebaseapp.com",
@@ -189,6 +200,7 @@
         const auth = getAuth(app);
         const db = getFirestore(app);
         
+        // 3. TRANSLATIONS
         const i18n = {
             en: { heroTitle: "Find the job that fits your life", whatLabel: "What", whereLabel: "Where", searchPlaceholder: "Job title, keywords...", searchBtn: "Find Jobs", cvTitle: "Post your CV", cvSub: "It only takes a few seconds", uploadBtn: "Upload Resume", categories: "Job Categories", feedTitle: "Job Feed", loadMore: "Refresh Jobs", hiringNow: "Hiring Now", authTitle: "Welcome Back", authSub: "Access your profile, save jobs, and apply instantly.", backHome: "Back to Jobs", logout: "Logout", savedJobs: "Saved Jobs", easyApply: "Easy Apply", urgent: "Urgent", posted: "Posted", ago: "ago", applyOn: "Apply on", loginBtn: "Sign In", cat_prod: "Production & Manufacturing", cat_tech: "Technicians & Maintenance", cat_eng: "Engineering & Civil", cat_it: "IT & Digital", cat_sales: "Sales & Commercial", cat_admin: "Admin & Finance", cat_transport: "Transport & Logistics" },
             fr: { heroTitle: "Trouvez le job qui correspond à votre vie", whatLabel: "Quoi", whereLabel: "Où", searchPlaceholder: "Titre, mots-clés...", searchBtn: "Rechercher", cvTitle: "Déposez votre CV", cvSub: "Cela ne prend que quelques secondes", uploadBtn: "Télécharger CV", categories: "Catégories", feedTitle: "Offres d'emploi", loadMore: "Actualiser", hiringNow: "Recrute Actuellement", authTitle: "Bienvenue", authSub: "Accédez à votre profil et postulez instantanément.", backHome: "Retour aux offres", logout: "Déconnexion", savedJobs: "Offres Sauvegardées", easyApply: "Candidature Simple", urgent: "Urgent", posted: "Publié il y a", ago: "", applyOn: "Postuler sur", loginBtn: "Connexion", cat_prod: "Production & Industrie", cat_tech: "Techniciens & Maintenance", cat_eng: "Ingénierie & BTP", cat_it: "Informatique & Digital", cat_sales: "Commercial & Vente", cat_admin: "Admin & Finance", cat_transport: "Transport & Logistique" },
@@ -202,7 +214,7 @@
         window.onload = () => { 
             if(localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
             setLang(window.currentLang); 
-            window.initData(); // FORCE LOAD ON STARTUP
+            window.initData(); // FORCE LOAD
         };
 
         window.setLang = (lang) => {
@@ -235,7 +247,7 @@
             else { sec.innerHTML = `<button onclick="switchView('auth')" class="bg-morocco-green text-white px-5 py-2 rounded-lg font-bold text-sm hover:bg-morocco-darkGreen transition shadow-sm" data-i18n="loginBtn">${i18n[currentLang].loginBtn}</button>`; }
         });
 
-        // CORE DATA LOADING (FIXED)
+        // 6. REAL DATA LOADING
         window.initData = async () => {
             const cities = ['Casablanca', 'Tanger', 'Kenitra', 'Rabat', 'El Jadida', 'Agadir', 'Fes']; 
             document.getElementById('locationFilter').innerHTML = `<option value="">${i18n[currentLang].whereLabel || 'All Cities'}</option>` + cities.map(c => `<option value="${c}">${c}</option>`).join('');
@@ -244,23 +256,54 @@
             if(list) list.innerHTML = `<div class="text-center py-12"><i class="fa-solid fa-circle-notch fa-spin text-4xl text-morocco-green"></i></div>`;
 
             try {
+                // Attempt to fetch generated file
                 const response = await fetch('jobs.json?t=' + Date.now());
                 if (!response.ok) throw new Error("Jobs file missing");
                 const realJobs = await response.json();
                 window.jobs = realJobs;
                 renderJobs(window.jobs);
+                console.log("Loaded from JSON");
             } catch (e) {
                 console.log("⚠️ Using Backup Data");
-                generateBackupData(); // FALLBACK
+                generateBackupData();
             }
         };
 
+        // 7. BACKUP WITH EXTERNAL LINKS
         function generateBackupData() {
             const types = [{ t: "Opérateur de Production", c: "cat_prod", sal: "3000 - 4500 MAD" }, { t: "Technicien de Maintenance", c: "cat_tech", sal: "4500 - 7000 MAD" }, { t: "Ingénieur Mécanique", c: "cat_eng", sal: "9000 - 13000 MAD" }, { t: "Développeur Full Stack", c: "cat_it", sal: "12000 MAD+" }, { t: "Commercial Terrain", c: "cat_sales", sal: "Fixed + Comm" }];
             const companies = ['Renault', 'Yazaki', 'OCP', 'Maroc Telecom', 'Dell'];
             const cities = ['Casablanca', 'Tanger', 'Rabat'];
+            
+            // EXTERNAL SOURCES RANDOMIZER
+            const sources = [
+                { name: "LinkedIn", url: "https://www.linkedin.com/jobs/search/?keywords=Maroc" },
+                { name: "Rekrute", url: "https://www.rekrute.com/offres.html" },
+                { name: "Emploi.ma", url: "https://www.emploi.ma/" },
+                { name: "Anapec", url: "http://www.anapec.org/" }
+            ];
+
             const backupJobs = [];
-            for(let i=0; i<30; i++) { const type = types[Math.floor(Math.random() * types.length)]; const comp = companies[Math.floor(Math.random() * companies.length)]; backupJobs.push({ id: Date.now() + i, title: type.t, company: comp, location: cities[Math.floor(Math.random() * cities.length)], catId: type.c, salary: type.sal, posted: Math.floor(Math.random() * 5), urgent: Math.random() > 0.8, easyApply: true, rating: "4.5", link: "#", sourceName: "Direct" }); }
+            for(let i=0; i<30; i++) { 
+                const type = types[Math.floor(Math.random() * types.length)]; 
+                const comp = companies[Math.floor(Math.random() * companies.length)]; 
+                const src = sources[Math.floor(Math.random() * sources.length)];
+                
+                backupJobs.push({ 
+                    id: Date.now() + i, 
+                    title: type.t, 
+                    company: comp, 
+                    location: cities[Math.floor(Math.random() * cities.length)], 
+                    catId: type.c, 
+                    salary: type.sal, 
+                    posted: Math.floor(Math.random() * 5), 
+                    urgent: Math.random() > 0.8, 
+                    easyApply: true, 
+                    rating: "4.5", 
+                    link: src.url,        // <--- EXTERNAL LINK
+                    sourceName: src.name  // <--- SOURCE NAME
+                }); 
+            }
             window.jobs = backupJobs;
             renderJobs(window.jobs);
         }
@@ -279,6 +322,7 @@
             container.innerHTML = arr.map((j, idx) => {
                 const timeText = j.posted === 0 ? (currentLang === 'ar' ? 'اليوم' : 'Today') : `${currentLang === 'ar' ? '' : i18n[currentLang].posted} ${j.posted}d ${i18n[currentLang].ago}`;
                 let adBlock = ''; if(idx === 4) { adBlock = `<div class="ad-container py-4 my-4"><span class="ad-label">Sponsored</span><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3965710509874164" data-ad-slot="REPLACE_WITH_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script></div>`; }
+                
                 return `${adBlock}<div class="bg-white dark:bg-dark-card p-5 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-morocco-green hover:shadow-lg transition-all animate-fade-in group relative" style="animation-delay: ${idx * 0.05}s">${j.urgent ? `<span class="absolute top-0 right-0 bg-red-100 text-morocco-red text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-lg uppercase tracking-wide"><i class="fa-solid fa-fire mr-1"></i>${i18n[currentLang].urgent}</span>` : ''}<div class="flex gap-4"><div class="w-12 h-12 rounded bg-white border border-gray-200 flex items-center justify-center font-bold text-gray-700 shrink-0 text-xl">${j.company[0]}</div><div class="flex-1"><h3 class="font-bold text-lg text-gray-800 dark:text-white group-hover:text-morocco-green transition-colors mb-0.5">${j.title}</h3><div class="text-sm text-gray-700 dark:text-gray-300 mb-2">${j.company} <span class="text-xs text-gray-400">★ ${j.rating}</span></div><div class="text-sm text-gray-500 mb-3 flex items-center gap-1"><i class="fa-solid fa-location-dot text-xs"></i> ${j.location}</div><div class="flex flex-wrap gap-2 mb-3"><span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-bold px-2 py-1 rounded flex items-center gap-1"><i class="fa-solid fa-money-bill-wave"></i> ${j.salary}</span></div><div class="text-xs text-gray-400 mb-4">${timeText}</div><div class="flex gap-3"><a href="${j.link}" target="_blank" class="flex-1 bg-morocco-green text-white text-center py-2.5 rounded-lg text-sm font-bold hover:bg-morocco-darkGreen transition shadow-sm flex items-center justify-center gap-2">${i18n[currentLang].applyOn} ${j.sourceName} <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a><button onclick="toggleSave(${j.id})" class="px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-400 hover:text-morocco-red hover:border-morocco-red transition"><i class="fa-regular fa-heart text-lg"></i></button></div></div></div></div>`;
             }).join('');
         }
