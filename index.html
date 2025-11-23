@@ -332,7 +332,29 @@
         window.setCategory = (val) => window.filterCat(val);
         window.toggleSave = async (id) => { if(!window.currentUser) return switchView('auth'); const job = window.jobs.find(j => j.id === id); await setDoc(doc(db, 'users', window.currentUser.uid, 'saved', id.toString()), job); alert("Job Saved!"); }
         async function loadSavedJobs() { if(!window.currentUser) return; const snap = await getDocs(collection(db, 'users', window.currentUser.uid, 'saved')); const list = document.getElementById('savedContainer'); list.innerHTML = ''; snap.forEach(d => { const j = d.data(); list.innerHTML += `<div class="p-4 border rounded-xl bg-white dark:bg-gray-800 flex justify-between items-center shadow-sm"><div><div class="font-bold text-gray-800 dark:text-white">${j.title}</div><div class="text-sm text-gray-500">${j.company}</div></div><a href="${j.link}" target="_blank" class="text-morocco-green font-bold text-sm border border-morocco-green px-3 py-1 rounded hover:bg-green-50">Apply</a></div>`; }); }
-    <a href="privacy.html">Privacy Policy</a>
+    <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-12 transition-colors duration-300">
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                
+                <div class="text-center md:text-left">
+                    <span class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">Proleefic</span>
+                    <span class="text-[10px] font-bold text-morocco-red uppercase tracking-wider ml-1">Maroc 🇲🇦</span>
+                    <p class="text-xs text-gray-500 mt-1">Connecting Moroccan talent with global opportunities.</p>
+                </div>
+
+                <div class="flex gap-6 text-sm font-medium text-gray-600 dark:text-gray-400">
+                    <a href="#" onclick="switchView('home')" class="hover:text-morocco-green transition">Home</a>
+                    <a href="privacy.html" target="_blank" class="hover:text-morocco-green transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-morocco-green transition">Contact</a>
+                </div>
+
+                <div class="text-xs text-gray-400">
+                    &copy; 2025 Proleefic.ma. Made with ❤️ in Morocco.
+        <a href="privacy.html">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
     </script>
 </body>
 </html>
