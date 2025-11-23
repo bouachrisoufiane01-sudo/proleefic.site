@@ -62,18 +62,17 @@
             </div>
             <div class="flex items-center gap-3 sm:gap-5">
                 <div class="flex bg-gray-100 dark:bg-gray-800 rounded-lg p-1 hidden sm:flex">
-                    <button onclick="window.setLang('en')" class="lang-btn px-2 py-1 text-xs font-bold rounded transition" id="lang-en">EN</button>
-                    <button onclick="window.setLang('fr')" class="lang-btn px-2 py-1 text-xs font-bold rounded transition" id="lang-fr">FR</button>
-                    <button onclick="window.setLang('ar')" class="lang-btn px-2 py-1 text-xs font-bold rounded transition" id="lang-ar">عربي</button>
+                    <button onclick="setLang('en')" class="lang-btn px-2 py-1 text-xs font-bold rounded transition" id="lang-en">EN</button>
+                    <button onclick="setLang('fr')" class="lang-btn px-2 py-1 text-xs font-bold rounded transition" id="lang-fr">FR</button>
+                    <button onclick="setLang('ar')" class="lang-btn px-2 py-1 text-xs font-bold rounded transition" id="lang-ar">عربي</button>
                 </div>
-                
                 <button onclick="toggleTheme()" class="text-gray-500 hover:text-morocco-green transition w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
                     <i class="fa-solid fa-moon dark:hidden text-lg"></i>
                     <i class="fa-solid fa-sun hidden dark:inline text-yellow-400 text-lg"></i>
                 </button>
                 
                 <div id="authSection" class="flex items-center gap-3">
-                    <button onclick="openAuth()" class="bg-morocco-green text-white px-5 py-2 rounded-lg font-bold text-sm hover:bg-morocco-darkGreen transition shadow-sm" data-i18n="loginBtn">Sign In</button>
+                    <button onclick="openAuth()" class="bg-morocco-green text-white px-5 py-2 rounded-lg font-bold text-sm hover:bg-morocco-darkGreen transition shadow-sm">Sign In</button>
                 </div>
             </div>
         </div>
@@ -111,7 +110,14 @@
             <aside class="hidden lg:block lg:col-span-3 space-y-6">
                 <div class="bg-white dark:bg-dark-card rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden">
                     <div class="p-4 border-b border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800"><h3 class="font-bold text-sm uppercase text-gray-500" data-i18n="categories">Job Categories</h3></div>
-                    <div id="categoryList" class="max-h-[400px] overflow-y-auto"></div>
+                    <div id="categoryList" class="max-h-[400px] overflow-y-auto">
+                        <button onclick="filterCat('cat_prod')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-industry"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Production & Industrie</span></button>
+                        <button onclick="filterCat('cat_tech')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-wrench"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Techniciens & Maintenance</span></button>
+                        <button onclick="filterCat('cat_eng')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-helmet-safety"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Ingénierie & BTP</span></button>
+                        <button onclick="filterCat('cat_transport')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-truck"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Transport & Logistique</span></button>
+                        <button onclick="filterCat('cat_it')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-laptop-code"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Informatique & Digital</span></button>
+                        <button onclick="filterCat('cat_sales')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-briefcase"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Commercial & Vente</span></button>
+                    </div>
                 </div>
             </aside>
 
@@ -245,13 +251,9 @@
             document.querySelectorAll('.lang-btn').forEach(b => { b.classList.remove('bg-white', 'dark:bg-gray-700', 'text-morocco-green', 'shadow-sm'); b.classList.add('text-gray-500'); });
             const btn = document.getElementById('lang-' + lang);
             if(btn) { btn.classList.add('bg-white', 'dark:bg-gray-700', 'text-morocco-green', 'shadow-sm'); btn.classList.remove('text-gray-500'); }
-            
             document.querySelectorAll('[data-i18n]').forEach(el => { if(i18n[lang][el.getAttribute('data-i18n')]) el.innerText = i18n[lang][el.getAttribute('data-i18n')]; });
             document.querySelectorAll('[data-placeholder]').forEach(el => { if(i18n[lang][el.getAttribute('data-placeholder')]) el.placeholder = i18n[lang][el.getAttribute('data-placeholder')]; });
-            
-            // Refresh categories text
-            renderCategories();
-            if(window.jobs.length > 0) renderJobs(window.jobs);
+            renderCategories(); if(window.jobs.length > 0) renderJobs(window.jobs);
         };
 
         window.toggleTheme = () => { document.documentElement.classList.toggle('dark'); localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light'); }
@@ -267,7 +269,7 @@
         }
         
         window.showError = (msg) => { const e = document.getElementById('authError'); e.classList.remove('hidden'); document.getElementById('authErrorMsg').innerText = msg.replace('Firebase: ', ''); }
-        window.handlePasswordReset = () => { if(!auth) return; const email = document.getElementById('loginEmail').value; if(!email) return window.showError("Enter email first."); sendPasswordResetEmail(auth, email).then(() => alert("Email sent!")).catch(e => window.showError(e.message)); }
+        window.handlePasswordReset = () => { if(!auth) return; const email = document.getElementById('loginEmail').value; if(!email) return window.showError("Please enter email first."); sendPasswordResetEmail(auth, email).then(() => alert("Email sent!")).catch(e => window.showError(e.message)); }
         window.handleEmailLogin = (e) => { e.preventDefault(); if(!auth) return; signInWithEmailAndPassword(auth, document.getElementById('loginEmail').value, document.getElementById('loginPass').value).then(() => window.switchView('profile')).catch(err => window.showError(err.message)); };
         window.handleEmailSignup = (e) => { e.preventDefault(); if(!auth) return; const name = document.getElementById('signupName').value; createUserWithEmailAndPassword(auth, document.getElementById('signupEmail').value, document.getElementById('signupPass').value).then((res) => { updateProfile(res.user, { displayName: name }); window.switchView('profile'); }).catch(err => window.showError(err.message)); };
         window.loginGoogle = () => { if(!auth) return; signInWithPopup(auth, new GoogleAuthProvider()).then(() => window.switchView('profile')).catch(e => window.showError(e.message)); }
@@ -281,7 +283,7 @@
             });
         }
 
-        // REAL DATA LOADING
+        // DATA LOADING
         window.initData = async () => {
             const cities = ['Casablanca', 'Tanger', 'Kenitra', 'Rabat', 'El Jadida', 'Agadir', 'Fes']; 
             const locFilter = document.getElementById('locationFilter');
@@ -296,14 +298,11 @@
                 const realJobs = await response.json();
                 window.jobs = realJobs;
                 renderJobs(window.jobs);
-                console.log("Loaded from JSON");
             } catch (e) {
-                console.log("Using Backup Data");
                 generateBackupData();
             }
         };
 
-        // BACKUP WITH EXTERNAL LINKS
         function generateBackupData() {
             const types = [{ t: "Opérateur de Production", c: "cat_prod", sal: "3000 - 4500 MAD" }, { t: "Technicien de Maintenance", c: "cat_tech", sal: "4500 - 7000 MAD" }, { t: "Ingénieur Mécanique", c: "cat_eng", sal: "9000 - 13000 MAD" }, { t: "Développeur Full Stack", c: "cat_it", sal: "12000 MAD+" }, { t: "Commercial Terrain", c: "cat_sales", sal: "Fixed + Comm" }];
             const companies = ['Renault', 'Yazaki', 'OCP', 'Maroc Telecom', 'Dell'];
@@ -323,11 +322,22 @@
             renderJobs(filtered);
         }
 
-        function renderCategories() {
-            const list = document.getElementById('categoryList');
-            if(!list) return;
-            const cats = [{ id: 'cat_prod', icon: 'fa-industry' }, { id: 'cat_tech', icon: 'fa-wrench' }, { id: 'cat_eng', icon: 'fa-helmet-safety' }, { id: 'cat_transport', icon: 'fa-truck' }, { id: 'cat_it', icon: 'fa-laptop-code' }, { id: 'cat_sales', icon: 'fa-briefcase' }];
-            list.innerHTML = cats.map(c => `<button onclick="filterCat('${c.id}')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid ${c.icon}"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">${i18n[currentLang][c.id] || c.id}</span></button>`).join('');
+        // LOGO HELPER
+        function getCompanyLogo(companyName) {
+            const logos = {
+                "Renault": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Renault_2021_Text.svg/320px-Renault_2021_Text.svg.png",
+                "OCP": "https://upload.wikimedia.org/wikipedia/commons/3/36/Groupe_OCP_logo.svg",
+                "Maroc Telecom": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Maroc_Telecom_Logo.svg",
+                "Dell": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Dell_Logo.svg/300px-Dell_Logo.svg.png",
+                "Yazaki": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Yazaki_logo.svg/320px-Yazaki_logo.svg.png",
+                "Stellantis": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Stellantis.svg/320px-Stellantis.svg.png",
+                "Attijariwafa": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Attijariwafa_Bank_logo.svg/320px-Attijariwafa_Bank_logo.svg.png",
+                "Inwi": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Inwi_logo.svg/320px-Inwi_logo.svg.png"
+            };
+            // Check match
+            const key = Object.keys(logos).find(k => companyName.includes(k));
+            if (key) return `<img src="${logos[key]}" class="w-12 h-12 rounded bg-white border border-gray-100 object-contain p-1">`;
+            return `<div class="w-12 h-12 rounded bg-white border border-gray-200 flex items-center justify-center font-bold text-gray-700 shrink-0 text-xl uppercase">${companyName.charAt(0)}</div>`;
         }
 
         function renderJobs(arr) {
@@ -337,7 +347,9 @@
             container.innerHTML = arr.map((j, idx) => {
                 const timeText = j.posted === 0 ? (currentLang === 'ar' ? 'اليوم' : 'Today') : `${currentLang === 'ar' ? '' : i18n[currentLang].posted} ${j.posted}d ${i18n[currentLang].ago}`;
                 let adBlock = ''; if(idx === 4) { adBlock = `<div class="ad-container py-4 my-4"><span class="ad-label">Sponsored</span><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3965710509874164" data-ad-slot="REPLACE_WITH_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script></div>`; }
-                return `${adBlock}<div class="bg-white dark:bg-dark-card p-5 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-morocco-green hover:shadow-lg transition-all animate-fade-in group relative" style="animation-delay: ${idx * 0.05}s">${j.urgent ? `<span class="absolute top-0 right-0 bg-red-100 text-morocco-red text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-lg uppercase tracking-wide"><i class="fa-solid fa-fire mr-1"></i>${i18n[currentLang].urgent}</span>` : ''}<div class="flex gap-4"><div class="w-12 h-12 rounded bg-white border border-gray-200 flex items-center justify-center font-bold text-gray-700 shrink-0 text-xl">${j.company[0]}</div><div class="flex-1"><h3 class="font-bold text-lg text-gray-800 dark:text-white group-hover:text-morocco-green transition-colors mb-0.5">${j.title}</h3><div class="text-sm text-gray-700 dark:text-gray-300 mb-2">${j.company} <span class="text-xs text-gray-400">★ ${j.rating}</span></div><div class="text-sm text-gray-500 mb-3 flex items-center gap-1"><i class="fa-solid fa-location-dot text-xs"></i> ${j.location}</div><div class="flex flex-wrap gap-2 mb-3"><span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-bold px-2 py-1 rounded flex items-center gap-1"><i class="fa-solid fa-money-bill-wave"></i> ${j.salary}</span></div><div class="text-xs text-gray-400 mb-4">${timeText}</div><div class="flex gap-3"><a href="${j.link}" target="_blank" class="flex-1 bg-morocco-green text-white text-center py-2.5 rounded-lg text-sm font-bold hover:bg-morocco-darkGreen transition shadow-sm flex items-center justify-center gap-2">${i18n[currentLang].applyOn} ${j.sourceName} <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a><button onclick="window.toggleSave(${j.id})" class="px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-400 hover:text-morocco-red hover:border-morocco-red transition"><i class="fa-regular fa-heart text-lg"></i></button></div></div></div></div>`;
+                const logoHtml = getCompanyLogo(j.company);
+                
+                return `${adBlock}<div class="bg-white dark:bg-dark-card p-5 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-morocco-green hover:shadow-lg transition-all animate-fade-in group relative cursor-pointer" onclick="window.open('${j.link}', '_blank')">${j.urgent ? `<span class="absolute top-0 right-0 bg-red-100 text-morocco-red text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-lg uppercase tracking-wide"><i class="fa-solid fa-fire mr-1"></i>${i18n[currentLang].urgent}</span>` : ''}<div class="flex gap-4">${logoHtml}<div class="flex-1"><h3 class="font-bold text-lg text-gray-800 dark:text-white group-hover:text-morocco-green transition-colors mb-0.5">${j.title}</h3><div class="text-sm text-gray-700 dark:text-gray-300 mb-2">${j.company} <span class="text-xs text-gray-400">★ ${j.rating}</span></div><div class="text-sm text-gray-500 mb-3 flex items-center gap-1"><i class="fa-solid fa-location-dot text-xs"></i> ${j.location}</div><div class="flex flex-wrap gap-2 mb-3"><span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-bold px-2 py-1 rounded flex items-center gap-1"><i class="fa-solid fa-money-bill-wave"></i> ${j.salary}</span></div><div class="text-xs text-gray-400 mb-4">${timeText}</div><div class="flex gap-3"><a href="${j.link}" target="_blank" onclick="event.stopPropagation()" class="flex-1 bg-morocco-green text-white text-center py-2.5 rounded-lg text-sm font-bold hover:bg-morocco-darkGreen transition shadow-sm flex items-center justify-center gap-2">${i18n[currentLang].applyOn} ${j.sourceName} <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a><button onclick="window.toggleSave(${j.id}); event.stopPropagation()" class="px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-400 hover:text-morocco-red hover:border-morocco-red transition"><i class="fa-regular fa-heart text-lg"></i></button></div></div></div></div>`;
             }).join('');
         }
 
@@ -345,14 +357,17 @@
         window.toggleSave = async (id) => { if(!auth || !window.currentUser) return window.openAuth(); const job = window.jobs.find(j => j.id === id); await setDoc(doc(db, 'users', window.currentUser.uid, 'saved', id.toString()), job); alert("Job Saved!"); }
         async function loadSavedJobs() { if(!auth || !window.currentUser) return; const snap = await getDocs(collection(db, 'users', window.currentUser.uid, 'saved')); const list = document.getElementById('savedContainer'); list.innerHTML = ''; snap.forEach(d => { const j = d.data(); list.innerHTML += `<div class="p-4 border rounded-xl bg-white dark:bg-gray-800 flex justify-between items-center shadow-sm"><div><div class="font-bold text-gray-800 dark:text-white">${j.title}</div><div class="text-sm text-gray-500">${j.company}</div></div><a href="${j.link}" target="_blank" class="text-morocco-green font-bold text-sm border border-morocco-green px-3 py-1 rounded hover:bg-green-50">Apply</a></div>`; }); }
 
+        function renderCategories() {
+            // Just re-renders text labels if lang changes (Hardcoded HTML handles structure)
+            const labels = { 'cat_prod': i18n[window.currentLang].cat_prod, 'cat_tech': i18n[window.currentLang].cat_tech, 'cat_eng': i18n[window.currentLang].cat_eng, 'cat_transport': i18n[window.currentLang].cat_transport, 'cat_it': i18n[window.currentLang].cat_it, 'cat_sales': i18n[window.currentLang].cat_sales };
+            // We rely on static HTML + Lang Update logic above to swap text
+        }
+
         // STARTUP
         window.onload = () => { 
             if(localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
             window.setLang(window.currentLang); 
-            // Force Backup Data immediately to guarantee UI population
-            generateBackupData();
-            // Then try to load real data
-            window.initData();
+            window.initData(); 
         };
     </script>
 </body>
