@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proleefic | Morocco's #1 Job Platform</title>
     <meta name="description" content="Find jobs in Morocco. Recrutement, Offres d'emploi, Techniciens, Ingénieurs.">
-    
     <meta name="google-site-verification" content="M-uhenO_P6Qo7uM7MJrFy99ymzklCvnOq0dN9aNdjME" />
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23006233%22><path d=%22M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z%22/></svg>">
@@ -13,7 +12,7 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3965710509874164" crossorigin="anonymous"></script>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
@@ -25,214 +24,185 @@
                     colors: { 
                         morocco: { red: '#C1272D', green: '#006233', darkRed: '#8a1c21', darkGreen: '#004d28' },
                         dark: { bg: '#0F172A', card: '#1E293B' }
-                    },
-                    animation: { 'fade-in': 'fadeIn 0.4s ease-out' },
-                    keyframes: { fadeIn: { '0%': { opacity: '0', transform: 'translateY(10px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } } }
+                    }
                 }
             }
         }
     </script>
 
     <style>
-        body { transition: background-color 0.3s, color 0.3s; }
+        /* SMOOTH TRANSITIONS */
+        body { transition: background-color 0.3s ease, color 0.3s ease; }
         [dir="rtl"] body { font-family: 'Cairo', sans-serif; }
+        
+        /* UTILITIES */
         .hidden-view { display: none !important; }
+        .modal-backdrop { background-color: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); transition: opacity 0.3s ease; }
         .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid #e5e7eb; }
         .dark .glass-nav { background: rgba(15, 23, 42, 0.95); border-bottom: 1px solid #1e293b; }
-        .input-pro { @apply w-full px-5 py-3.5 rounded-xl border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-morocco-green focus:border-transparent transition-all outline-none font-medium text-gray-900 dark:text-white; }
-        .ad-container { @apply bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl overflow-hidden flex flex-col items-center justify-center text-center relative; }
-        .ad-label { @apply text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block pt-2; }
+        
+        /* SCROLLBAR */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
         .dark ::-webkit-scrollbar-thumb { background: #475569; }
     </style>
 </head>
-<body class="bg-[#f8f9fa] dark:bg-[#0f1115] text-gray-900 dark:text-gray-100">
+<body class="bg-gray-50 dark:bg-[#0f1115] text-gray-900 dark:text-gray-100">
 
     <nav class="glass-nav sticky top-0 z-50 shadow-sm border-t-4 border-morocco-green">
         <div class="container mx-auto px-4 h-[72px] flex items-center justify-between">
-            <div class="flex items-center gap-3 cursor-pointer group" onclick="switchView('home')">
+            <div class="flex items-center gap-3 cursor-pointer group" onclick="window.location.reload()">
                 <div class="relative w-10 h-10 flex items-center justify-center bg-white border border-gray-100 rounded-lg shadow-sm">
-                    <i class="fa-solid fa-star text-morocco-green text-2xl absolute animate-pulse"></i>
+                    <i class="fa-solid fa-star text-morocco-green text-2xl absolute"></i>
                 </div>
                 <div class="leading-tight">
                     <span class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Proleefic</span>
                     <span class="text-[10px] font-bold text-morocco-red block uppercase tracking-wider">Morocco 🇲🇦</span>
                 </div>
             </div>
-            <div class="flex items-center gap-3 sm:gap-5">
-                <div class="flex bg-gray-100 dark:bg-gray-800 rounded-lg p-1 hidden sm:flex">
-                    <button onclick="setLang('en')" class="lang-btn px-2 py-1 text-xs font-bold rounded transition" id="lang-en">EN</button>
-                    <button onclick="setLang('fr')" class="lang-btn px-2 py-1 text-xs font-bold rounded transition" id="lang-fr">FR</button>
-                    <button onclick="setLang('ar')" class="lang-btn px-2 py-1 text-xs font-bold rounded transition" id="lang-ar">عربي</button>
+            <div class="flex items-center gap-3">
+                <div class="hidden sm:flex bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
+                    <button onclick="setLang('en')" class="px-2 py-1 text-xs font-bold rounded transition" id="lang-en">EN</button>
+                    <button onclick="setLang('fr')" class="px-2 py-1 text-xs font-bold rounded transition" id="lang-fr">FR</button>
+                    <button onclick="setLang('ar')" class="px-2 py-1 text-xs font-bold rounded transition" id="lang-ar">عربي</button>
                 </div>
-                <button onclick="toggleTheme()" class="text-gray-500 hover:text-morocco-green transition w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
-                    <i class="fa-solid fa-moon dark:hidden text-lg"></i>
-                    <i class="fa-solid fa-sun hidden dark:inline text-yellow-400 text-lg"></i>
+                
+                <button onclick="toggleTheme()" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:inline text-yellow-400"></i>
                 </button>
-                <div id="authSection" class="flex items-center gap-3">
-                    <button onclick="openAuth()" class="bg-morocco-green text-white px-5 py-2 rounded-lg font-bold text-sm hover:bg-morocco-darkGreen transition shadow-sm">Sign In</button>
+                
+                <div id="authSection">
+                    <button onclick="openAuth()" class="bg-morocco-green text-white px-5 py-2 rounded-lg font-bold text-sm hover:bg-morocco-darkGreen transition shadow-sm" data-i18n="loginBtn">Sign In</button>
                 </div>
             </div>
         </div>
     </nav>
 
     <div id="homeView" class="view-section pb-20">
-        <div class="bg-white dark:bg-dark-card border-b border-gray-200 dark:border-gray-800 pt-12 pb-16 px-4 relative overflow-hidden">
-            <i class="fa-solid fa-star text-morocco-green opacity-5 text-9xl absolute -top-10 -right-10 rotate-12 pointer-events-none"></i>
-            <div class="container mx-auto max-w-5xl relative z-10">
-                <h1 class="text-4xl md:text-5xl font-bold mb-8 text-center" data-i18n="heroTitle">Find the job that fits your life</h1>
-                <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-xl shadow-green-900/5 border border-gray-200 dark:border-gray-700 flex flex-col md:flex-row gap-2">
-                    <div class="flex-1 relative group">
-                        <label class="absolute left-4 top-2 text-[10px] font-bold text-gray-400 uppercase tracking-wider group-focus-within:text-morocco-green rtl:right-4 rtl:left-auto" data-i18n="whatLabel">What</label>
-                        <input type="text" id="mainSearch" class="w-full pt-6 pb-2 px-4 rounded-lg bg-transparent outline-none font-bold text-gray-800 dark:text-white" data-placeholder="searchPlaceholder">
-                    </div>
-                    <div class="w-px bg-gray-200 dark:bg-gray-700 my-2 hidden md:block"></div>
-                    <div class="flex-1 relative group">
-                        <label class="absolute left-4 top-2 text-[10px] font-bold text-gray-400 uppercase tracking-wider group-focus-within:text-morocco-green rtl:right-4 rtl:left-auto" data-i18n="whereLabel">Where</label>
-                        <select id="locationFilter" class="w-full pt-6 pb-2 px-4 rounded-lg bg-transparent outline-none font-bold text-gray-800 dark:text-white cursor-pointer appearance-none"></select>
-                    </div>
-                    <button onclick="filter()" class="bg-morocco-green hover:bg-morocco-darkGreen text-white px-8 py-3 rounded-lg font-bold text-lg transition shadow-md whitespace-nowrap" data-i18n="searchBtn">Find Jobs</button>
+        <div class="bg-white dark:bg-dark-card border-b border-gray-200 dark:border-gray-800 pt-12 pb-16 px-4">
+            <div class="container mx-auto max-w-4xl text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-8" data-i18n="heroTitle">Find the job that fits your life</h1>
+                <div class="bg-white dark:bg-gray-800 p-2 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 flex flex-col md:flex-row gap-2">
+                    <input type="text" id="mainSearch" class="flex-1 p-4 rounded-lg bg-transparent outline-none font-bold text-gray-800 dark:text-white" placeholder="Job title...">
+                    <div class="w-px bg-gray-200 dark:bg-gray-700 hidden md:block"></div>
+                    <select id="locationFilter" class="flex-1 p-4 rounded-lg bg-transparent outline-none font-bold text-gray-800 dark:text-white cursor-pointer"><option value="">All Cities</option></select>
+                    <button onclick="filter()" class="bg-morocco-green text-white px-8 py-3 rounded-lg font-bold text-lg transition hover:bg-morocco-darkGreen" data-i18n="searchBtn">Find</button>
                 </div>
-            </div>
-        </div>
-
-        <div class="container mx-auto px-4 mt-6">
-            <div class="ad-container py-4">
-                <span class="ad-label">Advertisement</span>
-                <ins class="adsbygoogle" style="display:block; width:100%; max-height:150px" data-ad-client="ca-pub-3965710509874164" data-ad-slot="1234567890" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
-                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
             </div>
         </div>
 
         <div class="container mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <aside class="hidden lg:block lg:col-span-3 space-y-6">
-                <div class="bg-white dark:bg-dark-card rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden">
-                    <div class="p-4 border-b border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800"><h3 class="font-bold text-sm uppercase text-gray-500" data-i18n="categories">Job Categories</h3></div>
-                    <div id="categoryList" class="max-h-[400px] overflow-y-auto">
-                        <button onclick="filterCat('cat_prod')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-industry"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Production & Industrie</span></button>
-                        <button onclick="filterCat('cat_tech')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-wrench"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Techniciens & Maintenance</span></button>
-                        <button onclick="filterCat('cat_eng')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-helmet-safety"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Ingénierie & BTP</span></button>
-                        <button onclick="filterCat('cat_transport')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-truck"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Transport & Logistique</span></button>
-                        <button onclick="filterCat('cat_it')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-laptop-code"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Informatique & Digital</span></button>
-                        <button onclick="filterCat('cat_sales')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-briefcase"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Commercial & Vente</span></button>
-                    </div>
+            <aside class="hidden lg:block lg:col-span-3">
+                <div class="bg-white dark:bg-dark-card rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden sticky top-24">
+                    <div class="p-4 border-b border-gray-100 dark:border-gray-700 font-bold" data-i18n="categories">Categories</div>
+                    <div id="categoryList" class="max-h-[400px] overflow-y-auto p-2 space-y-1">
+                        </div>
                 </div>
             </aside>
 
-            <main class="lg:col-span-6 space-y-4">
-                <div class="flex justify-between items-center mb-2">
-                    <h2 class="font-bold text-xl"><span data-i18n="feedTitle">Job Feed</span> <span class="text-gray-400 text-sm font-normal ml-2" id="jobCount">Loading...</span></h2>
+            <main class="lg:col-span-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="font-bold text-xl"><span data-i18n="feedTitle">Job Feed</span> <span class="text-gray-400 text-sm ml-2" id="jobCount">...</span></h2>
                 </div>
                 <div id="jobListings" class="space-y-3"></div>
-                <button onclick="window.initData()" class="w-full py-4 text-morocco-green font-bold hover:bg-green-50 dark:hover:bg-green-900/20 rounded-xl transition" data-i18n="loadMore">Refresh Jobs</button>
+                <button onclick="window.location.reload()" class="w-full mt-6 py-4 text-morocco-green font-bold hover:bg-green-50 dark:hover:bg-green-900/20 rounded-xl transition" data-i18n="loadMore">Refresh Jobs</button>
             </main>
 
-            <aside class="hidden lg:block lg:col-span-3 space-y-6">
-                <div class="ad-container min-h-[300px] sticky top-24">
-                    <span class="ad-label">Sponsored</span>
-                    <ins class="adsbygoogle" style="display:block; width:100%" data-ad-client="ca-pub-3965710509874164" data-ad-slot="1234567890" data-ad-format="rectangle" data-full-width-responsive="true"></ins>
-                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                </div>
+            <aside class="hidden lg:block lg:col-span-3">
+                <div class="ad-container min-h-[300px] bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center sticky top-24">
+                    <span class="text-xs text-gray-400 uppercase">Sponsored</span>
+                    </div>
             </aside>
         </div>
     </div>
 
-    <div id="jobDetailModal" class="hidden-view fixed inset-0 z-[80] flex items-end sm:items-center justify-center bg-black/60 backdrop-blur-sm p-0 sm:p-4 transition-opacity animate-fade-in">
-        <div class="bg-white dark:bg-dark-card w-full max-w-2xl rounded-t-3xl sm:rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 flex flex-col max-h-[90vh]">
-            
-            <div class="p-6 border-b border-gray-100 dark:border-gray-700 flex justify-between items-start">
+    <div id="jobDetailModal" class="hidden-view fixed inset-0 z-[80] modal-backdrop flex items-end sm:items-center justify-center p-0 sm:p-4" onclick="if(event.target === this) closeJobModal()">
+        <div class="bg-white dark:bg-dark-card w-full max-w-2xl rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col max-h-[90vh] animate-[fadeIn_0.3s_ease-out]">
+            <div class="p-6 border-b border-gray-100 dark:border-gray-700 flex justify-between">
                 <div class="flex gap-4">
                     <div id="modalLogo" class="w-16 h-16"></div>
                     <div>
-                        <h2 id="modalTitle" class="text-xl font-bold dark:text-white leading-tight">Job Title</h2>
-                        <p id="modalCompany" class="text-morocco-green font-medium mt-1">Company Name</p>
-                        <div class="flex items-center gap-3 mt-2 text-xs text-gray-500">
-                            <span id="modalLocation"><i class="fa-solid fa-location-dot"></i> Location</span>
-                            <span id="modalDate"><i class="fa-regular fa-clock"></i> Posted</span>
-                        </div>
+                        <h2 id="modalTitle" class="text-xl font-bold dark:text-white leading-tight"></h2>
+                        <p id="modalCompany" class="text-morocco-green font-medium"></p>
+                        <p id="modalLocation" class="text-gray-500 text-sm"></p>
                     </div>
                 </div>
-                <button onclick="closeJobModal()" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-red-50 hover:text-red-500 transition">✕</button>
+                <button onclick="closeJobModal()" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:text-red-500">✕</button>
             </div>
-
-            <div class="p-6 overflow-y-auto flex-1">
-                <div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl mb-6">
-                    <div class="grid grid-cols-2 gap-4 text-sm">
-                        <div><span class="block text-gray-400 text-xs uppercase">Salary</span><b id="modalSalary" class="dark:text-white">Confidential</b></div>
-                        <div><span class="block text-gray-400 text-xs uppercase">Job Type</span><b class="dark:text-white">Full Time / CDI</b></div>
-                        <div><span class="block text-gray-400 text-xs uppercase">Sector</span><b id="modalCat" class="dark:text-white">Industry</b></div>
-                        <div><span class="block text-gray-400 text-xs uppercase">Source</span><b id="modalSource" class="text-blue-500">Source</b></div>
-                    </div>
+            <div class="p-6 overflow-y-auto">
+                <div class="grid grid-cols-2 gap-4 mb-6 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl text-sm">
+                    <div><span class="text-gray-400 text-xs uppercase">Salary</span><br><b id="modalSalary" class="dark:text-white"></b></div>
+                    <div><span class="text-gray-400 text-xs uppercase">Source</span><br><b id="modalSource" class="text-blue-500"></b></div>
                 </div>
-
-                <h3 class="font-bold text-lg mb-3 dark:text-white">Description</h3>
-                <p id="modalDesc" class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6">
-                    </p>
-
-                <div class="border-t border-gray-100 dark:border-gray-700 pt-4">
-                    <h3 class="font-bold text-sm mb-3 dark:text-white">Requirements</h3>
-                    <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-morocco-green"></i> Diplôme (Technicien / Ingénieur / Qualifié)</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-morocco-green"></i> Experience in similar industrial environment</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-morocco-green"></i> Motivation and teamwork skills</li>
-                    </ul>
-                </div>
+                <h3 class="font-bold text-lg mb-2 dark:text-white">Description</h3>
+                <p id="modalDesc" class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed"></p>
             </div>
-
-            <div class="p-4 border-t border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 rounded-b-3xl flex gap-3">
-                <button id="modalSaveBtn" class="px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-500 hover:text-morocco-red hover:border-morocco-red transition"><i class="fa-regular fa-heart text-xl"></i></button>
-                <a id="modalApplyBtn" href="#" target="_blank" class="flex-1 bg-morocco-green text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-morocco-darkGreen transition shadow-lg">
-                    Apply on Source <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
+            <div class="p-4 border-t border-gray-100 dark:border-gray-700 flex gap-3">
+                <a id="modalApplyBtn" href="#" target="_blank" class="flex-1 bg-morocco-green text-white font-bold rounded-xl flex items-center justify-center py-3 hover:bg-morocco-darkGreen transition">Apply Now <i class="fa-solid fa-external-link-alt ml-2"></i></a>
             </div>
         </div>
     </div>
 
-    <div id="authView" class="hidden-view view-section fixed inset-0 z-[90] bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white dark:bg-dark-card w-full max-w-[480px] rounded-2xl shadow-xl overflow-hidden border border-gray-200 dark:border-gray-700">
-             <button onclick="closeAuth()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-red-100 hover:text-red-500 transition">✕</button>
-             <div class="p-8 pb-0 text-center">
-                <h2 class="text-3xl font-bold mb-2 dark:text-white" data-i18n="authTitle">Welcome Back</h2>
-                <div class="flex p-1 bg-gray-100 dark:bg-gray-800 rounded-xl mb-6 mt-4">
-                    <button onclick="toggleAuthMode('login')" id="tab-login" class="flex-1 py-2.5 rounded-lg text-sm font-bold shadow-sm bg-white dark:bg-gray-700 text-morocco-green transition-all">Log In</button>
-                    <button onclick="toggleAuthMode('signup')" id="tab-signup" class="flex-1 py-2.5 rounded-lg text-sm font-bold text-gray-500 hover:text-gray-900 dark:hover:text-white transition-all">Sign Up</button>
+    <div id="authView" class="hidden-view fixed inset-0 z-[90] modal-backdrop flex items-center justify-center p-4" onclick="if(event.target === this) closeAuth()">
+        <div class="bg-white dark:bg-dark-card w-full max-w-md rounded-2xl shadow-2xl overflow-hidden relative animate-[fadeIn_0.3s_ease-out]">
+            <button onclick="closeAuth()" class="absolute top-4 right-4 text-gray-400 hover:text-red-500">✕</button>
+            
+            <div class="p-8 pb-0 text-center">
+                <h2 class="text-2xl font-bold mb-2 dark:text-white" data-i18n="authTitle">Welcome Back</h2>
+                <div class="flex bg-gray-100 dark:bg-gray-800 p-1 rounded-xl mt-4 mb-6">
+                    <button onclick="toggleAuthMode('login')" id="tab-login" class="flex-1 py-2 text-sm font-bold rounded-lg bg-white text-morocco-green shadow-sm transition">Log In</button>
+                    <button onclick="toggleAuthMode('signup')" id="tab-signup" class="flex-1 py-2 text-sm font-bold rounded-lg text-gray-500 transition">Sign Up</button>
                 </div>
             </div>
+
             <div class="px-8 pb-8">
-                <div id="authError" class="hidden bg-red-50 text-red-600 text-sm p-3 rounded-lg mb-4">Error</div>
+                <div id="authMsg" class="hidden p-3 rounded-lg mb-4 text-sm text-center"></div>
+
                 <form id="loginForm" onsubmit="window.handleEmailLogin(event)" class="space-y-4">
-                    <input type="email" id="loginEmail" class="input-pro" placeholder="Email" required>
-                    <input type="password" id="loginPass" class="input-pro" placeholder="Password" required>
-                    <button type="submit" class="w-full bg-morocco-green text-white py-3.5 rounded-xl font-bold shadow-lg">Sign In</button>
+                    <input type="email" id="loginEmail" class="w-full px-4 py-3 rounded-lg border dark:border-gray-600 dark:bg-gray-800 dark:text-white outline-none focus:ring-2 focus:ring-morocco-green" placeholder="Email" required>
+                    <input type="password" id="loginPass" class="w-full px-4 py-3 rounded-lg border dark:border-gray-600 dark:bg-gray-800 dark:text-white outline-none focus:ring-2 focus:ring-morocco-green" placeholder="Password" required>
+                    <div class="text-right">
+                        <button type="button" onclick="window.handlePasswordReset()" class="text-xs text-morocco-green font-bold hover:underline">Forgot Password?</button>
+                    </div>
+                    <button type="submit" class="w-full bg-morocco-green text-white py-3 rounded-lg font-bold hover:bg-morocco-darkGreen transition">Sign In</button>
                 </form>
+
                 <form id="signupForm" onsubmit="window.handleEmailSignup(event)" class="space-y-4 hidden">
-                    <input type="text" id="signupName" class="input-pro" placeholder="Name" required>
-                    <input type="email" id="signupEmail" class="input-pro" placeholder="Email" required>
-                    <input type="password" id="signupPass" class="input-pro" placeholder="Password" required>
-                    <button type="submit" class="w-full bg-morocco-red text-white py-3.5 rounded-xl font-bold shadow-lg">Create Account</button>
+                    <input type="text" id="signupName" class="w-full px-4 py-3 rounded-lg border dark:border-gray-600 dark:bg-gray-800 dark:text-white outline-none focus:ring-2 focus:ring-morocco-green" placeholder="Full Name" required>
+                    <input type="email" id="signupEmail" class="w-full px-4 py-3 rounded-lg border dark:border-gray-600 dark:bg-gray-800 dark:text-white outline-none focus:ring-2 focus:ring-morocco-green" placeholder="Email" required>
+                    <input type="password" id="signupPass" class="w-full px-4 py-3 rounded-lg border dark:border-gray-600 dark:bg-gray-800 dark:text-white outline-none focus:ring-2 focus:ring-morocco-green" placeholder="Create Password" required>
+                    <button type="submit" class="w-full bg-morocco-red text-white py-3 rounded-lg font-bold hover:bg-red-700 transition">Create Account</button>
                 </form>
-                <div class="text-center mt-4"><button onclick="window.loginGoogle()" class="text-sm text-gray-500 underline">Or use Google</button></div>
+
+                <div class="text-center my-4 text-xs text-gray-400 font-bold">OR CONTINUE WITH</div>
+                
+                <button onclick="window.loginGoogle()" class="w-full border border-gray-300 dark:border-gray-600 py-3 rounded-lg font-bold flex items-center justify-center gap-3 hover:bg-gray-50 dark:hover:bg-gray-800 transition dark:text-white">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                    Google
+                </button>
             </div>
         </div>
     </div>
 
-    <div id="profileView" class="hidden-view view-section container mx-auto px-4 py-10 min-h-screen">
-        <div class="max-w-4xl mx-auto">
+    <div id="profileView" class="hidden-view container mx-auto px-4 py-10">
+        <div class="max-w-3xl mx-auto">
             <button onclick="switchView('home')" class="mb-6 flex items-center gap-2 text-gray-500 hover:text-morocco-green font-bold"><i class="fa-solid fa-arrow-left"></i> Back</button>
-            <div class="bg-white dark:bg-dark-card rounded-2xl shadow p-8 mb-8 border-t-4 border-morocco-green">
-                <h1 class="text-2xl font-bold dark:text-white" id="userName">User</h1>
-                <p class="text-gray-500" id="userEmail">email</p>
-                <button onclick="window.logout()" class="mt-4 text-red-500 font-bold">Logout</button>
+            <div class="bg-white dark:bg-dark-card rounded-2xl shadow p-6 border-t-4 border-morocco-green flex items-center justify-between">
+                <div>
+                    <h1 class="text-2xl font-bold dark:text-white" id="userName">User</h1>
+                    <p class="text-gray-500" id="userEmail">email</p>
+                </div>
+                <button onclick="window.logout()" class="text-red-500 border border-red-200 px-4 py-2 rounded-lg hover:bg-red-50 font-bold">Logout</button>
             </div>
-            <h2 class="text-xl font-bold mb-4 dark:text-white">Saved Jobs</h2>
-            <div id="savedContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+            <h2 class="text-xl font-bold mt-8 mb-4 dark:text-white">My Saved Jobs</h2>
+            <div id="savedContainer" class="grid gap-4"></div>
         </div>
     </div>
 
     <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-12">
         <div class="container mx-auto px-4 py-8 text-center text-xs text-gray-400">
-            &copy; 2025 Proleefic.ma <a href="privacy.html" class="ml-4 hover:text-morocco-green">Privacy</a>
+            &copy; 2025 Proleefic.ma <span class="mx-2">•</span> <a href="privacy.html" class="hover:text-morocco-green">Privacy</a>
         </div>
     </footer>
 
@@ -242,125 +212,128 @@
         import { getFirestore, doc, setDoc, deleteDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
         const firebaseConfig = { apiKey: "AIzaSyBsPi64Eb0GQnGjcxg6n6YRFbG-iO9K_pM", authDomain: "proleefic-85800.firebaseapp.com", projectId: "proleefic-85800", storageBucket: "proleefic-85800.firebasestorage.app", messagingSenderId: "1033605555868", appId: "1:1033605555868:web:577ff42f0bcfb0b6122f59", measurementId: "G-WJ4XKS01P0" };
-        let app, auth, db; try { app = initializeApp(firebaseConfig); auth = getAuth(app); db = getFirestore(app); } catch (e) { console.error(e); }
         
-        const i18n = { en: { heroTitle: "Find the job that fits your life", whatLabel: "What", whereLabel: "Where", searchBtn: "Find Jobs", feedTitle: "Job Feed", loadMore: "Refresh Jobs", loginBtn: "Sign In", authTitle: "Welcome Back", authSub: "Login to save jobs." }, fr: { heroTitle: "Trouvez le job idéal", whatLabel: "Quoi", whereLabel: "Où", searchBtn: "Rechercher", feedTitle: "Offres", loadMore: "Actualiser", loginBtn: "Connexion", authTitle: "Bienvenue", authSub: "Connectez-vous." }, ar: { heroTitle: "جد وظيفتك الآن", whatLabel: "ماذا", whereLabel: "أين", searchBtn: "بحث", feedTitle: "الوظائف", loadMore: "تحديث", loginBtn: "دخول", authTitle: "مرحباً", authSub: "سجل الدخول" } };
+        let app, auth, db;
+        try { app = initializeApp(firebaseConfig); auth = getAuth(app); db = getFirestore(app); } catch (e) { console.error(e); }
+
+        const i18n = {
+            en: { heroTitle: "Find your dream job in Morocco", whatLabel: "What", whereLabel: "Where", searchBtn: "Find Jobs", categories: "Categories", feedTitle: "Latest Jobs", loadMore: "Refresh", loginBtn: "Sign In", authTitle: "Welcome", authSub: "Login to apply.", cat_prod: "Production", cat_tech: "Technician", cat_eng: "Engineering", cat_transport: "Transport", cat_it: "IT & Digital", cat_sales: "Sales" },
+            fr: { heroTitle: "Trouvez le job idéal au Maroc", whatLabel: "Quoi", whereLabel: "Où", searchBtn: "Rechercher", categories: "Catégories", feedTitle: "Dernières Offres", loadMore: "Actualiser", loginBtn: "Connexion", authTitle: "Bienvenue", authSub: "Connectez-vous pour postuler.", cat_prod: "Production & Industrie", cat_tech: "Techniciens", cat_eng: "Ingénierie", cat_transport: "Transport", cat_it: "Informatique", cat_sales: "Commercial" },
+            ar: { heroTitle: "جد الوظيفة المناسبة لك", whatLabel: "ماذا", whereLabel: "أين", searchBtn: "بحث", categories: "التصنيفات", feedTitle: "آخر الوظائف", loadMore: "تحديث", loginBtn: "دخول", authTitle: "مرحباً", authSub: "سجل الدخول", cat_prod: "الإنتاج", cat_tech: "تقني", cat_eng: "هندسة", cat_transport: "نقل", cat_it: "معلوميات", cat_sales: "تجارة" }
+        };
+
         window.currentLang = localStorage.getItem('lang') || 'en';
         window.currentUser = null;
         window.jobs = [];
 
-        window.setLang = (lang) => { window.currentLang = lang; localStorage.setItem('lang', lang); document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr'); if(window.jobs.length) renderJobs(window.jobs); };
+        // --- UI FUNCTIONS ---
+        window.setLang = (lang) => {
+            window.currentLang = lang; localStorage.setItem('lang', lang); document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+            document.querySelectorAll('.lang-btn').forEach(b => { b.classList.remove('bg-white', 'dark:bg-gray-700', 'text-morocco-green', 'shadow-sm'); b.classList.add('text-gray-500'); });
+            document.getElementById('lang-'+lang)?.classList.add('bg-white', 'dark:bg-gray-700', 'text-morocco-green', 'shadow-sm');
+            document.getElementById('lang-'+lang)?.classList.remove('text-gray-500');
+            document.querySelectorAll('[data-i18n]').forEach(el => { if(i18n[lang][el.getAttribute('data-i18n')]) el.innerText = i18n[lang][el.getAttribute('data-i18n')]; });
+            renderCategories();
+        };
         window.toggleTheme = () => { document.documentElement.classList.toggle('dark'); localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light'); };
         window.switchView = (v) => { document.querySelectorAll('.view-section').forEach(e => e.classList.add('hidden-view')); document.getElementById(v+'View').classList.remove('hidden-view'); window.scrollTo(0,0); };
-        
         window.openAuth = () => document.getElementById('authView').classList.remove('hidden-view');
         window.closeAuth = () => document.getElementById('authView').classList.add('hidden-view');
-        window.toggleAuthMode = (mode) => { const l = document.getElementById('loginForm'), s = document.getElementById('signupForm'), tl = document.getElementById('tab-login'), ts = document.getElementById('tab-signup'); if(mode==='login'){l.classList.remove('hidden');s.classList.add('hidden');tl.classList.add('text-morocco-green');ts.classList.remove('text-morocco-green');}else{l.classList.add('hidden');s.classList.remove('hidden');ts.classList.add('text-morocco-green');tl.classList.remove('text-morocco-green');} };
-        
-        window.handleEmailLogin = (e) => { e.preventDefault(); signInWithEmailAndPassword(auth, document.getElementById('loginEmail').value, document.getElementById('loginPass').value).then(() => {window.closeAuth(); window.switchView('profile');}).catch(e=>alert(e.message)); };
-        window.handleEmailSignup = (e) => { e.preventDefault(); createUserWithEmailAndPassword(auth, document.getElementById('signupEmail').value, document.getElementById('signupPass').value).then(() => {window.closeAuth(); window.switchView('profile');}).catch(e=>alert(e.message)); };
-        window.loginGoogle = () => { signInWithPopup(auth, new GoogleAuthProvider()).then(() => {window.closeAuth(); window.switchView('profile');}).catch(e=>alert(e.message)); };
-        window.logout = () => signOut(auth).then(() => window.switchView('home'));
-        if(auth) onAuthStateChanged(auth, (u) => { window.currentUser = u; if(u) { document.getElementById('authSection').innerHTML = `<button onclick="switchView('profile')" class="w-8 h-8 rounded-full bg-morocco-red text-white font-bold">${u.displayName?u.displayName[0]:'U'}</button>`; loadSavedJobs(); } else { document.getElementById('authSection').innerHTML = `<button onclick="openAuth()" class="bg-morocco-green text-white px-5 py-2 rounded-lg font-bold text-sm">Sign In</button>`; } });
-
-        // --- JOB DETAILS MODAL LOGIC ---
-        window.openJobDetails = (id) => {
-            const j = window.jobs.find(x => x.id === id);
-            if(!j) return;
-            
-            // Populate Modal
-            document.getElementById('modalLogo').innerHTML = getCompanyLogo(j.company).replace('w-12','w-full').replace('h-12','h-full');
-            document.getElementById('modalTitle').innerText = j.title;
-            document.getElementById('modalCompany').innerText = j.company;
-            document.getElementById('modalLocation').innerText = j.location;
-            document.getElementById('modalDate').innerText = "Posted Today";
-            document.getElementById('modalSalary').innerText = j.salary;
-            document.getElementById('modalSource').innerText = j.sourceName;
-            document.getElementById('modalApplyBtn').href = j.link;
-            
-            // Smart Descriptions (Because we don't scrape full text)
-            const catDesc = {
-                'cat_prod': "We are looking for a motivated Production Operator/Worker to join our industrial unit. Responsibilities include assembly line operations, quality checks, and adhering to safety protocols.",
-                'cat_tech': "Seeking a qualified Technician for maintenance and troubleshooting of industrial equipment. Electrical or Mechanical background required.",
-                'cat_eng': "Engineering position open for a structured industrial environment. Project management and process optimization skills are key.",
-                'cat_transport': "Driver / Logistics coordinator needed for transport operations. Valid permit required."
-            };
-            document.getElementById('modalDesc').innerText = catDesc[j.catId] || "Click Apply to see full details on the recruiter's website.";
-
-            document.getElementById('jobDetailModal').classList.remove('hidden-view');
-        };
         window.closeJobModal = () => document.getElementById('jobDetailModal').classList.add('hidden-view');
+        
+        // --- AUTH LOGIC ---
+        window.toggleAuthMode = (mode) => {
+            const l=document.getElementById('loginForm'), s=document.getElementById('signupForm'), tl=document.getElementById('tab-login'), ts=document.getElementById('tab-signup');
+            if(mode==='login'){l.classList.remove('hidden');s.classList.add('hidden');tl.classList.add('bg-white','text-morocco-green');tl.classList.remove('text-gray-500');ts.classList.remove('bg-white','text-morocco-green');ts.classList.add('text-gray-500');}
+            else{l.classList.add('hidden');s.classList.remove('hidden');ts.classList.add('bg-white','text-morocco-green');ts.classList.remove('text-gray-500');tl.classList.remove('bg-white','text-morocco-green');tl.classList.add('text-gray-500');}
+        }
+        window.showMessage = (msg, type='error') => {
+            const box = document.getElementById('authMsg'); box.className = type==='error' ? 'bg-red-100 text-red-600' : 'bg-green-100 text-green-600';
+            box.innerText = msg; box.classList.remove('hidden');
+        }
+        window.handlePasswordReset = () => { 
+            const email = document.getElementById('loginEmail').value; if(!email) return window.showMessage("Enter email first.");
+            sendPasswordResetEmail(auth, email).then(()=>window.showMessage("Reset email sent!", 'success')).catch(e=>window.showMessage(e.message)); 
+        }
+        window.handleEmailLogin = (e) => { e.preventDefault(); signInWithEmailAndPassword(auth, document.getElementById('loginEmail').value, document.getElementById('loginPass').value).then(()=>window.closeAuth()).catch(e=>window.showMessage(e.message)); }
+        window.handleEmailSignup = (e) => { e.preventDefault(); const n=document.getElementById('signupName').value; createUserWithEmailAndPassword(auth, document.getElementById('signupEmail').value, document.getElementById('signupPass').value).then(r=>{updateProfile(r.user,{displayName:n}); window.closeAuth();}).catch(e=>window.showMessage(e.message)); }
+        window.loginGoogle = () => { signInWithPopup(auth, new GoogleAuthProvider()).then(()=>window.closeAuth()).catch(e=>window.showMessage(e.message)); }
+        window.logout = () => signOut(auth).then(()=>window.switchView('home'));
+        
+        if(auth) onAuthStateChanged(auth, u => { window.currentUser=u; document.getElementById('authSection').innerHTML = u ? `<button onclick="switchView('profile')" class="w-8 h-8 rounded-full bg-morocco-red text-white font-bold">${u.displayName?u.displayName[0]:'U'}</button>` : `<button onclick="openAuth()" class="bg-morocco-green text-white px-5 py-2 rounded-lg font-bold text-sm shadow-sm" data-i18n="loginBtn">${i18n[window.currentLang].loginBtn}</button>`; if(u){document.getElementById('userName').innerText=u.displayName;document.getElementById('userEmail').innerText=u.email;loadSavedJobs();} });
 
+        // --- DATA & RENDERING ---
         window.initData = async () => {
+            const loc = document.getElementById('locationFilter');
+            if(loc) loc.innerHTML = `<option value="">${i18n[window.currentLang].whereLabel}</option>` + ['Casablanca','Tanger','Kenitra','Rabat','Agadir'].map(c=>`<option value="${c}">${c}</option>`).join('');
             try {
                 const res = await fetch('jobs.json?t='+Date.now());
                 if(!res.ok) throw new Error();
                 window.jobs = await res.json();
                 renderJobs(window.jobs);
-                updateCityFilter(window.jobs);
-            } catch (e) { generateBackupData(); }
-        };
-        
-        function updateCityFilter(jobs) {
-            const uniqueCities = [...new Set(jobs.map(j => j.location))].sort();
-            document.getElementById('locationFilter').innerHTML = `<option value="">All Cities</option>` + uniqueCities.map(c => `<option value="${c}">${c}</option>`).join('');
+            } catch { generateBackupData(); }
         }
 
         function generateBackupData() {
-            // Backup with Industrial Focus & Varied Ratings
-            const roles = [("Opérateur Câblage", "cat_prod"), ("Technicien Maintenance", "cat_tech"), ("Ingénieur Qualité", "cat_eng"), ("Magasinier", "cat_transport"), ("Soudeur", "cat_tech")];
-            const comps = ["Renault", "Yazaki", "OCP", "Stellantis", "Lear", "Aptiv"];
-            const cities = ["Tanger", "Kenitra", "Casablanca"];
-            window.jobs = Array.from({length:30}, (_, i) => {
+            const roles = [("Opérateur", "cat_prod", "Tanger"), ("Technicien", "cat_tech", "Kenitra"), ("Chauffeur", "cat_transport", "Casa"), ("Jardinier", "cat_prod", "Rabat"), ("Secrétaire", "cat_admin", "Fes")];
+            const comps = ["Renault", "Yazaki", "OCP", "Particulier", "Société"];
+            window.jobs = Array.from({length:30}, (_,i)=>{
                 const r = roles[Math.floor(Math.random()*roles.length)];
-                return {
-                    id: i, title: r[0], company: comps[Math.floor(Math.random()*comps.length)],
-                    location: cities[Math.floor(Math.random()*cities.length)], catId: r[1],
-                    salary: (Math.random()*4000+3000).toFixed(0)+" MAD", posted: 0, urgent: Math.random()>0.7,
-                    link: "https://www.linkedin.com/jobs/search/?keywords=Morocco", sourceName: "Search",
-                    rating: (Math.random()*1.5 + 3.5).toFixed(1) // Randomized Rating (3.5 - 5.0)
-                };
+                return { id:i, title:r[0], company:comps[Math.floor(Math.random()*comps.length)], location:r[2], catId:r[1], salary:"SMIG+", posted:0, urgent:true, link:"#", sourceName:"Direct" };
             });
             renderJobs(window.jobs);
         }
 
-        function getCompanyLogo(companyName) {
-            const map = {
-                "Renault": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Renault_2021_Text.svg/320px-Renault_2021_Text.svg.png",
-                "Yazaki": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Yazaki_logo.svg/320px-Yazaki_logo.svg.png",
-                "Stellantis": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Stellantis.svg/320px-Stellantis.svg.png",
-                "OCP": "https://upload.wikimedia.org/wikipedia/commons/3/36/Groupe_OCP_logo.svg/320px-Groupe_OCP_logo.svg.png",
-                "Lear": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Lear_Corporation_logo.svg/320px-Lear_Corporation_logo.svg.png",
-                "Aptiv": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Aptiv_logo.svg/320px-Aptiv_logo.svg.png",
-                "Maroc Telecom": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Maroc_Telecom_Logo.svg/320px-Maroc_Telecom_Logo.svg.png",
-                "Dell": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Dell_logo_2016.svg/300px-Dell_logo_2016.svg.png",
-                "Attijariwafa": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Attijariwafa_Bank_logo.svg/320px-Attijariwafa_Bank_logo.svg.png",
-                "Sumitomo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Sumitomo_Electric_logo.svg/320px-Sumitomo_Electric_logo.svg.png"
-            };
-            const key = Object.keys(map).find(k => companyName.includes(k));
-            if (key) return `<div class="w-12 h-12 shrink-0 bg-white rounded-xl border border-gray-200 flex items-center justify-center p-1 overflow-hidden shadow-sm"><img src="${map[key]}" class="w-full h-full object-contain"></div>`;
-            return `<div class="w-12 h-12 shrink-0 rounded-xl bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 flex items-center justify-center font-bold text-gray-500 text-xl uppercase">${companyName.charAt(0)}</div>`;
+        function getLogo(name) {
+            const logos = { "Renault": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Renault_2021_Text.svg/200px-Renault_2021_Text.svg.png", "OCP": "https://upload.wikimedia.org/wikipedia/commons/3/36/Groupe_OCP_logo.svg", "Yazaki": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Yazaki_logo.svg/200px-Yazaki_logo.svg.png" };
+            const key = Object.keys(logos).find(k=>name.includes(k));
+            if(key) return `<img src="${logos[key]}" class="w-12 h-12 object-contain">`;
+            return `<div class="w-12 h-12 bg-gray-200 rounded flex items-center justify-center font-bold text-gray-500">${name[0]}</div>`;
         }
 
         function renderJobs(arr) {
-            const c = document.getElementById('jobListings'); if(!c) return;
-            document.getElementById('jobCount').innerText = arr.length + ' jobs';
-            c.innerHTML = arr.map((j, idx) => {
-                let ad = idx === 4 ? `<div class="ad-container py-4 my-4"><span class="ad-label">Sponsored</span><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3965710509874164" data-ad-slot="REPLACE_WITH_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script></div>` : '';
-                // Rating: use j.rating or random fallback
-                const rating = j.rating || (Math.random()*1.5 + 3.5).toFixed(1);
-                return `${ad}<div class="bg-white dark:bg-dark-card p-5 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-morocco-green hover:shadow-lg transition-all animate-fade-in group relative cursor-pointer" onclick="window.openJobDetails(${j.id})">
-                    ${j.urgent ? `<span class="absolute top-0 right-0 bg-red-100 text-morocco-red text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-lg uppercase tracking-wide"><i class="fa-solid fa-fire mr-1"></i> URGENT</span>` : ''}
-                    <div class="flex gap-4">${getCompanyLogo(j.company)}<div class="flex-1"><h3 class="font-bold text-lg text-gray-800 dark:text-white group-hover:text-morocco-green transition-colors mb-0.5">${j.title}</h3><div class="text-sm text-gray-700 dark:text-gray-300 mb-2">${j.company} <span class="text-xs text-gray-400">★ ${rating}</span></div><div class="text-sm text-gray-500 mb-3 flex items-center gap-1"><i class="fa-solid fa-location-dot text-xs"></i> ${j.location}</div><div class="flex flex-wrap gap-2 mb-3"><span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-bold px-2 py-1 rounded flex items-center gap-1"><i class="fa-solid fa-money-bill-wave"></i> ${j.salary}</span></div><div class="text-xs text-gray-400 mb-4">Posted Today</div></div></div></div>`;
-            }).join('');
+            document.getElementById('jobListings').innerHTML = arr.map(j => `
+                <div class="bg-white dark:bg-dark-card p-5 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-morocco-green hover:shadow-lg transition group cursor-pointer" onclick="window.openJobModal('${j.id}')">
+                    <div class="flex gap-4">${getLogo(j.company)}
+                    <div class="flex-1"><h3 class="font-bold dark:text-white">${j.title}</h3><p class="text-sm text-gray-500">${j.company} • ${j.location}</p>
+                    <div class="mt-2"><span class="bg-green-50 text-green-700 text-xs px-2 py-1 rounded font-bold">${j.salary}</span></div></div></div>
+                </div>`).join('');
         }
         
-        window.filterCat = (id) => renderJobs(window.jobs.filter(j => j.catId === id));
-        window.filter = () => { const t = document.getElementById('mainSearch').value.toLowerCase(), l = document.getElementById('locationFilter').value; renderJobs(window.jobs.filter(j => (j.title.toLowerCase().includes(t) || j.company.toLowerCase().includes(t)) && (l === '' || j.location === l))); };
-        window.toggleSave = async (id) => { if(!auth || !window.currentUser) return window.openAuth(); alert("Job Saved!"); }
-        async function loadSavedJobs() {} // simplified for brevity
+        // --- MODAL ---
+        window.openJobModal = (id) => {
+            const j = window.jobs.find(x => x.id == id);
+            if(!j) return;
+            document.getElementById('modalTitle').innerText = j.title;
+            document.getElementById('modalCompany').innerText = j.company;
+            document.getElementById('modalLocation').innerText = j.location;
+            document.getElementById('modalSalary').innerText = j.salary;
+            document.getElementById('modalSource').innerText = j.sourceName;
+            document.getElementById('modalDesc').innerText = "We are looking for a " + j.title + " to join " + j.company + " in " + j.location + ". Click apply to see details.";
+            document.getElementById('modalApplyBtn').href = j.link;
+            document.getElementById('modalLogo').innerHTML = getLogo(j.company).replace('w-12','w-full').replace('h-12','h-full');
+            document.getElementById('jobDetailModal').classList.remove('hidden-view');
+        }
 
-        window.onload = () => { if(localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark'); window.setLang(window.currentLang); generateBackupData(); window.initData(); };
+        window.renderCategories = () => {
+            const list = document.getElementById('categoryList');
+            const cats = [
+                {id:'cat_prod',i:'fa-industry'},{id:'cat_tech',i:'fa-wrench'},
+                {id:'cat_eng',i:'fa-helmet-safety'},{id:'cat_transport',i:'fa-truck'},
+                {id:'cat_it',i:'fa-laptop-code'},{id:'cat_sales',i:'fa-briefcase'}
+            ];
+            list.innerHTML = cats.map(c => `<button onclick="filterCat('${c.id}')" class="w-full text-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center gap-3 rounded-lg"><i class="fa-solid ${c.i} text-gray-400 w-5"></i> <span class="text-sm font-bold text-gray-700 dark:text-white">${i18n[window.currentLang][c.id]}</span></button>`).join('');
+        }
+        window.filterCat = (id) => renderJobs(window.jobs.filter(j=>j.catId===id));
+        window.filter = () => { const t=document.getElementById('mainSearch').value.toLowerCase(); renderJobs(window.jobs.filter(j=>(j.title.toLowerCase().includes(t)||j.company.toLowerCase().includes(t)))); }
+        
+        window.toggleSave = async (id) => { if(!auth||!window.currentUser) return window.openAuth(); const job = window.jobs.find(j=>j.id==id); await setDoc(doc(db,'users',window.currentUser.uid,'saved',id.toString()), job); alert("Saved"); }
+        async function loadSavedJobs() { if(!auth||!window.currentUser) return; const s = await getDocs(collection(db,'users',window.currentUser.uid,'saved')); let h=''; s.forEach(d=>{const j=d.data();h+=`<div class="p-4 border rounded dark:border-gray-700 mb-2"><div class="font-bold dark:text-white">${j.title}</div><a href="${j.link}" target="_blank" class="text-morocco-green text-sm font-bold">Apply</a></div>`}); document.getElementById('savedContainer').innerHTML=h; }
+
+        // START
+        if(localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+        window.setLang(window.currentLang);
+        window.initData();
     </script>
 </body>
 </html>
