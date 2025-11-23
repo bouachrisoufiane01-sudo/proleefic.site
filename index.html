@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proleefic | Morocco's #1 Job Platform</title>
-    <meta name="description" content="Find jobs in Morocco. Recrutement, Offres d'emploi, Techniciens, Ingénieurs.">
     
-    <meta name="google-site-verification" content="M-uhenO_P6Qo7uM7MJrFy99ymzklCvnOq0dN9aNdjME" />
-
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23006233%22><path d=%22M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z%22/></svg>">
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3965710509874164" crossorigin="anonymous"></script>
@@ -111,11 +108,12 @@
                 <div class="bg-white dark:bg-dark-card rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden">
                     <div class="p-4 border-b border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800"><h3 class="font-bold text-sm uppercase text-gray-500" data-i18n="categories">Job Categories</h3></div>
                     <div id="categoryList" class="max-h-[400px] overflow-y-auto">
-                        <button onclick="filterCat('cat_prod')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-industry"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Production & Industrie</span></button>
-                        <button onclick="filterCat('cat_tech')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-wrench"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Techniciens & Maintenance</span></button>
-                        <button onclick="filterCat('cat_eng')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-helmet-safety"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Ingénierie & BTP</span></button>
-                        <button onclick="filterCat('cat_transport')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-truck"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Transport & Logistique</span></button>
-                        <button onclick="filterCat('cat_it')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-laptop-code"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Informatique & Digital</span></button>
+                        <button onclick="window.filterCat('cat_prod')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-industry"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Production & Industrie</span></button>
+                        <button onclick="window.filterCat('cat_tech')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-wrench"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Techniciens & Maintenance</span></button>
+                        <button onclick="window.filterCat('cat_eng')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-helmet-safety"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Ingénierie & BTP</span></button>
+                        <button onclick="window.filterCat('cat_transport')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-truck"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Transport & Logistique</span></button>
+                        <button onclick="window.filterCat('cat_it')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-laptop-code"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Informatique & Digital</span></button>
+                        <button onclick="window.filterCat('cat_sales')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-briefcase"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Commercial & Vente</span></button>
                     </div>
                 </div>
             </aside>
@@ -144,25 +142,23 @@
                 <div class="w-14 h-14 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4 text-morocco-green text-2xl"><i class="fa-solid fa-user-shield"></i></div>
                 <h2 class="text-3xl font-bold mb-2 dark:text-white" data-i18n="authTitle">Welcome Back</h2>
                 <p class="text-gray-500 text-sm mb-6" data-i18n="authSub">Access your profile, save jobs, and apply instantly.</p>
-                
                 <div class="flex p-1 bg-gray-100 dark:bg-gray-800 rounded-xl mb-6">
-                    <button onclick="toggleAuthMode('login')" id="tab-login" class="flex-1 py-2.5 rounded-lg text-sm font-bold shadow-sm bg-white dark:bg-gray-700 text-morocco-green transition-all">Log In</button>
-                    <button onclick="toggleAuthMode('signup')" id="tab-signup" class="flex-1 py-2.5 rounded-lg text-sm font-bold text-gray-500 hover:text-gray-900 dark:hover:text-white transition-all">Sign Up</button>
+                    <button onclick="window.toggleAuthMode('login')" id="tab-login" class="flex-1 py-2.5 rounded-lg text-sm font-bold shadow-sm bg-white dark:bg-gray-700 text-morocco-green transition-all">Log In</button>
+                    <button onclick="window.toggleAuthMode('signup')" id="tab-signup" class="flex-1 py-2.5 rounded-lg text-sm font-bold text-gray-500 hover:text-gray-900 dark:hover:text-white transition-all">Sign Up</button>
                 </div>
             </div>
-
             <div class="px-8 pb-8">
                 <div id="authError" class="hidden bg-red-50 text-red-600 text-sm p-3 rounded-lg mb-4 border border-red-100 flex items-center gap-2"><i class="fa-solid fa-circle-exclamation"></i> <span id="authErrorMsg">Error</span></div>
                 <div id="authSuccess" class="hidden bg-green-50 text-green-600 text-sm p-3 rounded-lg mb-4 border border-green-100 flex items-center gap-2"><i class="fa-solid fa-check-circle"></i> <span id="authSuccessMsg">Success</span></div>
 
-                <form id="loginForm" onsubmit="handleEmailLogin(event)" class="space-y-4">
+                <form id="loginForm" onsubmit="window.handleEmailLogin(event)" class="space-y-4">
                     <div><label class="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">Email Address</label><input type="email" id="loginEmail" class="input-pro" placeholder="name@example.com" required></div>
                     <div><label class="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">Password</label><input type="password" id="loginPass" class="input-pro" placeholder="••••••••" required></div>
-                    <div class="text-right"><button type="button" onclick="handlePasswordReset()" class="text-xs text-morocco-green font-bold hover:underline">Forgot Password?</button></div>
+                    <div class="text-right"><button type="button" onclick="window.handlePasswordReset()" class="text-xs text-morocco-green font-bold hover:underline">Forgot Password?</button></div>
                     <button type="submit" class="w-full bg-morocco-green text-white py-4 rounded-xl font-bold hover:bg-morocco-darkGreen transition shadow-lg shadow-green-900/10">Sign In</button>
                 </form>
 
-                <form id="signupForm" onsubmit="handleEmailSignup(event)" class="space-y-4 hidden">
+                <form id="signupForm" onsubmit="window.handleEmailSignup(event)" class="space-y-4 hidden">
                     <div><label class="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">Full Name</label><input type="text" id="signupName" class="input-pro" placeholder="John Doe" required></div>
                     <div><label class="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">Email Address</label><input type="email" id="signupEmail" class="input-pro" placeholder="name@example.com" required></div>
                     <div><label class="block text-xs font-bold text-gray-500 uppercase mb-1 ml-1">Create Password</label><input type="password" id="signupPass" class="input-pro" placeholder="••••••••" required></div>
@@ -170,7 +166,7 @@
                 </form>
 
                 <div class="relative text-center my-6"><div class="h-px bg-gray-200 dark:bg-gray-700 w-full absolute top-1/2"></div><span class="bg-white dark:bg-dark-card px-3 text-xs text-gray-400 font-bold relative z-10">OR CONTINUE WITH</span></div>
-                <button onclick="loginGoogle()" class="w-full border border-gray-300 dark:border-gray-600 py-3.5 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-gray-50 dark:hover:bg-gray-800 transition"><i class="fa-brands fa-google text-red-500 text-xl"></i><span class="text-gray-700 dark:text-gray-200">Google</span></button>
+                <button onclick="window.loginGoogle()" class="w-full border border-gray-300 dark:border-gray-600 py-3.5 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-gray-50 dark:hover:bg-gray-800 transition"><i class="fa-brands fa-google text-red-500 text-xl"></i><span class="text-gray-700 dark:text-gray-200">Google</span></button>
                 <p class="text-center mt-6 text-sm text-gray-400"><a href="#" onclick="switchView('home')" class="hover:text-morocco-green">Back to Home</a></p>
             </div>
         </div>
@@ -186,7 +182,7 @@
                     <h1 class="text-2xl font-bold dark:text-white" id="userName">User</h1>
                     <p class="text-gray-500" id="userEmail">email</p>
                 </div>
-                <button onclick="logout()" class="text-morocco-red font-bold border border-red-200 px-4 py-2 rounded-lg hover:bg-red-50 transition" data-i18n="logout">Logout</button>
+                <button onclick="window.logout()" class="text-morocco-red font-bold border border-red-200 px-4 py-2 rounded-lg hover:bg-red-50 transition" data-i18n="logout">Logout</button>
             </div>
             <h2 class="text-xl font-bold mb-4 dark:text-white" data-i18n="savedJobs">Saved Jobs</h2>
             <div id="savedContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
@@ -225,9 +221,15 @@
             appId: "1:1033605555868:web:577ff42f0bcfb0b6122f59",
             measurementId: "G-WJ4XKS01P0"
         };
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
+        
+        let app, auth, db;
+        try {
+            app = initializeApp(firebaseConfig);
+            auth = getAuth(app);
+            db = getFirestore(app);
+        } catch (e) {
+            console.error("Firebase Init Error:", e);
+        }
         
         const i18n = {
             en: { heroTitle: "Find the job that fits your life", whatLabel: "What", whereLabel: "Where", searchPlaceholder: "Job title, keywords...", searchBtn: "Find Jobs", cvTitle: "Post your CV", cvSub: "It only takes a few seconds", uploadBtn: "Upload Resume", categories: "Job Categories", feedTitle: "Job Feed", loadMore: "Refresh Jobs", hiringNow: "Hiring Now", authTitle: "Welcome Back", authSub: "Access your profile, save jobs, and apply instantly.", backHome: "Back to Jobs", logout: "Logout", savedJobs: "Saved Jobs", easyApply: "Easy Apply", urgent: "Urgent", posted: "Posted", ago: "ago", applyOn: "Apply on", loginBtn: "Sign In", cat_prod: "Production & Manufacturing", cat_tech: "Technicians & Maintenance", cat_eng: "Engineering & Civil", cat_it: "IT & Digital", cat_sales: "Sales & Commercial", cat_admin: "Admin & Finance", cat_transport: "Transport & Logistics" },
@@ -239,23 +241,15 @@
         window.currentUser = null;
         window.jobs = [];
 
-        window.onload = () => { 
-            if(localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
-            setLang(window.currentLang); 
-            
-            // Force Backup Data immediately to check if UI works
-            generateBackupData(); 
-            // Then try to fetch real data
-            window.initData();
-        };
-
+        // EXPOSE FUNCTIONS TO WINDOW (CRITICAL FIX)
         window.setLang = (lang) => {
             window.currentLang = lang; localStorage.setItem('lang', lang); document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
             document.querySelectorAll('.lang-btn').forEach(b => { b.classList.remove('bg-white', 'dark:bg-gray-700', 'text-morocco-green', 'shadow-sm'); b.classList.add('text-gray-500'); });
-            document.getElementById('lang-' + lang).classList.add('bg-white', 'dark:bg-gray-700', 'text-morocco-green', 'shadow-sm'); document.getElementById('lang-' + lang).classList.remove('text-gray-500');
+            document.getElementById('lang-' + lang)?.classList.add('bg-white', 'dark:bg-gray-700', 'text-morocco-green', 'shadow-sm'); 
+            document.getElementById('lang-' + lang)?.classList.remove('text-gray-500');
             document.querySelectorAll('[data-i18n]').forEach(el => { if(i18n[lang][el.getAttribute('data-i18n')]) el.innerText = i18n[lang][el.getAttribute('data-i18n')]; });
             document.querySelectorAll('[data-placeholder]').forEach(el => { if(i18n[lang][el.getAttribute('data-placeholder')]) el.placeholder = i18n[lang][el.getAttribute('data-placeholder')]; });
-            renderCategories(); if(window.jobs.length > 0) renderJobs(window.jobs);
+            if(window.jobs.length > 0) renderJobs(window.jobs);
         };
 
         window.toggleTheme = () => { document.documentElement.classList.toggle('dark'); localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light'); }
@@ -266,43 +260,49 @@
             if(mode === 'login') { document.getElementById('loginForm').classList.remove('hidden'); document.getElementById('signupForm').classList.add('hidden'); document.getElementById('tab-login').classList.add('bg-white', 'text-morocco-green'); document.getElementById('tab-login').classList.remove('text-gray-500'); document.getElementById('tab-signup').classList.remove('bg-white', 'text-morocco-green'); document.getElementById('tab-signup').classList.add('text-gray-500'); }
             else { document.getElementById('loginForm').classList.add('hidden'); document.getElementById('signupForm').classList.remove('hidden'); document.getElementById('tab-signup').classList.add('bg-white', 'text-morocco-green'); document.getElementById('tab-signup').classList.remove('text-gray-500'); document.getElementById('tab-login').classList.remove('bg-white', 'text-morocco-green'); document.getElementById('tab-login').classList.add('text-gray-500'); }
         }
+        
         window.openAuth = () => document.getElementById('authView').classList.remove('hidden-view');
         window.showError = (msg) => { const e = document.getElementById('authError'); e.classList.remove('hidden'); document.getElementById('authErrorMsg').innerText = msg.replace('Firebase: ', ''); }
-        window.handlePasswordReset = () => { const email = document.getElementById('loginEmail').value; if(!email) return showError("Please enter your email address above first."); sendPasswordResetEmail(auth, email).then(() => { document.getElementById('authError').classList.add('hidden'); document.getElementById('authSuccess').classList.remove('hidden'); document.getElementById('authSuccessMsg').innerText = "Password reset email sent!"; }).catch(e => showError(e.message)); }
-        window.handleEmailLogin = (e) => { e.preventDefault(); signInWithEmailAndPassword(auth, document.getElementById('loginEmail').value, document.getElementById('loginPass').value).then(() => switchView('profile')).catch(err => showError(err.message)); };
-        window.handleEmailSignup = (e) => { e.preventDefault(); const name = document.getElementById('signupName').value; createUserWithEmailAndPassword(auth, document.getElementById('signupEmail').value, document.getElementById('signupPass').value).then((res) => { updateProfile(res.user, { displayName: name }); switchView('profile'); }).catch(err => showError(err.message)); };
-        window.loginGoogle = () => { signInWithPopup(auth, new GoogleAuthProvider()).then(() => switchView('profile')).catch(e => showError(e.message)); }
-        window.logout = () => signOut(auth).then(() => switchView('home'));
+        
+        window.handlePasswordReset = () => { 
+            if(!auth) return window.showError("Firebase not loaded");
+            const email = document.getElementById('loginEmail').value; if(!email) return window.showError("Please enter your email address above first."); sendPasswordResetEmail(auth, email).then(() => { document.getElementById('authError').classList.add('hidden'); document.getElementById('authSuccess').classList.remove('hidden'); document.getElementById('authSuccessMsg').innerText = "Password reset email sent!"; }).catch(e => window.showError(e.message)); 
+        }
+        
+        window.handleEmailLogin = (e) => { e.preventDefault(); if(!auth) return; signInWithEmailAndPassword(auth, document.getElementById('loginEmail').value, document.getElementById('loginPass').value).then(() => window.switchView('profile')).catch(err => window.showError(err.message)); };
+        window.handleEmailSignup = (e) => { e.preventDefault(); if(!auth) return; const name = document.getElementById('signupName').value; createUserWithEmailAndPassword(auth, document.getElementById('signupEmail').value, document.getElementById('signupPass').value).then((res) => { updateProfile(res.user, { displayName: name }); window.switchView('profile'); }).catch(err => window.showError(err.message)); };
+        window.loginGoogle = () => { if(!auth) return; signInWithPopup(auth, new GoogleAuthProvider()).then(() => window.switchView('profile')).catch(e => window.showError(e.message)); }
+        window.logout = () => { if(auth) signOut(auth).then(() => window.switchView('home')); }
 
-        onAuthStateChanged(auth, (user) => {
-            window.currentUser = user; const sec = document.getElementById('authSection');
-            if(user) { sec.innerHTML = `<button onclick="switchView('profile')" class="font-bold text-sm text-gray-700 dark:text-gray-200 hover:text-morocco-green flex items-center gap-2"><div class="w-8 h-8 rounded-full bg-morocco-red text-white flex items-center justify-center font-bold">${user.displayName?user.displayName[0]:'U'}</div> <span class="hidden sm:inline">${user.displayName || 'User'}</span></button>`; document.getElementById('userName').innerText = user.displayName || "User"; document.getElementById('userEmail').innerText = user.email; loadSavedJobs(); }
-            else { sec.innerHTML = `<button onclick="openAuth()" class="bg-morocco-green text-white px-5 py-2 rounded-lg font-bold text-sm hover:bg-morocco-darkGreen transition shadow-sm" data-i18n="loginBtn">${i18n[currentLang].loginBtn}</button>`; }
-        });
+        if(auth) {
+            onAuthStateChanged(auth, (user) => {
+                window.currentUser = user; const sec = document.getElementById('authSection');
+                if(user) { sec.innerHTML = `<button onclick="switchView('profile')" class="font-bold text-sm text-gray-700 dark:text-gray-200 hover:text-morocco-green flex items-center gap-2"><div class="w-8 h-8 rounded-full bg-morocco-red text-white flex items-center justify-center font-bold">${user.displayName?user.displayName[0]:'U'}</div> <span class="hidden sm:inline">${user.displayName || 'User'}</span></button>`; document.getElementById('userName').innerText = user.displayName || "User"; document.getElementById('userEmail').innerText = user.email; loadSavedJobs(); }
+                else { sec.innerHTML = `<button onclick="openAuth()" class="bg-morocco-green text-white px-5 py-2 rounded-lg font-bold text-sm hover:bg-morocco-darkGreen transition shadow-sm" data-i18n="loginBtn">${i18n[currentLang].loginBtn}</button>`; }
+            });
+        }
 
         // REAL DATA LOADING
         window.initData = async () => {
             const cities = ['Casablanca', 'Tanger', 'Kenitra', 'Rabat', 'El Jadida', 'Agadir', 'Fes']; 
-            document.getElementById('locationFilter').innerHTML = `<option value="">${i18n[currentLang].whereLabel || 'All Cities'}</option>` + cities.map(c => `<option value="${c}">${c}</option>`).join('');
+            const locFilter = document.getElementById('locationFilter');
+            if(locFilter) locFilter.innerHTML = `<option value="">${i18n[currentLang].whereLabel || 'All Cities'}</option>` + cities.map(c => `<option value="${c}">${c}</option>`).join('');
             
             const list = document.getElementById('jobListings');
             if(list) list.innerHTML = `<div class="text-center py-12"><i class="fa-solid fa-circle-notch fa-spin text-4xl text-morocco-green"></i></div>`;
 
             try {
-                // Attempt to fetch generated file
                 const response = await fetch('jobs.json?t=' + Date.now());
                 if (!response.ok) throw new Error("Jobs file missing");
                 const realJobs = await response.json();
                 window.jobs = realJobs;
                 renderJobs(window.jobs);
-                console.log("Loaded from JSON");
             } catch (e) {
                 console.log("⚠️ Using Backup Data");
                 generateBackupData();
             }
         };
 
-        // BACKUP WITH EXTERNAL LINKS
         function generateBackupData() {
             const types = [{ t: "Opérateur de Production", c: "cat_prod", sal: "3000 - 4500 MAD" }, { t: "Technicien de Maintenance", c: "cat_tech", sal: "4500 - 7000 MAD" }, { t: "Ingénieur Mécanique", c: "cat_eng", sal: "9000 - 13000 MAD" }, { t: "Développeur Full Stack", c: "cat_it", sal: "12000 MAD+" }, { t: "Commercial Terrain", c: "cat_sales", sal: "Fixed + Comm" }];
             const companies = ['Renault', 'Yazaki', 'OCP', 'Maroc Telecom', 'Dell'];
@@ -310,35 +310,16 @@
             const sources = [{ name: "LinkedIn", url: "https://www.linkedin.com/jobs/search/?keywords=Maroc" }, { name: "Rekrute", url: "https://www.rekrute.com/offres.html" }, { name: "Emploi.ma", url: "https://www.emploi.ma/" }, { name: "Anapec", url: "http://www.anapec.org/" }];
             const backupJobs = [];
             for(let i=0; i<30; i++) { 
-                const type = types[Math.floor(Math.random() * types.length)]; 
-                const comp = companies[Math.floor(Math.random() * companies.length)]; 
-                const src = sources[Math.floor(Math.random() * sources.length)];
-                
-                backupJobs.push({ 
-                    id: Date.now() + i, 
-                    title: type.t, 
-                    company: comp, 
-                    location: cities[Math.floor(Math.random() * cities.length)], 
-                    catId: type.c, 
-                    salary: type.sal, 
-                    posted: Math.floor(Math.random() * 5), 
-                    urgent: Math.random() > 0.8, 
-                    easyApply: true, 
-                    rating: "4.5", 
-                    link: src.url, 
-                    sourceName: src.name 
-                }); 
+                const type = types[Math.floor(Math.random() * types.length)]; const comp = companies[Math.floor(Math.random() * companies.length)]; const src = sources[Math.floor(Math.random() * sources.length)];
+                backupJobs.push({ id: Date.now() + i, title: type.t, company: comp, location: cities[Math.floor(Math.random() * cities.length)], catId: type.c, salary: type.sal, posted: Math.floor(Math.random() * 5), urgent: Math.random() > 0.8, easyApply: true, rating: "4.5", link: src.url, sourceName: src.name }); 
             }
             window.jobs = backupJobs;
             renderJobs(window.jobs);
         }
 
-        function filterCat(catId) { renderJobs(window.jobs.filter(j => j.catId === catId)); }
-
-        function renderCategories() {
-            const list = document.getElementById('categoryList');
-            if(!list) return;
-            // Just update existing buttons text if needed or keep static
+        window.filterCat = (catId) => {
+            const filtered = window.jobs.filter(j => j.catId === catId);
+            renderJobs(filtered);
         }
 
         function renderJobs(arr) {
@@ -348,13 +329,36 @@
             container.innerHTML = arr.map((j, idx) => {
                 const timeText = j.posted === 0 ? (currentLang === 'ar' ? 'اليوم' : 'Today') : `${currentLang === 'ar' ? '' : i18n[currentLang].posted} ${j.posted}d ${i18n[currentLang].ago}`;
                 let adBlock = ''; if(idx === 4) { adBlock = `<div class="ad-container py-4 my-4"><span class="ad-label">Sponsored</span><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3965710509874164" data-ad-slot="REPLACE_WITH_SLOT_ID"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script></div>`; }
-                return `${adBlock}<div class="bg-white dark:bg-dark-card p-5 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-morocco-green hover:shadow-lg transition-all animate-fade-in group relative" style="animation-delay: ${idx * 0.05}s">${j.urgent ? `<span class="absolute top-0 right-0 bg-red-100 text-morocco-red text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-lg uppercase tracking-wide"><i class="fa-solid fa-fire mr-1"></i>${i18n[currentLang].urgent}</span>` : ''}<div class="flex gap-4"><div class="w-12 h-12 rounded bg-white border border-gray-200 flex items-center justify-center font-bold text-gray-700 shrink-0 text-xl">${j.company[0]}</div><div class="flex-1"><h3 class="font-bold text-lg text-gray-800 dark:text-white group-hover:text-morocco-green transition-colors mb-0.5">${j.title}</h3><div class="text-sm text-gray-700 dark:text-gray-300 mb-2">${j.company} <span class="text-xs text-gray-400">★ ${j.rating}</span></div><div class="text-sm text-gray-500 mb-3 flex items-center gap-1"><i class="fa-solid fa-location-dot text-xs"></i> ${j.location}</div><div class="flex flex-wrap gap-2 mb-3"><span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-bold px-2 py-1 rounded flex items-center gap-1"><i class="fa-solid fa-money-bill-wave"></i> ${j.salary}</span></div><div class="text-xs text-gray-400 mb-4">${timeText}</div><div class="flex gap-3"><a href="${j.link}" target="_blank" class="flex-1 bg-morocco-green text-white text-center py-2.5 rounded-lg text-sm font-bold hover:bg-morocco-darkGreen transition shadow-sm flex items-center justify-center gap-2">${i18n[currentLang].applyOn} ${j.sourceName} <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a><button onclick="toggleSave(${j.id})" class="px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-400 hover:text-morocco-red hover:border-morocco-red transition"><i class="fa-regular fa-heart text-lg"></i></button></div></div></div></div>`;
+                return `${adBlock}<div class="bg-white dark:bg-dark-card p-5 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-morocco-green hover:shadow-lg transition-all animate-fade-in group relative" style="animation-delay: ${idx * 0.05}s">${j.urgent ? `<span class="absolute top-0 right-0 bg-red-100 text-morocco-red text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-lg uppercase tracking-wide"><i class="fa-solid fa-fire mr-1"></i>${i18n[currentLang].urgent}</span>` : ''}<div class="flex gap-4"><div class="w-12 h-12 rounded bg-white border border-gray-200 flex items-center justify-center font-bold text-gray-700 shrink-0 text-xl">${j.company[0]}</div><div class="flex-1"><h3 class="font-bold text-lg text-gray-800 dark:text-white group-hover:text-morocco-green transition-colors mb-0.5">${j.title}</h3><div class="text-sm text-gray-700 dark:text-gray-300 mb-2">${j.company} <span class="text-xs text-gray-400">★ ${j.rating}</span></div><div class="text-sm text-gray-500 mb-3 flex items-center gap-1"><i class="fa-solid fa-location-dot text-xs"></i> ${j.location}</div><div class="flex flex-wrap gap-2 mb-3"><span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-bold px-2 py-1 rounded flex items-center gap-1"><i class="fa-solid fa-money-bill-wave"></i> ${j.salary}</span></div><div class="text-xs text-gray-400 mb-4">${timeText}</div><div class="flex gap-3"><a href="${j.link}" target="_blank" class="flex-1 bg-morocco-green text-white text-center py-2.5 rounded-lg text-sm font-bold hover:bg-morocco-darkGreen transition shadow-sm flex items-center justify-center gap-2">${i18n[currentLang].applyOn} ${j.sourceName} <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a><button onclick="window.toggleSave(${j.id})" class="px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-400 hover:text-morocco-red hover:border-morocco-red transition"><i class="fa-regular fa-heart text-lg"></i></button></div></div></div></div>`;
             }).join('');
         }
 
         window.filter = () => { const term = document.getElementById('mainSearch').value.toLowerCase(); const loc = document.getElementById('locationFilter').value; renderJobs(window.jobs.filter(j => (j.title.toLowerCase().includes(term) || j.company.toLowerCase().includes(term)) && (loc === '' || j.location === loc))); };
-        window.toggleSave = async (id) => { if(!window.currentUser) return switchView('auth'); const job = window.jobs.find(j => j.id === id); await setDoc(doc(db, 'users', window.currentUser.uid, 'saved', id.toString()), job); alert("Job Saved!"); }
-        async function loadSavedJobs() { if(!window.currentUser) return; const snap = await getDocs(collection(db, 'users', window.currentUser.uid, 'saved')); const list = document.getElementById('savedContainer'); list.innerHTML = ''; snap.forEach(d => { const j = d.data(); list.innerHTML += `<div class="p-4 border rounded-xl bg-white dark:bg-gray-800 flex justify-between items-center shadow-sm"><div><div class="font-bold text-gray-800 dark:text-white">${j.title}</div><div class="text-sm text-gray-500">${j.company}</div></div><a href="${j.link}" target="_blank" class="text-morocco-green font-bold text-sm border border-morocco-green px-3 py-1 rounded hover:bg-green-50">Apply</a></div>`; }); }
+        
+        window.toggleSave = async (id) => { 
+            if(!auth || !window.currentUser) return window.openAuth(); 
+            const job = window.jobs.find(j => j.id === id); 
+            await setDoc(doc(db, 'users', window.currentUser.uid, 'saved', id.toString()), job); 
+            alert("Job Saved!"); 
+        }
+        
+        async function loadSavedJobs() { 
+            if(!auth || !window.currentUser) return; 
+            const snap = await getDocs(collection(db, 'users', window.currentUser.uid, 'saved')); 
+            const list = document.getElementById('savedContainer'); 
+            list.innerHTML = ''; 
+            snap.forEach(d => { 
+                const j = d.data(); 
+                list.innerHTML += `<div class="p-4 border rounded-xl bg-white dark:bg-gray-800 flex justify-between items-center shadow-sm"><div><div class="font-bold text-gray-800 dark:text-white">${j.title}</div><div class="text-sm text-gray-500">${j.company}</div></div><a href="${j.link}" target="_blank" class="text-morocco-green font-bold text-sm border border-morocco-green px-3 py-1 rounded hover:bg-green-50">Apply</a></div>`; 
+            }); 
+        }
+
+        // STARTUP
+        window.onload = () => { 
+            if(localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+            window.setLang(window.currentLang); 
+            window.initData(); 
+        };
     </script>
 </body>
 </html>
