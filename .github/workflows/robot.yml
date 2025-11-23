@@ -1,0 +1,35 @@
+name: Proleefic Robot
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # Runs every 6 hours
+  workflow_dispatch: # Allows you to click "Run" manually
+
+permissions:
+  contents: write
+
+jobs:
+  update-jobs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Robot Tools
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run The Robot
+        run: python scraper.py
+
+      - name: Save New Jobs to Website
+        run: |
+          git config --global user.name 'Proleefic Robot'
+          git config --global user.email 'robot@proleefic.site'
+          git add jobs.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Robot fetched new jobs" && git push)
