@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proleefic | Morocco's #1 Job Platform</title>
-    <meta name="description" content="Find jobs in Morocco. Recrutement, Offres d'emploi, Techniciens, Ingénieurs.">
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23006233%22><path d=%22M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z%22/></svg>">
 
@@ -68,7 +67,10 @@
                     <i class="fa-solid fa-moon dark:hidden text-lg"></i>
                     <i class="fa-solid fa-sun hidden dark:inline text-yellow-400 text-lg"></i>
                 </button>
-                <div id="authSection" class="flex items-center gap-3"></div>
+                
+                <div id="authSection" class="flex items-center gap-3">
+                    <button onclick="switchView('auth')" class="bg-morocco-green text-white px-5 py-2 rounded-lg font-bold text-sm hover:bg-morocco-darkGreen transition shadow-sm">Sign In</button>
+                </div>
             </div>
         </div>
     </nav>
@@ -105,13 +107,19 @@
             <aside class="hidden lg:block lg:col-span-3 space-y-6">
                 <div class="bg-white dark:bg-dark-card rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden">
                     <div class="p-4 border-b border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800"><h3 class="font-bold text-sm uppercase text-gray-500" data-i18n="categories">Job Categories</h3></div>
-                    <div id="categoryList" class="max-h-[400px] overflow-y-auto"></div>
+                    <div id="categoryList" class="max-h-[400px] overflow-y-auto">
+                        <button onclick="filterCat('cat_prod')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-industry"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Production & Industrie</span></button>
+                        <button onclick="filterCat('cat_tech')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-wrench"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Techniciens & Maintenance</span></button>
+                        <button onclick="filterCat('cat_eng')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-helmet-safety"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Ingénierie & BTP</span></button>
+                        <button onclick="filterCat('cat_transport')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-truck"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Transport & Logistique</span></button>
+                        <button onclick="filterCat('cat_it')" class="w-full text-left px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 flex items-center gap-3 transition group"><span class="text-gray-400 group-hover:text-morocco-green"><i class="fa-solid fa-laptop-code"></i></span><span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">Informatique & Digital</span></button>
+                    </div>
                 </div>
             </aside>
 
             <main class="lg:col-span-6 space-y-4">
                 <div class="flex justify-between items-center mb-2">
-                    <h2 class="font-bold text-xl"><span data-i18n="feedTitle">Job Feed</span> <span class="text-gray-400 text-sm font-normal ml-2" id="jobCount">0 jobs</span></h2>
+                    <h2 class="font-bold text-xl"><span data-i18n="feedTitle">Job Feed</span> <span class="text-gray-400 text-sm font-normal ml-2" id="jobCount">Loading...</span></h2>
                 </div>
                 <div id="jobListings" class="space-y-3"></div>
                 <button onclick="window.initData()" class="w-full py-4 text-morocco-green font-bold hover:bg-green-50 dark:hover:bg-green-900/20 rounded-xl transition" data-i18n="loadMore">Refresh Jobs</button>
@@ -133,11 +141,13 @@
                 <div class="w-14 h-14 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4 text-morocco-green text-2xl"><i class="fa-solid fa-user-shield"></i></div>
                 <h2 class="text-3xl font-bold mb-2 dark:text-white" data-i18n="authTitle">Welcome Back</h2>
                 <p class="text-gray-500 text-sm mb-6" data-i18n="authSub">Access your profile, save jobs, and apply instantly.</p>
+                
                 <div class="flex p-1 bg-gray-100 dark:bg-gray-800 rounded-xl mb-6">
                     <button onclick="toggleAuthMode('login')" id="tab-login" class="flex-1 py-2.5 rounded-lg text-sm font-bold shadow-sm bg-white dark:bg-gray-700 text-morocco-green transition-all">Log In</button>
                     <button onclick="toggleAuthMode('signup')" id="tab-signup" class="flex-1 py-2.5 rounded-lg text-sm font-bold text-gray-500 hover:text-gray-900 dark:hover:text-white transition-all">Sign Up</button>
                 </div>
             </div>
+
             <div class="px-8 pb-8">
                 <div id="authError" class="hidden bg-red-50 text-red-600 text-sm p-3 rounded-lg mb-4 border border-red-100 flex items-center gap-2"><i class="fa-solid fa-circle-exclamation"></i> <span id="authErrorMsg">Error</span></div>
                 <div id="authSuccess" class="hidden bg-green-50 text-green-600 text-sm p-3 rounded-lg mb-4 border border-green-100 flex items-center gap-2"><i class="fa-solid fa-check-circle"></i> <span id="authSuccessMsg">Success</span></div>
@@ -209,4 +219,58 @@
             projectId: "proleefic-85800",
             storageBucket: "proleefic-85800.firebasestorage.app",
             messagingSenderId: "1033605555868",
-            appId: "1:1033605555868:web:577ff42f0bcfb0b6122f59
+            appId: "1:1033605555868:web:577ff42f0bcfb0b6122f59",
+            measurementId: "G-WJ4XKS01P0"
+        };
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+        
+        const i18n = {
+            en: { heroTitle: "Find the job that fits your life", whatLabel: "What", whereLabel: "Where", searchPlaceholder: "Job title, keywords...", searchBtn: "Find Jobs", cvTitle: "Post your CV", cvSub: "It only takes a few seconds", uploadBtn: "Upload Resume", categories: "Job Categories", feedTitle: "Job Feed", loadMore: "Refresh Jobs", hiringNow: "Hiring Now", authTitle: "Welcome Back", authSub: "Access your profile, save jobs, and apply instantly.", backHome: "Back to Jobs", logout: "Logout", savedJobs: "Saved Jobs", easyApply: "Easy Apply", urgent: "Urgent", posted: "Posted", ago: "ago", applyOn: "Apply on", loginBtn: "Sign In", cat_prod: "Production & Manufacturing", cat_tech: "Technicians & Maintenance", cat_eng: "Engineering & Civil", cat_it: "IT & Digital", cat_sales: "Sales & Commercial", cat_admin: "Admin & Finance", cat_transport: "Transport & Logistics" },
+            fr: { heroTitle: "Trouvez le job qui correspond à votre vie", whatLabel: "Quoi", whereLabel: "Où", searchPlaceholder: "Titre, mots-clés...", searchBtn: "Rechercher", cvTitle: "Déposez votre CV", cvSub: "Cela ne prend que quelques secondes", uploadBtn: "Télécharger CV", categories: "Catégories", feedTitle: "Offres d'emploi", loadMore: "Actualiser", hiringNow: "Recrute Actuellement", authTitle: "Bienvenue", authSub: "Accédez à votre profil et postulez instantanément.", backHome: "Retour aux offres", logout: "Déconnexion", savedJobs: "Offres Sauvegardées", easyApply: "Candidature Simple", urgent: "Urgent", posted: "Publié il y a", ago: "", applyOn: "Postuler sur", loginBtn: "Connexion", cat_prod: "Production & Industrie", cat_tech: "Techniciens & Maintenance", cat_eng: "Ingénierie & BTP", cat_it: "Informatique & Digital", cat_sales: "Commercial & Vente", cat_admin: "Admin & Finance", cat_transport: "Transport & Logistique" },
+            ar: { heroTitle: "جد الوظيفة التي تناسب حياتك", whatLabel: "ماذا", whereLabel: "أين", searchPlaceholder: "المسمى الوظيفي...", searchBtn: "بحث", cvTitle: "ارفع سيرتك الذاتية", cvSub: "ثوانٍ فقط", uploadBtn: "تحميل السيرة الذاتية", categories: "تصنيفات الوظائف", feedTitle: "أحدث الوظائف", loadMore: "تحديث الوظائف", hiringNow: "يوظفون الآن", authTitle: "مرحباً بعودتك", authSub: "سجل الدخول لحفظ الوظائف والتقديم.", backHome: "العودة للوظائف", logout: "خروج", savedJobs: "الوظائف المحفوظة", easyApply: "تقديم سريع", urgent: "عاجل", posted: "نشر منذ", ago: "", applyOn: "التقديم عبر", loginBtn: "تسجيل الدخول", cat_prod: "الإنتاج والتصنيع", cat_tech: "الفنيين والصيانة", cat_eng: "الهندسة والبناء", cat_it: "تكنولوجيا المعلومات", cat_sales: "المبيعات والتجارة", cat_admin: "الإدارة والمالية", cat_transport: "النقل واللوجستيك" }
+        };
+
+        window.currentLang = localStorage.getItem('lang') || 'en';
+        window.currentUser = null;
+        window.jobs = [];
+
+        window.onload = () => { 
+            if(localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+            setLang(window.currentLang); 
+            
+            // Force Backup Data immediately to check if UI works
+            generateBackupData(); 
+            // Then try to fetch real data
+            window.initData();
+        };
+
+        window.setLang = (lang) => {
+            window.currentLang = lang; localStorage.setItem('lang', lang); document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+            document.querySelectorAll('.lang-btn').forEach(b => { b.classList.remove('bg-white', 'dark:bg-gray-700', 'text-morocco-green', 'shadow-sm'); b.classList.add('text-gray-500'); });
+            document.getElementById('lang-' + lang).classList.add('bg-white', 'dark:bg-gray-700', 'text-morocco-green', 'shadow-sm'); document.getElementById('lang-' + lang).classList.remove('text-gray-500');
+            document.querySelectorAll('[data-i18n]').forEach(el => { if(i18n[lang][el.getAttribute('data-i18n')]) el.innerText = i18n[lang][el.getAttribute('data-i18n')]; });
+            document.querySelectorAll('[data-placeholder]').forEach(el => { if(i18n[lang][el.getAttribute('data-placeholder')]) el.placeholder = i18n[lang][el.getAttribute('data-placeholder')]; });
+            if(window.jobs.length > 0) renderJobs(window.jobs);
+        };
+
+        window.toggleTheme = () => { document.documentElement.classList.toggle('dark'); localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light'); }
+        window.switchView = (v) => { document.querySelectorAll('.view-section').forEach(e => e.classList.add('hidden-view')); document.getElementById(v+'View').classList.remove('hidden-view'); window.scrollTo(0,0); }
+        
+        window.toggleAuthMode = (mode) => {
+            document.getElementById('authError').classList.add('hidden');
+            if(mode === 'login') { document.getElementById('loginForm').classList.remove('hidden'); document.getElementById('signupForm').classList.add('hidden'); document.getElementById('tab-login').classList.add('bg-white', 'text-morocco-green'); document.getElementById('tab-login').classList.remove('text-gray-500'); document.getElementById('tab-signup').classList.remove('bg-white', 'text-morocco-green'); document.getElementById('tab-signup').classList.add('text-gray-500'); }
+            else { document.getElementById('loginForm').classList.add('hidden'); document.getElementById('signupForm').classList.remove('hidden'); document.getElementById('tab-signup').classList.add('bg-white', 'text-morocco-green'); document.getElementById('tab-signup').classList.remove('text-gray-500'); document.getElementById('tab-login').classList.remove('bg-white', 'text-morocco-green'); document.getElementById('tab-login').classList.add('text-gray-500'); }
+        }
+        window.showError = (msg) => { const e = document.getElementById('authError'); e.classList.remove('hidden'); document.getElementById('authErrorMsg').innerText = msg.replace('Firebase: ', ''); }
+        window.handlePasswordReset = () => { const email = document.getElementById('loginEmail').value; if(!email) return showError("Please enter your email address above first."); sendPasswordResetEmail(auth, email).then(() => { document.getElementById('authError').classList.add('hidden'); document.getElementById('authSuccess').classList.remove('hidden'); document.getElementById('authSuccessMsg').innerText = "Password reset email sent!"; }).catch(e => showError(e.message)); }
+        window.handleEmailLogin = (e) => { e.preventDefault(); signInWithEmailAndPassword(auth, document.getElementById('loginEmail').value, document.getElementById('loginPass').value).then(() => switchView('profile')).catch(err => showError(err.message)); };
+        window.handleEmailSignup = (e) => { e.preventDefault(); const name = document.getElementById('signupName').value; createUserWithEmailAndPassword(auth, document.getElementById('signupEmail').value, document.getElementById('signupPass').value).then((res) => { updateProfile(res.user, { displayName: name }); switchView('profile'); }).catch(err => showError(err.message)); };
+        window.loginGoogle = () => { signInWithPopup(auth, new GoogleAuthProvider()).then(() => switchView('profile')).catch(e => showError(e.message)); }
+        window.logout = () => signOut(auth).then(() => switchView('home'));
+
+        onAuthStateChanged(auth, (user) => {
+            window.currentUser = user; const sec = document.getElementById('authSection');
+            if(user) { sec.innerHTML = `<button onclick="switchView('profile')" class="font-bold text-sm text-gray-700 dark:text-gray-200 hover:text-morocco-green flex items-center gap-2"><div class="w-8 h-8 rounded-full bg-morocco-red text-white flex items-center justify-center font-bold">${user.displayName?user.displayName[0]:'U'}</div> <span class="hidden sm:inline">${user.displayName || 'User'}</span></button>`; document.getElementById('userName').innerText = user.displayName || "User"; document.getElementById('userEmail').innerText = user.email; loadSavedJobs(); }
+            else { sec.innerHTML = `<button onclick="switchView('auth')" class="bg-morocco-green text-white px-5 py-2 rounded-lg font-bold text-sm hover:bg-morocco-darkGreen transition shadow-sm" data-i18n="loginBtn">${i18
