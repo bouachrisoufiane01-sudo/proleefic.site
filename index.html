@@ -4,13 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proleefic | Morocco's #1 Job Platform</title>
-    <meta name="description" content="Find jobs in Morocco. Recrutement, Offres d'emploi, Techniciens, Ingénieurs.">
-    
-    <meta name="google-site-verification" content="M-uhenO_P6Qo7uM7MJrFy99ymzklCvnOq0dN9aNdjME" />
-
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23006233%22><path d=%22M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z%22/></svg>">
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3965710509874164" crossorigin="anonymous"></script>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -26,8 +19,7 @@
                         morocco: { red: '#C1272D', green: '#006233', darkRed: '#8a1c21', darkGreen: '#004d28' },
                         dark: { bg: '#0F172A', card: '#1E293B' }
                     },
-                    animation: { 'fade-in': 'fadeIn 0.4s ease-out' },
-                    keyframes: { fadeIn: { '0%': { opacity: '0', transform: 'translateY(10px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } } }
+                    animation: { 'fade-in': 'fadeIn 0.4s ease-out' }
                 }
             }
         }
@@ -39,465 +31,245 @@
         .hidden-view { display: none !important; }
         .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid #e5e7eb; }
         .dark .glass-nav { background: rgba(15, 23, 42, 0.95); border-bottom: 1px solid #1e293b; }
-        .input-pro { @apply w-full px-5 py-3.5 rounded-xl border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-morocco-green focus:border-transparent transition-all outline-none font-medium text-gray-900 dark:text-white; }
-        .ad-container { @apply bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl overflow-hidden flex flex-col items-center justify-center text-center relative; }
-        .ad-label { @apply text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block pt-2; }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
-        .dark ::-webkit-scrollbar-thumb { background: #475569; }
+        .input-pro { @apply w-full px-5 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-morocco-green outline-none font-medium text-gray-900 dark:text-white transition; }
+        .btn-primary { @apply bg-morocco-green text-white font-bold px-6 py-3 rounded-xl hover:bg-morocco-darkGreen transition shadow-lg shadow-green-900/20; }
         
-        /* Category Button Styles */
-        .cat-btn { @apply w-full flex items-center gap-4 px-4 py-3 rounded-xl border border-transparent hover:border-morocco-green hover:bg-green-50 dark:hover:bg-green-900/20 transition-all duration-200 group text-left; }
-        .cat-icon { @apply w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-500 group-hover:bg-white group-hover:text-morocco-green shadow-sm transition-colors; }
-        .cat-active { @apply border-morocco-green bg-green-50 dark:bg-green-900/20; }
+        /* CV Paper Effect */
+        .cv-paper { width: 210mm; min-height: 297mm; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.1); padding: 40px; margin: 0 auto; color: #333; }
+        .dark .cv-paper { background: #e2e8f0; color: #000; } /* Always light paper for readability */
+        
+        @media print {
+            body * { visibility: hidden; }
+            #cvPreview, #cvPreview * { visibility: visible; }
+            #cvPreview { position: absolute; left: 0; top: 0; width: 100%; margin: 0; padding: 0; box-shadow: none; }
+            .no-print { display: none !important; }
+        }
     </style>
 </head>
 <body class="bg-[#f8f9fa] dark:bg-[#0f1115] text-gray-900 dark:text-gray-100">
 
-    <nav class="glass-nav sticky top-0 z-50 shadow-sm border-t-4 border-morocco-green">
+    <nav class="glass-nav sticky top-0 z-50 shadow-sm border-t-4 border-morocco-green no-print">
         <div class="container mx-auto px-4 h-[72px] flex items-center justify-between">
-            <div class="flex items-center gap-3 cursor-pointer group" onclick="switchView('home')">
-                <div class="relative w-10 h-10 flex items-center justify-center bg-white border border-gray-100 rounded-lg shadow-sm">
-                    <i class="fa-solid fa-star text-morocco-green text-2xl absolute"></i>
+            <div class="flex items-center gap-3 cursor-pointer" onclick="switchView('home')">
+                <div class="w-10 h-10 flex items-center justify-center bg-white border border-gray-100 rounded-lg shadow-sm">
+                    <i class="fa-solid fa-star text-morocco-green text-2xl"></i>
                 </div>
                 <div class="leading-tight">
-                    <span class="text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">Proleefic</span>
+                    <span class="text-2xl font-extrabold text-gray-900 dark:text-white">Proleefic</span>
                     <span class="text-[10px] font-bold text-morocco-red block uppercase tracking-wider">Morocco 🇲🇦</span>
                 </div>
             </div>
-            <div class="flex items-center gap-3 sm:gap-5">
-                <div class="hidden md:flex bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
-                    <button onclick="setLang('en')" class="px-3 py-1 text-xs font-bold rounded transition" id="lang-en">EN</button>
-                    <button onclick="setLang('fr')" class="px-3 py-1 text-xs font-bold rounded transition" id="lang-fr">FR</button>
-                    <button onclick="setLang('ar')" class="px-3 py-1 text-xs font-bold rounded transition" id="lang-ar">عربي</button>
-                </div>
-                <button onclick="toggleTheme()" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition text-gray-500">
-                    <i class="fa-solid fa-moon dark:hidden text-lg"></i>
-                    <i class="fa-solid fa-sun hidden dark:inline text-yellow-400 text-lg"></i>
+            <div class="flex items-center gap-2 sm:gap-4">
+                <button onclick="switchView('cv')" class="hidden sm:flex items-center gap-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-lg font-bold text-sm shadow-md hover:opacity-90 transition">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> AI CV Builder <span class="bg-white/20 px-1.5 rounded text-[10px]">FREE</span>
                 </button>
-                
+                <button onclick="switchView('cv')" class="sm:hidden text-purple-600 text-xl"><i class="fa-solid fa-file-pdf"></i></button>
+
                 <div id="authSection" class="flex items-center gap-3">
-                    <button onclick="openAuth()" class="bg-morocco-green text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-morocco-darkGreen transition shadow-lg shadow-green-900/20">Sign In</button>
+                    <button onclick="openAuth()" class="bg-morocco-green text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-morocco-darkGreen transition">Sign In</button>
                 </div>
             </div>
         </div>
     </nav>
 
     <div id="homeView" class="view-section pb-20">
-        <div class="bg-white dark:bg-dark-card border-b border-gray-200 dark:border-gray-800 pt-12 pb-16 px-4 relative overflow-hidden">
-            <i class="fa-solid fa-star text-morocco-green opacity-5 text-[250px] absolute -top-10 -right-10 rotate-12 pointer-events-none z-0"></i>
-            <div class="container mx-auto max-w-5xl relative z-10">
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-8 text-center tracking-tight" data-i18n="heroTitle">Find the job that fits your life</h1>
-                
-                <div class="bg-white dark:bg-gray-800 p-2 rounded-2xl shadow-xl shadow-green-900/5 border border-gray-200 dark:border-gray-700 flex flex-col md:flex-row gap-2">
-                    
-                    <div class="flex-1 relative group">
-                        <i class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 rtl:right-5 rtl:left-auto z-10"></i>
-                        <input type="text" id="mainSearch" class="w-full pl-12 pr-4 py-4 rounded-xl bg-transparent outline-none font-bold text-gray-800 dark:text-white text-lg" data-placeholder="searchPlaceholder">
-                    </div>
-
-                    <div class="w-px bg-gray-200 dark:bg-gray-700 hidden md:block"></div>
-
-                    <div class="flex-1 relative group">
-                        <i class="fa-solid fa-layer-group absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 rtl:right-5 rtl:left-auto z-10"></i>
-                        <select id="categoryFilter" class="w-full pl-12 pr-4 py-4 rounded-xl bg-transparent outline-none font-bold text-gray-800 dark:text-white cursor-pointer appearance-none text-lg">
-                            <option value="">All Sectors</option>
-                        </select>
-                        <i class="fa-solid fa-chevron-down absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 text-xs pointer-events-none rtl:left-5 rtl:right-auto"></i>
-                    </div>
-
-                    <div class="w-px bg-gray-200 dark:bg-gray-700 hidden md:block"></div>
-
-                    <div class="flex-1 relative group">
-                        <i class="fa-solid fa-location-dot absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 rtl:right-5 rtl:left-auto z-10"></i>
-                        <select id="locationFilter" class="w-full pl-12 pr-4 py-4 rounded-xl bg-transparent outline-none font-bold text-gray-800 dark:text-white cursor-pointer appearance-none text-lg">
-                            <option value="">All Cities</option>
-                        </select>
-                        <i class="fa-solid fa-chevron-down absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 text-xs pointer-events-none rtl:left-5 rtl:right-auto"></i>
-                    </div>
-
-                    <button onclick="filter()" class="bg-morocco-green hover:bg-morocco-darkGreen text-white px-8 py-4 rounded-xl font-bold text-lg transition shadow-xl" data-i18n="searchBtn">Find</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="container mx-auto px-4 mt-8">
-            <div class="ad-container py-4 bg-white dark:bg-dark-card shadow-sm">
-                <span class="ad-label">Advertisement</span>
-                <ins class="adsbygoogle" style="display:block; width:100%; max-height:90px" data-ad-client="ca-pub-3965710509874164" data-ad-slot="REPLACE_WITH_SLOT_ID" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
-                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-            </div>
-        </div>
-
-        <div class="container mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="bg-white dark:bg-dark-card border-b border-gray-200 dark:border-gray-800 pt-10 pb-12 px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">Find the job that fits your life</h1>
             
-            <aside class="hidden lg:block lg:col-span-3 space-y-6">
-                <div class="bg-white dark:bg-dark-card rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm p-5">
-                    <h3 class="font-bold text-xs uppercase text-gray-400 mb-4 tracking-wider" data-i18n="categories">Sectors</h3>
-                    <div id="categoryList" class="grid grid-cols-1 gap-1.5">
-                        </div>
-                </div>
-            </aside>
-
-            <main class="lg:col-span-6 space-y-4">
-                <div class="flex justify-between items-center mb-2 px-1">
-                    <h2 class="font-bold text-xl flex items-center gap-2"><span data-i18n="feedTitle">Latest Jobs</span> <span class="text-gray-400 text-sm font-normal ml-2" id="jobCount">...</span></h2>
-                </div>
-                <div id="jobListings" class="space-y-3 min-h-[500px]">
-                    </div>
-                <button onclick="window.initData()" class="w-full mt-6 py-4 border-2 border-dashed border-gray-300 dark:border-gray-700 text-morocco-green font-bold rounded-2xl hover:bg-white dark:hover:bg-gray-800 transition" data-i18n="loadMore">Refresh Jobs</button>
-            </main>
-
-            <aside class="hidden lg:block lg:col-span-3 space-y-6">
-                <div class="ad-container min-h-[300px] sticky top-24">
-                    <span class="ad-label">Sponsored</span>
-                    <ins class="adsbygoogle" style="display:block; width:100%" data-ad-client="ca-pub-3965710509874164" data-ad-slot="REPLACE_WITH_SLOT_ID" data-ad-format="rectangle" data-full-width-responsive="true"></ins>
-                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                </div>
-            </aside>
+            <div class="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-2 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 flex flex-col md:flex-row gap-2">
+                <input type="text" id="mainSearch" class="flex-1 w-full px-4 py-4 rounded-xl bg-transparent outline-none font-bold text-lg" placeholder="Job title, keywords...">
+                <button onclick="alert('Use the CV Builder to get hired faster!')" class="bg-morocco-green text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl">Find Jobs</button>
+            </div>
+            
+            <div class="mt-8">
+                <button onclick="switchView('cv')" class="inline-flex items-center gap-2 text-gray-500 hover:text-purple-600 font-bold transition">
+                    Need a Resume? <span class="underline">Create one for free with AI</span> <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
         </div>
     </div>
 
-    <div id="jobDetailModal" class="hidden-view fixed inset-0 z-[100] modal-backdrop flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/50 backdrop-blur-sm transition-opacity" onclick="if(event.target === this) closeJobModal()">
-        <div class="bg-white dark:bg-dark-card w-full max-w-2xl rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col max-h-[90vh] animate-fade-in">
-            <button onclick="closeJobModal()" class="absolute top-4 right-4 w-10 h-10 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center hover:text-red-500 transition text-xl font-bold z-10">✕</button>
+    <div id="cvView" class="hidden-view view-section bg-gray-100 dark:bg-black min-h-screen">
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex flex-col lg:flex-row gap-8">
+                
+                <div class="w-full lg:w-1/3 space-y-6 no-print">
+                    <div class="bg-white dark:bg-dark-card p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700">
+                        <h2 class="text-xl font-bold mb-4 flex items-center gap-2 text-gray-800 dark:text-white">
+                            <i class="fa-solid fa-pen-to-square text-morocco-green"></i> Edit Details
+                        </h2>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="text-xs font-bold text-gray-400 uppercase">Full Name</label>
+                                <input type="text" id="cvName" oninput="updateCV()" class="input-pro" placeholder="e.g. Karim Bennani">
+                            </div>
+                            <div>
+                                <label class="text-xs font-bold text-gray-400 uppercase">Job Title</label>
+                                <input type="text" id="cvTitle" oninput="updateCV()" class="input-pro" placeholder="e.g. Electricien Industriel">
+                            </div>
+                            <div class="grid grid-cols-2 gap-2">
+                                <input type="text" id="cvPhone" oninput="updateCV()" class="input-pro" placeholder="+212 6...">
+                                <input type="text" id="cvCity" oninput="updateCV()" class="input-pro" placeholder="Casablanca">
+                            </div>
 
-            <div class="p-6 border-b border-gray-100 dark:border-gray-700 flex justify-between items-start">
-                <div class="flex gap-5">
-                    <div id="modalLogo" class="w-16 h-16 shrink-0"></div>
-                    <div>
-                        <h2 id="modalTitle" class="text-2xl font-bold dark:text-white leading-tight"></h2>
-                        <p id="modalCompany" class="text-morocco-green font-semibold text-lg mt-1"></p>
-                        <div class="flex items-center gap-3 mt-2 text-sm text-gray-500">
-                            <span id="modalLocation"><i class="fa-solid fa-location-dot"></i></span> • <span id="modalDate">Today</span>
+                            <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-xl border border-purple-100 dark:border-purple-800">
+                                <div class="flex justify-between items-center mb-2">
+                                    <label class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase">Profile Summary</label>
+                                    <button onclick="generateAISummary()" class="text-xs bg-purple-600 text-white px-2 py-1 rounded shadow hover:bg-purple-700 transition">
+                                        <i class="fa-solid fa-wand-magic-sparkles"></i> AI Write
+                                    </button>
+                                </div>
+                                <textarea id="cvSummary" oninput="updateCV()" rows="4" class="input-pro text-sm" placeholder="Click 'AI Write' to auto-generate..."></textarea>
+                            </div>
+
+                            <div>
+                                <label class="text-xs font-bold text-gray-400 uppercase">Experience</label>
+                                <textarea id="cvExp" oninput="updateCV()" rows="3" class="input-pro" placeholder="• 2023-Present: Technician at Renault..."></textarea>
+                            </div>
+
+                            <div>
+                                <label class="text-xs font-bold text-gray-400 uppercase">Skills</label>
+                                <input type="text" id="cvSkills" oninput="updateCV()" class="input-pro" placeholder="Wiring, PLC, Safety, Teamwork">
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-6 border-t dark:border-gray-700">
+                            <button onclick="window.print()" class="w-full bg-morocco-green text-white py-3 rounded-xl font-bold shadow-lg hover:bg-morocco-darkGreen transition">
+                                <i class="fa-solid fa-download mr-2"></i> Download PDF
+                            </button>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="p-6 overflow-y-auto flex-1">
-                <div class="bg-gray-50 dark:bg-gray-800/50 p-5 rounded-2xl mb-6 border border-gray-100 dark:border-gray-700 grid grid-cols-2 gap-4">
-                    <div><span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Salary</span><div id="modalSalary" class="font-bold dark:text-white text-lg"></div></div>
-                    <div><span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Source</span><div id="modalSource" class="font-bold text-blue-500"></div></div>
+                <div class="w-full lg:w-2/3 overflow-x-auto pb-10">
+                    <div id="cvPreview" class="cv-paper rounded-none sm:rounded-lg relative">
+                        <div class="border-b-4 border-gray-800 pb-6 mb-6 flex justify-between items-start">
+                            <div>
+                                <h1 id="prevName" class="text-4xl font-extrabold uppercase tracking-tight text-gray-900">YOUR NAME</h1>
+                                <p id="prevTitle" class="text-xl text-morocco-green font-bold mt-1 uppercase tracking-widest">JOB TITLE</p>
+                            </div>
+                            <div class="text-right text-sm text-gray-600 leading-relaxed">
+                                <p id="prevPhone">+212 600 000 000</p>
+                                <p id="prevCity">City, Morocco</p>
+                                <p id="prevEmail">email@example.com</p>
+                            </div>
+                        </div>
+
+                        <div class="mb-8">
+                            <h3 class="font-bold text-gray-800 border-b border-gray-300 mb-3 uppercase text-sm tracking-wider">Profile</h3>
+                            <p id="prevSummary" class="text-gray-700 text-sm leading-relaxed">
+                                A brief professional summary will appear here. Enter your job title and click the AI button to generate one instantly.
+                            </p>
+                        </div>
+
+                        <div class="mb-8">
+                            <h3 class="font-bold text-gray-800 border-b border-gray-300 mb-3 uppercase text-sm tracking-wider">Experience</h3>
+                            <div id="prevExp" class="text-gray-700 text-sm whitespace-pre-line">
+                                • 2022 - Present: [Company Name]
+                                  Describe your responsibilities here.
+                            </div>
+                        </div>
+
+                        <div class="mb-8">
+                            <h3 class="font-bold text-gray-800 border-b border-gray-300 mb-3 uppercase text-sm tracking-wider">Skills & Expertise</h3>
+                            <div id="prevSkills" class="flex flex-wrap gap-2 mt-2">
+                                <span class="bg-gray-200 px-3 py-1 rounded text-xs font-bold text-gray-700">Skill 1</span>
+                                <span class="bg-gray-200 px-3 py-1 rounded text-xs font-bold text-gray-700">Skill 2</span>
+                            </div>
+                        </div>
+
+                        <div class="absolute bottom-4 right-4 text-[10px] text-gray-400">
+                            Created with Proleefic.ma
+                        </div>
+                    </div>
                 </div>
-                <h3 class="font-bold text-lg mb-3 dark:text-white">Job Overview</h3>
-                <p id="modalDesc" class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm"></p>
-            </div>
 
-            <div class="p-5 border-t border-gray-100 dark:border-gray-700 flex gap-3 bg-gray-50 dark:bg-gray-800/30 rounded-b-3xl">
-                <button onclick="window.toggleSave(window.currentJobId); closeJobModal()" class="px-5 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-500 hover:text-morocco-red hover:bg-white transition"><i class="fa-regular fa-heart text-xl"></i></button>
-                <a id="modalApplyBtn" href="#" target="_blank" class="flex-1 bg-morocco-green text-white font-bold rounded-xl flex items-center justify-center py-3.5 hover:bg-morocco-darkGreen transition shadow-lg text-lg">Apply Now <i class="fa-solid fa-external-link-alt ml-2"></i></a>
             </div>
         </div>
     </div>
 
     <div id="authView" class="hidden-view fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4" onclick="if(event.target === this) closeAuth()">
-        <div class="bg-white dark:bg-dark-card w-full max-w-md rounded-3xl shadow-2xl relative p-8 animate-fade-in">
-            <button onclick="closeAuth()" class="absolute top-4 right-4 text-gray-400 hover:text-red-500 text-xl">✕</button>
-            <div class="text-center mb-6">
-                <h2 class="text-2xl font-bold dark:text-white" data-i18n="authTitle">Welcome</h2>
-                <p id="authSubMsg" class="text-sm text-gray-500 mt-1" data-i18n="authSub">Login to save jobs.</p>
-                <div class="flex bg-gray-100 dark:bg-gray-800 p-1 rounded-xl mt-6">
-                    <button onclick="toggleAuthMode('login')" id="tab-login" class="flex-1 py-2 text-sm font-bold rounded-lg bg-white text-morocco-green shadow-sm transition">Log In</button>
-                    <button onclick="toggleAuthMode('signup')" id="tab-signup" class="flex-1 py-2 text-sm font-bold rounded-lg text-gray-500 transition">Sign Up</button>
-                </div>
-            </div>
-            <div id="authError" class="hidden bg-red-100 text-red-600 p-3 rounded-lg mb-4 text-sm border-l-4 border-red-500"></div>
-            
-            <form id="loginForm" onsubmit="window.handleEmailLogin(event)" class="space-y-4">
-                <input type="email" id="loginEmail" class="input-pro" placeholder="Email Address" required>
-                <input type="password" id="loginPass" class="input-pro" placeholder="Password" required>
-                <div class="text-right"><button type="button" onclick="window.handlePasswordReset()" class="text-xs text-morocco-green font-bold hover:underline">Forgot Password?</button></div>
-                <button type="submit" class="w-full bg-morocco-green text-white py-3.5 rounded-xl font-bold transition shadow-lg">Sign In</button>
-            </form>
-
-            <form id="signupForm" onsubmit="window.handleEmailSignup(event)" class="space-y-4 hidden">
-                <input type="text" id="signupName" class="input-pro" placeholder="Full Name" required>
-                <input type="email" id="signupEmail" class="input-pro" placeholder="Email Address" required>
-                <input type="password" id="signupPass" class="input-pro" placeholder="Create Password" required>
-                <button type="submit" class="w-full bg-morocco-red text-white py-3.5 rounded-xl font-bold transition shadow-lg">Create Account</button>
-            </form>
-
-            <div class="relative text-center my-6"><span class="bg-white dark:bg-dark-card px-3 text-xs text-gray-400 font-bold relative z-10">OR</span><div class="h-px bg-gray-200 dark:bg-gray-700 w-full absolute top-1/2"></div></div>
-            <button onclick="window.loginGoogle()" class="w-full border border-gray-300 dark:border-gray-600 py-3.5 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-gray-50 dark:hover:bg-gray-800 transition dark:text-white">
-                <svg class="w-5 h-5" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google
-            </button>
+        <div class="bg-white dark:bg-dark-card w-full max-w-md rounded-3xl shadow-2xl relative p-8">
+            <button onclick="closeAuth()" class="absolute top-4 right-4 text-xl">✕</button>
+            <h2 class="text-2xl font-bold mb-4 dark:text-white">Sign In</h2>
+            <p class="text-sm text-gray-500 mb-4">Login to save jobs. (CV Builder is free without login!)</p>
+            <button onclick="alert('This is a demo login')" class="w-full bg-morocco-green text-white py-3 rounded-xl font-bold">Demo Login</button>
         </div>
     </div>
 
-    <div id="profileView" class="hidden-view view-section container mx-auto px-4 py-10 min-h-screen">
-        <div class="max-w-3xl mx-auto">
-            <button onclick="switchView('home')" class="mb-6 font-bold text-morocco-green flex items-center gap-2"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="backHome">Back to Jobs</span></button>
-            <div class="bg-white dark:bg-dark-card rounded-2xl shadow p-6 flex items-center justify-between border-t-4 border-morocco-green">
-                <div>
-                    <h1 class="text-2xl font-bold dark:text-white" id="userName">User</h1>
-                    <p class="text-gray-500" id="userEmail">email</p>
-                </div>
-                <button onclick="window.logout()" class="text-red-500 font-bold border border-red-200 px-4 py-2 rounded-lg hover:bg-red-50" data-i18n="logout">Logout</button>
-            </div>
-            <h2 class="text-xl font-bold mt-8 mb-4 dark:text-white" data-i18n="savedJobs">Saved Jobs</h2>
-            <div id="savedContainer" class="grid gap-4">
-                <p class="text-gray-400 text-sm">No saved jobs yet.</p>
-            </div>
-        </div>
-    </div>
+    <script>
+        // --- NAVIGATION ---
+        function switchView(viewName) {
+            document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden-view'));
+            document.getElementById(viewName + 'View').classList.remove('hidden-view');
+            window.scrollTo(0, 0);
+        }
+        function openAuth() { document.getElementById('authView').classList.remove('hidden-view'); }
+        function closeAuth() { document.getElementById('authView').classList.add('hidden-view'); }
 
-    <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-12 py-8 text-center text-xs text-gray-400">
-        <div class="container mx-auto px-4">
-            &copy; 2025 Proleefic.ma <span class="mx-2">•</span> <a href="privacy.html" class="hover:text-morocco-green">Privacy</a> <span class="mx-2">•</span> <a href="https://www.linkedin.com/in/soufiane-bouachri-5a2891350" target="_blank" class="hover:text-morocco-green">Contact</a>
-        </div>
-    </footer>
-
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-        import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, updateProfile } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-        import { getFirestore, doc, setDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-        // CONFIG (Replace with your actual keys)
-        const firebaseConfig = { apiKey: "AIzaSyBsPi64Eb0GQnGjcxg6n6YRFbG-iO9K_pM", authDomain: "proleefic-85800.firebaseapp.com", projectId: "proleefic-85800", storageBucket: "proleefic-85800.firebasestorage.app", messagingSenderId: "1033605555868", appId: "1:1033605555868:web:577ff42f0bcfb0b6122f59", measurementId: "G-WJ4XKS01P0" };
-        let app, auth, db; try { app = initializeApp(firebaseConfig); auth = getAuth(app); db = getFirestore(app); } catch(e){}
-
-        // TRANSLATIONS
-        const i18n = {
-            en: { heroTitle: "Find the job that fits your life", searchPlaceholder: "Job title, keywords...", searchBtn: "Find Jobs", categories: "Sectors", feedTitle: "Latest Jobs", loadMore: "Refresh Jobs", loginBtn: "Sign In", authTitle: "Welcome", authSub: "Login to save jobs.", backHome: "Back to Jobs", logout: "Logout", savedJobs: "Saved Jobs" },
-            fr: { heroTitle: "Trouvez le job idéal au Maroc", searchPlaceholder: "Titre du poste...", searchBtn: "Rechercher", categories: "Secteurs", feedTitle: "Dernières Offres", loadMore: "Actualiser", loginBtn: "Connexion", authTitle: "Bienvenue", authSub: "Connectez-vous pour postuler.", backHome: "Retour", logout: "Déconnexion", savedJobs: "Offres Sauvegardées" },
-            ar: { heroTitle: "جد الوظيفة المناسبة لك", searchPlaceholder: "عنوان الوظيفة...", searchBtn: "بحث", categories: "القطاعات", feedTitle: "أحدث الوظائف", loadMore: "تحديث", loginBtn: "دخول", authTitle: "مرحباً", authSub: "سجل الدخول", backHome: "رجوع", logout: "خروج", savedJobs: "محفوظات" }
-        };
-        
-        // CATEGORIES
-        const catLabels = { 
-            'cat_prod': {en:"Production / Industry", fr:"Industrie", ar:"الإنتاج الصناعي", i:"fa-industry"}, 
-            'cat_tech': {en:"Technician", fr:"Technicien", ar:"تقني", i:"fa-wrench"}, 
-            'cat_eng': {en:"Engineering", fr:"Ingénierie", ar:"هندسة", i:"fa-helmet-safety"}, 
-            'cat_transport': {en:"Transport", fr:"Transport", ar:"نقل", i:"fa-truck"}, 
-            'cat_it': {en:"IT / Dev", fr:"Informatique", ar:"معلوميات", i:"fa-laptop-code"}, 
-            'cat_sales': {en:"Sales", fr:"Commerce", ar:"تجارة", i:"fa-briefcase"}, 
-            'cat_call': {en:"Call Center", fr:"Centre d'Appel", ar:"مركز نداء", i:"fa-headset"}, 
-            'cat_health': {en:"Healthcare", fr:"Santé", ar:"صحة", i:"fa-heart-pulse"}, 
-            'cat_edu': {en:"Education", fr:"Enseignement", ar:"تعليم", i:"fa-graduation-cap"} 
-        };
-
-        // GLOBAL STATE
-        window.currentLang = localStorage.getItem('lang') || 'en';
-        window.currentUser = null;
-        window.jobs = [];
-        window.currentJobId = null;
-
-        // === SYSTEM FUNCTIONS ===
-        window.setLang = (l) => { 
-            window.currentLang = l; 
-            localStorage.setItem('lang', l); 
-            document.documentElement.setAttribute('dir', l === 'ar' ? 'rtl' : 'ltr'); 
-            document.querySelectorAll('#lang-en, #lang-fr, #lang-ar').forEach(b => { 
-                b.classList.remove('bg-white', 'text-morocco-green', 'shadow-sm'); 
-                b.classList.add('text-gray-500'); 
-            }); 
-            document.getElementById('lang-' + l)?.classList.add('bg-white', 'text-morocco-green', 'shadow-sm'); 
-            document.getElementById('lang-' + l)?.classList.remove('text-gray-500'); 
+        // --- CV LOGIC ---
+        function updateCV() {
+            // Get values
+            const name = document.getElementById('cvName').value || "YOUR NAME";
+            const title = document.getElementById('cvTitle').value || "JOB TITLE";
+            const phone = document.getElementById('cvPhone').value || "+212 6...";
+            const city = document.getElementById('cvCity').value || "City";
+            const summary = document.getElementById('cvSummary').value || "Your summary will appear here...";
+            const exp = document.getElementById('cvExp').value || "• Experience details...";
             
-            document.querySelectorAll('[data-i18n]').forEach(el => { 
-                if(i18n[l][el.getAttribute('data-i18n')]) el.innerText = i18n[l][el.getAttribute('data-i18n')]; 
-            }); 
-            document.getElementById('mainSearch').placeholder = i18n[l].searchPlaceholder;
-            renderCategories(); 
-        };
+            // Render basic text
+            document.getElementById('prevName').innerText = name;
+            document.getElementById('prevTitle').innerText = title;
+            document.getElementById('prevPhone').innerText = phone;
+            document.getElementById('prevCity').innerText = city;
+            document.getElementById('prevSummary').innerText = summary;
+            document.getElementById('prevExp').innerText = exp;
 
-        window.toggleTheme = () => { document.documentElement.classList.toggle('dark'); localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light'); };
-        window.switchView = (v) => { document.querySelectorAll('.view-section').forEach(e => e.classList.add('hidden-view')); document.getElementById(v+'View').classList.remove('hidden-view'); window.scrollTo(0,0); };
-        window.openAuth = (msg = null) => {
-            document.getElementById('authView').classList.remove('hidden-view');
-            if(msg) document.getElementById('authSubMsg').innerText = msg;
-            else document.getElementById('authSubMsg').innerText = i18n[window.currentLang].authSub;
-        };
-        window.closeAuth = () => document.getElementById('authView').classList.add('hidden-view');
-        window.closeJobModal = () => document.getElementById('jobDetailModal').classList.add('hidden-view');
-        
-        window.toggleAuthMode = (m) => {
-            const l=document.getElementById('loginForm'), s=document.getElementById('signupForm'), tl=document.getElementById('tab-login'), ts=document.getElementById('tab-signup');
-            if(m==='login'){l.classList.remove('hidden');s.classList.add('hidden');tl.classList.add('bg-white','text-morocco-green');tl.classList.remove('text-gray-500');ts.classList.remove('bg-white','text-morocco-green');ts.classList.add('text-gray-500');}
-            else{l.classList.add('hidden');s.classList.remove('hidden');ts.classList.add('bg-white','text-morocco-green');ts.classList.remove('text-gray-500');tl.classList.remove('bg-white','text-morocco-green');tl.classList.add('text-gray-500');}
-        };
-        
-        // === AUTH HANDLERS ===
-        window.showMessage = (msg, type='error') => { const b=document.getElementById('authError'); b.innerText=msg.replace('Firebase: ',''); b.classList.remove('hidden'); }
-        window.handleEmailLogin = (e) => { e.preventDefault(); signInWithEmailAndPassword(auth, document.getElementById('loginEmail').value, document.getElementById('loginPass').value).then(()=>{window.closeAuth(); window.switchView('profile');}).catch(e=>window.showMessage(e.message)); };
-        window.handleEmailSignup = (e) => { e.preventDefault(); const n=document.getElementById('signupName').value; createUserWithEmailAndPassword(auth, document.getElementById('signupEmail').value, document.getElementById('signupPass').value).then(r=>{updateProfile(r.user,{displayName:n}); window.closeAuth(); window.switchView('profile');}).catch(e=>window.showMessage(e.message)); };
-        window.handlePasswordReset = () => { const e=document.getElementById('loginEmail').value; if(!e)return window.showMessage("Enter email first."); sendPasswordResetEmail(auth, e).then(()=>alert("Reset link sent!")).catch(e=>window.showMessage(e.message)); };
-        window.loginGoogle = () => { signInWithPopup(auth, new GoogleAuthProvider()).then(()=>{window.closeAuth(); window.switchView('profile');}).catch(e=>window.showMessage(e.message)); };
-        window.logout = () => signOut(auth).then(()=>window.switchView('home'));
-        
-        if(auth) onAuthStateChanged(auth, u => { 
-            window.currentUser=u; 
-            document.getElementById('authSection').innerHTML = u ? `<button onclick="switchView('profile')" class="w-9 h-9 rounded-full bg-morocco-red text-white font-bold relative flex items-center justify-center">${u.displayName ? u.displayName.charAt(0) : 'U'}<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-white rounded-full"></span></button>` : `<button onclick="openAuth()" class="bg-morocco-green text-white px-5 py-2 rounded-lg font-bold text-sm hover:bg-morocco-darkGreen transition shadow-sm" data-i18n="loginBtn">${i18n[window.currentLang].loginBtn}</button>`; 
-            if(u){
-                document.getElementById('userName').innerText=u.displayName || "User";
-                document.getElementById('userEmail').innerText=u.email;
-                loadSavedJobs();
-            } 
-        });
-
-        // === DATA & MOCK GENERATOR ===
-        window.initData = async () => {
-            const locFilter = document.getElementById('locationFilter');
-            const catFilter = document.getElementById('categoryFilter'); // NEW
-            
-            locFilter.innerHTML = `<option value="">All Cities</option>` + ['Casablanca','Tanger','Kenitra','Rabat','Agadir','Marrakech'].map(c=>`<option value="${c}">${c}</option>`).join('');
-            
-            // Populate Mobile Category Dropdown
-            catFilter.innerHTML = `<option value="">All Sectors</option>` + Object.keys(catLabels).map(k=>`<option value="${k}">${catLabels[k][window.currentLang]}</option>`).join('');
-
-            try {
-                const res = await fetch('jobs.json?t='+Date.now());
-                if(!res.ok) throw new Error();
-                window.jobs = await res.json();
-                renderJobs(window.jobs);
-            } catch { 
-                generateBackupData();
+            // Render Skills as Tags
+            const skillsInput = document.getElementById('cvSkills').value;
+            const skillsContainer = document.getElementById('prevSkills');
+            if(skillsInput) {
+                skillsContainer.innerHTML = skillsInput.split(',').map(s => 
+                    `<span class="bg-gray-100 border border-gray-200 px-3 py-1 rounded text-xs font-bold text-gray-700 uppercase tracking-wide">${s.trim()}</span>`
+                ).join('');
+            } else {
+                skillsContainer.innerHTML = '<span class="text-gray-400 text-xs italic">List your skills separated by comma...</span>';
             }
-        };
-
-        function generateBackupData() {
-            const prodRoles = [
-                ["Opérateur Câblage", "cat_prod", "Tanger", "Yazaki"],
-                ["Chef d'Équipe Production", "cat_prod", "Kenitra", "Stellantis"],
-                ["Technicien Maintenance", "cat_tech", "Tanger", "Renault"],
-                ["Ingénieur Qualité", "cat_eng", "Casablanca", "OCP"],
-                ["Soudeur Industriel", "cat_prod", "Agadir", "Manpower"]
-            ];
-            
-            const otherRoles = [
-                ["Chauffeur Poids Lourds", "cat_transport", "Casa", "Transport Maroc"],
-                ["Infirmier Polyvalent", "cat_health", "Rabat", "Clinique Agdal"],
-                ["Réceptionniste", "cat_sales", "Marrakech", "Sofitel"],
-                ["Professeur Français", "cat_edu", "Fes", "Mission"]
-            ];
-            
-            const roles = [...prodRoles, ...prodRoles, ...otherRoles]; 
-
-            window.jobs = Array.from({length:30}, (_,i)=>{ 
-                const r = roles[Math.floor(Math.random()*roles.length)];
-                return { id: i, title: r[0], catId: r[1], location: r[2], company: r[3], salary: "Negotiable", posted: "2d ago", urgent: Math.random() < 0.3, link: "#", sourceName: "Direct", rating: (Math.random()*1.5+3.5).toFixed(1) }; 
-            });
-            renderJobs(window.jobs);
         }
 
-        // === RENDER FUNCTIONS ===
-        function getLogo(name) {
-            const colors = ['bg-blue-100 text-blue-600', 'bg-green-100 text-green-600', 'bg-purple-100 text-purple-600', 'bg-orange-100 text-orange-600', 'bg-red-100 text-red-600'];
-            const color = colors[name.length % colors.length];
-            return `<div class="w-14 h-14 shrink-0 rounded-xl ${color} flex items-center justify-center font-bold text-2xl uppercase border border-black/5 shadow-sm">${name.charAt(0)}</div>`;
-        }
-
-        function renderCategories() {
-            const list = document.getElementById('categoryList');
-            const l = window.currentLang;
-            list.innerHTML = Object.keys(catLabels).map(k => `
-                <button onclick="filterCat('${k}')" class="cat-btn" id="btn-${k}">
-                    <div class="cat-icon"><i class="fa-solid ${catLabels[k].i} text-xl"></i></div>
-                    <span class="text-sm font-bold text-gray-700 dark:text-gray-200 group-hover:text-morocco-green">${catLabels[k][l]}</span>
-                </button>`).join('');
+        // --- AI SIMULATION (The "Magic" Part) ---
+        function generateAISummary() {
+            const title = document.getElementById('cvTitle').value.toLowerCase();
+            const summaryBox = document.getElementById('cvSummary');
             
-            // Also refresh dropdown language
-            const catFilter = document.getElementById('categoryFilter');
-            if(catFilter) catFilter.innerHTML = `<option value="">All Sectors</option>` + Object.keys(catLabels).map(k=>`<option value="${k}">${catLabels[k][l]}</option>`).join('');
-        }
+            // Simulated AI Responses
+            let aiText = "Experienced professional dedicated to delivering high-quality results. Skilled in team collaboration and problem-solving.";
 
-        function renderJobs(arr) {
-            document.getElementById('jobCount').innerText = arr.length + ' jobs';
-            document.getElementById('jobListings').innerHTML = arr.map((j, idx) => {
-                let ad = idx===4 ? `<div class="ad-container py-4 my-4"><span class="ad-label">Sponsored</span><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3965710509874164" data-ad-slot="1234567890"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});<\/script></div>` : '';
-                return `${ad}<div class="bg-white dark:bg-dark-card p-5 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-morocco-green hover:shadow-lg transition group cursor-pointer relative animate-fade-in" onclick="openJobDetails('${j.id}')">
-                    ${j.urgent ? `<span class="absolute top-4 right-4 bg-red-100 text-red-600 text-[10px] font-bold px-2 py-1 rounded-full">URGENT</span>` : ''}
-                    <div class="flex gap-4">${getLogo(j.company)}
-                        <div class="flex-1">
-                            <h3 class="font-bold text-lg dark:text-white mb-0.5">${j.title}</h3>
-                            <p class="text-sm text-gray-500">${j.company} <span class="text-yellow-500 ml-1">★ ${j.rating}</span></p>
-                            <div class="mt-3 flex gap-2 text-xs font-bold text-gray-500">
-                                <span class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded"><i class="fa-solid fa-location-dot mr-1"></i>${j.location}</span>
-                                <span class="bg-green-50 text-green-700 px-2 py-1 rounded">${j.salary}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>`;
-            }).join('');
-        }
-
-        // === ACTION FUNCTIONS ===
-        window.filter = () => { 
-            const t=document.getElementById('mainSearch').value.toLowerCase();
-            const l=document.getElementById('locationFilter').value;
-            const c=document.getElementById('categoryFilter').value; // Get dropdown value
-            
-            renderJobs(window.jobs.filter(j=>
-                (j.title.toLowerCase().includes(t)||j.company.toLowerCase().includes(t)) && 
-                (l===''||j.location===l) &&
-                (c===''||j.catId===c) // Apply category logic
-            )); 
-        }
-        
-        window.filterCat = (id) => {
-            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('cat-active'));
-            document.getElementById('btn-'+id)?.classList.add('cat-active');
-            
-            // Sync with dropdown for consistency
-            document.getElementById('categoryFilter').value = id;
-            
-            renderJobs(window.jobs.filter(j=>j.catId===id));
-        };
-        
-        window.openJobDetails = (id) => {
-            const j = window.jobs.find(x => x.id == id); if(!j) return;
-            window.currentJobId = id; 
-            document.getElementById('modalTitle').innerText = j.title; 
-            document.getElementById('modalCompany').innerText = j.company; 
-            document.getElementById('modalLocation').innerText = j.location; 
-            document.getElementById('modalSalary').innerText = j.salary; 
-            document.getElementById('modalSource').innerText = j.sourceName; 
-            document.getElementById('modalDesc').innerText = `We are hiring a ${j.title} to join our team in ${j.location}. This is a ${j.urgent?'Urgent':''} position with ${j.company}. Apply directly on ${j.sourceName}.`; 
-            document.getElementById('modalApplyBtn').href = j.link; 
-            document.getElementById('modalLogo').innerHTML = getLogo(j.company).replace('w-14','w-16').replace('h-14','h-16'); 
-            document.getElementById('jobDetailModal').classList.remove('hidden-view');
-        }
-
-        window.toggleSave = async (id) => { 
-            // UPDATED LOGIC FOR LOGIN PROMPT
-            if(!auth||!window.currentUser) {
-                // Close job modal so they focus on login
-                window.closeJobModal();
-                // Open auth with custom message
-                return window.openAuth("Please login to save this job.");
+            if (title.includes('tech') || title.includes('maint')) {
+                aiText = "Skilled Maintenance Technician with strong expertise in industrial electrical systems and machinery repair. Committed to safety protocols and minimizing downtime through preventive maintenance strategies.";
+            } else if (title.includes('sales') || title.includes('comm')) {
+                aiText = "Results-driven Sales Representative with a proven track record of exceeding targets. Expert in building customer relationships and negotiating contracts in the Moroccan market.";
+            } else if (title.includes('driver') || title.includes('chauf')) {
+                aiText = "Reliable Professional Driver with 5+ years of experience in logistics and transport. Clean driving record, excellent time management, and deep knowledge of national routes.";
+            } else if (title.includes('ing') || title.includes('eng')) {
+                aiText = "Innovative Engineer with a focus on optimization and project management. Proficient in technical analysis and leading teams to deliver projects on time and within budget.";
             }
-            
-            const job = window.jobs.find(j=>j.id==id); 
-            if(!job) return;
-            try {
-                await setDoc(doc(db,'users',window.currentUser.uid,'saved',id.toString()), job); 
-                alert("Job Saved to your Profile!");
-            } catch(e) { console.error(e); }
-        }
-        
-        async function loadSavedJobs() { 
-            if(!auth||!window.currentUser) return; 
-            try {
-                const s = await getDocs(collection(db,'users',window.currentUser.uid,'saved')); 
-                let h=''; 
-                if(s.empty) h = '<p class="text-gray-400">No saved jobs.</p>';
-                else s.forEach(d=>{
-                    const j=d.data();
-                    h+=`<div class="p-4 border rounded-xl dark:border-gray-700 mb-2 flex justify-between items-center bg-gray-50 dark:bg-gray-800">
-                        <div><div class="font-bold dark:text-white">${j.title}</div><div class="text-xs text-gray-500">${j.company}</div></div>
-                        <a href="${j.link}" target="_blank" class="text-morocco-green font-bold text-sm border border-morocco-green px-3 py-1 rounded-lg hover:bg-morocco-green hover:text-white transition">Apply</a>
-                    </div>`
-                }); 
-                document.getElementById('savedContainer').innerHTML=h; 
-            } catch(e) { console.error(e); }
-        }
 
-        window.onload = () => { 
-            if(localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark'); 
-            window.setLang(window.currentLang); 
-            window.initData(); 
-        };
+            // Typing Effect
+            summaryBox.value = "";
+            summaryBox.placeholder = "AI is writing...";
+            let i = 0;
+            const typeWriter = setInterval(() => {
+                if (i < aiText.length) {
+                    summaryBox.value += aiText.charAt(i);
+                    updateCV(); // Update preview in real-time
+                    i++;
+                } else {
+                    clearInterval(typeWriter);
+                }
+            }, 30); // Speed of typing
+        }
     </script>
 </body>
 </html>
