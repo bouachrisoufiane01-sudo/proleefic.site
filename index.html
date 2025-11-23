@@ -25,13 +25,15 @@
         body { font-family: 'Inter', sans-serif; background-color: #F9FAFB; }
         [dir="rtl"] body { font-family: 'Cairo', sans-serif; }
         .hidden-view { display: none !important; }
+        .input-field { width: 100%; padding: 12px; border: 1px solid #E5E7EB; border-radius: 8px; margin-bottom: 16px; outline: none; transition: border-color 0.2s; }
+        .input-field:focus { border-color: #C1272D; ring: 2px solid #C1272D; }
     </style>
 </head>
 <body class="text-gray-800">
 
     <nav class="bg-morocco-red text-white shadow-lg sticky top-0 z-40 border-b-4 border-morocco-green">
         <div class="container mx-auto px-4 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-2 cursor-pointer" onclick="showHome()">
+            <div class="flex items-center gap-2 cursor-pointer" onclick="switchView('home')">
                 <div class="bg-white w-10 h-10 rounded-full flex items-center justify-center shadow-md">
                     <i class="fa-solid fa-star text-morocco-green text-xl"></i>
                 </div>
@@ -40,25 +42,16 @@
             
             <div class="flex items-center gap-4">
                 <div id="authSection">
-                    <button onclick="loginWithGoogle()" class="bg-white text-morocco-red px-4 py-2 rounded-lg font-bold text-sm hover:bg-gray-100 transition shadow-sm">
-                        <i class="fa-brands fa-google mr-1"></i> Sign In
-                    </button>
-                </div>
-
-                <div class="hidden md:flex bg-red-800 rounded-lg p-1">
-                    <button onclick="setLanguage('en')" class="px-2 text-xs font-bold text-white">EN</button>
-                    <button onclick="setLanguage('fr')" class="px-2 text-xs font-bold text-white">FR</button>
-                    <button onclick="setLanguage('ar')" class="px-2 text-xs font-bold text-white">AR</button>
-                </div>
+                    </div>
             </div>
         </div>
     </nav>
 
-    <div id="homeView">
+    <div id="homeView" class="view-section">
         <header class="bg-white py-12 px-4 border-b border-gray-200">
             <div class="container mx-auto max-w-4xl text-center">
                 <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                    <span data-i18n="heroTitle">Find your dream job in</span> <span class="text-morocco-red">Morocco 🇲🇦</span>
+                    Find your dream job in <span class="text-morocco-red">Morocco 🇲🇦</span>
                 </h1>
                 <div class="bg-white p-2 rounded-2xl shadow-xl border border-gray-200 flex flex-col md:flex-row gap-2 max-w-4xl mx-auto mt-8 ring-4 ring-morocco-green/10">
                     <input type="text" id="searchInput" placeholder="Job title, company..." class="flex-[2] px-4 h-14 outline-none text-lg bg-transparent">
@@ -71,51 +64,97 @@
         <div class="container mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
             <div class="hidden lg:block space-y-6">
                 <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm sticky top-24">
-                    <h3 class="font-bold text-morocco-red text-lg mb-4 border-b pb-2" data-i18n="categories">Categories</h3>
+                    <h3 class="font-bold text-morocco-red text-lg mb-4 border-b pb-2">Categories</h3>
                     <div id="categoryList" class="space-y-1"></div>
                 </div>
             </div>
             <div class="lg:col-span-3">
                 <div class="flex justify-between items-center mb-4">
-                    <h2 class="font-bold text-2xl text-gray-800 flex items-center gap-2">
-                        <span class="text-morocco-green text-3xl">•</span> 
-                        <span id="jobCount">Latest Jobs</span>
-                    </h2>
+                    <h2 class="font-bold text-2xl text-gray-800 flex items-center gap-2"><span class="text-morocco-green text-3xl">•</span> Latest Jobs</h2>
                 </div>
                 <div id="jobListings" class="space-y-4"></div>
-                <div class="mt-8 text-center">
-                    <button onclick="refreshJobs()" class="bg-white border-2 border-morocco-red text-morocco-red font-bold py-3 px-8 rounded-full hover:bg-morocco-red hover:text-white transition">Load More</button>
-                </div>
             </div>
         </div>
     </div>
 
-    <div id="profileView" class="hidden-view container mx-auto px-4 py-8">
+    <div id="loginView" class="view-section hidden-view container mx-auto px-4 py-12 flex justify-center">
+        <div class="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full border border-gray-200">
+            <h2 class="text-3xl font-bold text-center mb-2 text-morocco-red">Welcome Back</h2>
+            <p class="text-center text-gray-500 mb-8">Sign in to save jobs and manage your profile</p>
+            
+            <form onsubmit="handleEmailLogin(event)">
+                <label class="block text-sm font-bold mb-2">Email Address</label>
+                <input type="email" id="loginEmail" required class="input-field" placeholder="you@example.com">
+                
+                <label class="block text-sm font-bold mb-2">Password</label>
+                <input type="password" id="loginPassword" required class="input-field" placeholder="••••••••">
+                
+                <p id="loginError" class="text-red-500 text-sm mb-4 hidden"></p>
+                
+                <button type="submit" class="w-full bg-morocco-red text-white py-3 rounded-xl font-bold hover:bg-red-800 transition mb-4">Sign In</button>
+            </form>
+
+            <div class="flex items-center gap-4 my-4">
+                <div class="h-px bg-gray-300 flex-1"></div>
+                <span class="text-gray-400 text-sm">OR</span>
+                <div class="h-px bg-gray-300 flex-1"></div>
+            </div>
+
+            <button onclick="loginWithGoogle()" class="w-full bg-white border border-gray-300 text-gray-700 py-3 rounded-xl font-bold hover:bg-gray-50 transition flex items-center justify-center gap-2">
+                <i class="fa-brands fa-google text-red-500"></i> Continue with Google
+            </button>
+
+            <p class="text-center mt-6 text-gray-600">
+                Don't have an account? <a href="#" onclick="switchView('signup')" class="text-morocco-green font-bold hover:underline">Sign Up</a>
+            </p>
+        </div>
+    </div>
+
+    <div id="signupView" class="view-section hidden-view container mx-auto px-4 py-12 flex justify-center">
+        <div class="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full border border-gray-200">
+            <h2 class="text-3xl font-bold text-center mb-2 text-morocco-green">Create Account</h2>
+            <p class="text-center text-gray-500 mb-8">Join the #1 Job Board in Morocco</p>
+            
+            <form onsubmit="handleEmailSignup(event)">
+                <label class="block text-sm font-bold mb-2">Full Name</label>
+                <input type="text" id="signupName" required class="input-field" placeholder="John Doe">
+
+                <label class="block text-sm font-bold mb-2">Email Address</label>
+                <input type="email" id="signupEmail" required class="input-field" placeholder="you@example.com">
+                
+                <label class="block text-sm font-bold mb-2">Password</label>
+                <input type="password" id="signupPassword" required class="input-field" placeholder="Create a password (6+ chars)">
+                
+                <p id="signupError" class="text-red-500 text-sm mb-4 hidden"></p>
+                
+                <button type="submit" class="w-full bg-morocco-green text-white py-3 rounded-xl font-bold hover:bg-green-800 transition">Create Account</button>
+            </form>
+
+            <p class="text-center mt-6 text-gray-600">
+                Already have an account? <a href="#" onclick="switchView('login')" class="text-morocco-red font-bold hover:underline">Log In</a>
+            </p>
+        </div>
+    </div>
+
+    <div id="profileView" class="view-section hidden-view container mx-auto px-4 py-8">
         <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 mb-8 flex flex-col md:flex-row items-center gap-6">
-            <img id="profilePic" src="" class="w-24 h-24 rounded-full border-4 border-morocco-green">
+            <div id="profileAvatar" class="w-24 h-24 rounded-full bg-morocco-red text-white flex items-center justify-center text-3xl font-bold border-4 border-gray-100">User</div>
             <div class="text-center md:text-left">
                 <h1 class="text-3xl font-bold text-gray-900" id="profileName">User Name</h1>
                 <p class="text-gray-500" id="profileEmail">user@email.com</p>
-                <button onclick="logout()" class="mt-4 text-red-600 font-semibold hover:underline">Log Out</button>
-            </div>
-            <div class="md:ml-auto bg-green-50 p-4 rounded-xl border border-green-100 text-center min-w-[150px]">
-                <p class="text-3xl font-bold text-morocco-green" id="savedCount">0</p>
-                <p class="text-sm text-green-800">Saved Jobs</p>
+                <button onclick="logout()" class="mt-4 text-red-600 font-semibold hover:underline border border-red-200 px-4 py-1 rounded-lg">Log Out</button>
             </div>
         </div>
 
         <h2 class="text-2xl font-bold mb-6 text-gray-800">❤️ My Saved Jobs</h2>
-        <div id="savedJobsList" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            </div>
+        <div id="savedJobsList" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
     </div>
 
     <script type="module">
-        // 1. Import Firebase (Version 12.6.0)
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"; // Using stable 10.7.1 for better CDN compatibility
-        import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
         import { getFirestore, doc, setDoc, getDoc, deleteDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-        // 2. Configuration
         const firebaseConfig = {
             apiKey: "AIzaSyBsPi64Eb0GQnGjcxg6n6YRFbG-iO9K_pM",
             authDomain: "proleefic-85800.firebaseapp.com",
@@ -126,118 +165,135 @@
             measurementId: "G-WJ4XKS01P0"
         };
 
-        // 3. Initialize
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         const db = getFirestore(app);
         const provider = new GoogleAuthProvider();
-
         let currentUser = null;
 
-        // 4. Auth Functions
+        // --- NAVIGATION LOGIC ---
+        window.switchView = (viewName) => {
+            document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden-view'));
+            document.getElementById(viewName + 'View').classList.remove('hidden-view');
+            
+            if(viewName === 'profile') loadSavedJobs();
+        };
+
+        // --- AUTH LOGIC ---
         window.loginWithGoogle = () => {
             signInWithPopup(auth, provider)
-                .then((result) => {
-                    console.log("Logged in:", result.user.displayName);
-                    showProfile();
-                }).catch((error) => alert("Login Failed: " + error.message));
+                .then(() => window.switchView('profile'))
+                .catch((error) => alert(error.message));
+        };
+
+        window.handleEmailLogin = async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const pass = document.getElementById('loginPassword').value;
+            const errorText = document.getElementById('loginError');
+
+            try {
+                await signInWithEmailAndPassword(auth, email, pass);
+                window.switchView('profile');
+            } catch (error) {
+                errorText.innerText = "Error: " + error.message;
+                errorText.classList.remove('hidden');
+            }
+        };
+
+        window.handleEmailSignup = async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const pass = document.getElementById('signupPassword').value;
+            const errorText = document.getElementById('signupError');
+
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, pass);
+                // Update profile with name immediately
+                await updateProfile(userCredential.user, { displayName: name });
+                window.switchView('profile');
+            } catch (error) {
+                errorText.innerText = "Error: " + error.message;
+                errorText.classList.remove('hidden');
+            }
         };
 
         window.logout = () => {
-            signOut(auth).then(() => {
-                showHome();
-            });
+            signOut(auth).then(() => window.switchView('home'));
         };
 
-        // 5. Database Functions (Save/Unsave)
+        // --- DATABASE LOGIC ---
         window.toggleSaveJob = async (jobId) => {
             if (!currentUser) {
                 alert("Please login to save jobs!");
-                loginWithGoogle();
+                window.switchView('login');
                 return;
             }
-
             const job = jobs.find(j => j.id === jobId);
             const jobRef = doc(db, "users", currentUser.uid, "savedJobs", jobId.toString());
             const btn = document.getElementById(`save-btn-${jobId}`);
 
             try {
-                // Check if already saved
                 const docSnap = await getDoc(jobRef);
-                
                 if (docSnap.exists()) {
-                    // Remove it
                     await deleteDoc(jobRef);
                     if(btn) btn.innerHTML = '<i class="fa-regular fa-heart"></i>';
-                    alert("Job removed from profile.");
-                    if(!document.getElementById('homeView').classList.contains('hidden-view')) {
-                         // If on profile page, refresh
-                         loadSavedJobs();
-                    }
                 } else {
-                    // Save it
                     await setDoc(jobRef, job);
-                    if(btn) btn.innerHTML = '<i class="fa-solid fa-heart text-red-500"></i>';
-                    alert("Job saved to your profile!");
+                    if(btn) btn.innerHTML = '<i class="fa-solid fa-heart text-morocco-red"></i>';
                 }
-            } catch (e) {
-                console.error("Error saving job: ", e);
-            }
+            } catch (e) { console.error(e); }
         };
 
-        // 6. Load Saved Jobs for Profile
         window.loadSavedJobs = async () => {
             if (!currentUser) return;
-            
             const list = document.getElementById('savedJobsList');
             list.innerHTML = '<div class="text-gray-500">Loading...</div>';
             
             const querySnapshot = await getDocs(collection(db, "users", currentUser.uid, "savedJobs"));
             let html = '';
-            let count = 0;
-            
             querySnapshot.forEach((doc) => {
-                count++;
                 const j = doc.data();
                 html += `
                     <div class="bg-white p-5 rounded-xl border border-gray-200 flex gap-4 items-center">
                         <div class="h-12 w-12 bg-blue-50 rounded-lg flex items-center justify-center font-bold text-blue-600">${j.company.charAt(0)}</div>
                         <div class="flex-1">
                             <h3 class="font-bold text-gray-800">${j.title}</h3>
-                            <p class="text-sm text-gray-500">${j.company} • ${j.location}</p>
+                            <p class="text-sm text-gray-500">${j.company}</p>
                         </div>
                         <a href="${j.applyUrl}" target="_blank" class="bg-morocco-green text-white px-4 py-2 rounded-lg text-sm font-bold">Apply</a>
-                        <button onclick="toggleSaveJob(${j.id})" class="text-red-500 hover:bg-red-50 p-2 rounded"><i class="fa-solid fa-trash"></i></button>
                     </div>
                 `;
             });
-
-            document.getElementById('savedCount').innerText = count;
-            list.innerHTML = count > 0 ? html : '<div class="col-span-2 text-center py-10 text-gray-500">No saved jobs yet. Go back home to find some!</div>';
+            list.innerHTML = html || '<div class="col-span-2 text-center py-10 text-gray-500">No saved jobs yet.</div>';
         };
 
-        // 7. Auth State Observer
+        // --- AUTH LISTENER ---
         onAuthStateChanged(auth, (user) => {
             currentUser = user;
             const authSection = document.getElementById('authSection');
             
             if (user) {
-                // User is logged in
                 authSection.innerHTML = `
-                    <button onclick="showProfile()" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition">
-                        <img src="${user.photoURL}" class="w-6 h-6 rounded-full border border-white">
-                        <span class="text-sm font-bold hidden md:block">My Profile</span>
+                    <button onclick="switchView('profile')" class="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-3 py-1.5 rounded-lg transition">
+                        ${user.photoURL ? `<img src="${user.photoURL}" class="w-8 h-8 rounded-full border border-white">` : `<div class="w-8 h-8 rounded-full bg-white text-morocco-red flex items-center justify-center font-bold">${user.displayName ? user.displayName.charAt(0) : 'U'}</div>`}
                     </button>
                 `;
-                // Fill profile data
-                document.getElementById('profileName').innerText = user.displayName;
+                document.getElementById('profileName').innerText = user.displayName || "User";
                 document.getElementById('profileEmail').innerText = user.email;
-                document.getElementById('profilePic').src = user.photoURL;
+                
+                // Handle Avatar
+                const avatar = document.getElementById('profileAvatar');
+                if(user.photoURL) {
+                    avatar.innerHTML = `<img src="${user.photoURL}" class="w-full h-full rounded-full object-cover">`;
+                } else {
+                    avatar.innerText = user.displayName ? user.displayName.charAt(0).toUpperCase() : 'U';
+                }
             } else {
-                // User is logged out
                 authSection.innerHTML = `
-                    <button onclick="loginWithGoogle()" class="bg-white text-morocco-red px-4 py-2 rounded-lg font-bold text-sm hover:bg-gray-100 transition shadow-sm">
-                        <i class="fa-brands fa-google mr-1"></i> Sign In
+                    <button onclick="switchView('login')" class="bg-white text-morocco-red px-6 py-2 rounded-lg font-bold text-sm hover:bg-gray-100 transition shadow-sm">
+                        Sign In
                     </button>
                 `;
             }
@@ -246,62 +302,21 @@
 
     <script>
         let jobs = [];
-        // Translations
-        const i18n = {
-            en: { allLocs: "📍 All Cities", allCats: "📂 All Categories" },
-            fr: { allLocs: "📍 Toutes les villes", allCats: "📂 Toutes les catégories" },
-            ar: { allLocs: "📍 كل المدن", allCats: "📂 جميع التصنيفات" }
-        };
-        let currentLang = 'en';
-
-        function showHome() {
-            document.getElementById('homeView').classList.remove('hidden-view');
-            document.getElementById('profileView').classList.add('hidden-view');
-        }
-
-        function showProfile() {
-            document.getElementById('homeView').classList.add('hidden-view');
-            document.getElementById('profileView').classList.remove('hidden-view');
-            window.loadSavedJobs(); // Load data from Firebase
-        }
-
-        function setLanguage(lang) {
-            currentLang = lang;
-            document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-            fetchJobs(); 
-        }
-
         function fetchJobs() {
-            // Mock Data Generation (Simulated)
-            jobs = [];
-            const titles = ['Web Developer', 'Sales Manager', 'Accountant', 'Graphic Designer', 'Civil Engineer'];
+            const titles = ['Web Developer', 'Sales Manager', 'Accountant', 'Graphic Designer', 'Civil Engineer', 'Nurse', 'Marketing Lead'];
             const cities = ['Casablanca', 'Rabat', 'Marrakech', 'Tangier', 'Remote'];
-            
+            jobs = [];
             for(let i=0; i<20; i++) {
                 jobs.push({
                     id: i,
                     title: titles[Math.floor(Math.random() * titles.length)],
                     company: "Company " + (i+1),
                     location: cities[Math.floor(Math.random() * cities.length)],
-                    salary: "8000 MAD",
-                    applyUrl: "#",
-                    description: "Job description placeholder..."
+                    salary: (Math.floor(Math.random()*10)+5) + "000 MAD",
+                    applyUrl: "#"
                 });
             }
-            initFilters();
             render(jobs);
-        }
-
-        function initFilters() {
-            const lf = document.getElementById('locationFilter');
-            const cl = document.getElementById('categoryList');
-            lf.innerHTML = `<option value="">${i18n[currentLang].allLocs}</option>`;
-            cl.innerHTML = '';
-            // Populate fake categories
-            ['Tech', 'Sales', 'Finance'].forEach(c => {
-                lf.innerHTML += `<option>${c}</option>`; // Just for demo
-                cl.innerHTML += `<div class="p-2 hover:bg-gray-50 cursor-pointer">${c}</div>`;
-            });
         }
 
         function render(arr) {
@@ -309,37 +324,26 @@
             let html = '';
             arr.forEach(j => {
                 html += `
-                <div class="bg-white p-5 rounded-xl border border-gray-200 hover:border-morocco-green hover:shadow-md transition relative group">
-                    <div class="flex gap-4">
-                        <div class="h-12 w-12 bg-red-50 text-morocco-red rounded-lg flex items-center justify-center font-bold text-xl">${j.company.charAt(0)}</div>
-                        <div>
-                            <h3 class="font-bold text-gray-900">${j.title}</h3>
-                            <p class="text-sm text-gray-500">${j.company} • ${j.location}</p>
+                <div class="bg-white p-5 rounded-xl border border-gray-200 hover:border-morocco-green hover:shadow-md transition">
+                    <div class="flex justify-between items-start">
+                        <div class="flex gap-4">
+                            <div class="h-12 w-12 bg-red-50 text-morocco-red rounded-lg flex items-center justify-center font-bold text-xl">${j.company.charAt(0)}</div>
+                            <div>
+                                <h3 class="font-bold text-gray-900">${j.title}</h3>
+                                <p class="text-sm text-gray-500">${j.company} • ${j.location}</p>
+                            </div>
                         </div>
+                        <button onclick="toggleSaveJob(${j.id})" id="save-btn-${j.id}" class="text-gray-400 hover:text-red-500 text-xl"><i class="fa-regular fa-heart"></i></button>
                     </div>
                     <div class="mt-4 flex justify-between items-center border-t border-gray-100 pt-4">
                         <span class="text-green-700 font-bold text-sm">${j.salary}</span>
-                        <div class="flex gap-2">
-                            <button onclick="toggleSaveJob(${j.id})" id="save-btn-${j.id}" class="text-gray-400 hover:text-morocco-red text-xl transition">
-                                <i class="fa-regular fa-heart"></i>
-                            </button>
-                            <a href="${j.applyUrl}" class="bg-morocco-green text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-green-800">Apply</a>
-                        </div>
+                        <a href="${j.applyUrl}" class="bg-morocco-green text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-green-800">Apply</a>
                     </div>
                 </div>`;
             });
             container.innerHTML = html;
-            document.getElementById('jobCount').innerText = arr.length + " Jobs";
         }
-
-        window.onload = () => {
-            fetchJobs();
-            // Search Listener
-            document.getElementById('searchInput').addEventListener('input', (e) => {
-                const val = e.target.value.toLowerCase();
-                render(jobs.filter(j => j.title.toLowerCase().includes(val)));
-            });
-        };
+        window.onload = fetchJobs;
     </script>
 </body>
 </html>
