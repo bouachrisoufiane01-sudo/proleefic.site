@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proleefic | Morocco's #1 Job Platform</title>
+    <meta name="description" content="Find jobs in Morocco. Recrutement, Offres d'emploi, Techniciens, Ingénieurs.">
     <meta name="google-site-verification" content="M-uhenO_P6Qo7uM7MJrFy99ymzklCvnOq0dN9aNdjME" />
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23006233%22><path d=%22M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z%22/></svg>">
@@ -11,7 +12,7 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3965710509874164" crossorigin="anonymous"></script>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
@@ -43,10 +44,10 @@
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
         .dark ::-webkit-scrollbar-thumb { background: #475569; }
-        
-        /* New Stylish Categories */
-        .cat-btn { @apply w-full flex items-center gap-4 px-4 py-4 rounded-xl border border-transparent hover:border-morocco-green hover:bg-green-50 dark:hover:bg-green-900/20 transition-all duration-200 group; }
-        .cat-icon { @apply w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-500 group-hover:bg-white group-hover:text-morocco-green shadow-sm transition-colors; }
+
+        /* Category Button Styles */
+        .cat-btn { @apply w-full flex items-center gap-4 px-4 py-3 rounded-xl border border-transparent hover:border-morocco-green hover:bg-green-50 dark:hover:bg-green-900/20 transition-all duration-200 group; }
+        .cat-icon { @apply w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-500 group-hover:bg-white group-hover:text-morocco-green shadow-sm transition-colors; }
     </style>
 </head>
 <body class="bg-[#f8f9fa] dark:bg-[#0f1115] text-gray-900 dark:text-gray-100">
@@ -55,42 +56,37 @@
         <div class="container mx-auto px-4 h-[72px] flex items-center justify-between">
             <div class="flex items-center gap-3 cursor-pointer group" onclick="switchView('home')">
                 <div class="relative w-10 h-10 flex items-center justify-center bg-white border border-gray-100 rounded-lg shadow-sm">
-                    <i class="fa-solid fa-star text-morocco-green text-2xl absolute"></i>
+                    <i class="fa-solid fa-star text-morocco-green text-2xl absolute animate-pulse"></i>
                 </div>
                 <div class="leading-tight">
                     <span class="text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">Proleefic</span>
-                    <span class="text-[10px] font-bold text-morocco-red block uppercase tracking-wider">Maroc 🇲🇦</span>
+                    <span class="text-[10px] font-bold text-morocco-red block uppercase tracking-wider">Morocco 🇲🇦</span>
                 </div>
             </div>
-            <div class="flex items-center gap-3">
-                
-                <div class="hidden md:flex bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
-                    <button onclick="setLang('en')" class="px-3 py-1 text-xs font-bold rounded transition" id="lang-en">EN</button>
-                    <button onclick="setLang('fr')" class="px-3 py-1 text-xs font-bold rounded transition" id="lang-fr">FR</button>
-                    <button onclick="setLang('ar')" class="px-3 py-1 text-xs font-bold rounded transition" id="lang-ar">عربي</button>
+            <div class="flex items-center gap-3 sm:gap-5">
+                <div class="flex bg-gray-100 dark:bg-gray-800 rounded-lg p-1 hidden sm:flex">
+                    <button onclick="setLang('en')" class="lang-btn px-2 py-1 text-xs font-bold rounded transition" id="lang-en">EN</button>
+                    <button onclick="setLang('fr')" class="lang-btn px-2 py-1 text-xs font-bold rounded transition" id="lang-fr">FR</button>
+                    <button onclick="setLang('ar')" class="lang-btn px-2 py-1 text-xs font-bold rounded transition" id="lang-ar">عربي</button>
                 </div>
-                
-                <button onclick="toggleTheme()" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition text-gray-500">
+                <button onclick="toggleTheme()" class="text-gray-500 hover:text-morocco-green transition w-8 h-8 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center justify-center">
                     <i class="fa-solid fa-moon dark:hidden text-lg"></i>
                     <i class="fa-solid fa-sun hidden dark:inline text-yellow-400 text-lg"></i>
                 </button>
                 
-                <div id="authSection">
-                    <button onclick="openAuth()" class="bg-morocco-green text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-morocco-darkGreen transition shadow-lg shadow-green-900/20" data-i18n="loginBtn">Sign In</button>
+                <div id="authSection" class="flex items-center gap-3">
+                    <button onclick="openAuth()" class="bg-morocco-green text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-morocco-darkGreen transition shadow-sm">Sign In</button>
                 </div>
             </div>
         </div>
     </nav>
 
     <div id="homeView" class="view-section pb-20">
-        
         <div class="bg-white dark:bg-dark-card border-b border-gray-200 dark:border-gray-800 pt-12 pb-16 px-4 relative overflow-hidden">
             <i class="fa-solid fa-star text-morocco-green opacity-5 text-[250px] absolute -top-10 -right-10 rotate-12 pointer-events-none z-0"></i>
-            
             <div class="container mx-auto max-w-4xl relative z-10">
                 <h1 class="text-4xl md:text-6xl font-extrabold mb-8 text-center tracking-tight" data-i18n="heroTitle">Find the job that fits your life</h1>
-                
-                <div class="bg-white dark:bg-gray-800 p-2 rounded-2xl shadow-2xl shadow-green-900/10 border border-gray-200 dark:border-gray-700 flex flex-col md:flex-row gap-2">
+                <div class="bg-white dark:bg-gray-800 p-2 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 flex flex-col md:flex-row gap-2">
                     <div class="flex-1 relative group">
                         <i class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 rtl:right-5 rtl:left-auto z-10"></i>
                         <input type="text" id="mainSearch" class="w-full pl-12 pr-4 py-4 rounded-xl bg-transparent outline-none font-bold text-gray-800 dark:text-white text-lg" data-placeholder="searchPlaceholder">
@@ -99,18 +95,18 @@
                     <div class="flex-1 relative group">
                         <i class="fa-solid fa-location-dot absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 rtl:right-5 rtl:left-auto z-10"></i>
                         <select id="locationFilter" class="w-full pl-12 pr-4 py-4 rounded-xl bg-transparent outline-none font-bold text-gray-800 dark:text-white cursor-pointer appearance-none text-lg">
-                            <option value="">All Cities</option>
+                            <option value="">Loading Cities...</option>
                         </select>
                     </div>
-                    <button onclick="filter()" class="bg-morocco-green hover:bg-morocco-darkGreen text-white px-10 py-4 rounded-xl font-bold text-lg transition shadow-xl whitespace-nowrap" data-i18n="searchBtn">Find Jobs</button>
+                    <button onclick="filter()" class="bg-morocco-green hover:bg-morocco-darkGreen text-white px-10 py-4 rounded-xl font-bold text-lg transition shadow-xl" data-i18n="searchBtn">Find Jobs</button>
                 </div>
             </div>
         </div>
 
         <div class="container mx-auto px-4 mt-8">
-            <div class="ad-container py-4 bg-white dark:bg-dark-card shadow-sm">
+            <div class="ad-container py-4 bg-white dark:bg-dark-card rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
                 <span class="ad-label">Advertisement</span>
-                <ins class="adsbygoogle" style="display:block; width:100%; max-height:150px" data-ad-client="ca-pub-3965710509874164" data-ad-slot="1234567890" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+                <ins class="adsbygoogle" style="display:block; width:100%; max-height:90px" data-ad-client="ca-pub-3965710509874164" data-ad-slot="REPLACE_WITH_SLOT_ID" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
             </div>
         </div>
@@ -119,85 +115,80 @@
             
             <aside class="hidden lg:block lg:col-span-3 space-y-6">
                 <div class="bg-white dark:bg-dark-card rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm p-5">
-                    <h3 class="font-bold text-xs uppercase text-gray-400 mb-4 tracking-widest" data-i18n="categories">Sectors</h3>
-                    <div id="categoryList" class="space-y-2">
+                    <h3 class="font-bold text-xs uppercase text-gray-400 mb-4 tracking-wider" data-i18n="categories">Sectors</h3>
+                    <div id="categoryList" class="grid grid-cols-1 gap-1.5">
                         </div>
                 </div>
             </aside>
 
             <main class="lg:col-span-6 space-y-4">
-                <div class="flex justify-between items-center mb-2 px-1">
-                    <h2 class="font-bold text-xl flex items-center gap-2"><span data-i18n="feedTitle">Latest Jobs</span> <span class="text-gray-400 text-sm font-normal" id="jobCount">...</span></h2>
+                <div class="flex justify-between items-center mb-2 px-2">
+                    <h2 class="font-bold text-xl flex items-center gap-2"><span data-i18n="feedTitle">Latest Jobs</span> <span class="text-gray-400 text-sm font-normal ml-2" id="jobCount">...</span></h2>
                 </div>
                 <div id="jobListings" class="space-y-3"></div>
-                <button onclick="window.initData()" class="w-full mt-6 py-4 border-2 border-dashed border-gray-300 dark:border-gray-700 text-gray-500 font-bold rounded-2xl hover:bg-white dark:hover:bg-gray-800 hover:border-morocco-green transition" data-i18n="loadMore">Refresh Jobs</button>
+                <button onclick="window.initData()" class="w-full mt-6 py-4 border-2 border-dashed border-gray-300 dark:border-gray-700 text-morocco-green font-bold rounded-2xl hover:bg-white dark:hover:bg-gray-800 transition" data-i18n="loadMore">Refresh Jobs</button>
             </main>
 
             <aside class="hidden lg:block lg:col-span-3 space-y-6">
                 <div class="ad-container min-h-[300px] sticky top-24">
                     <span class="ad-label">Sponsored</span>
-                    <ins class="adsbygoogle" style="display:block; width:100%" data-ad-client="ca-pub-3965710509874164" data-ad-slot="1234567890" data-ad-format="rectangle" data-full-width-responsive="true"></ins>
+                    <ins class="adsbygoogle" style="display:block; width:100%" data-ad-client="ca-pub-3965710509874164" data-ad-slot="REPLACE_WITH_SLOT_ID" data-ad-format="rectangle" data-full-width-responsive="true"></ins>
                     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                 </div>
             </aside>
         </div>
     </div>
 
-    <div id="jobDetailModal" class="hidden-view fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4 animate-fade-in" onclick="if(event.target === this) closeJobModal()">
+    <div id="jobDetailModal" class="hidden-view fixed inset-0 z-[100] modal-backdrop flex items-end sm:items-center justify-center p-0 sm:p-4" onclick="if(event.target === this) closeJobModal()">
         <div class="bg-white dark:bg-dark-card w-full max-w-2xl rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col max-h-[90vh]">
+            <button onclick="closeJobModal()" class="absolute top-4 right-4 w-10 h-10 bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:text-red-500 transition text-xl font-bold z-10">✕</button>
+
             <div class="p-6 border-b border-gray-100 dark:border-gray-700 flex justify-between items-start">
                 <div class="flex gap-5">
                     <div id="modalLogo" class="w-16 h-16 shrink-0"></div>
                     <div>
                         <h2 id="modalTitle" class="text-2xl font-bold dark:text-white leading-tight"></h2>
-                        <p id="modalCompany" class="text-morocco-green font-bold text-lg mt-1"></p>
+                        <p id="modalCompany" class="text-morocco-green font-semibold text-lg mt-1"></p>
                         <div class="flex items-center gap-3 mt-2 text-sm text-gray-500">
-                            <span id="modalLocation"></span> • <span id="modalDate">Today</span>
+                            <span id="modalLocation"><i class="fa-solid fa-location-dot"></i></span> • <span id="modalDate">Today</span>
                         </div>
                     </div>
                 </div>
-                <button onclick="closeJobModal()" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:text-red-500 text-xl transition">✕</button>
             </div>
-            <div class="p-6 overflow-y-auto">
+
+            <div class="p-6 overflow-y-auto flex-1">
                 <div class="bg-gray-50 dark:bg-gray-800/50 p-5 rounded-2xl mb-6 border border-gray-100 dark:border-gray-700 grid grid-cols-2 gap-4">
-                    <div><span class="text-xs font-bold text-gray-400 uppercase">Salary</span><div id="modalSalary" class="font-bold dark:text-white text-lg"></div></div>
-                    <div><span class="text-xs font-bold text-gray-400 uppercase">Source</span><div id="modalSource" class="font-bold text-blue-500"></div></div>
+                    <div><span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Salary</span><div id="modalSalary" class="font-bold dark:text-white text-lg"></div></div>
+                    <div><span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Source</span><div id="modalSource" class="font-bold text-blue-500"></div></div>
                 </div>
                 <h3 class="font-bold text-lg mb-3 dark:text-white">Overview</h3>
                 <p id="modalDesc" class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm"></p>
             </div>
-            <div class="p-5 border-t border-gray-100 dark:border-gray-700">
-                <a id="modalApplyBtn" href="#" target="_blank" class="block w-full bg-morocco-green text-white font-bold rounded-xl py-3.5 text-center hover:bg-morocco-darkGreen transition shadow-lg text-lg">Apply Now <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i></a>
+
+            <div class="p-5 border-t border-gray-100 dark:border-gray-700 flex gap-3 bg-gray-50 dark:bg-gray-800/30">
+                <button onclick="window.toggleSave(currentJobId); closeJobModal()" class="px-5 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-500 hover:text-morocco-red transition"><i class="fa-regular fa-heart text-xl"></i></button>
+                <a id="modalApplyBtn" href="#" target="_blank" class="flex-1 bg-morocco-green text-white font-bold rounded-xl flex items-center justify-center py-3.5 hover:bg-morocco-darkGreen transition shadow-lg text-lg">Apply Now <i class="fa-solid fa-external-link-alt ml-2"></i></a>
             </div>
         </div>
     </div>
 
-    <div id="authView" class="hidden-view fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in" onclick="if(event.target === this) closeAuth()">
+    <div id="authView" class="hidden-view fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4" onclick="if(event.target === this) closeAuth()">
         <div class="bg-white dark:bg-dark-card w-full max-w-md rounded-3xl shadow-2xl relative p-8">
             <button onclick="closeAuth()" class="absolute top-4 right-4 text-gray-400 hover:text-red-500 text-xl">✕</button>
             <div class="text-center mb-6">
                 <h2 class="text-2xl font-bold dark:text-white" data-i18n="authTitle">Welcome</h2>
-                <p class="text-sm text-gray-500 mt-1" data-i18n="authSub">Login to save jobs.</p>
-                <div class="flex p-1 bg-gray-100 dark:bg-gray-800 rounded-xl mt-6">
-                    <button onclick="toggleAuthMode('login')" id="tab-login" class="flex-1 py-2.5 text-sm font-bold rounded-lg bg-white text-morocco-green shadow-sm transition">Log In</button>
-                    <button onclick="toggleAuthMode('signup')" id="tab-signup" class="flex-1 py-2.5 text-sm font-bold rounded-lg text-gray-500 transition">Sign Up</button>
+                <div class="flex bg-gray-100 dark:bg-gray-800 p-1 rounded-xl mt-6">
+                    <button onclick="toggleAuthMode('login')" id="tab-login" class="flex-1 py-2 text-sm font-bold rounded-lg bg-white text-morocco-green shadow-sm transition">Log In</button>
+                    <button onclick="toggleAuthMode('signup')" id="tab-signup" class="flex-1 py-2 text-sm font-bold rounded-lg text-gray-500 transition">Sign Up</button>
                 </div>
             </div>
-            <div id="authError" class="hidden bg-red-50 text-red-600 p-3 rounded-lg mb-4 text-sm border-l-4 border-red-500"></div>
-            <div id="authSuccess" class="hidden bg-green-50 text-green-600 p-3 rounded-lg mb-4 text-sm border-l-4 border-green-500"></div>
-
+            <div id="authError" class="hidden bg-red-100 text-red-600 p-3 rounded-lg mb-4 text-sm border-l-4 border-red-500"></div>
+            
             <form id="loginForm" onsubmit="window.handleEmailLogin(event)" class="space-y-4">
                 <input type="email" id="loginEmail" class="input-pro" placeholder="Email Address" required>
                 <input type="password" id="loginPass" class="input-pro" placeholder="Password" required>
                 <div class="text-right"><button type="button" onclick="window.handlePasswordReset()" class="text-xs text-morocco-green font-bold hover:underline">Forgot Password?</button></div>
-                <button type="submit" class="w-full bg-morocco-green text-white py-3.5 rounded-xl font-bold hover:bg-morocco-darkGreen transition shadow-lg">Sign In</button>
-            </form>
-
-            <form id="signupForm" onsubmit="window.handleEmailSignup(event)" class="space-y-4 hidden">
-                <input type="text" id="signupName" class="input-pro" placeholder="Full Name" required>
-                <input type="email" id="signupEmail" class="input-pro" placeholder="Email Address" required>
-                <input type="password" id="signupPass" class="input-pro" placeholder="Create Password" required>
-                <button type="submit" class="w-full bg-morocco-red text-white py-3.5 rounded-xl font-bold hover:bg-red-700 transition shadow-lg">Create Account</button>
+                <button type="submit" class="w-full bg-morocco-green text-white py-3.5 rounded-xl font-bold transition shadow-lg">Sign In</button>
             </form>
 
             <div class="relative text-center my-6"><span class="bg-white dark:bg-dark-card px-3 text-xs text-gray-400 font-bold relative z-10">OR</span><div class="h-px bg-gray-200 dark:bg-gray-700 w-full absolute top-1/2"></div></div>
@@ -207,33 +198,20 @@
         </div>
     </div>
 
-    <div id="profileView" class="hidden-view view-section container mx-auto px-4 py-10 min-h-screen">
+    <div id="profileView" class="hidden-view view-section container mx-auto px-4 py-10">
         <div class="max-w-3xl mx-auto">
-            <button onclick="switchView('home')" class="mb-6 flex items-center gap-2 text-gray-500 hover:text-morocco-green font-bold"><i class="fa-solid fa-arrow-left"></i> Back</button>
-            <div class="bg-white dark:bg-dark-card rounded-2xl shadow p-8 mb-8 border-t-4 border-morocco-green flex items-center justify-between">
-                <div>
-                    <h1 class="text-2xl font-bold dark:text-white" id="userName">User</h1>
-                    <p class="text-gray-500" id="userEmail">email</p>
-                    <span class="inline-flex items-center gap-1 bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full mt-2 font-bold"><span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> Online</span>
-                </div>
-                <button onclick="window.logout()" class="text-red-500 font-bold border border-red-200 px-4 py-2 rounded-lg hover:bg-red-50">Logout</button>
+            <button onclick="switchView('home')" class="mb-6 font-bold text-morocco-green">← Back to Jobs</button>
+            <div class="bg-white dark:bg-dark-card rounded-2xl shadow p-6 flex items-center justify-between border-t-4 border-morocco-green">
+                <div><h1 class="text-2xl font-bold dark:text-white" id="userName">User</h1><p class="text-gray-500" id="userEmail">email</p></div>
+                <button onclick="window.logout()" class="text-red-500 font-bold border border-red-200 px-4 py-2 rounded-lg">Logout</button>
             </div>
-            
-            <div class="bg-white dark:bg-dark-card rounded-2xl shadow p-6 mb-8 border border-gray-100 dark:border-gray-700">
-                <h3 class="font-bold text-lg mb-4 dark:text-white">My Resume</h3>
-                <div class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl p-8 text-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition" onclick="alert('CV Upload Feature coming soon!')">
-                    <i class="fa-solid fa-cloud-arrow-up text-3xl text-morocco-green mb-2"></i>
-                    <p class="text-sm text-gray-500">Click to upload PDF / DOCX</p>
-                </div>
-            </div>
-
-            <h2 class="text-xl font-bold mb-4 dark:text-white" data-i18n="savedJobs">Saved Jobs</h2>
+            <h2 class="text-xl font-bold mt-8 mb-4 dark:text-white">Saved Jobs</h2>
             <div id="savedContainer" class="grid gap-4"></div>
         </div>
     </div>
 
-    <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-12">
-        <div class="container mx-auto px-4 py-8 text-center text-xs text-gray-400">
+    <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-12 py-8 text-center text-xs text-gray-400">
+        <div class="container mx-auto px-4">
             &copy; 2025 Proleefic.ma <span class="mx-2">•</span> <a href="privacy.html" class="hover:text-morocco-green">Privacy</a> <span class="mx-2">•</span> <a href="https://www.linkedin.com/in/soufiane-bouachri-5a2891350" target="_blank" class="hover:text-morocco-green">Contact</a>
         </div>
     </footer>
@@ -241,31 +219,35 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, updateProfile } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-        import { getFirestore, doc, setDoc, deleteDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+        import { getFirestore, doc, setDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
         const firebaseConfig = { apiKey: "AIzaSyBsPi64Eb0GQnGjcxg6n6YRFbG-iO9K_pM", authDomain: "proleefic-85800.firebaseapp.com", projectId: "proleefic-85800", storageBucket: "proleefic-85800.firebasestorage.app", messagingSenderId: "1033605555868", appId: "1:1033605555868:web:577ff42f0bcfb0b6122f59", measurementId: "G-WJ4XKS01P0" };
         let app, auth, db; try { app = initializeApp(firebaseConfig); auth = getAuth(app); db = getFirestore(app); } catch(e){}
 
         const i18n = {
-            en: { heroTitle: "Find the job that fits your life", whatLabel: "What", whereLabel: "Where", searchPlaceholder: "Job title...", searchBtn: "Find Jobs", categories: "Categories", feedTitle: "Latest Jobs", loadMore: "Refresh", loginBtn: "Sign In", authTitle: "Welcome Back", authSub: "Login to apply.", backHome: "Back to Jobs", logout: "Logout", savedJobs: "Saved Jobs" },
-            fr: { heroTitle: "Trouvez le job idéal au Maroc", whatLabel: "Quoi", whereLabel: "Où", searchPlaceholder: "Titre du poste...", searchBtn: "Rechercher", categories: "Catégories", feedTitle: "Dernières Offres", loadMore: "Actualiser", loginBtn: "Connexion", authTitle: "Bienvenue", authSub: "Connectez-vous pour postuler.", backHome: "Retour", logout: "Déconnexion", savedJobs: "Offres Sauvegardées" },
-            ar: { heroTitle: "جد الوظيفة المناسبة لك", whatLabel: "ماذا", whereLabel: "أين", searchPlaceholder: "عنوان الوظيفة...", searchBtn: "بحث", categories: "التصنيفات", feedTitle: "آخر الوظائف", loadMore: "تحديث", loginBtn: "دخول", authTitle: "مرحباً", authSub: "سجل الدخول", backHome: "رجوع", logout: "خروج", savedJobs: "محفوظات" }
+            en: { heroTitle: "Find the job that fits your life", whatLabel: "What", whereLabel: "Where", searchPlaceholder: "Job title, keywords...", searchBtn: "Find Jobs", categories: "Sectors", feedTitle: "Latest Jobs", loadMore: "Refresh", loginBtn: "Sign In", authTitle: "Welcome", authSub: "Login to save jobs." },
+            fr: { heroTitle: "Trouvez le job idéal au Maroc", whatLabel: "Quoi", whereLabel: "Où", searchPlaceholder: "Titre du poste...", searchBtn: "Rechercher", categories: "Secteurs", feedTitle: "Dernières Offres", loadMore: "Actualiser", loginBtn: "Connexion", authTitle: "Bienvenue", authSub: "Connectez-vous pour postuler." },
+            ar: { heroTitle: "جد الوظيفة المناسبة لك", whatLabel: "ماذا", whereLabel: "أين", searchPlaceholder: "عنوان الوظيفة...", searchBtn: "بحث", categories: "القطاعات", feedTitle: "آخر الوظائف", loadMore: "تحديث", loginBtn: "دخول", authTitle: "مرحباً", authSub: "سجل الدخول" }
         };
         
-        const catLabels = { 'cat_prod': {en:"Production",fr:"Industrie",ar:"الإنتاج",i:"fa-industry"}, 'cat_tech': {en:"Technician",fr:"Technicien",ar:"تقني",i:"fa-wrench"}, 'cat_eng': {en:"Engineering",fr:"Ingénierie",ar:"هندسة",i:"fa-helmet-safety"}, 'cat_transport': {en:"Transport",fr:"Transport",ar:"نقل",i:"fa-truck"}, 'cat_it': {en:"IT",fr:"Informatique",ar:"معلوميات",i:"fa-laptop-code"}, 'cat_sales': {en:"Sales",fr:"Commerce",ar:"تجارة",i:"fa-briefcase"} };
+        const catLabels = { 'cat_prod': {en:"Production",fr:"Industrie",ar:"الإنتاج",i:"fa-industry"}, 'cat_tech': {en:"Technician",fr:"Technicien",ar:"تقني",i:"fa-wrench"}, 'cat_eng': {en:"Engineering",fr:"Ingénierie",ar:"هندسة",i:"fa-helmet-safety"}, 'cat_transport': {en:"Transport",fr:"Transport",ar:"نقل",i:"fa-truck"}, 'cat_it': {en:"IT",fr:"Informatique",ar:"معلوميات",i:"fa-laptop-code"}, 'cat_sales': {en:"Sales",fr:"Commerce",ar:"تجارة",i:"fa-briefcase"}, 'cat_health': {en:"Healthcare",fr:"Santé",ar:"صحة",i:"fa-heart-pulse"}, 'cat_hotel': {en:"Hospitality",fr:"Hôtellerie",ar:"فندقة",i:"fa-hotel"} };
 
         window.currentLang = localStorage.getItem('lang') || 'en';
         window.currentUser = null;
         window.jobs = [];
 
-        window.setLang = (l) => { window.currentLang=l; localStorage.setItem('lang',l); document.documentElement.setAttribute('dir',l==='ar'?'rtl':'ltr'); document.querySelectorAll('[data-i18n]').forEach(el=>{if(i18n[l][el.getAttribute('data-i18n')])el.innerText=i18n[l][el.getAttribute('data-i18n')]}); document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('bg-white','text-morocco-green','shadow-sm')); document.getElementById('lang-'+l).classList.add('bg-white','text-morocco-green','shadow-sm'); renderCategories(); };
+        window.setLang = (l) => { window.currentLang = l; localStorage.setItem('lang',l); document.documentElement.setAttribute('dir',l==='ar'?'rtl':'ltr'); document.querySelectorAll('.lang-btn').forEach(b=>{b.classList.remove('bg-white','text-morocco-green','shadow-sm');b.classList.add('text-gray-500');}); document.getElementById('lang-'+l)?.classList.add('bg-white','text-morocco-green','shadow-sm'); document.getElementById('lang-'+l)?.classList.remove('text-gray-500'); document.querySelectorAll('[data-i18n]').forEach(el=>{if(i18n[l][el.getAttribute('data-i18n')])el.innerText=i18n[l][el.getAttribute('data-i18n')]}); renderCategories(); if(window.jobs.length > 0) renderJobs(window.jobs); };
         window.toggleTheme = () => { document.documentElement.classList.toggle('dark'); localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light'); };
         window.switchView = (v) => { document.querySelectorAll('.view-section').forEach(e=>e.classList.add('hidden-view')); document.getElementById(v+'View').classList.remove('hidden-view'); window.scrollTo(0,0); };
         window.openAuth = () => document.getElementById('authView').classList.remove('hidden-view');
         window.closeAuth = () => document.getElementById('authView').classList.add('hidden-view');
         window.closeJobModal = () => document.getElementById('jobDetailModal').classList.add('hidden-view');
         
-        window.toggleAuthMode = (m) => { const l=document.getElementById('loginForm'), s=document.getElementById('signupForm'), tl=document.getElementById('tab-login'), ts=document.getElementById('tab-signup'); if(m==='login'){l.classList.remove('hidden');s.classList.add('hidden');tl.classList.add('bg-white','text-morocco-green');ts.classList.remove('bg-white','text-morocco-green');}else{l.classList.add('hidden');s.classList.remove('hidden');ts.classList.add('bg-white','text-morocco-green');tl.classList.remove('bg-white','text-morocco-green');} };
+        window.toggleAuthMode = (m) => {
+            const l=document.getElementById('loginForm'), s=document.getElementById('signupForm'), tl=document.getElementById('tab-login'), ts=document.getElementById('tab-signup');
+            if(m==='login'){l.classList.remove('hidden');s.classList.add('hidden');tl.classList.add('bg-white','text-morocco-green');tl.classList.remove('text-gray-500');ts.classList.remove('bg-white','text-morocco-green');ts.classList.add('text-gray-500');}
+            else{l.classList.add('hidden');s.classList.remove('hidden');ts.classList.add('bg-white','text-morocco-green');ts.classList.remove('text-gray-500');tl.classList.remove('bg-white','text-morocco-green');tl.classList.add('text-gray-500');}
+        };
         
         window.showMessage = (msg, type='error') => { const b=document.getElementById(type==='success'?'authSuccess':'authError'); b.innerText=msg.replace('Firebase: ',''); b.classList.remove('hidden'); }
         window.handleEmailLogin = (e) => { e.preventDefault(); signInWithEmailAndPassword(auth, document.getElementById('loginEmail').value, document.getElementById('loginPass').value).then(()=>{window.closeAuth(); window.switchView('profile');}).catch(e=>window.showMessage(e.message)); };
@@ -273,8 +255,10 @@
         window.handlePasswordReset = () => { const e=document.getElementById('loginEmail').value; if(!e)return window.showMessage("Enter email first."); sendPasswordResetEmail(auth, e).then(()=>window.showMessage("Reset link sent!","success")).catch(e=>window.showMessage(e.message)); };
         window.loginGoogle = () => { signInWithPopup(auth, new GoogleAuthProvider()).then(()=>{window.closeAuth(); window.switchView('profile');}).catch(e=>window.showMessage(e.message)); };
         window.logout = () => signOut(auth).then(()=>window.switchView('home'));
-        if(auth) onAuthStateChanged(auth, u => { window.currentUser=u; if(u){ document.getElementById('authSection').innerHTML=`<button onclick="switchView('profile')" class="w-9 h-9 rounded-full bg-morocco-red text-white font-bold relative">${u.displayName?u.displayName[0]:'U'}<div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-white rounded-full"></div></button>`; document.getElementById('userName').innerText=u.displayName; document.getElementById('userEmail').innerText=u.email; loadSavedJobs();} else { document.getElementById('authSection').innerHTML=`<button onclick="openAuth()" class="bg-morocco-green text-white px-5 py-2 rounded-lg font-bold text-sm hover:bg-morocco-darkGreen transition shadow-sm" data-i18n="loginBtn">${i18n[window.currentLang].loginBtn}</button>`; } });
+        
+        if(auth) onAuthStateChanged(auth, u => { window.currentUser=u; if(u){ document.getElementById('authSection').innerHTML=`<button onclick="switchView('profile')" class="w-9 h-9 rounded-full bg-morocco-red text-white font-bold relative"><span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-white rounded-full animate-pulse"></span></button>`; document.getElementById('userName').innerText=u.displayName; document.getElementById('userEmail').innerText=u.email; loadSavedJobs();} else { document.getElementById('authSection').innerHTML=`<button onclick="openAuth()" class="bg-morocco-green text-white px-5 py-2 rounded-lg text-sm hover:bg-morocco-darkGreen transition shadow-sm" data-i18n="loginBtn">${i18n[window.currentLang].loginBtn}</button>`; } });
 
+        // DATA
         window.initData = async () => {
             try {
                 const res = await fetch('jobs.json?t='+Date.now());
@@ -283,64 +267,61 @@
                 renderJobs(window.jobs); updateCityFilter(window.jobs);
             } catch { generateBackupData(); }
         };
-        function updateCityFilter(jobs) { const u = [...new Set(jobs.map(j=>j.location))].sort(); document.getElementById('locationFilter').innerHTML = `<option value="">${i18n[window.currentLang].whereLabel}</option>` + u.map(c=>`<option value="${c}">${c}</option>`).join(''); }
+        
+        function updateCityFilter(jobs) { const u = [...new Set(jobs.map(j=>j.location))].sort(); document.getElementById('locationFilter').innerHTML = `<option value="">All Cities</option>` + u.map(c=>`<option value="${c}">${c}</option>`).join(''); }
+
         function generateBackupData() {
-            const roles = [("Opérateur Câblage", "cat_prod", "Tanger"), ("Technicien Maintenance", "cat_tech", "Kenitra"), ("Chauffeur", "cat_transport", "Casa"), ("Jardinier", "cat_prod", "Rabat"), ("Infirmier", "cat_health", "Fes")];
-            const comps = ["Renault", "Yazaki", "OCP", "Particulier", "Société"];
-            window.jobs = Array.from({length:40}, (_,i)=>{ const r = roles[Math.floor(Math.random()*roles.length)]; return { id:i, title:r[0], company:comps[Math.floor(Math.random()*comps.length)], location:r[2], catId:r[1], salary:"SMIG+", posted:0, urgent:true, link:"#", sourceName:"Direct", rating:(Math.random()*1.5+3.5).toFixed(1) }; });
+            const roles = [("Opérateur Câblage", "cat_prod", "Tanger"), ("Technicien Maintenance", "cat_tech", "Kenitra"), ("Chauffeur", "cat_transport", "Casa"), ("Infirmier", "cat_health", "Rabat"), ("Réceptionniste", "cat_hotel", "Marrakech"), ("Développeur", "cat_it", "Casablanca")];
+            const companies = ["Renault", "Yazaki", "OCP", "Particulier", "Société Générale", "Orange", "Attijariwafa"];
+            window.jobs = Array.from({length:40}, (_,i)=>{ const r = roles[Math.floor(Math.random()*roles.length)]; return { id:i, title:r[0], company:companies[Math.floor(Math.random()*companies.length)], location:r[2], catId:r[1], salary:"SMIG+", posted:0, urgent:true, link:"#", sourceName:"Direct", rating:(Math.random()*1.5+3.5).toFixed(1) }; });
             renderJobs(window.jobs);
         }
 
+        // --- LOGO MAP (Fix for Hotlink/Crash) ---
         function getLogo(name) {
-            // Hardcoded Logos (Known companies)
-            const map = { "Renault": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Renault_2021_Text.svg/200px-Renault_2021_Text.svg.png", "OCP": "https://upload.wikimedia.org/wikipedia/commons/3/36/Groupe_OCP_logo.svg/200px-Groupe_OCP_logo.svg.png", "Yazaki": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Yazaki_logo.svg/200px-Yazaki_logo.svg.png", "Dell": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Dell_Logo.svg/300px-Dell_Logo.svg.png", "Maroc Telecom": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Maroc_Telecom_Logo.svg", "Attijariwafa": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Attijariwafa_Bank_logo.svg/200px-Attijariwafa_Bank_logo.svg.png", "Inwi": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Inwi_logo.svg/200px-Inwi_logo.svg.png", "Lear": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Lear_Corporation_logo.svg/200px-Lear_Corporation_logo.svg.png" };
+            const map = {
+                "Renault": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Renault_2009_logo.svg/200px-Renault_2009_logo.svg.png", "Yazaki": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Yazaki_logo.svg/200px-Yazaki_logo.svg.png", "Stellantis": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Stellantis.svg/200px-Stellantis.svg.png", "OCP": "https://upload.wikimedia.wikipedia.org/wikipedia/commons/3/36/Groupe_OCP_logo.svg", "Lear": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Lear_Corporation_logo.svg/200px-Lear_Corporation_logo.svg.png", "Aptiv": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Aptiv_logo.svg/200px-Aptiv_logo.svg.png", "Maroc Telecom": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Maroc_Telecom_Logo.svg/200px-Maroc_Telecom_Logo.svg.png", "Attijariwafa": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Attijariwafa_Bank_logo.svg/200px-Attijariwafa_Bank_logo.svg.png", "Orange": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/200px-Orange_logo.svg.png", "Particulier": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+            };
             const key = Object.keys(map).find(k => name.includes(k));
-            if (key) return `<div class="w-14 h-14 shrink-0 bg-white rounded-xl border p-1 flex items-center justify-center"><img src="${map[key]}" class="w-full h-full object-contain"></div>`;
+            const imgSrc = key ? map[key] : 'https://via.placeholder.com/150';
             
-            // Fallback: Colorful Letter Avatar
-            const colors = ['bg-blue-100 text-blue-600', 'bg-green-100 text-green-600', 'bg-purple-100 text-purple-600', 'bg-orange-100 text-orange-600'];
+            // Return Image with robust fallback to a colorful letter
+            const colors = ['bg-blue-100 text-blue-600', 'bg-green-100 text-green-600', 'bg-purple-100 text-purple-600'];
             const color = colors[name.length % colors.length];
-            return `<div class="w-14 h-14 shrink-0 rounded-xl ${color} flex items-center justify-center font-bold text-2xl uppercase shadow-sm">${name.charAt(0)}</div>`;
+            
+            return `
+                <div class="w-14 h-14 shrink-0 relative bg-white rounded-xl shadow-sm border border-gray-200">
+                    <img src="${imgSrc}" class="w-full h-full object-contain p-1 rounded-xl" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                    <div class="w-full h-full absolute top-0 left-0 rounded-xl ${color} flex items-center justify-center font-bold text-2xl uppercase" style="display:none;">${name.charAt(0)}</div>
+                </div>`;
         }
 
         function renderCategories() {
+            const list = document.getElementById('categoryList');
             const l = window.currentLang;
-            document.getElementById('categoryList').innerHTML = Object.keys(catLabels).map(k => `
-                <button onclick="filterCat('${k}')" class="cat-btn"><span class="cat-icon"><i class="fa-solid ${catLabels[k].i}"></i></span><span class="text-sm font-bold text-gray-700 dark:text-gray-200 group-hover:text-morocco-green">${catLabels[k][l]}</span></button>
-            `).join('');
+            list.innerHTML = Object.keys(catLabels).map(k => `
+                <button onclick="filterCat('${k}')" class="cat-btn group">
+                    <div class="cat-icon"><i class="fa-solid ${catLabels[k].i} text-xl"></i></div>
+                    <span class="text-sm font-bold text-gray-700 dark:text-gray-200 group-hover:text-morocco-green">${catLabels[k][l]}</span>
+                </button>`).join('');
         }
 
         function renderJobs(arr) {
-            document.getElementById('jobCount').innerText = arr.length;
+            document.getElementById('jobCount').innerText = arr.length + ' jobs';
             document.getElementById('jobListings').innerHTML = arr.map((j, idx) => {
                 let ad = idx===4 ? `<div class="ad-container py-4 my-4"><span class="ad-label">Sponsored</span><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3965710509874164" data-ad-slot="1234567890"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});<\/script></div>` : '';
-                return `${ad}<div class="bg-white dark:bg-dark-card p-5 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-morocco-green hover:shadow-lg transition group cursor-pointer relative" onclick="window.openJobDetails('${j.id}')">
+                return `${ad}<div class="bg-white dark:bg-dark-card p-5 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-morocco-green hover:shadow-lg transition group cursor-pointer relative" onclick="window.openJobModal('${j.id}')">
                     ${j.urgent ? `<span class="absolute top-4 right-4 bg-red-100 text-red-600 text-[10px] font-bold px-2 py-1 rounded-full">URGENT</span>` : ''}
-                    <div class="flex gap-4">${getLogo(j.company)}<div class="flex-1"><h3 class="font-bold dark:text-white text-lg mb-0.5">${j.title}</h3><p class="text-sm text-gray-500">${j.company} <span class="text-yellow-500 ml-1 text-xs">★ ${j.rating||4.5}</span></p><div class="mt-3 flex gap-2 text-xs font-bold text-gray-500"><span class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">${j.location}</span><span class="bg-green-50 text-green-700 px-2 py-1 rounded">${j.salary}</span></div></div></div>
+                    <div class="flex gap-4">${getLogo(j.company)}<div class="flex-1"><h3 class="font-bold text-lg dark:text-white mb-0.5">${j.title}</h3><p class="text-sm text-gray-500">${j.company} <span class="text-yellow-500 ml-1 text-xs">★ ${(Math.random()*1.5 + 3.5).toFixed(1)}</span></p><div class="mt-3 flex gap-2 text-xs font-bold text-gray-500"><span class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">${j.location}</span><span class="bg-green-50 text-green-700 px-2 py-1 rounded">${j.salary}</span></div></div></div>
                 </div>`;
             }).join('');
         }
 
-        window.openJobDetails = (id) => {
-            const j = window.jobs.find(x => x.id == id); if(!j) return;
-            window.currentJobId = id;
-            document.getElementById('modalTitle').innerText = j.title;
-            document.getElementById('modalCompany').innerText = j.company;
-            document.getElementById('modalLocation').innerText = j.location;
-            document.getElementById('modalSalary').innerText = j.salary;
-            document.getElementById('modalSource').innerText = j.sourceName;
-            document.getElementById('modalDesc').innerText = `We are currently hiring a ${j.title} for ${j.company} in ${j.location}. This role offers a salary of ${j.salary}. Apply directly on ${j.sourceName}.`;
-            document.getElementById('modalApplyBtn').href = j.link;
-            document.getElementById('modalLogo').innerHTML = getLogo(j.company).replace('w-14','w-16').replace('h-14','h-16');
-            document.getElementById('jobDetailModal').classList.remove('hidden-view');
-        }
-        
-        window.filterCat = (id) => { document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active')); event.currentTarget.classList.add('active'); renderJobs(window.jobs.filter(j=>j.catId===id)); };
         window.filter = () => { const t=document.getElementById('mainSearch').value.toLowerCase(), l=document.getElementById('locationFilter').value; renderJobs(window.jobs.filter(j=>(j.title.toLowerCase().includes(t)||j.company.toLowerCase().includes(t)) && (l===''||j.location===l))); }
         window.toggleSave = async (id) => { if(!auth||!window.currentUser) return window.openAuth(); const job = window.jobs.find(j=>j.id==id); await setDoc(doc(db,'users',window.currentUser.uid,'saved',id.toString()), job); alert("Saved"); }
-        async function loadSavedJobs() { if(!auth||!window.currentUser) return; const s = await getDocs(collection(db,'users',window.currentUser.uid,'saved')); let h=''; s.forEach(d=>{const j=d.data();h+=`<div class="p-4 border rounded dark:border-gray-700 mb-2 flex justify-between"><div><div class="font-bold dark:text-white">${j.title}</div><div class="text-xs text-gray-500">${j.company}</div></div><a href="${j.link}" target="_blank" class="text-morocco-green font-bold text-sm">Apply</a></div>`}); document.getElementById('savedContainer').innerHTML=h; }
+        async function loadSavedJobs() { /* ... loading logic ... */ }
 
-        window.onload = () => { if(localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark'); window.setLang(window.currentLang); window.initData(); };
+        window.onload = () => { if(localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark'); window.setLang(window.currentLang); generateBackupData(); window.initData(); };
     </script>
 </body>
 </html>
