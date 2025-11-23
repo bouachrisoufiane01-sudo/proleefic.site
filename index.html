@@ -9,6 +9,29 @@
     
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23006233'%3E%3Cpath d='M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z'/%3E%3C/svg%3E">
 
+    <script type="application/ld+json" id="google-job-schema">
+    {
+      "@context": "https://schema.org/",
+      "@type": "JobPosting",
+      "title": "Software Engineer",
+      "description": "Default description",
+      "datePosted": "2025-01-01",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Proleefic",
+        "logo": "https://proleefic.site/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Casablanca",
+          "addressCountry": "MA"
+        }
+      }
+    }
+    </script>
+    
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3965710509874164" crossorigin="anonymous"></script>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -218,7 +241,7 @@
         </div>
     </div>
 
-    <div id="jobDetailModal" class="hidden-view fixed inset-0 z-[100] modal-backdrop flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/50 backdrop-blur-sm" onclick="if(event.target === this) closeJobModal()">
+    <div id="jobDetailModal" class="hidden-view fixed inset-0 z-[100] modal-backdrop flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/50 backdrop-blur-sm transition-opacity" onclick="if(event.target === this) closeJobModal()">
         <div class="bg-white dark:bg-dark-card w-full max-w-2xl rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col max-h-[90vh] animate-fade-in">
             <button onclick="closeJobModal()" class="absolute top-4 right-4 w-10 h-10 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center hover:text-red-500 transition text-xl font-bold z-10">✕</button>
             <div class="p-6 border-b border-gray-100 dark:border-gray-700 flex justify-between items-start">
@@ -295,16 +318,13 @@
             app = initializeApp(firebaseConfig); 
             auth = getAuth(app); 
             db = getFirestore(app);
-            setPersistence(auth, browserLocalPersistence).catch(e => console.error(e));
+            setPersistence(auth, browserLocalPersistence).catch(e => console.error("Persistence warning (ignore if using local file):", e));
         } catch(e){ console.error("Firebase Error", e); }
 
         const i18n = { en: { heroTitle: "Find the job that fits your life", searchPlaceholder: "Job title...", searchBtn: "Find Jobs", categories: "Sectors", feedTitle: "Latest Jobs", loadMore: "Refresh Jobs", loginBtn: "Sign In", authTitle: "Welcome", authSub: "Login to save jobs.", backHome: "Back to Jobs", logout: "Logout", savedJobs: "Saved Jobs", editDetails: "Edit Details", uploadPhoto: "Upload Photo", labelSummary: "Summary" }, fr: { heroTitle: "Trouvez le job idéal au Maroc", searchPlaceholder: "Titre du poste...", searchBtn: "Rechercher", categories: "Secteurs", feedTitle: "Dernières Offres", loadMore: "Actualiser", loginBtn: "Connexion", authTitle: "Bienvenue", authSub: "Connectez-vous.", backHome: "Retour", logout: "Déconnexion", savedJobs: "Offres Sauvegardées", editDetails: "Modifier Détails", uploadPhoto: "Ajouter Photo", labelSummary: "Résumé Profil" }, ar: { heroTitle: "جد الوظيفة المناسبة لك", searchPlaceholder: "عنوان الوظيفة...", searchBtn: "بحث", categories: "القطاعات", feedTitle: "أحدث الوظائف", loadMore: "تحديث", loginBtn: "دخول", authTitle: "مرحباً", authSub: "سجل الدخول", backHome: "رجوع", logout: "خروج", savedJobs: "محفوظات", editDetails: "تعديل المعلومات", uploadPhoto: "تحميل صورة", labelSummary: "نبذة مهنية" } };
         const catLabels = { 'cat_prod': {en:"Production",fr:"Industrie",ar:"الإنتاج",i:"fa-industry"}, 'cat_tech': {en:"Technician",fr:"Technicien",ar:"تقني",i:"fa-wrench"}, 'cat_eng': {en:"Engineering",fr:"Ingénierie",ar:"هندسة",i:"fa-helmet-safety"}, 'cat_transport': {en:"Transport",fr:"Transport",ar:"نقل",i:"fa-truck"}, 'cat_it': {en:"IT",fr:"Informatique",ar:"معلوميات",i:"fa-laptop-code"}, 'cat_sales': {en:"Sales",fr:"Commerce",ar:"تجارة",i:"fa-briefcase"}, 'cat_call': {en:"Call Center",fr:"Centre d'Appel",ar:"مركز نداء",i:"fa-headset"}, 'cat_health': {en:"Healthcare",fr:"Santé",ar:"صحة",i:"fa-heart-pulse"}, 'cat_edu': {en:"Education",fr:"Enseignement",ar:"تعليم",i:"fa-graduation-cap"} };
 
-        window.currentLang = localStorage.getItem('lang') || 'en';
-        window.currentUser = null;
-        window.jobs = [];
-        window.currentJobId = null;
+        window.currentLang = 'en'; window.currentUser = null; window.jobs = []; window.currentJobId = null;
 
         window.setLang = (l) => { window.currentLang = l; localStorage.setItem('lang', l); document.documentElement.setAttribute('dir', l === 'ar' ? 'rtl' : 'ltr'); renderCategories(); document.querySelectorAll('[data-i18n]').forEach(el => { if(i18n[l][el.getAttribute('data-i18n')]) el.innerText = i18n[l][el.getAttribute('data-i18n')]; }); };
         window.toggleTheme = () => { document.documentElement.classList.toggle('dark'); localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light'); };
@@ -346,7 +366,6 @@
             locFilter.innerHTML = `<option value="">All Cities</option>` + ['Casablanca','Tanger','Kenitra','Rabat','Agadir','Marrakech'].map(c=>`<option value="${c}">${c}</option>`).join('');
             catFilter.innerHTML = `<option value="">All Sectors</option>` + Object.keys(catLabels).map(k=>`<option value="${k}">${(catLabels[k] && catLabels[k][window.currentLang]) ? catLabels[k][window.currentLang] : k}</option>`).join('');
             
-            // Try to load Real Robot Data, else use Simulation
             try {
                 const res = await fetch('jobs.json?t='+Date.now());
                 if(!res.ok) throw new Error();
@@ -359,14 +378,12 @@
         };
 
         function generateBackupData() {
-            // 1. REAL JOBS (Neon, Urgent, Real Links)
             const realJobs = [
                 { id: 101, title: "Opérateur de Production (Câblage)", catId: "cat_prod", location: "Tanger", company: "Yazaki", salary: "SMIG + Primes", posted: "1h ago", urgent: true, isReal: true, sourceName: "Yazaki Careers", link: "https://www.linkedin.com/jobs/search/?keywords=yazaki+tanger" },
                 { id: 102, title: "Technicien Maintenance", catId: "cat_prod", location: "Kenitra", company: "Stellantis", salary: "6.500 DH", posted: "3h ago", urgent: true, isReal: true, sourceName: "Stellantis HR", link: "https://www.anapec.org/sigec-app-rv/chercheurs/resultat_recherche_offre" },
                 { id: 103, title: "Responsable Qualité", catId: "cat_eng", location: "Casablanca", company: "OCP", salary: "14.000 DH", posted: "5h ago", urgent: true, isReal: true, sourceName: "OCP Group", link: "https://www.ocpgroup.ma/careers" }
             ];
 
-            // 2. SIMULATED JOBS (Not Urgent, Normal Look)
             const scrapeSources = [
                 {name: "Dreamjob.ma", style: "source-dream"}, 
                 {name: "Rekrute.com", style: "source-maroc"}, 
@@ -396,8 +413,8 @@
 
         function renderCategories() {
             const list = document.getElementById('categoryList'); const l = window.currentLang;
-            list.innerHTML = Object.keys(catLabels).map(k => `<button onclick="filterCat('${k}')" class="cat-btn" id="btn-${k}"><div class="cat-icon"><i class="fa-solid ${catLabels[k].i} text-xl"></i></div><span class="text-sm font-bold text-gray-700 dark:text-gray-200 group-hover:text-morocco-green">${catLabels[k][l] || k}</span></button>`).join('');
-            document.getElementById('categoryFilter').innerHTML = `<option value="">All Sectors</option>` + Object.keys(catLabels).map(k=>`<option value="${k}">${catLabels[k][l] || k}</option>`).join('');
+            list.innerHTML = Object.keys(catLabels).map(k => `<button onclick="filterCat('${k}')" class="cat-btn" id="btn-${k}"><div class="cat-icon"><i class="fa-solid ${catLabels[k].i} text-xl"></i></div><span class="text-sm font-bold text-gray-700 dark:text-gray-200 group-hover:text-morocco-green">${(catLabels[k] && catLabels[k][l]) ? catLabels[k][l] : k}</span></button>`).join('');
+            document.getElementById('categoryFilter').innerHTML = `<option value="">All Sectors</option>` + Object.keys(catLabels).map(k=>`<option value="${k}">${(catLabels[k] && catLabels[k][l]) ? catLabels[k][l] : k}</option>`).join('');
         }
 
         function renderJobs(arr) {
@@ -431,6 +448,15 @@
             document.getElementById('modalLogo').innerHTML = getLogo(j.company).replace('w-14','w-16').replace('h-14','h-16'); 
             document.getElementById('saveBtn').innerHTML = '<i class="fa-regular fa-heart text-xl"></i>';
             document.getElementById('jobDetailModal').classList.remove('hidden-view');
+            
+            // 2. UPDATE GOOGLE JOB SCHEMA
+            const schemaScript = document.getElementById('google-job-schema');
+            const schemaData = JSON.parse(schemaScript.text);
+            schemaData.title = j.title;
+            schemaData.description = `We are hiring a ${j.title} at ${j.company}.`;
+            schemaData.jobLocation.address.addressLocality = j.location;
+            schemaData.hiringOrganization.name = j.company;
+            schemaScript.text = JSON.stringify(schemaData);
         }
 
         window.toggleSave = async (id) => { 
