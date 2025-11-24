@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-   <url>
-      <loc>https://www.proleefic.site/</loc>
-      <lastmod>2025-11-23</lastmod>
-      <changefreq>daily</changefreq>
-      <priority>1.0</priority>
-   </url>
-   
-   <url>
-      <loc>https://www.proleefic.site/privacy.html</loc>
-      <lastmod>2025-11-23</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
+  <url><loc>https://proleefic.site/</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://proleefic.site/?job_id=real_01</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=real_02</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=real_03</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=real_04</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=real_05</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=real_06</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=real_07</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=real_08</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=real_09</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=real_10</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=sim_0</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=sim_1</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=sim_2</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=sim_3</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=sim_4</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=sim_5</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=sim_6</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=sim_7</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=sim_8</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=sim_9</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=sim_10</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=sim_11</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=sim_12</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=sim_13</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=sim_14</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=sim_15</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=sim_16</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=sim_17</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=sim_18</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://proleefic.site/?job_id=sim_19</loc><lastmod>2025-11-24</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
 </urlset>
