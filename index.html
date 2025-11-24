@@ -115,7 +115,7 @@
                 
                 <div class="flex justify-between items-end mb-4 px-1"><h2 class="font-bold text-xl" data-i18n="feedTitle">Latest Opportunities</h2><span class="text-sm text-gray-500" id="jobCount">...</span></div>
                 <div id="jobListings" class="space-y-4 min-h-[500px]"></div>
-                <button onclick="window.initData()" class="w-full mt-6 py-4 border-2 border-dashed border-gray-300 dark:border-gray-700 text-gray-500 font-bold rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition">Load More</button>
+                <button onclick="window.initData()" class="w-full mt-6 py-4 border-2 border-dashed border-gray-300 dark:border-gray-700 text-gray-500 font-bold rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition">Refresh Offers</button>
             </main>
             
             <aside class="hidden lg:block lg:col-span-3">
@@ -207,91 +207,7 @@
 
         if(auth) onAuthStateChanged(auth, u => { if(u) { window.currentUser=u; localStorage.setItem('proleefic_user', JSON.stringify(u)); document.getElementById('authSection').innerHTML = `<button class="w-9 h-9 rounded-full bg-morocco-red text-white font-bold text-xs shadow-lg">U</button>`; } });
 
+        // === FIXED INIT DATA FUNCTION (This connects the Robot to the Website) ===
         window.initData = async () => {
             const cities = ['Casablanca','Tanger','Kenitra','Rabat','Agadir','Marrakech','Fes'];
-            document.getElementById('locationFilter').innerHTML = `<option value="">All Cities</option>`+cities.map(c=>`<option value="${c}">${c}</option>`).join('');
-            document.getElementById('categoryFilter').innerHTML = `<option value="">All Sectors</option>`+Object.keys(catLabels).map(k=>`<option value="${k}">${catLabels[k].en}</option>`).join('');
-            try { const res = await fetch('jobs.json?t='+Date.now()); if(!res.ok) throw new Error(); window.jobs = await res.json(); } catch { window.generateBackupData(); }
-            window.renderJobs(); window.renderCategories();
-        };
-
-        window.generateBackupData = () => {
-            const direct = [
-                { id: "d1", title: "Responsable Production", company: "Yazaki", location: "Tanger", salary: "12000 DH", urgent: true, isReal: true, isDirect: true, email: "rh@yazaki.ma", reqs: ["Bac+5", "5 ans exp"], sourceName: "Direct", catId: "cat_prod" },
-                { id: "d2", title: "Vendeuse", company: "Marjane", location: "Casablanca", salary: "4000 DH", urgent: true, isReal: true, isDirect: true, email: "job@marjane.ma", reqs: ["Bac", "Présentation"], sourceName: "Direct", catId: "cat_sales" }
-            ];
-            const scraped = Array.from({length: 30}, (_, i) => ({
-                id: "l_"+i, title: "Comptable Junior", catId: "cat_admin", location: "Rabat", company: "Fiduciaire", salary: "Neg.", urgent: false, isReal: false, isDirect: false, sourceName: "Dreamjob", link: "https://dreamjob.ma"
-            }));
-            window.jobs = [...direct, ...scraped];
-        };
-
-        window.renderCategories = () => {
-            const html = Object.keys(catLabels).map(k => `<button onclick="window.filterCat('${k}')" class="cat-btn"><i class="fa-solid ${catLabels[k].i} cat-icon"></i><span>${catLabels[k][window.currentLang]}</span></button>`).join('');
-            document.getElementById('categoryList').innerHTML = html;
-            document.getElementById('mobileCategoryList').innerHTML = Object.keys(catLabels).map(k => `<button onclick="window.filterCat('${k}')" class="mobile-cat-btn">${catLabels[k][window.currentLang]}</button>`).join('');
-        };
-
-        window.renderJobs = (arr) => {
-            const list = arr || window.jobs;
-            document.getElementById('jobListings').innerHTML = list.map((j, i) => {
-                // MOBILE AD 2
-                let ad = (i===4) ? `<div class="ad-box h-20 mb-4 md:hidden"><span class="ad-label">Mobile Ad</span><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3965710509874164" data-ad-slot="1234567890" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script></div>` : '';
-                let extra = j.isReal ? "job-real" : "";
-                let badge = j.isDirect ? "badge-direct" : "badge-link";
-                let txt = j.isDirect ? "Direct Apply" : "Via " + j.sourceName;
-                return ad + `<div class="job-card ${extra}" onclick="window.openJobDetails('${j.id}')">
-                    ${j.urgent ? '<span class="absolute top-4 right-4 badge badge-urgent">URGENT</span>' : ''}
-                    <div class="flex gap-4"><div class="w-14 h-14 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-xl shadow-sm">${j.company[0]}</div>
-                    <div><h3 class="font-bold text-lg dark:text-white">${j.title}</h3><p class="text-sm text-gray-500">${j.company}</p>
-                    <div class="mt-2 flex gap-2 items-center"><span class="badge bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300">${j.location}</span><span class="badge ${badge}">${txt}</span></div></div></div></div>`;
-            }).join('');
-        };
-
-        window.filterCat = (id) => window.renderJobs(window.jobs.filter(j=>j.catId===id));
-        window.filter = () => { 
-            const t=document.getElementById('mainSearch').value.toLowerCase(), c=document.getElementById('categoryFilter').value, l=document.getElementById('locationFilter').value;
-            window.renderJobs(window.jobs.filter(j=>j.title.toLowerCase().includes(t) && (c===''||j.catId===c) && (l===''||j.location===l)));
-        };
-
-        window.openJobDetails = (id) => {
-            const j = window.jobs.find(x => x.id == id);
-            window.currentJobId = id;
-            document.getElementById('modalTitle').innerText = j.title;
-            document.getElementById('modalCompany').innerText = j.company;
-            document.getElementById('modalLocation').innerText = j.location;
-            document.getElementById('modalSalary').innerText = j.salary;
-            document.getElementById('modalSource').innerText = j.sourceName;
-            document.getElementById('modalLogo').innerText = j.company[0];
-            
-            const btn = document.getElementById('modalApplyBtn');
-            const direct = document.getElementById('directContactArea');
-            
-            if(j.isDirect) {
-                btn.classList.add('hidden'); direct.classList.remove('hidden');
-                document.getElementById('modalEmail').innerText = j.email;
-                document.getElementById('modalReqs').innerHTML = j.reqs.map(r=>`<li>${r}</li>`).join('');
-                document.getElementById('modalDesc').innerText = "Review requirements and apply directly.";
-            } else {
-                btn.classList.remove('hidden'); direct.classList.add('hidden');
-                btn.innerText = "Apply on " + j.sourceName;
-                btn.href = j.link;
-                document.getElementById('modalDesc').innerText = `We are hiring a ${j.title}. Click below to apply.`;
-            }
-            
-            const u = localStorage.getItem('proleefic_user') || window.currentUser;
-            document.getElementById('saveBtn').innerHTML = u ? '<i class="fa-solid fa-heart text-xl text-morocco-red"></i>' : '<i class="fa-regular fa-heart text-xl text-gray-300"></i>';
-            document.getElementById('jobDetailModal').classList.remove('hidden-view');
-        }
-
-        window.copyToClipboard = (id) => { navigator.clipboard.writeText(document.getElementById(id).innerText).then(() => alert("Copied!")); };
-        window.toggleSave = async (id) => { if(!localStorage.getItem('proleefic_user') && !window.currentUser) { window.closeJobModal(); return window.openAuth(); } alert("Saved!"); };
-
-        window.onload = () => { 
-            const u = JSON.parse(localStorage.getItem('proleefic_user')); 
-            if (u) { window.currentUser = u; document.getElementById('authSection').innerHTML = `<button class="w-9 h-9 rounded-full bg-morocco-red text-white font-bold text-xs">U</button>`; }
-            window.setLang('en'); window.initData(); window.toggleTheme(); window.toggleTheme(); 
-        };
-    </script>
-</body>
-</html>
+            document.getElementBy
