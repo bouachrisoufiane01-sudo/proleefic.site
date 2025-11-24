@@ -2,34 +2,34 @@ name: Daily Job Scraper
 
 on:
   schedule:
-    - cron: '0 10 * * *' # Runs every day at 10:00 AM Morocco time
-  workflow_dispatch:      # Allows you to click "Run Now" manually
+    - cron: '0 9 * * *' # Runs daily at 9:00 AM
+  workflow_dispatch: # Allows manual button click
 
 jobs:
-  scrape:
+  update-jobs:
     runs-on: ubuntu-latest
-    permissions:          # GIVES PERMISSION TO SAVE THE FILE
+    permissions:
       contents: write
     
     steps:
-      - name: Checkout Repo
+      - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
-      - name: Install Scraper Tools
+      - name: Install Tools
         run: pip install requests beautifulsoup4
 
-      - name: Run Scraper Script
+      - name: Run The Robot
         run: python scraper.py
 
-      - name: Save Data (Commit & Push)
+      - name: Save Results
         run: |
           git config --global user.name "ProleeficBot"
           git config --global user.email "bot@proleefic.com"
           git add jobs.json
-          git commit -m "Auto-update jobs [skip ci]" || exit 0
+          git commit -m "New jobs found [skip ci]" || exit 0
           git push
