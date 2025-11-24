@@ -5,18 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Proleefic | Morocco's #1 Job Platform</title>
-    <meta name="description" content="Find production and technical jobs in Morocco. Direct contact with employers.">
+    <meta name="description" content="Find production and technical jobs in Morocco. Direct hiring and aggregator.">
     
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23006233'%3E%3Cpath d='M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z'/%3E%3C/svg%3E">
 
-    <script type="application/ld+json" id="google-job-schema">
-    {
-      "@context": "https://schema.org/",
-      "@type": "WebSite",
-      "name": "Proleefic",
-      "url": "https://proleefic.site"
-    }
-    </script>
+    <script type="application/ld+json" id="google-job-schema">{"@context":"https://schema.org/","@type":"WebSite","name":"Proleefic","url":"https://proleefic.site"}</script>
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3965710509874164" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -46,22 +39,21 @@
         .ad-container { @apply bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl overflow-hidden flex flex-col items-center justify-center text-center relative; }
         .ad-label { @apply text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2 block pt-2; }
         
-        /* Job Card Styles */
+        /* Job Styles */
         .job-real { border: 2px solid #C1272D; box-shadow: 0 0 15px rgba(193, 39, 45, 0.15); background: linear-gradient(to right, #fff, #fff5f5); }
         .dark .job-real { background: linear-gradient(to right, #1E293B, #2d1a1b); box-shadow: 0 0 20px rgba(193, 39, 45, 0.3); }
         
+        /* Badges */
         .source-badge { font-size: 10px; font-weight: bold; padding: 3px 8px; border-radius: 6px; margin-left: auto; display: inline-block; border: 1px solid transparent; }
-        .src-direct { background: #fee2e2; color: #991b1b; border-color: #fca5a5; } /* Direct Contact (Red) */
-        .src-link { background: #e0f2fe; color: #075985; border-color: #bae6fd; } /* Link (Blue) */
+        .src-direct { background: #fee2e2; color: #991b1b; border-color: #fca5a5; }
+        .src-link { background: #e0f2fe; color: #075985; border-color: #bae6fd; }
 
-        .cat-btn { @apply w-full flex items-center gap-4 px-4 py-3 rounded-xl border border-transparent hover:border-morocco-green hover:bg-green-50 dark:hover:bg-green-900/20 transition-all duration-200 group text-left bg-white dark:bg-gray-800 shadow-sm mb-2; }
-        .cat-icon { @apply w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-500 group-hover:bg-white group-hover:text-morocco-green shadow-sm transition-colors text-lg; }
+        /* Sidebar Categories */
+        .cat-btn { @apply w-full flex items-center gap-4 px-4 py-4 rounded-xl border border-transparent hover:border-morocco-green hover:bg-green-50 dark:hover:bg-green-900/20 transition-all duration-200 group text-left bg-white dark:bg-gray-800 shadow-sm mb-2; }
+        .cat-icon { @apply w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-500 group-hover:bg-white group-hover:text-morocco-green shadow-sm transition-colors text-xl; }
         .cat-active { @apply border-morocco-green bg-green-50 dark:bg-green-900/20 ring-1 ring-morocco-green; }
         
-        /* Contact Box Style */
-        .contact-box { @apply bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 p-4 rounded-xl flex justify-between items-center mt-4; }
-        
-        @media print { .no-print { display: none !important; } body { background: white; } }
+        @media print { .no-print { display: none !important; } #cvPreview { position: absolute; left: 0; top: 0; width: 100%; margin: 0; padding: 0; box-shadow: none; } body { background: white; } }
     </style>
 </head>
 <body class="bg-[#f8f9fa] dark:bg-[#0f1115] text-gray-900 dark:text-gray-100">
@@ -79,11 +71,12 @@
             </div>
             <div class="flex items-center gap-2 sm:gap-4">
                 <div class="hidden md:flex bg-gray-100 dark:bg-gray-800 rounded-xl p-1.5 gap-1">
-                    <button onclick="setLang('en')" class="px-3 py-1 text-xs font-bold rounded-lg transition-all hover:scale-110 hover:bg-white hover:text-morocco-green">EN</button>
-                    <button onclick="setLang('fr')" class="px-3 py-1 text-xs font-bold rounded-lg transition-all hover:scale-110 hover:bg-white hover:text-morocco-green">FR</button>
-                    <button onclick="setLang('ar')" class="px-3 py-1 text-xs font-bold rounded-lg transition-all hover:scale-110 hover:bg-white hover:text-morocco-green">عربي</button>
+                    <button onclick="setLang('en')" id="lang-en" class="px-3 py-1 text-xs font-bold rounded-lg transition-all hover:scale-110 hover:bg-white hover:text-morocco-green">EN</button>
+                    <button onclick="setLang('fr')" id="lang-fr" class="px-3 py-1 text-xs font-bold rounded-lg transition-all hover:scale-110 hover:bg-white hover:text-morocco-green">FR</button>
+                    <button onclick="setLang('ar')" id="lang-ar" class="px-3 py-1 text-xs font-bold rounded-lg transition-all hover:scale-110 hover:bg-white hover:text-morocco-green">عربي</button>
                 </div>
-                <button onclick="toggleTheme()" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition text-gray-500"><i class="fa-solid fa-moon"></i></button>
+                <button onclick="toggleTheme()" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition text-gray-500"><i class="fa-solid fa-moon dark:hidden text-lg"></i><i class="fa-solid fa-sun hidden dark:inline text-yellow-400 text-lg"></i></button>
+                <button onclick="switchView('cv')" class="flex items-center gap-2 bg-purple-600 text-white px-3 py-2 rounded-lg font-bold text-xs shadow-md hover:bg-purple-700 transition"><i class="fa-solid fa-wand-magic-sparkles"></i> CV</button>
                 <div id="authSection"><button onclick="openAuth()" class="bg-morocco-green text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-morocco-darkGreen transition shadow-lg">Sign In</button></div>
             </div>
         </div>
@@ -96,7 +89,9 @@
                 <h1 class="text-4xl md:text-6xl font-extrabold mb-8 text-center tracking-tight" data-i18n="heroTitle">Find the job that fits your life</h1>
                 <div class="bg-white dark:bg-gray-800 p-2 rounded-2xl shadow-xl shadow-green-900/5 border border-gray-200 dark:border-gray-700 flex flex-col md:flex-row gap-2">
                     <input type="text" id="mainSearch" class="flex-1 w-full px-5 py-4 rounded-xl bg-transparent outline-none font-bold text-gray-800 dark:text-white text-lg" placeholder="Job title...">
+                    <div class="w-px bg-gray-200 dark:bg-gray-700 hidden md:block"></div>
                     <select id="categoryFilter" class="flex-1 w-full px-5 py-4 rounded-xl bg-transparent outline-none font-bold text-gray-800 dark:text-white cursor-pointer"><option value="">All Sectors</option></select>
+                    <div class="w-px bg-gray-200 dark:bg-gray-700 hidden md:block"></div>
                     <select id="locationFilter" class="flex-1 w-full px-5 py-4 rounded-xl bg-transparent outline-none font-bold text-gray-800 dark:text-white cursor-pointer"><option value="">All Cities</option></select>
                     <button onclick="filter()" class="bg-morocco-green hover:bg-morocco-darkGreen text-white px-8 py-4 rounded-xl font-bold text-lg transition shadow-xl">Find</button>
                 </div>
@@ -118,6 +113,7 @@
                     <div id="categoryList" class="flex flex-col gap-1"></div>
                 </div>
             </aside>
+            
             <main class="lg:col-span-6 space-y-4">
                 <div class="flex justify-between items-center mb-2 px-1">
                     <h2 class="font-bold text-xl flex items-center gap-2"><span data-i18n="feedTitle">Latest Jobs</span> <span class="text-gray-400 text-sm font-normal ml-2" id="jobCount">...</span></h2>
@@ -125,6 +121,7 @@
                 <div id="jobListings" class="space-y-3 min-h-[500px]"></div>
                 <button onclick="window.initData()" class="w-full mt-6 py-4 border-2 border-dashed border-gray-300 dark:border-gray-700 text-morocco-green font-bold rounded-2xl hover:bg-white dark:hover:bg-gray-800 transition">Refresh Jobs</button>
             </main>
+            
             <aside class="hidden lg:block lg:col-span-3 space-y-6">
                 <div class="ad-container min-h-[300px] sticky top-24">
                     <span class="ad-label">Sponsored</span>
@@ -135,48 +132,58 @@
         </div>
     </div>
 
+    <div id="cvView" class="hidden-view view-section bg-gray-100 dark:bg-black min-h-screen">
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <div class="w-full lg:w-1/3 space-y-6 no-print">
+                    <div class="bg-white dark:bg-dark-card p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 h-[90vh] overflow-y-auto">
+                        <div class="flex justify-between items-center mb-6"><h2 class="text-xl font-bold flex items-center gap-2 text-gray-800 dark:text-white"><i class="fa-solid fa-pen-to-square text-morocco-green"></i> <span data-i18n="editDetails">Edit Details</span></h2><button onclick="switchView('home')" class="text-sm font-bold text-gray-400 hover:text-red-500">✕ Close</button></div>
+                        <div class="space-y-4">
+                            <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-dashed border-gray-300 dark:border-gray-600 text-center"><label for="cvPhotoUpload" class="cursor-pointer block"><i class="fa-solid fa-camera text-2xl text-morocco-green mb-2"></i><div class="text-xs font-bold text-gray-500" data-i18n="uploadPhoto">Upload Photo</div></label><input type="file" id="cvPhotoUpload" accept="image/*" class="hidden" onchange="loadPhoto(event)"></div>
+                            <input type="text" id="cvName" oninput="updateCV()" class="input-pro" placeholder="Full Name"><input type="text" id="cvTitle" oninput="updateCV()" class="input-pro" placeholder="Job Title">
+                            <div class="grid grid-cols-2 gap-2"><input type="text" id="cvPhone" oninput="updateCV()" class="input-pro" placeholder="Phone"><input type="text" id="cvCity" oninput="updateCV()" class="input-pro" placeholder="City"></div>
+                            <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-xl border border-purple-100 dark:border-purple-800 relative"><div class="flex justify-between items-center mb-2"><label class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase" data-i18n="labelSummary">Summary</label><button onclick="generateAISummary()" class="text-xs bg-purple-600 text-white px-3 py-1.5 rounded-lg shadow hover:bg-purple-700 transition font-bold"><i class="fa-solid fa-robot"></i> AI Write</button></div><textarea id="cvSummary" oninput="updateCV()" rows="3" class="input-pro text-sm" placeholder="AI will write this..."></textarea></div>
+                            <div><label class="text-xs font-bold text-gray-400 uppercase mb-1 block">Education</label><textarea id="cvEdu" oninput="updateCV()" rows="2" class="input-pro"></textarea></div>
+                            <div><label class="text-xs font-bold text-gray-400 uppercase mb-1 block">Certificates</label><textarea id="cvCerts" oninput="updateCV()" rows="2" class="input-pro"></textarea></div>
+                            <div><label class="text-xs font-bold text-gray-400 uppercase mb-1 block">Experience</label><textarea id="cvExp" oninput="updateCV()" rows="3" class="input-pro"></textarea></div>
+                            <div><label class="text-xs font-bold text-gray-400 uppercase mb-1 block">Skills</label><input type="text" id="cvSkills" oninput="updateCV()" class="input-pro"></div>
+                            <div><label class="text-xs font-bold text-gray-400 uppercase mb-1 block">Languages</label><input type="text" id="cvLangs" oninput="updateCV()" class="input-pro"></div>
+                        </div>
+                        <div class="mt-6 pt-6 border-t dark:border-gray-700"><button onclick="window.print()" class="w-full bg-morocco-green text-white py-3.5 rounded-xl font-bold shadow-lg hover:bg-morocco-darkGreen transition"><i class="fa-solid fa-download"></i> Download PDF</button></div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-2/3 overflow-x-auto pb-10">
+                    <div id="cvPreview" class="cv-paper rounded-none sm:rounded-lg">
+                        <div class="border-b-4 border-gray-800 pb-8 mb-8 flex justify-between items-start gap-6 relative z-10">
+                            <div class="flex gap-6 items-center"><img id="prevPhoto" src="" class="cv-photo-frame hidden"><div><h1 id="prevName" class="text-4xl font-extrabold uppercase text-gray-900">YOUR NAME</h1><p id="prevTitle" class="text-xl text-morocco-green font-bold mt-2 uppercase">JOB TITLE</p></div></div>
+                            <div class="text-right text-sm text-gray-600 leading-relaxed pt-2"><p id="prevPhone" class="font-semibold">+212 600 000 000</p><p id="prevCity">City, Morocco</p></div>
+                        </div>
+                        <div class="mb-6 relative z-10"><h3 class="font-bold text-gray-800 border-b-2 border-gray-200 mb-2 uppercase text-sm tracking-wider">Profile</h3><p id="prevSummary" class="text-gray-700 text-sm leading-relaxed"></p></div>
+                        <div class="mb-6 relative z-10"><h3 class="font-bold text-gray-800 border-b-2 border-gray-200 mb-2 uppercase text-sm tracking-wider">Experience</h3><div id="prevExp" class="text-gray-700 text-sm whitespace-pre-line pl-1"></div></div>
+                        <div class="grid grid-cols-2 gap-8 mb-6 relative z-10"><div><h3 class="font-bold text-gray-800 border-b-2 border-gray-200 mb-2 uppercase text-sm tracking-wider">Education</h3><div id="prevEdu" class="text-gray-700 text-sm whitespace-pre-line"></div></div><div><h3 class="font-bold text-gray-800 border-b-2 border-gray-200 mb-2 uppercase text-sm tracking-wider">Certificates</h3><div id="prevCerts" class="text-gray-700 text-sm whitespace-pre-line"></div></div></div>
+                        <div class="grid grid-cols-2 gap-8 relative z-10"><div><h3 class="font-bold text-gray-800 border-b-2 border-gray-200 mb-2 uppercase text-sm tracking-wider">Skills</h3><div id="prevSkills" class="flex flex-wrap gap-2"></div></div><div><h3 class="font-bold text-gray-800 border-b-2 border-gray-200 mb-2 uppercase text-sm tracking-wider">Languages</h3><div id="prevLangs" class="flex flex-wrap gap-2"></div></div></div>
+                        <div class="absolute bottom-6 right-8 text-[10px] text-gray-300 font-bold uppercase tracking-widest z-10">Proleefic.site</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="jobDetailModal" class="hidden-view fixed inset-0 z-[100] modal-backdrop flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/50 backdrop-blur-sm transition-opacity" onclick="if(event.target === this) closeJobModal()">
         <div class="bg-white dark:bg-dark-card w-full max-w-2xl rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col max-h-[90vh] animate-fade-in">
             <button onclick="closeJobModal()" class="absolute top-4 right-4 w-10 h-10 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center hover:text-red-500 transition text-xl font-bold z-10">✕</button>
-            
-            <div class="p-6 border-b border-gray-100 dark:border-gray-700 flex justify-between items-start">
-                <div class="flex gap-5">
-                    <div id="modalLogo" class="w-16 h-16 shrink-0"></div>
-                    <div>
-                        <h2 id="modalTitle" class="text-2xl font-bold dark:text-white leading-tight"></h2>
-                        <p id="modalCompany" class="text-morocco-green font-semibold text-lg mt-1"></p>
-                        <div class="flex items-center gap-3 mt-2 text-sm text-gray-500"><span id="modalLocation"></span> • <span id="modalDate">Today</span></div>
-                    </div>
-                </div>
-            </div>
-
+            <div class="p-6 border-b border-gray-100 dark:border-gray-700 flex justify-between items-start"><div class="flex gap-5"><div id="modalLogo" class="w-16 h-16 shrink-0"></div><div><h2 id="modalTitle" class="text-2xl font-bold dark:text-white leading-tight"></h2><p id="modalCompany" class="text-morocco-green font-semibold text-lg mt-1"></p><div class="flex items-center gap-3 mt-2 text-sm text-gray-500"><span id="modalLocation"></span> • <span id="modalDate">Today</span></div></div></div></div>
             <div class="p-6 overflow-y-auto flex-1">
-                <div class="bg-gray-50 dark:bg-gray-800/50 p-5 rounded-2xl mb-6 border border-gray-100 dark:border-gray-700 grid grid-cols-2 gap-4">
-                    <div><span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Salary</span><div id="modalSalary" class="font-bold dark:text-white text-lg"></div></div>
-                    <div><span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Source</span><div id="modalSource" class="font-bold text-blue-500"></div></div>
-                </div>
-                
-                <h3 class="font-bold text-lg mb-3 dark:text-white">Job Details</h3>
-                <p id="modalDesc" class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm mb-6"></p>
-                
+                <div class="bg-gray-50 dark:bg-gray-800/50 p-5 rounded-2xl mb-6 border border-gray-100 dark:border-gray-700 grid grid-cols-2 gap-4"><div><span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Salary</span><div id="modalSalary" class="font-bold dark:text-white text-lg"></div></div><div><span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Source</span><div id="modalSource" class="font-bold text-blue-500"></div></div></div>
+                <h3 class="font-bold text-lg mb-3 dark:text-white">Job Details</h3><p id="modalDesc" class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm mb-6"></p>
                 <div id="directContactArea" class="hidden border-t border-gray-200 dark:border-gray-700 pt-6">
                     <h3 class="font-bold text-lg mb-3 dark:text-white flex items-center gap-2"><i class="fa-solid fa-check-circle text-green-500"></i> Requirements</h3>
                     <ul id="modalReqs" class="list-disc list-inside text-sm text-gray-600 dark:text-gray-300 space-y-2 mb-6"></ul>
-                    
-                    <h3 class="font-bold text-lg mb-3 dark:text-white">How to Apply</h3>
-                    <div class="contact-box">
-                        <div>
-                            <span class="text-xs font-bold text-green-700 dark:text-green-400 uppercase block mb-1">Send CV To:</span>
-                            <span id="modalEmail" class="font-bold text-lg dark:text-white select-all"></span>
-                        </div>
-                        <button onclick="copyToClipboard('modalEmail')" class="text-gray-400 hover:text-green-600"><i class="fa-regular fa-copy text-xl"></i></button>
-                    </div>
+                    <div class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 p-4 rounded-xl flex justify-between items-center"><div><span class="text-xs font-bold text-green-700 dark:text-green-400 uppercase block mb-1">Send CV To:</span><span id="modalEmail" class="font-bold text-lg dark:text-white select-all"></span></div><button onclick="copyToClipboard('modalEmail')" class="text-gray-400 hover:text-green-600"><i class="fa-regular fa-copy text-xl"></i></button></div>
                 </div>
             </div>
-
             <div class="p-5 border-t border-gray-100 dark:border-gray-700 flex gap-3 bg-gray-50 dark:bg-gray-800/30 rounded-b-3xl">
                 <button id="saveBtn" onclick="window.toggleSave(window.currentJobId)" class="px-5 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-500 hover:text-morocco-red hover:bg-white transition"><i class="fa-regular fa-heart text-xl"></i></button>
-                
                 <a id="modalApplyBtn" href="#" target="_blank" class="flex-1 bg-morocco-green text-white font-bold rounded-xl flex items-center justify-center py-3.5 hover:bg-morocco-darkGreen transition shadow-lg text-lg">Apply Now</a>
             </div>
         </div>
@@ -185,17 +192,19 @@
     <div id="authView" class="hidden-view fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4" onclick="if(event.target === this) closeAuth()">
         <div class="bg-white dark:bg-dark-card w-full max-w-md rounded-3xl shadow-2xl relative p-8 animate-fade-in">
             <button onclick="closeAuth()" class="absolute top-4 right-4 text-2xl">✕</button>
-            <div class="text-center mb-6"><h2 class="text-2xl font-bold dark:text-white" data-i18n="authTitle">Welcome</h2><div class="flex bg-gray-100 dark:bg-gray-800 p-1 rounded-xl mt-6"><button onclick="toggleAuthMode('login')" id="tab-login" class="flex-1 py-2 text-sm font-bold rounded-lg bg-white text-morocco-green shadow-sm">Log In</button><button onclick="toggleAuthMode('signup')" id="tab-signup" class="flex-1 py-2 text-sm font-bold rounded-lg text-gray-500">Sign Up</button></div></div>
-            <form id="loginForm" onsubmit="window.handleEmailLogin(event)" class="space-y-4"><input type="email" id="loginEmail" class="input-pro" placeholder="Email" required><input type="password" id="loginPass" class="input-pro" placeholder="Password" required><button type="submit" class="w-full bg-morocco-green text-white py-3.5 rounded-xl font-bold">Sign In</button></form>
-            <form id="signupForm" onsubmit="window.handleEmailSignup(event)" class="space-y-4 hidden"><input type="text" id="signupName" class="input-pro" placeholder="Name" required><input type="email" id="signupEmail" class="input-pro" placeholder="Email" required><input type="password" id="signupPass" class="input-pro" placeholder="Password" required><button type="submit" class="w-full bg-morocco-green text-white py-3.5 rounded-xl font-bold">Create Account</button></form>
-            <button onclick="window.loginGoogle()" class="w-full border-2 mt-4 py-3.5 rounded-xl font-bold flex items-center justify-center gap-3 dark:text-white">Google Login</button>
+            <div class="text-center mb-6"><h2 class="text-2xl font-bold dark:text-white" data-i18n="authTitle">Welcome</h2><p id="authSubMsg" class="text-sm text-gray-500 mt-1">Login to save jobs.</p><div class="flex bg-gray-100 dark:bg-gray-800 p-1 rounded-xl mt-6"><button onclick="toggleAuthMode('login')" id="tab-login" class="flex-1 py-2 text-sm font-bold rounded-lg bg-white text-morocco-green shadow-sm transition">Log In</button><button onclick="toggleAuthMode('signup')" id="tab-signup" class="flex-1 py-2 text-sm font-bold rounded-lg text-gray-500 transition">Sign Up</button></div></div>
+            <div id="authError" class="hidden bg-red-100 text-red-600 p-3 rounded-lg mb-4 text-sm border-l-4 border-red-500 font-bold"></div>
+            <form id="loginForm" onsubmit="window.handleEmailLogin(event)" class="space-y-4"><input type="email" id="loginEmail" class="input-pro" placeholder="Email" required><input type="password" id="loginPass" class="input-pro" placeholder="Password" required><button type="submit" class="w-full bg-morocco-green text-white py-3.5 rounded-xl font-bold transition shadow-lg">Sign In</button></form>
+            <form id="signupForm" onsubmit="window.handleEmailSignup(event)" class="space-y-4 hidden"><input type="text" id="signupName" class="input-pro" placeholder="Full Name" required><input type="email" id="signupEmail" class="input-pro" placeholder="Email" required><input type="password" id="signupPass" class="input-pro" placeholder="Password" required><button type="submit" class="w-full bg-morocco-red text-white py-3.5 rounded-xl font-bold transition shadow-lg">Create Account</button></form>
+            <div class="relative text-center my-6"><span class="bg-white dark:bg-dark-card px-3 text-xs text-gray-400 font-bold relative z-10">OR</span><div class="h-px bg-gray-200 dark:bg-gray-700 w-full absolute top-1/2"></div></div>
+            <button onclick="window.loginGoogle()" class="w-full border-2 border-gray-200 dark:border-gray-600 py-3.5 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-gray-50"><svg class="w-5 h-5" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google Login</button>
         </div>
     </div>
 
     <div id="profileView" class="hidden-view view-section container mx-auto px-4 py-10 min-h-screen">
         <div class="max-w-3xl mx-auto">
             <button onclick="switchView('home')" class="mb-6 font-bold text-morocco-green">Back</button>
-            <div class="bg-white dark:bg-dark-card rounded-2xl shadow p-6 flex justify-between items-center"><div><h1 class="text-2xl font-bold dark:text-white" id="userName">User</h1><p class="text-gray-500" id="userEmail">email</p></div><button onclick="window.logout()" class="text-red-500 font-bold">Logout</button></div>
+            <div class="bg-white dark:bg-dark-card rounded-2xl shadow p-6 flex justify-between items-center"><div><h1 class="text-2xl font-bold dark:text-white" id="userName">User</h1><p class="text-gray-500" id="userEmail">email</p></div><button onclick="window.logout()" class="text-red-500 font-bold border border-red-200 px-4 py-2 rounded-lg hover:bg-red-50" data-i18n="logout">Logout</button></div>
             <h2 class="text-xl font-bold mt-8 mb-4 dark:text-white">Saved Jobs</h2>
             <div id="savedContainer" class="grid gap-4"></div>
         </div>
@@ -203,19 +212,19 @@
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-        import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, updateProfile, setPersistence, browserLocalPersistence } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
         import { getFirestore, doc, setDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
         const firebaseConfig = { apiKey: "AIzaSyBsPi64Eb0GQnGjcxg6n6YRFbG-iO9K_pM", authDomain: "proleefic-85800.firebaseapp.com", projectId: "proleefic-85800", storageBucket: "proleefic-85800.firebasestorage.app", messagingSenderId: "1033605555868", appId: "1:1033605555868:web:577ff42f0bcfb0b6122f59", measurementId: "G-WJ4XKS01P0" };
-        let app, auth, db; try { app = initializeApp(firebaseConfig); auth = getAuth(app); db = getFirestore(app); setPersistence(auth, browserLocalPersistence).catch(console.error); } catch(e){}
+        let app, auth, db; try { app = initializeApp(firebaseConfig); auth = getAuth(app); db = getFirestore(app); } catch(e){}
 
         function checkLocalLogin() { const u = JSON.parse(localStorage.getItem('proleefic_user')); if (u) { window.currentUser = u; updateUIForLogin(u); } }
-        function updateUIForLogin(u) { document.getElementById('userName').innerText = u.displayName || "User"; document.getElementById('userEmail').innerText = u.email; document.getElementById('authSection').innerHTML = `<button onclick="switchView('profile')" class="w-9 h-9 rounded-full bg-morocco-red text-white font-bold text-xs">U</button>`; loadSavedJobs(); }
+        function updateUIForLogin(u) { document.getElementById('userName').innerText = u.displayName || "User"; document.getElementById('userEmail').innerText = u.email; document.getElementById('authSection').innerHTML = `<button onclick="switchView('profile')" class="w-9 h-9 rounded-full bg-morocco-red text-white font-bold flex items-center justify-center text-xs">U</button>`; loadSavedJobs(); }
         
         const i18n={en:{heroTitle:"Find the job"},fr:{heroTitle:"Trouvez le job"},ar:{heroTitle:"جد الوظيفة"}};
-        const catLabels = {'cat_prod':{en:"Production",i:"fa-industry"},'cat_tech':{en:"Technician",i:"fa-wrench"},'cat_sales':{en:"Sales",i:"fa-briefcase"},'cat_admin':{en:"Admin",i:"fa-user-tie"}};
+        const catLabels = {'cat_prod':{en:"Production",i:"fa-industry"},'cat_tech':{en:"Technician",i:"fa-wrench"},'cat_eng':{en:"Engineering",i:"fa-helmet-safety"},'cat_transport':{en:"Transport",i:"fa-truck"},'cat_it':{en:"IT/Dev",i:"fa-laptop-code"},'cat_sales':{en:"Sales",i:"fa-briefcase"},'cat_call':{en:"Call Center",i:"fa-headset"},'cat_health':{en:"Healthcare",i:"fa-heart-pulse"},'cat_edu':{en:"Education",i:"fa-graduation-cap"},'cat_admin':{en:"Admin/HR",i:"fa-user-tie"}};
+        
         window.currentLang='en'; window.currentUser=null; window.jobs=[]; window.currentJobId=null;
-
         window.setLang = (l) => { window.currentLang = l; document.documentElement.setAttribute('dir', l === 'ar' ? 'rtl' : 'ltr'); renderCategories(); };
         window.toggleTheme = () => document.documentElement.classList.toggle('dark');
         window.switchView = (v) => { document.querySelectorAll('.view-section').forEach(e=>e.classList.add('hidden-view')); document.getElementById(v+'View').classList.remove('hidden-view'); };
@@ -225,48 +234,68 @@
         window.toggleAuthMode = (m) => { document.getElementById('loginForm').style.display=m==='login'?'block':'none'; document.getElementById('signupForm').style.display=m==='login'?'none':'block'; };
         
         window.handleEmailLogin = (e) => { e.preventDefault(); signInWithEmailAndPassword(auth, document.getElementById('loginEmail').value, document.getElementById('loginPass').value).then(res=>{ localStorage.setItem('proleefic_user', JSON.stringify({email:res.user.email,uid:res.user.uid})); window.closeAuth(); }); };
+        window.handleEmailSignup = (e) => { e.preventDefault(); const n=document.getElementById('signupName').value; createUserWithEmailAndPassword(auth, document.getElementById('signupEmail').value, document.getElementById('signupPass').value).then(r=>{ updateProfile(r.user,{displayName:n}); localStorage.setItem('proleefic_user', JSON.stringify({email:r.user.email,uid:r.user.uid})); window.closeAuth(); }); };
         window.loginGoogle = () => signInWithPopup(auth, new GoogleAuthProvider()).then(res=>{ localStorage.setItem('proleefic_user', JSON.stringify({email:res.user.email,uid:res.user.uid})); window.closeAuth(); });
         window.logout = () => signOut(auth).then(()=>{ localStorage.removeItem('proleefic_user'); location.reload(); });
 
-        if(auth) onAuthStateChanged(auth, u => { if(u) { window.currentUser=u; localStorage.setItem('proleefic_user', JSON.stringify({email:u.email,uid:u.uid})); updateUIForLogin(u); } });
-
         window.initData = async () => {
             const locFilter = document.getElementById('locationFilter');
-            locFilter.innerHTML = `<option value="">All Cities</option>`+['Casablanca','Tanger','Kenitra'].map(c=>`<option value="${c}">${c}</option>`).join('');
+            locFilter.innerHTML = `<option value="">All Cities</option>`+['Casablanca','Tanger','Kenitra','Rabat','Agadir','Marrakech','Fes','Oujda'].map(c=>`<option value="${c}">${c}</option>`).join('');
             try { const res = await fetch('jobs.json?t='+Date.now()); if(!res.ok) throw new Error(); window.jobs = await res.json(); renderJobs(window.jobs); } catch { generateBackupData(); }
             renderCategories();
         };
 
         function generateBackupData() {
-            // DIRECT JOBS (High Value - Shows Email/Phone)
+            // 1. DIRECT HIRING (Specific companies)
             const directJobs = [
                 { id: "d_1", title: "Responsable Production", company: "Yazaki Tanger", location: "Tanger", salary: "12.000 DH", posted: "1h ago", urgent: true, isReal: true, isDirect: true, email: "rh@yazaki-maroc.com", reqs: ["Bac+5 Ingénieur", "5 ans expérience", "Anglais courant"], sourceName: "Direct HR", catId: "cat_prod" },
-                { id: "d_2", title: "Technicien Maintenance", company: "Stellantis", location: "Kenitra", salary: "7.000 DH", posted: "2h ago", urgent: true, isReal: true, isDirect: true, email: "recrutement@stellantis.ma", reqs: ["Bac+2 Electromécanique", "3 ans expérience", "Travail posté"], sourceName: "Direct HR", catId: "cat_tech" }
+                { id: "d_2", title: "Technicien Maintenance", company: "Stellantis", location: "Kenitra", salary: "7.000 DH", posted: "2h ago", urgent: true, isReal: true, isDirect: true, email: "recrutement@stellantis.ma", reqs: ["Bac+2 Electromécanique", "3 ans expérience", "Travail posté"], sourceName: "Direct HR", catId: "cat_tech" },
+                { id: "d_3", title: "Assistant(e) RH", company: "Lear Corp", location: "Rabat", salary: "5.500 DH", posted: "4h ago", urgent: true, isReal: true, isDirect: true, email: "careers.rabat@lear.com", reqs: ["Bac+3 Gestion", "Français parfait", "Dynamique"], sourceName: "Direct HR", catId: "cat_admin" },
+                { id: "d_4", title: "Vendeuse", company: "Marjane", location: "Casablanca", salary: "4.000 DH", posted: "5h ago", urgent: true, isReal: true, isDirect: true, email: "job@marjane.ma", reqs: ["Niveau Bac", "Bonne présentation", "Disponible de suite"], sourceName: "Direct HR", catId: "cat_sales" },
+                { id: "d_5", title: "Conseiller Client", company: "Webhelp", location: "Agadir", salary: "4.500 DH + Primes", posted: "6h ago", urgent: true, isReal: true, isDirect: true, email: "joinus@webhelp.com", reqs: ["Bon français", "Sens de l'écoute", "Esprit d'équipe"], sourceName: "Direct HR", catId: "cat_call" }
             ];
-            // LINK JOBS (Standard - Shows Link)
-            const linkJobs = Array.from({length: 20}, (_, i) => ({
-                id: "l_"+i, title: "Vendeur Showroom", company: "Zara", location: "Casablanca", salary: "Negotiable", posted: "1d ago", urgent: false, isReal: false, isDirect: false, sourceName: "Dreamjob", link: "https://dreamjob.ma", catId: "cat_sales"
-            }));
+
+            // 2. LINKED JOBS (Mixed Sources)
+            const sources = [
+                {name: "Dreamjob", style: "src-dream", url: "https://dreamjob.ma/"},
+                {name: "Rekrute", style: "src-rekrute", url: "https://www.rekrute.com/"},
+                {name: "Anapec", style: "src-anapec", url: "http://www.anapec.org/"},
+                {name: "Emploi.ma", style: "src-emploi", url: "https://www.emploi.ma/"}
+            ];
+            const cities = ["Casablanca", "Tanger", "Kenitra", "Rabat", "Agadir", "Marrakech", "Fes", "Meknes", "Oujda"];
+            const roles = [["Comptable", "cat_admin"], ["Chauffeur", "cat_transport"], ["Vendeur", "cat_sales"], ["Développeur", "cat_it"]];
+
+            const linkJobs = Array.from({length: 40}, (_, i) => {
+                const r = roles[Math.floor(Math.random() * roles.length)];
+                const src = sources[Math.floor(Math.random() * sources.length)];
+                const city = cities[Math.floor(Math.random() * cities.length)];
+                return {
+                    id: "l_"+i, title: r[0], catId: r[1], location: city, company: "Recruteur " + city, salary: "Negotiable", posted: "1d ago",
+                    urgent: false, isReal: false, isDirect: false, sourceName: src.name, sourceStyle: "source-badge " + src.style, link: src.url
+                };
+            });
+
             window.jobs = [...directJobs, ...linkJobs];
             renderJobs(window.jobs);
         }
 
         function renderCategories() {
-            document.getElementById('categoryList').innerHTML = Object.keys(catLabels).map(k => `<button onclick="filterCat('${k}')" class="cat-btn"><i class="fa-solid ${catLabels[k].i} cat-icon"></i><span>${catLabels[k]['en']}</span></button>`).join('');
+            document.getElementById('categoryList').innerHTML = Object.keys(catLabels).map(k => `<button onclick="filterCat('${k}')" class="cat-btn"><div class="cat-icon"><i class="fa-solid ${catLabels[k].i}"></i></div><span class="text-sm font-bold text-gray-700 dark:text-gray-200 group-hover:text-morocco-green">${(catLabels[k] && catLabels[k][window.currentLang]) ? catLabels[k][window.currentLang] : k}</span></button>`).join('');
         }
 
         function renderJobs(arr) {
             document.getElementById('jobListings').innerHTML = arr.map(j => {
                 let extra = j.isReal ? "job-real" : "";
-                let badgeClass = j.isDirect ? "source-badge src-direct" : "source-badge src-link";
+                let badgeClass = j.isDirect ? "source-badge src-direct" : (j.sourceStyle || "source-badge src-link");
                 return `<div class="bg-white dark:bg-dark-card p-5 rounded-2xl border border-gray-200 dark:border-gray-700 hover:shadow-lg mb-3 cursor-pointer ${extra}" onclick="openJobDetails('${j.id}')">
                     ${j.urgent ? '<span class="absolute top-4 right-4 bg-red-100 text-red-600 text-[10px] font-bold px-2 py-1 rounded-full">URGENT</span>' : ''}
-                    <div class="flex gap-4"><div class="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl">${j.company[0]}</div><div><h3 class="font-bold text-lg dark:text-white">${j.title}</h3><p class="text-sm text-gray-500">${j.company}</p><div class="mt-2 flex gap-2 text-xs"><span class="bg-gray-100 px-2 py-1 rounded">${j.location}</span><span class="${badgeClass}">${j.isDirect ? "Direct Contact" : j.sourceName}</span></div></div></div></div>`;
+                    <div class="flex gap-4"><div class="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl shadow-sm">${j.company[0]}</div><div><h3 class="font-bold text-lg dark:text-white">${j.title}</h3><p class="text-sm text-gray-500">${j.company}</p><div class="mt-2 flex gap-2 text-xs"><span class="bg-gray-100 px-2 py-1 rounded">${j.location}</span><span class="${badgeClass}">${j.isDirect ? "Direct Contact" : j.sourceName}</span></div></div></div></div>`;
             }).join('');
         }
 
         window.filterCat = (id) => renderJobs(window.jobs.filter(j=>j.catId===id));
-        
+        window.filter = () => { const t=document.getElementById('mainSearch').value.toLowerCase(); renderJobs(window.jobs.filter(j=>j.title.toLowerCase().includes(t))); };
+
         window.openJobDetails = (id) => {
             const j = window.jobs.find(x => x.id == id);
             window.currentJobId = id;
@@ -279,29 +308,35 @@
             const applyBtn = document.getElementById('modalApplyBtn');
             const directArea = document.getElementById('directContactArea');
             
-            // SMART TOGGLE: Direct vs Link
+            // === SMART TOGGLE ===
             if(j.isDirect) {
-                applyBtn.classList.add('hidden'); // Hide "Apply Now"
-                directArea.classList.remove('hidden'); // Show Contact Box
+                applyBtn.classList.add('hidden');
+                directArea.classList.remove('hidden');
                 document.getElementById('modalEmail').innerText = j.email;
                 document.getElementById('modalReqs').innerHTML = j.reqs.map(r => `<li>${r}</li>`).join('');
-                document.getElementById('modalDesc').innerText = "Review the requirements below and contact the company directly.";
+                document.getElementById('modalDesc').innerText = "Review requirements below and contact company directly.";
             } else {
-                applyBtn.classList.remove('hidden'); // Show "Apply Now"
+                applyBtn.classList.remove('hidden');
                 directArea.classList.add('hidden');
-                applyBtn.innerText = "See Details on " + j.sourceName;
+                applyBtn.innerText = "Apply on " + j.sourceName;
                 applyBtn.href = j.link;
-                document.getElementById('modalDesc').innerText = `We are hiring a ${j.title}. Click below to view full details on ${j.sourceName}.`;
+                document.getElementById('modalDesc').innerText = `We are hiring a ${j.title} in ${j.location}. Apply via ${j.sourceName}.`;
             }
 
             document.getElementById('saveBtn').innerHTML = (localStorage.getItem('proleefic_user') || window.currentUser) ? '<i class="fa-regular fa-heart text-xl"></i>' : '<i class="fa-regular fa-heart text-xl text-gray-300"></i>';
+            
+            const schema = document.getElementById('google-job-schema');
+            const data = JSON.parse(schema.text);
+            data.title = j.title;
+            data.description = `Hiring ${j.title} at ${j.company}`;
+            schema.text = JSON.stringify(data);
+            const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?job_id=' + j.id;
+            window.history.pushState({path:newUrl},'',newUrl);
+
             document.getElementById('jobDetailModal').classList.remove('hidden-view');
         }
 
-        window.copyToClipboard = (id) => {
-            const text = document.getElementById(id).innerText;
-            navigator.clipboard.writeText(text).then(() => alert("Email copied!"));
-        };
+        window.copyToClipboard = (id) => { navigator.clipboard.writeText(document.getElementById(id).innerText).then(() => alert("Email copied!")); };
 
         window.toggleSave = async (id) => {
             if(!localStorage.getItem('proleefic_user') && !window.currentUser) { window.closeJobModal(); return window.openAuth(); }
@@ -309,6 +344,10 @@
         }
         
         async function loadSavedJobs() { if(!window.currentUser) return; try { const s = await getDocs(collection(db,'users',window.currentUser.uid,'saved')); let h=''; s.forEach(d=>{h+=`<div class="p-4 border rounded mb-2"><b>${d.data().title}</b></div>`}); document.getElementById('savedContainer').innerHTML=h; } catch(e){} }
+
+        window.loadPhoto = (e) => { const r = new FileReader(); r.onload = (ev) => { document.getElementById('prevPhoto').src = ev.target.result; document.getElementById('prevPhoto').classList.remove('hidden'); }; r.readAsDataURL(e.target.files[0]); }
+        window.updateCV = () => { document.getElementById('prevName').innerText = document.getElementById('cvName').value || "NAME"; document.getElementById('prevTitle').innerText = document.getElementById('cvTitle').value || "JOB TITLE"; document.getElementById('prevSummary').innerText = document.getElementById('cvSummary').value; document.getElementById('prevEdu').innerText = document.getElementById('cvEdu').value; document.getElementById('prevCerts').innerText = document.getElementById('cvCerts').value; document.getElementById('prevExp').innerText = document.getElementById('cvExp').value; document.getElementById('prevSkills').innerText = document.getElementById('cvSkills').value; document.getElementById('prevLangs').innerText = document.getElementById('cvLangs').value; };
+        window.generateAISummary = () => { const t = document.getElementById('cvTitle').value; document.getElementById('cvSummary').value = `Professional ${t} with strong skills in teamwork and problem-solving.`; window.updateCV(); };
 
         window.onload = () => { checkLocalLogin(); window.setLang('en'); window.initData(); };
     </script>
