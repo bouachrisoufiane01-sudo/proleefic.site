@@ -1,0 +1,43 @@
+/* Add this to your style.css */
+
+/* The Button Container */
+.button-group {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-top: 15px;
+}
+
+/* Base Button Style */
+.btn {
+    flex: 1; /* Make them equal width */
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* 1. Direct Apply (Primary Color - e.g., Green or Blue) */
+.btn-direct {
+    background-color: #007bff; /* Change to your Proleefic Brand Color */
+    color: white;
+    border: none;
+}
+.btn-direct:hover {
+    background-color: #0056b3;
+}
+
+/* 2. Source Link (Secondary - e.g., Grey/Outline) */
+.btn-source {
+    background-color: transparent;
+    color: #555;
+    border: 1px solid #ccc;
+}
+.btn-source:hover {
+    background-color: #f8f9fa;
+    color: #000;
+    border-color: #999;
+}
