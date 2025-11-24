@@ -3,92 +3,93 @@ from bs4 import BeautifulSoup
 import json
 import time
 
-# Target: Rekrute
-URL = "https://www.rekrute.com/offres-emploi-maroc.html"
-
-# We look like a real browser to avoid being blocked
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-    "Accept-Language": "en-US,en;q=0.5"
+# Configuration
+SOURCES = {
+    'rekrute': 'https://www.rekrute.com/offres.html',
+    'dreamjob': 'https://www.dreamjob.ma/emploi/',
 }
 
-def scrape():
-    print(f"🚀 Connecting to {URL}...")
+def scrape_rekrute():
+    """Scrape jobs from Rekrute"""
+    jobs = []
     try:
-        session = requests.Session()
-        response = session.get(URL, headers=HEADERS, timeout=20)
+        response = requests.get(SOURCES['rekrute'])
+        soup = BeautifulSoup(response.content, 'html.parser')
         
-        if response.status_code != 200:
-            print(f"❌ Blocked or Error. Status Code: {response.status_code}")
-            return []
-
-        soup = BeautifulSoup(response.text, 'html.parser')
+        # Find job listings (adjust selectors based on actual site)
+        job_cards = soup.find_all('div', class_='job-item')
         
-        # STRATEGY 1: Look for 'post-item' (Standard)
-        cards = soup.find_all(class_="post-item")
-        
-        # STRATEGY 2: If 1 fails, look for specific list items
-        if not cards:
-            print("⚠️ Strategy 1 failed. Trying Strategy 2...")
-            cards = soup.select('li.post-item')
-
-        print(f"✅ Found {len(cards)} raw job cards.")
-
-        jobs = []
-        for card in cards[:30]: # Process top 30
-            try:
-                # 1. Title (Try H2, then H3, then A)
-                title_tag = card.find('h2') or card.find('h3') or card.find('a', class_='titreJob')
-                title = title_tag.text.strip() if title_tag else "Offre Recente"
-
-                # 2. Company (Try IMG alt, then text)
-                company = "Confidential"
-                photo_div = card.find(class_="photo")
-                if photo_div and photo_div.find('img'):
-                    company = photo_div.find('img').get('alt')
-                elif photo_div:
-                    company = photo_div.text.strip()
-
-                # 3. Link
-                link_tag = card.find('a', class_='titreJob') or card.find('a')
-                link = "#"
-                if link_tag and 'href' in link_tag.attrs:
-                    link = "https://www.rekrute.com" + link_tag['href']
-
-                # 4. Location (Optional - Try to find it)
-                location = "Morocco"
-                info_tag = card.find(class_="info")
-                if info_tag:
-                    text = info_tag.text.strip()
-                    if "|" in text:
-                        location = text.split('|')[-1].strip()
-
-                jobs.append({
-                    "title": title,
-                    "company": company,
-                    "location": location,
-                    "link": link,
-                    "date": time.strftime("%d/%m/%Y")
-                })
-                
-            except Exception as e:
-                continue
-
-        return jobs
-
+        for card in job_cards:
+            job = {
+                'id': f"rek_{len(jobs)}",
+                'title': card.find('h3').text.strip(),
+                'company': card.find('span', class_='company').text.strip(),
+                'location': card.find('span', class_='location').text.strip(),
+                'link': card.find('a')['href'],
+                'catId': 'cat_prod',  # Categorize based on keywords
+                'salary': 'Négociable',
+                'urgent': False,
+                'isReal': False,
+                'isDirect': False,
+                'sourceName': 'Rekrute'
+            }
+            jobs.append(job)
+            
     except Exception as e:
-        print(f"❌ CRITICAL ERROR: {e}")
-        return []
+        print(f"Error scraping Rekrute: {e}")
+    
+    return jobs
+
+def scrape_dreamjob():
+    """Scrape jobs from DreamJob"""
+    jobs = []
+    try:
+        response = requests.get(SOURCES['dreamjob'])
+        soup = BeautifulSoup(response.content, 'html.parser')
+        
+        # Adjust selectors based on actual site structure
+        job_cards = soup.find_all('article', class_='job-post')
+        
+        for card in job_cards:
+            job = {
+                'id': f"dream_{len(jobs)}",
+                'title': card.find('h2').text.strip(),
+                'company': card.find('div', class_='company-name').text.strip(),
+                'location': card.find('span', class_='job-location').text.strip(),
+                'link': card.find('a')['href'],
+                'catId': 'cat_admin',
+                'salary': 'Négociable',
+                'urgent': False,
+                'isReal': False,
+                'isDirect': False,
+                'sourceName': 'DreamJob'
+            }
+            jobs.append(job)
+            
+    except Exception as e:
+        print(f"Error scraping DreamJob: {e}")
+    
+    return jobs
+
+def main():
+    """Main scraper function"""
+    print("🤖 Starting job scraper...")
+    
+    all_jobs = []
+    
+    # Scrape each source
+    print("📊 Scraping Rekrute...")
+    all_jobs.extend(scrape_rekrute())
+    time.sleep(2)  # Be polite, wait between requests
+    
+    print("📊 Scraping DreamJob...")
+    all_jobs.extend(scrape_dreamjob())
+    
+    # Save to jobs.json
+    with open('jobs.json', 'w', encoding='utf-8') as f:
+        json.dump(all_jobs, f, ensure_ascii=False, indent=2)
+    
+    print(f"✅ Scraped {len(all_jobs)} jobs successfully!")
 
 if __name__ == "__main__":
-    data = scrape()
-    
-    # ALWAYS save the file, even if empty (so the site doesn't crash)
-    with open('jobs.json', 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-    
-    if len(data) > 0:
-        print(f"🎉 Success! Saved {len(data)} jobs.")
-    else:
-        print("⚠️ Warning: jobs.json is empty. The site structure might have changed.")
+    main()
