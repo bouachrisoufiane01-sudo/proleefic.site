@@ -1,9 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const jobContainer = document.getElementById('job-container'); // Make sure your HTML has this ID
+    const jobContainer = document.getElementById('job-container');
 
-    // 1. The URL to your RAW JSON file
-    // REPLACE 'YOUR_GITHUB_USER' and 'YOUR_REPO_NAME' below!
+    // 👇 REPLACE THIS with your actual GitHub Raw URL
     const API_URL = 'https://raw.githubusercontent.com/YOUR_GITHUB_USER/YOUR_REPO_NAME/main/jobs.json';
+    
+    // 👇 REPLACE THIS with the email where you want to receive CVs
+    const MY_EMAIL = "contact@proleefic.com"; 
 
     async function fetchJobs() {
         try {
@@ -12,24 +14,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const jobs = await response.json();
             
-            // Clear "Loading..." text
             jobContainer.innerHTML = '';
 
-            // Generate Cards
             jobs.forEach(job => {
-                const card = `
-                    <div class="job-card">
-                        <h3>${job.title}</h3>
-                        <div class="company">${job.company}</div>
-                        <a href="${job.link}" target="_blank" class="apply-btn">Apply Now</a>
+                // 1. Create the "Direct Apply" Mailto Link
+                // Result: mailto:contact@proleefic.com?subject=Candidature: Job Title
+                const emailSubject = encodeURIComponent(`Candidature: ${job.title}`);
+                const directLink = `mailto:${MY_EMAIL}?subject=${emailSubject}`;
+
+                // 2. Create the Card HTML
+                const card = document.createElement('div');
+                card.className = 'job-card'; // Make sure this matches your CSS class
+                
+                card.innerHTML = `
+                    <h3>${job.title}</h3>
+                    <div class="company">🏢 ${job.company}</div>
+                    <div class="date">📅 ${job.date || 'Récent'}</div>
+                    
+                    <div class="button-group">
+                        <a href="${directLink}" class="btn btn-direct">
+                            ⚡ Postuler Direct
+                        </a>
+
+                        <a href="${job.link}" target="_blank" class="btn btn-source">
+                            🔗 Voir Source
+                        </a>
                     </div>
                 `;
-                jobContainer.innerHTML += card;
+                jobContainer.appendChild(card);
             });
 
         } catch (error) {
             console.error(error);
-            jobContainer.innerHTML = '<p>Currently updating offers. Please check back later.</p>';
+            jobContainer.innerHTML = '<p style="text-align:center">Chargement des offres en cours...</p>';
         }
     }
 
