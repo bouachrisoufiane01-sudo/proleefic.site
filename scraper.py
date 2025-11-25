@@ -1,5 +1,5 @@
-import requests
 from bs4 import BeautifulSoup
+import requests
 import json
 import time
 import random
@@ -11,6 +11,30 @@ HEADERS = {
     'Accept-Language': 'en-US,en;q=0.9',
     'Referer': 'https://google.com'
 }
+
+# List of cities to look for in job descriptions
+MOROCCAN_CITIES = [
+    "Casablanca", "Rabat", "Tanger", "Marrakech", "Agadir", "Fès", 
+    "Meknès", "Oujda", "Kenitra", "Tetouan", "Laayoune", "Dakhla", 
+    "Mohammedia", "Salé", "El Jadida", "Bouskoura", "Nouaceur"
+]
+
+def extract_city(text_content):
+    """
+    Helper: Scans a text string to find a matching Moroccan city.
+    Defaults to 'Maroc' if no specific city is found.
+    """
+    if not text_content:
+        return "Maroc"
+    
+    text_lower = text_content.lower()
+    for city in MOROCCAN_CITIES:
+        # check for city name (surrounded by check to avoid partial matches if needed, 
+        # but simple string check is usually fine for scrapers)
+        if city.lower() in text_lower:
+            return city
+            
+    return "Maroc"
 
 def get_direct_jobs():
     """
@@ -46,21 +70,18 @@ def get_direct_jobs():
     ]
 
 def scrape_rekrute():
-    """Scrape Rekrute.com (Fixed Logic)"""
+    """Scrape Rekrute.com with City Detection"""
     print("🔍 Scraping Rekrute...")
     jobs = []
     try:
-        # We target the general search page
         url = "https://www.rekrute.com/offres.html"
         response = requests.get(url, headers=HEADERS, timeout=10)
         
         if response.status_code == 200:
             soup = BeautifulSoup(response.content, 'html.parser')
-            # Use a generic selector that usually catches job titles in lists
-            # On Rekrute, titles are often in <h2> or specific div classes
             items = soup.find_all('li', class_='post-id') 
             
-            if not items: # Fallback selector if layout changed
+            if not items:
                 items = soup.find_all('div', class_='section')
             
             for idx, item in enumerate(items):
@@ -71,17 +92,22 @@ def scrape_rekrute():
                     title = title_tag.get_text(strip=True)
                     link = "https://www.rekrute.com" + title_tag.find('a')['href'] if title_tag.find('a') else "#"
                     
+                    # --- CITY EXTRACTION ---
+                    # We grab the full text of the list item to search for the city
+                    full_card_text = item.get_text(separator=" ")
+                    detected_city = extract_city(full_card_text)
+
                     jobs.append({
                         "id": f"rek_{idx}",
                         "title": title[:60],
                         "company": "Rekrute Recruteur",
-                        "location": "Maroc",
+                        "location": detected_city, # Uses the result of extraction
                         "salary": "Negotiable",
                         "posted": "Today",
                         "urgent": False, "isReal": False, "isDirect": False,
                         "sourceName": "Rekrute",
                         "link": link,
-                        "catId": "cat_admin" # Default
+                        "catId": "cat_admin"
                     })
                 except: continue
     except Exception as e:
@@ -89,7 +115,7 @@ def scrape_rekrute():
     return jobs
 
 def scrape_dreamjob():
-    """Scrape Dreamjob.ma (Fixed Logic)"""
+    """Scrape Dreamjob.ma with City Detection"""
     print("🔍 Scraping Dreamjob...")
     jobs = []
     try:
@@ -98,7 +124,6 @@ def scrape_dreamjob():
         
         if response.status_code == 200:
             soup = BeautifulSoup(response.content, 'html.parser')
-            # Dreamjob usually uses <article> tags for posts
             articles = soup.find_all('article', limit=15)
             
             for idx, art in enumerate(articles):
@@ -110,6 +135,11 @@ def scrape_dreamjob():
                     link_tag = art.find('a')
                     link = link_tag['href'] if link_tag else "#"
                     
+                    # --- CITY EXTRACTION ---
+                    # Check Title first (Dreamjob often puts city in title) + Body text
+                    full_text_to_scan = title + " " + art.get_text(separator=" ")
+                    detected_city = extract_city(full_text_to_scan)
+                    
                     # Simple category detection
                     cat = "cat_sales"
                     if "technicien" in title.lower(): cat = "cat_tech"
@@ -119,7 +149,7 @@ def scrape_dreamjob():
                         "id": f"dj_{idx}",
                         "title": title[:60],
                         "company": "Dreamjob Partner",
-                        "location": "Maroc",
+                        "location": detected_city, # Uses the result of extraction
                         "salary": "Negotiable",
                         "posted": "Today",
                         "urgent": False, "isReal": False, "isDirect": False,
@@ -136,20 +166,21 @@ def main():
     print("🤖 Robot Started...")
     all_jobs = []
 
-    # 1. Add Direct Jobs (Crucial for site quality)
+    # 1. Add Direct Jobs
     all_jobs.extend(get_direct_jobs())
 
     # 2. Add Scraped Jobs
     all_jobs.extend(scrape_rekrute())
-    time.sleep(1) # Polite delay
+    time.sleep(1) 
     all_jobs.extend(scrape_dreamjob())
 
-    # 3. Safety Check: If scraping completely failed, generate simulation
+    # 3. Safety Check
     if len(all_jobs) < 10:
         print("⚠️ Scraping weak. Generating backup data...")
         for i in range(20):
             all_jobs.append({
-                "id": f"sim_{i}", "title": "Offre d'emploi (Voir Détails)", "company": "Recruteur", "location": "Casablanca",
+                "id": f"sim_{i}", "title": "Offre d'emploi (Voir Détails)", "company": "Recruteur", 
+                "location": "Casablanca", # Default for simulation
                 "salary": "Confidential", "posted": "1d ago", "urgent": False, "isReal": False, "isDirect": False,
                 "sourceName": "MarocAnnonces", "link": "https://www.marocannonces.com", "catId": "cat_sales"
             })
