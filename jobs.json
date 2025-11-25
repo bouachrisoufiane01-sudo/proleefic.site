@@ -39,6 +39,48 @@
   },
   {
     "id": "rek_0",
+    "title": "Conseillers commerciaux en assurance : 5000dhs + primes déplafonnées + transport assuré | Casablanca (Maroc)",
+    "company": "Eca Assurances",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-conseillers-commerciaux-en-assurance-5000dhs-primes-deplafonnees-transport-assure-recrutement-eca-assurances-casablanca-176377.html",
+    "catId": "cat_transport"
+  },
+  {
+    "id": "rek_1",
+    "title": "Déposez votre Candidature Spontanée | Casablanca (Maroc)",
+    "company": "Eca Assurances",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-deposez-votre-candidature-spontanee-recrutement-eca-assurances-casablanca-177358.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_2",
+    "title": "Commercial terrain | Casablanca (Maroc)",
+    "company": "Manpower Agences",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-commercial-terrain-recrutement-manpower-agences-casablanca-177357.html",
+    "catId": "cat_sales"
+  },
+  {
+    "id": "rek_3",
     "title": "Ingénieur Conception Mécanique | Casablanca (Maroc)",
     "company": "Capgemini Engineering",
     "location": "Casablanca",
@@ -52,7 +94,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_4",
     "title": "Opérateur de Salle de Contrôle – DAWEC (Dakhla) | Dakhla (Maroc)",
     "company": "Dakhla Water & Energy Company",
     "location": "Dakhla",
@@ -66,7 +108,7 @@
     "catId": "cat_prod"
   },
   {
-    "id": "rek_2",
+    "id": "rek_5",
     "title": "Chef de Quart (Dakhla) | Dakhla (Maroc)",
     "company": "Dakhla Water & Energy Company",
     "location": "Dakhla",
@@ -80,7 +122,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_6",
     "title": "Responsable Recrutement H/F | Casablanca (Maroc)",
     "company": "Atlas Multiservices",
     "location": "Casablanca",
@@ -94,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_7",
     "title": "Assistante Sociale H/F | Casablanca (Maroc)",
     "company": "Atlas Multiservices",
     "location": "Casablanca",
@@ -108,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
+    "id": "rek_8",
     "title": "Administrateur réseaux | Casablanca (Maroc)",
     "company": "Eca Assurances",
     "location": "Casablanca",
@@ -122,7 +164,7 @@
     "catId": "cat_it"
   },
   {
-    "id": "rek_6",
+    "id": "rek_9",
     "title": "Responsable achats et approvisionnement | Marrakech (Maroc)",
     "company": "Jardin Majorelle",
     "location": "Marrakech",
@@ -133,48 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-responsable-achats-et-approvisionnement-recrutement-jardin-majorelle-marrakech-177353.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_7",
-    "title": "Responsable contrôle de gestion | Marrakech (Maroc)",
-    "company": "Jardin Majorelle",
-    "location": "Marrakech",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-responsable-controle-de-gestion-recrutement-jardin-majorelle-marrakech-177352.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_8",
-    "title": "Gestionnaire Clientèle (H/F) - Tanger | Tanger (Maroc)",
-    "company": "Attijariwafa bank",
-    "location": "Tanger",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-gestionnaire-clientele-hf---tanger-recrutement-attijariwafa-bank-tanger-177351.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Gestionnaire Clientèle (H/F) -  Al Hoceima & Régions | Al Hoceima (Maroc)",
-    "company": "Attijariwafa bank",
-    "location": "Maroc",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-gestionnaire-clientele-hf---al-hoceima-regions-recrutement-attijariwafa-bank-al-hoceima-177350.html",
     "catId": "cat_admin"
   }
 ]
