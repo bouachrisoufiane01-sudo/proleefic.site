@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proleefic Admin Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+    <script>
+        tailwind.config = { theme: { extend: { colors: { morocco: { red: '#C1272D', green: '#006233' } } } } }
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans">
+
+    <div id="loginScreen" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900">
+        <div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md text-center">
+            <div class="w-16 h-16 bg-morocco-green rounded-xl mx-auto flex items-center justify-center text-white text-2xl mb-4"><i class="fa-solid fa-lock"></i></div>
+            <h2 class="text-2xl font-bold mb-6">Admin Access</h2>
+            <p class="text-xs text-gray-400 mb-4">Authorized Personnel Only</p>
+            <form onsubmit="handleLogin(event)" class="space-y-4">
+                <input type="email" id="adminEmail" placeholder="soufianebouachri0@gmail.com" class="w-full p-4 border rounded-xl font-bold" required>
+                <input type="password" id="adminPass" placeholder="Password" class="w-full p-4 border rounded-xl font-bold" required>
+                <button type="submit" class="w-full bg-morocco-green text-white py-4 rounded-xl font-bold hover:bg-green-700">Unlock Dashboard</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="dashboard" class="hidden min-h-screen flex">
+        <aside class="w-64 bg-gray-900 text-white p-6 hidden md:block">
+            <h1 class="text-2xl font-black mb-10 tracking-tighter">Proleefic<span class="text-morocco-green">.</span></h1>
+            <nav class="space-y-4">
+                <button onclick="switchTab('blog')" class="w-full text-left p-3 hover:bg-gray-800 rounded-lg font-bold flex gap-3 items-center text-morocco-green"><i class="fa-solid fa-pen-nib"></i> Write Article</button>
+                <button onclick="switchTab('jobs')" class="w-full text-left p-3 hover:bg-gray-800 rounded-lg font-bold flex gap-3 items-center"><i class="fa-solid fa-briefcase"></i> Post Job</button>
+                <button onclick="logout()" class="w-full text-left p-3 hover:bg-red-900/50 text-red-400 rounded-lg font-bold flex gap-3 items-center mt-10"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+            </nav>
+        </aside>
+
+        <main class="flex-1 p-8 overflow-y-auto">
+            
+            <div id="tab-blog" class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6">Write Blog Post</h2>
+                <div class="bg-white p-6 rounded-2xl shadow-sm space-y-4">
+                    <input id="postTitle" type="text" placeholder="Article Title (e.g. How to find a job in Tangier)" class="w-full p-4 border-2 border-gray-200 rounded-xl font-bold text-lg">
+                    <input id="postImage" type="text" placeholder="Image URL (Right click image -> Copy Address)" class="w-full p-3 border rounded-xl bg-gray-50 text-sm">
+                    <textarea id="postBody" rows="12" placeholder="Write your original article here... (Minimum 300 words for Google)" class="w-full p-4 border-2 border-gray-200 rounded-xl leading-relaxed"></textarea>
+                    <button onclick="savePost()" class="bg-morocco-green text-white px-8 py-4 rounded-xl font-bold hover:bg-green-800 w-full">Publish Article</button>
+                </div>
+            </div>
+
+            <div id="tab-jobs" class="hidden max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6">Post Manual Job</h2>
+                <div class="bg-white p-6 rounded-2xl shadow-sm space-y-4 grid grid-cols-2 gap-4">
+                    <input id="jobTitle" type="text" placeholder="Job Title" class="col-span-2 w-full p-3 border rounded-xl font-bold">
+                    <input id="jobCompany" type="text" placeholder="Company Name" class="w-full p-3 border rounded-xl">
+                    <select id="jobCity" class="w-full p-3 border rounded-xl"><option>Tanger</option><option>Casablanca</option><option>Rabat</option><option>Agadir</option><option>Marrakech</option></select>
+                    <input id="jobSalary" type="text" placeholder="Salary (e.g. 4000 DH)" class="w-full p-3 border rounded-xl">
+                    <input id="jobEmail" type="text" placeholder="Email for CV" class="w-full p-3 border rounded-xl">
+                    <select id="jobCat" class="col-span-2 w-full p-3 border rounded-xl"><option value="cat_prod">Production</option><option value="cat_tech">Technician</option><option value="cat_sales">Sales</option><option value="cat_admin">Admin</option></select>
+                    <textarea id="jobDesc" rows="5" placeholder="Job Description (Unique Summary)" class="col-span-2 w-full p-3 border rounded-xl"></textarea>
+                    <button onclick="saveJob()" class="col-span-2 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-800">Post Job</button>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        // CONFIG
+        const firebaseConfig = { apiKey: "AIzaSyBsPi64Eb0GQnGjcxg6n6YRFbG-iO9K_pM", authDomain: "proleefic-85800.firebaseapp.com", projectId: "proleefic-85800", storageBucket: "proleefic-85800.firebasestorage.app", messagingSenderId: "1033605555868", appId: "1:1033605555868:web:577ff42f0bcfb0b6122f59", measurementId: "G-WJ4XKS01P0" };
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        // AUTHENTICATION
+        const ADMIN_EMAIL = "soufianebouachri0@gmail.com"; 
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('adminEmail').value;
+            const pass = document.getElementById('adminPass').value;
+
+            auth.signInWithEmailAndPassword(email, pass).then(cred => {
+                if(cred.user.email.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
+                    alert("Access Denied. Your email is not authorized.");
+                    auth.signOut();
+                } else {
+                    document.getElementById('loginScreen').classList.add('hidden');
+                    document.getElementById('dashboard').classList.remove('hidden');
+                }
+            }).catch(err => alert("Login Failed: " + err.message));
+        }
+
+        // TABS
+        function switchTab(tab) {
+            document.getElementById('tab-blog').classList.add('hidden');
+            document.getElementById('tab-jobs').classList.add('hidden');
+            document.getElementById('tab-'+tab).classList.remove('hidden');
+        }
+
+        // SAVE BLOG
+        function savePost() {
+            const title = document.getElementById('postTitle').value;
+            const body = document.getElementById('postBody').value;
+            const img = document.getElementById('postImage').value || "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2070&auto=format&fit=crop";
+
+            if(!title || !body) return alert("Please fill in the title and body.");
+
+            db.collection("posts").add({
+                title: title,
+                body: body,
+                image: img,
+                date: firebase.firestore.FieldValue.serverTimestamp(), // Correct timestamp
+                author: "Admin"
+            }).then(() => {
+                alert("Success! Article published.");
+                document.getElementById('postTitle').value = "";
+                document.getElementById('postBody').value = "";
+            }).catch(e => alert(e));
+        }
+
+        // SAVE JOB
+        function saveJob() {
+            db.collection("jobs").add({
+                id: "m" + Date.now(), // Unique ID for manual jobs
+                title: document.getElementById('jobTitle').value,
+                company: document.getElementById('jobCompany').value,
+                location: document.getElementById('jobCity').value,
+                salary: document.getElementById('jobSalary').value,
+                desc: document.getElementById('jobDesc').value,
+                email: document.getElementById('jobEmail').value,
+                catId: document.getElementById('jobCat').value,
+                isDirect: true,
+                isReal: true,
+                createdAt: firebase.firestore.FieldValue.serverTimestamp()
+            }).then(() => {
+                alert("Job Posted Successfully!");
+            }).catch(e => alert(e));
+        }
+
+        function logout() { auth.signOut().then(() => location.reload()); }
+    </script>
+</body>
+</html>
