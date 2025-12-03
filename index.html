@@ -137,6 +137,7 @@
                     <div id="blogList" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         </div>
                 </div>
+                
                 <div class="flex justify-between items-end mb-4 px-1"><h2 class="font-bold text-xl" data-i18n="feedTitle">Latest Opportunities</h2><span class="text-sm text-gray-500" id="jobCount">...</span></div>
                 <div id="jobListings" class="min-h-[500px]"></div>
                 <button onclick="window.initData()" class="w-full mt-6 py-4 border-2 border-dashed border-gray-300 dark:border-gray-700 text-gray-500 font-bold rounded-xl hover:bg-gray-50 transition">Load More</button>
@@ -235,11 +236,27 @@
         </div>
     </div>
 
+    <div id="articleModal" class="hidden-view fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in" onclick="if(event.target === this) document.getElementById('articleModal').classList.add('hidden-view')">
+        <div class="bg-white dark:bg-dark-card w-full max-w-2xl max-h-[90vh] rounded-3xl shadow-2xl overflow-hidden flex flex-col relative">
+            <button onclick="document.getElementById('articleModal').classList.add('hidden-view')" class="absolute top-4 right-4 bg-black/50 hover:bg-red-600 text-white w-8 h-8 rounded-full flex items-center justify-center z-10">✕</button>
+            <img id="artImg" src="" class="w-full h-48 object-cover">
+            <div class="p-8 overflow-y-auto">
+                <h2 id="artTitle" class="text-2xl font-black mb-4 dark:text-white leading-tight"></h2>
+                <div class="flex items-center gap-2 mb-6 text-xs text-gray-400 font-bold uppercase tracking-widest">
+                    <span class="text-morocco-green">Proleefic Blog</span> • <span>5 Min Read</span>
+                </div>
+                <p id="artBody" class="text-gray-700 dark:text-gray-300 leading-loose whitespace-pre-line text-lg"></p>
+            </div>
+        </div>
+    </div>
+
     <script>
         const firebaseConfig = { apiKey: "AIzaSyBsPi64Eb0GQnGjcxg6n6YRFbG-iO9K_pM", authDomain: "proleefic-85800.firebaseapp.com", projectId: "proleefic-85800", storageBucket: "proleefic-85800.firebasestorage.app", messagingSenderId: "1033605555868", appId: "1:1033605555868:web:577ff42f0bcfb0b6122f59", measurementId: "G-WJ4XKS01P0" };
         try { firebase.initializeApp(firebaseConfig); window.auth = firebase.auth(); window.db = firebase.firestore(); auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).catch(()=>{}); } catch(e) { console.log("Offline Mode"); }
 
         window.jobs = []; window.currentJobId = null; window.currentLang='en';
+        window.blogPosts = []; // STORE POSTS HERE
+
         const catLabels = {'cat_prod':{en:"Production",i:"fa-industry"},'cat_tech':{en:"Technician",i:"fa-wrench"},'cat_sales':{en:"Sales",i:"fa-briefcase"},'cat_admin':{en:"Admin/HR",i:"fa-user-tie"},'cat_health':{en:"Health",i:"fa-heart-pulse"},'cat_transport':{en:"Transport",i:"fa-truck"},'cat_it':{en:"IT/Dev",i:"fa-laptop-code"},'cat_call':{en:"Call Center",i:"fa-headset"},'cat_edu':{en:"Education",i:"fa-graduation-cap"}};
         const i18n={en:{heroTitle:"Unlock Your Future",feedTitle:"Latest Opportunities",searchBtn:"Search",authTitle:"Welcome",navCV:"CV Builder",loginBtn:"Login",cvEditor:"CV Editor",cvSummary:"Summary",cvExp:"Experience",cvEdu:"Education",uploadPhoto:"Upload Photo",downloadPDF:"Download PDF",contactUs:"Contact Us",partners:"Partners",loadMore:"Load More",allSectors:"All Sectors",allCities:"All Cities",privacy:"Privacy Policy"},fr:{heroTitle:"Débloquez Votre Avenir",feedTitle:"Dernières Offres",searchBtn:"Rechercher",authTitle:"Bienvenue",navCV:"Créateur CV",loginBtn:"Connexion",cvEditor:"Éditeur CV",cvSummary:"Résumé",cvExp:"Expérience",cvEdu:"Formation",uploadPhoto:"Photo",downloadPDF:"Télécharger",contactUs:"Contactez-nous",partners:"Partenaires",loadMore:"Charger Plus",allSectors:"Tous Secteurs",allCities:"Toutes Villes",privacy:"Confidentialité"},ar:{heroTitle:"افتح مستقبلك المهني",feedTitle:"أحدث الفرص",searchBtn:"بحث",authTitle:"مرحباً",navCV:"سيرة ذاتية",loginBtn:"دخول",cvEditor:"محرر السيرة",cvSummary:"ملخص",cvExp:"الخبرة",cvEdu:"التعليم",uploadPhoto:"صورة",downloadPDF:"تحميل",contactUs:"اتصل بنا",partners:"شركاء",loadMore:"تحميل المزيد",allSectors:"كل القطاعات",allCities:"كل المدن",privacy:"الخصوصية"}};
 
@@ -285,36 +302,44 @@
             document.getElementById('locationFilter').innerHTML = `<option value="">${i18n[window.currentLang].allCities}</option>`+cities.map(c=>`<option value="${c}">${c}</option>`).join('');
             document.getElementById('categoryFilter').innerHTML = `<option value="">${i18n[window.currentLang].allSectors}</option>`+Object.keys(catLabels).map(k=>`<option value="${k}">${catLabels[k].en}</option>`).join('');
             
-            // --- NEW: Load Blog Posts from Firebase ---
+            // --- LOAD POSTS ---
             window.loadBlogPosts();
-            // ------------------------------------------
 
             try { const res = await fetch('jobs.json?t='+Date.now()); if(!res.ok) throw new Error(); window.jobs = await res.json(); } catch { window.generateBackupData(); }
             window.renderJobs(); window.renderCategories();
         };
 
-        // --- NEW FUNCTION: FETCH BLOG POSTS ---
+        // --- BLOG SYSTEM (FIXED) ---
         window.loadBlogPosts = () => {
             db.collection("posts").orderBy("date", "desc").limit(4).get().then(snap => {
                 if(!snap.empty) {
                     document.getElementById('blogSection').classList.remove('hidden');
-                    document.getElementById('blogList').innerHTML = snap.docs.map(doc => {
-                        const p = doc.data();
+                    window.blogPosts = snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                    
+                    document.getElementById('blogList').innerHTML = window.blogPosts.map((p, index) => {
                         const img = p.image || "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40";
                         return `
-                        <div class="bg-white dark:bg-dark-card p-4 rounded-2xl border border-gray-200 dark:border-gray-700 flex gap-4 hover:shadow-md transition cursor-pointer">
-                            <img src="${img}" class="w-24 h-24 object-cover rounded-xl bg-gray-100">
+                        <div onclick="window.openArticle(${index})" class="bg-white dark:bg-dark-card p-4 rounded-2xl border border-gray-200 dark:border-gray-700 flex gap-4 hover:shadow-md transition cursor-pointer group">
+                            <img src="${img}" class="w-24 h-24 object-cover rounded-xl bg-gray-100 group-hover:scale-105 transition">
                             <div class="flex-1 flex flex-col justify-center">
-                                <h3 class="font-bold text-sm mb-2 dark:text-white leading-tight line-clamp-2">${p.title}</h3>
+                                <h3 class="font-bold text-sm mb-2 dark:text-white leading-tight line-clamp-2 group-hover:text-morocco-green transition">${p.title}</h3>
                                 <p class="text-xs text-gray-500 line-clamp-2">${p.body}</p>
-                                <span class="text-[10px] text-morocco-green font-bold mt-2">Read Article &rarr;</span>
+                                <span class="text-[10px] text-morocco-green font-bold mt-2 group-hover:underline">Read Article &rarr;</span>
                             </div>
                         </div>`;
                     }).join('');
                 }
             });
         }
-        // -------------------------------------
+
+        window.openArticle = (index) => {
+            const p = window.blogPosts[index];
+            document.getElementById('artTitle').innerText = p.title;
+            document.getElementById('artBody').innerText = p.body;
+            document.getElementById('artImg').src = p.image || "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40";
+            document.getElementById('articleModal').classList.remove('hidden-view');
+        }
+        // -----------------------
 
         window.generateBackupData = () => {
             const direct = [
