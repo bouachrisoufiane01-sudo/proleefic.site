@@ -39,6 +39,62 @@
   },
   {
     "id": "rek_0",
+    "title": "Business Developer Closer – Expert(e) du Closing Commercial | Casablanca (Maroc)",
+    "company": "Weclose",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-business-developer-closer-experte-du-closing-commercial-recrutement-weclose-casablanca-177512.html",
+    "catId": "cat_prod"
+  },
+  {
+    "id": "rek_1",
+    "title": "Business Developer – Spécialiste du Closing (WeClose) | Casablanca (Maroc)",
+    "company": "Weclose",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-business-developer-specialiste-du-closing-weclose-recrutement-weclose-casablanca-177515.html",
+    "catId": "cat_prod"
+  },
+  {
+    "id": "rek_2",
+    "title": "Sales Manager / Marché Francophone | Casablanca (Maroc)",
+    "company": "Weclose",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-sales-manager-marche-francophone-recrutement-weclose-casablanca-177544.html",
+    "catId": "cat_sales"
+  },
+  {
+    "id": "rek_3",
+    "title": "FORMATEUR COMMERCIAL – CLOSING & VENTE À DISTANCE | Casablanca (Maroc)",
+    "company": "Weclose",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-formateur-commercial-closing-vente-a-distance-recrutement-weclose-casablanca-177220.html",
+    "catId": "cat_sales"
+  },
+  {
+    "id": "rek_4",
     "title": "Spécialiste Acquisition Digitale & Lead Generation H/F | Casablanca (Maroc)",
     "company": "WOW7H24",
     "location": "Casablanca",
@@ -52,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_5",
     "title": "Senior HR Business Partner | Casablanca (Maroc)",
     "company": "Groupe Addoha",
     "location": "Casablanca",
@@ -66,7 +122,7 @@
     "catId": "cat_prod"
   },
   {
-    "id": "rek_2",
+    "id": "rek_6",
     "title": "Systems Analyst | Rabat (Maroc)",
     "company": "Cnexia tech",
     "location": "Rabat",
@@ -80,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_7",
     "title": "Ingénieur d’Études – Structures Métalliques (H/F) | Mornag (Tunisie)",
     "company": "InnoSteel Conception",
     "location": "Maroc",
@@ -94,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_8",
     "title": "Dessinateur Projeteur – Charpente Métallique (H/F) | Mornag (Tunisie)",
     "company": "InnoSteel Conception",
     "location": "Maroc",
@@ -108,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
+    "id": "rek_9",
     "title": "Agent de Trésorerie (H/F) | Casablanca (Maroc)",
     "company": "PwC",
     "location": "Casablanca",
@@ -119,62 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-agent-de-tresorerie-hf-recrutement-pwc-casablanca-177766.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_6",
-    "title": "Technicien Maintenance | Casablanca (Maroc)",
-    "company": "",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-technicien-maintenance-recrutement-confidentiel-casablanca-177765.html",
-    "catId": "cat_tech"
-  },
-  {
-    "id": "rek_7",
-    "title": "Responsable Boutique (luxe) | Casablanca (Maroc)",
-    "company": "CRIT",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-responsable-boutique-luxe-recrutement-crit-casablanca-177764.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_8",
-    "title": "Business Support Officer | Benguerir (Maroc)",
-    "company": "UM6P - Université Mohammed VI Polytechnique",
-    "location": "Maroc",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-business-support-officer-recrutement-um6p---universite-mohammed-vi-polytechnique-benguerir-177763.html",
-    "catId": "cat_prod"
-  },
-  {
-    "id": "rek_9",
-    "title": "F&B Supervisor - SHBM | Rabat (Maroc)",
-    "company": "UM6P - Université Mohammed VI Polytechnique",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-fb-supervisor---shbm-recrutement-um6p---universite-mohammed-vi-polytechnique-rabat-177762.html",
     "catId": "cat_admin"
   }
 ]
