@@ -39,6 +39,76 @@
   },
   {
     "id": "rek_0",
+    "title": "QA specialist / Engineer | Jorf Lasfar / region of ELJADIDA (Maroc)",
+    "company": "COBCO",
+    "location": "Maroc",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-qa-specialist-engineer-recrutement-cobco-jorf-lasfar-region-of-eljadida-177516.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_1",
+    "title": "Responsable Comptabilité Fournisseurs | Casablanca (Maroc)",
+    "company": "CAC (Centrale Automobile Chérifienne)",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-responsable-comptabilite-fournisseurs-recrutement-cac-centrale-automobile-cherifienne-casablanca-177039.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_2",
+    "title": "Zone Manager Après-Vente (H/F) | Casablanca (Maroc)",
+    "company": "CAC (Centrale Automobile Chérifienne)",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-zone-manager-apres-vente-hf-recrutement-cac-centrale-automobile-cherifienne-casablanca-176516.html",
+    "catId": "cat_sales"
+  },
+  {
+    "id": "rek_3",
+    "title": "Jobaanbieding: customer support representative – logistics (nederlands sprekend, 100% remote) | Casablanca (Maroc)",
+    "company": "Foundever (ex Sitel Group)",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-jobaanbieding-customer-support-representative-logistics-nederlands-sprekend-100-remote-recrutement-foundever-ex-sitel-group-casablanca-177773.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_4",
+    "title": "Klantendienstmedewerker – Leider in Belgische telecommunicatie | Rabat (Maroc)",
+    "company": "Foundever (ex Sitel Group)",
+    "location": "Rabat",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-klantendienstmedewerker-leider-in-belgische-telecommunicatie-recrutement-foundever-ex-sitel-group-rabat-177772.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_5",
     "title": "Business Developer Closer – Expert(e) du Closing Commercial | Casablanca (Maroc)",
     "company": "Weclose",
     "location": "Casablanca",
@@ -52,7 +122,7 @@
     "catId": "cat_prod"
   },
   {
-    "id": "rek_1",
+    "id": "rek_6",
     "title": "Business Developer – Spécialiste du Closing (WeClose) | Casablanca (Maroc)",
     "company": "Weclose",
     "location": "Casablanca",
@@ -66,7 +136,7 @@
     "catId": "cat_prod"
   },
   {
-    "id": "rek_2",
+    "id": "rek_7",
     "title": "Sales Manager / Marché Francophone | Casablanca (Maroc)",
     "company": "Weclose",
     "location": "Casablanca",
@@ -80,7 +150,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_3",
+    "id": "rek_8",
     "title": "FORMATEUR COMMERCIAL – CLOSING & VENTE À DISTANCE | Casablanca (Maroc)",
     "company": "Weclose",
     "location": "Casablanca",
@@ -94,7 +164,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_4",
+    "id": "rek_9",
     "title": "Spécialiste Acquisition Digitale & Lead Generation H/F | Casablanca (Maroc)",
     "company": "WOW7H24",
     "location": "Casablanca",
@@ -105,76 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-specialiste-acquisition-digitale-lead-generation-hf-recrutement-wow7h24-casablanca-177771.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_5",
-    "title": "Senior HR Business Partner | Casablanca (Maroc)",
-    "company": "Groupe Addoha",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-senior-hr-business-partner-recrutement-groupe-addoha-casablanca-177770.html",
-    "catId": "cat_prod"
-  },
-  {
-    "id": "rek_6",
-    "title": "Systems Analyst | Rabat (Maroc)",
-    "company": "Cnexia tech",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-systems-analyst-recrutement-cnexia-tech-rabat-177769.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_7",
-    "title": "Ingénieur d’Études – Structures Métalliques (H/F) | Mornag (Tunisie)",
-    "company": "InnoSteel Conception",
-    "location": "Maroc",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-ingenieur-detudes-structures-metalliques-hf-recrutement-innosteel-conception-mornag-177768.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_8",
-    "title": "Dessinateur Projeteur – Charpente Métallique (H/F) | Mornag (Tunisie)",
-    "company": "InnoSteel Conception",
-    "location": "Maroc",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-dessinateur-projeteur-charpente-metallique-hf-recrutement-innosteel-conception-mornag-177767.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Agent de Trésorerie (H/F) | Casablanca (Maroc)",
-    "company": "PwC",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-agent-de-tresorerie-hf-recrutement-pwc-casablanca-177766.html",
     "catId": "cat_admin"
   }
 ]
