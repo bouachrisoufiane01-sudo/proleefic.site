@@ -39,6 +39,48 @@
   },
   {
     "id": "rek_0",
+    "title": "Brand Manager (H/F) - Sales & Marketing | Casablanca (Maroc)",
+    "company": "Beauty Tech",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-brand-manager-hf---sales-marketing-recrutement-beauty-tech-casablanca-177949.html",
+    "catId": "cat_sales"
+  },
+  {
+    "id": "rek_1",
+    "title": "HR Generalist | Nador (Maroc)",
+    "company": "Domino HR Morocco",
+    "location": "Maroc",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-hr-generalist-recrutement-domino-hr-morocco-nador-177948.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_2",
+    "title": "Infographiste Graphic Designer (F) | Casablanca (Maroc)",
+    "company": "Imaraq Trading",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-infographiste-graphic-designer-f-recrutement-imaraq-trading-casablanca-177947.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_3",
     "title": "Expert Systèmes et Virtualisation (F/H) | Technopolis (Maroc)",
     "company": "Sofrecom Maroc",
     "location": "Maroc",
@@ -52,7 +94,7 @@
     "catId": "cat_it"
   },
   {
-    "id": "rek_1",
+    "id": "rek_4",
     "title": "Tech Lead développeur Python (F/H) | Rabat (Maroc)",
     "company": "Sofrecom Maroc",
     "location": "Rabat",
@@ -66,7 +108,7 @@
     "catId": "cat_it"
   },
   {
-    "id": "rek_2",
+    "id": "rek_5",
     "title": "Développeur FullStack ReactJS/NodeJS (F/H) | Rabat (Maroc)",
     "company": "Sofrecom Maroc",
     "location": "Rabat",
@@ -80,7 +122,7 @@
     "catId": "cat_it"
   },
   {
-    "id": "rek_3",
+    "id": "rek_6",
     "title": "Stage Assistant (e) Ingénieur travaux/Chef de projet (rémunéré) | Casablanca (Maroc)",
     "company": "CAC (Centrale Automobile Chérifienne)",
     "location": "Casablanca",
@@ -94,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_7",
     "title": "Concepteur Développeur Camunda (F/H) | Rabat (Maroc)",
     "company": "Sofrecom Maroc",
     "location": "Rabat",
@@ -108,7 +150,7 @@
     "catId": "cat_it"
   },
   {
-    "id": "rek_5",
+    "id": "rek_8",
     "title": "Architect Entreprise (F/H) | Rabat (Maroc)",
     "company": "Sofrecom Maroc",
     "location": "Rabat",
@@ -122,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_6",
+    "id": "rek_9",
     "title": "Manager en Expertise Comptable | Casablanca (Maroc)",
     "company": "Moore Casablanca",
     "location": "Casablanca",
@@ -133,48 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-manager-en-expertise-comptable-recrutement-moore-casablanca-casablanca-177945.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_7",
-    "title": "Chef de Projet Cloud Infrastructure ( F/H) | Rabat (Maroc)",
-    "company": "Sofrecom Maroc",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-chef-de-projet-cloud-infrastructure-fh-recrutement-sofrecom-maroc-rabat-177217.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_8",
-    "title": "Chargé d'assistance | Casablanca (Maroc)",
-    "company": "Royale Marocaine d'Assurance",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-charge-dassistance-recrutement-royale-marocaine-dassurance-casablanca-177944.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Chargé(e) de données clients (Anglophone) | Casablanca (Maroc)",
-    "company": "CAC (Centrale Automobile Chérifienne)",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-chargee-de-donnees-clients-anglophone-recrutement-cac-centrale-automobile-cherifienne-casablanca-177635.html",
     "catId": "cat_admin"
   }
 ]
