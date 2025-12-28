@@ -39,6 +39,20 @@
   },
   {
     "id": "rek_0",
+    "title": "Gestionnaire Sinistre Assurance H/F | Meknès (Maroc)",
+    "company": "",
+    "location": "Meknès",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-gestionnaire-sinistre-assurance-hf-recrutement-confidentiel-meknes-178400.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_1",
     "title": "Comptable (H/F) | Casablanca (Maroc)",
     "company": "",
     "location": "Casablanca",
@@ -52,7 +66,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_2",
     "title": "Technicien Supérieur SAV | Casablanca (Maroc)",
     "company": "Professional labo",
     "location": "Casablanca",
@@ -66,7 +80,7 @@
     "catId": "cat_tech"
   },
   {
-    "id": "rek_2",
+    "id": "rek_3",
     "title": "Agent de Trésorerie / Chargé(e) de Règlements Fournisseurs | Casablanca (Maroc)",
     "company": "",
     "location": "Casablanca",
@@ -80,7 +94,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_4",
     "title": "Standardiste Expérimentée | Casablanca (Maroc)",
     "company": "",
     "location": "Casablanca",
@@ -94,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_5",
     "title": "Stagiaire pré-embauche_Consultant Technico-Fonctionnel Microsoft Dynamics 365 CRM & Power Platform | Casablanca (Maroc)",
     "company": "Inetum",
     "location": "Casablanca",
@@ -108,7 +122,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
+    "id": "rek_6",
     "title": "Project Management Officer - PMO (H/F) | Casablanca (Maroc)",
     "company": "BCP TECH",
     "location": "Casablanca",
@@ -122,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_6",
+    "id": "rek_7",
     "title": "Contrôleur de gestion (H/F) | Casablanca (Maroc)",
     "company": "BCP TECH",
     "location": "Casablanca",
@@ -136,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_7",
+    "id": "rek_8",
     "title": "Analyste sécurité des application et projets  (H/F) Salé Technopolis | Rabat (Maroc)",
     "company": "AXA Services Maroc",
     "location": "Rabat",
@@ -150,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_8",
+    "id": "rek_9",
     "title": "Chef D'Agence Ain Atiq | Ain Atiq (Maroc)",
     "company": "Fondation Arrawaj",
     "location": "Maroc",
@@ -161,20 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-chef-dagence-ain-atiq-recrutement-fondation-arrawaj-ain-atiq-178397.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Chargé(e) ADV | Nouaceur (Maroc)",
-    "company": "FIGEAC Aero Maroc",
-    "location": "Nouaceur",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-chargee-adv-recrutement-figeac-aero-maroc-nouaceur-177777.html",
     "catId": "cat_admin"
   }
 ]
