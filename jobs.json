@@ -39,6 +39,34 @@
   },
   {
     "id": "rek_0",
+    "title": "Téléconseillers Expérimentés – Centre d’Appel H/F sur Casablanca et El jadida | Casablanca (Maroc)",
+    "company": "WOW7H24",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-teleconseillers-experimentes-centre-dappel-hf-sur-casablanca-et-el-jadida-recrutement-wow7h24-casablanca-178495.html",
+    "catId": "cat_call"
+  },
+  {
+    "id": "rek_1",
+    "title": "Assistante Administrative | Meknès (Maroc)",
+    "company": "",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-assistante-administrative-recrutement-confidentiel-meknes-177796.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_2",
     "title": "Aftermarket buyer | Casablanca (Maroc)",
     "company": "Capgemini Engineering",
     "location": "Casablanca",
@@ -52,7 +80,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_3",
     "title": "Gérant de Station-Service | Ben Maachou (Maroc)",
     "company": "",
     "location": "Maroc",
@@ -66,7 +94,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_2",
+    "id": "rek_4",
     "title": "Gérant de Station-Service | El Menzeh - Meknès (Maroc)",
     "company": "",
     "location": "Meknès",
@@ -80,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_5",
     "title": "Gérant de Station-Service | Khouribga (Maroc)",
     "company": "",
     "location": "Maroc",
@@ -94,7 +122,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_6",
     "title": "Comptable (H/F) | Casablanca (Maroc)",
     "company": "",
     "location": "Casablanca",
@@ -108,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
+    "id": "rek_7",
     "title": "RESPONSABLE ADMINISTRATIF ET FINANCIER | Casablanca (Maroc)",
     "company": "Atlas Online",
     "location": "Casablanca",
@@ -122,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_6",
+    "id": "rek_8",
     "title": "Manager d'équipe en conduite d'activité FTTH | Casablanca (Maroc)",
     "company": "",
     "location": "Casablanca",
@@ -136,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_7",
+    "id": "rek_9",
     "title": "Data Analyst | Casablanca (Maroc)",
     "company": "Smollan Morocco",
     "location": "Casablanca",
@@ -148,33 +176,5 @@
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-data-analyst-recrutement-smollan-morocco-casablanca-178492.html",
     "catId": "cat_admin"
-  },
-  {
-    "id": "rek_8",
-    "title": "Chargé(e) d'Accueil (F/H) | Rabat (Maroc)",
-    "company": "Sofrecom Maroc",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-chargee-daccueil-fh-recrutement-sofrecom-maroc-rabat-177993.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Responsable Logistique de Stock (H/F) | Agadir, Souss-Massa, Morocco (Maroc)",
-    "company": "Manpower Agences",
-    "location": "Agadir",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-responsable-logistique-de-stock-hf-recrutement-manpower-agences-agadir-souss-massa-morocco-176305.html",
-    "catId": "cat_transport"
   }
 ]
