@@ -39,6 +39,76 @@
   },
   {
     "id": "rek_0",
+    "title": "Talent Acquisition Specialist | Casablanca (Maroc)",
+    "company": "Weclose",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-talent-acquisition-specialist-recrutement-weclose-casablanca-178960.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_1",
+    "title": "Executive Sales - Anglophone | Casablanca (Maroc)",
+    "company": "Weclose",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-executive-sales---anglophone-recrutement-weclose-casablanca-178959.html",
+    "catId": "cat_sales"
+  },
+  {
+    "id": "rek_2",
+    "title": "Commercial Anglophone – Marché International (High-Ticket Sales) | Casablanca (Maroc)",
+    "company": "Weclose",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-commercial-anglophone-marche-international-high-ticket-sales-recrutement-weclose-casablanca-178958.html",
+    "catId": "cat_sales"
+  },
+  {
+    "id": "rek_3",
+    "title": "Conseiller Commercial Expert – Closing Pur | Casablanca (Maroc)",
+    "company": "Weclose",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-conseiller-commercial-expert-closing-pur-recrutement-weclose-casablanca-178957.html",
+    "catId": "cat_sales"
+  },
+  {
+    "id": "rek_4",
+    "title": "Consultant Commercial Senior – Closing | Casablanca (Maroc)",
+    "company": "Weclose",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-consultant-commercial-senior-closing-recrutement-weclose-casablanca-178956.html",
+    "catId": "cat_sales"
+  },
+  {
+    "id": "rek_5",
     "title": "Chargé(e) de clientèle francophone – réception d’appels | shift de nuit | Banque Canadienne | Rabat (Maroc)",
     "company": "Foundever (ex Sitel Group)",
     "location": "Rabat",
@@ -52,7 +122,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_6",
     "title": "Conseiller(ère) B2B Bilingue FR/EN – Projet International Premium (Nespresso Canada – Shift de nuit) | Rabat (Maroc)",
     "company": "Foundever (ex Sitel Group)",
     "location": "Rabat",
@@ -66,7 +136,7 @@
     "catId": "cat_call"
   },
   {
-    "id": "rek_2",
+    "id": "rek_7",
     "title": "Contrôleur de gestion (H/F) | Casablanca (Maroc)",
     "company": "BCP TECH",
     "location": "Casablanca",
@@ -80,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_8",
     "title": "Project Management Officer - PMO (H/F) | Casablanca (Maroc)",
     "company": "BCP TECH",
     "location": "Casablanca",
@@ -94,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_9",
     "title": "Comptable confirmé ( H/F ) | Casablanca (Maroc)",
     "company": "SDK WOOD",
     "location": "Casablanca",
@@ -105,76 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-comptable-confirme-hf-recrutement-sdk-wood-casablanca-178260.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_5",
-    "title": "Business Intelligence Specialist | Casablanca (Maroc)",
-    "company": "Telus Digital",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-business-intelligence-specialist-recrutement-telus-digital-casablanca-178953.html",
-    "catId": "cat_prod"
-  },
-  {
-    "id": "rek_6",
-    "title": "Chef de projet Aménagement et Génie civil (H/F) | Casablanca (Maroc)",
-    "company": "ORH Assessment",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-chef-de-projet-amenagement-et-genie-civil-hf-recrutement-orh-assessment-casablanca-178952.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_7",
-    "title": "Technicien de chantier | Marrakech / Tanger (Maroc)",
-    "company": "Groupe Label'Vie - Carrefour",
-    "location": "Tanger",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-technicien-de-chantier-recrutement-groupe-labelvie---carrefour-marrakech-tanger-178951.html",
-    "catId": "cat_tech"
-  },
-  {
-    "id": "rek_8",
-    "title": "Chargé(e) RH | Casablanca (Maroc)",
-    "company": "Telus Digital",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-chargee-rh-recrutement-telus-digital-casablanca-178950.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Gestionnaire Risques Financiers | Rabat (Maroc)",
-    "company": "CDG",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-gestionnaire-risques-financiers-recrutement-cdg-rabat-178949.html",
     "catId": "cat_admin"
   }
 ]
