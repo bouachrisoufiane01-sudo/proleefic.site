@@ -39,6 +39,62 @@
   },
   {
     "id": "rek_0",
+    "title": "Conseiller Commercial  - Matériel et Solutions Informatiques | Casablanca (Maroc)",
+    "company": "Disty technologies",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-conseiller-commercial---materiel-et-solutions-informatiques-recrutement-disty-technologies-casablanca-179417.html",
+    "catId": "cat_sales"
+  },
+  {
+    "id": "rek_1",
+    "title": "MSN- RESEARCH ASSISTANT IN HYDROGEL MATERIALS | Benguerir (Maroc)",
+    "company": "UM6P - Université Mohammed VI Polytechnique",
+    "location": "Maroc",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-msn--research-assistant-in-hydrogel-materials-recrutement-um6p---universite-mohammed-vi-polytechnique-benguerir-179416.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_2",
+    "title": "HO Quality Management Plant | Bouznika (Maroc)",
+    "company": "Manpower Agences",
+    "location": "Maroc",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-ho-quality-management-plant-recrutement-manpower-agences-bouznika-179415.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_3",
+    "title": "HO Value Chain Management | Agadir (Maroc)",
+    "company": "Manpower Agences",
+    "location": "Agadir",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-ho-value-chain-management-recrutement-manpower-agences-agadir-179414.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_4",
     "title": "Assistante Personnelle / Executive Assistant (CEO Groupe) | Casablanca (Maroc)",
     "company": "Weclose",
     "location": "Casablanca",
@@ -52,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_5",
     "title": "Avis aux jeunes diplômés. intégrez unifitel et bénéficiez d'un tremplin vers les métiers financiers | Casablanca (Maroc)",
     "company": "Unifitel",
     "location": "Casablanca",
@@ -66,7 +122,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_2",
+    "id": "rek_6",
     "title": "Chef de projet marketing | Casablanca (Maroc)",
     "company": "HEOMI",
     "location": "Casablanca",
@@ -80,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_7",
     "title": "Assistante polyvalente | Casablanca (Maroc)",
     "company": "HEOMI",
     "location": "Casablanca",
@@ -94,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_8",
     "title": "Chef d'équipe | Casablanca (Maroc)",
     "company": "",
     "location": "Casablanca",
@@ -108,7 +164,7 @@
     "catId": "cat_prod"
   },
   {
-    "id": "rek_5",
+    "id": "rek_9",
     "title": "Aide comptable | CASABLANCA (Maroc)",
     "company": "",
     "location": "Casablanca",
@@ -119,62 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-aide-comptable-recrutement-confidentiel-casablanca-179411.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_6",
-    "title": "Responsable Production | Casablanca (Maroc)",
-    "company": "",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-responsable-production-recrutement-confidentiel-casablanca-179410.html",
-    "catId": "cat_prod"
-  },
-  {
-    "id": "rek_7",
-    "title": "Assistant Gouvernante | Benguerir (Maroc)",
-    "company": "UM6P - Université Mohammed VI Polytechnique",
-    "location": "Maroc",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-assistant-gouvernante-recrutement-um6p---universite-mohammed-vi-polytechnique-benguerir-179409.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_8",
-    "title": "Responsable Maintenance (H/F) | Casablanca (Maroc)",
-    "company": "",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-responsable-maintenance-hf-recrutement-confidentiel-casablanca-179408.html",
-    "catId": "cat_tech"
-  },
-  {
-    "id": "rek_9",
-    "title": "Offre de Stage PFE – Recrutement IT (H/F) | Rabat (Maroc)",
-    "company": "BTechnologie",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-offre-de-stage-pfe-recrutement-it-hf-recrutement-btechnologie-rabat-179407.html",
     "catId": "cat_admin"
   }
 ]
