@@ -39,6 +39,62 @@
   },
   {
     "id": "rek_0",
+    "title": "Comptable Fournisseurs - Confirmé | Rabat (Maroc)",
+    "company": "BTechnologie",
+    "location": "Rabat",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-comptable-fournisseurs---confirme-recrutement-btechnologie-rabat-179639.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_1",
+    "title": "Chargé(e) de recouvrement Organismes | Casablanca (Maroc)",
+    "company": "AKDITAL",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-chargee-de-recouvrement-organismes-recrutement-akdital-casablanca-179637.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_2",
+    "title": "Chargée dAccueil F | Casablanca (Maroc)",
+    "company": "Distrans Express Maroc",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-chargee-daccueil-f-recrutement-distrans-express-maroc-casablanca-179636.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_3",
+    "title": "Chargée de Recrutement | Casablanca (Maroc)",
+    "company": "Distrans Express Maroc",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-chargee-de-recrutement-recrutement-distrans-express-maroc-casablanca-179635.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_4",
     "title": "Responsable de Trésorerie | Casablanca (Maroc)",
     "company": "Disty technologies",
     "location": "Casablanca",
@@ -52,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_5",
     "title": "Chargée RH  Paie & Administration  - Bouskoura | Casablanca (Maroc)",
     "company": "",
     "location": "Casablanca",
@@ -66,7 +122,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_2",
+    "id": "rek_6",
     "title": "Assistante de direction | Casablanca (Maroc)",
     "company": "",
     "location": "Casablanca",
@@ -80,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_7",
     "title": "Acheteur  (Salé Technopolis) | Rabat (Maroc)",
     "company": "AXA Services Maroc",
     "location": "Rabat",
@@ -94,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_8",
     "title": "Chargé(e)s de fidélisation et rétention – Émission d’Appels | Casablanca (Maroc)",
     "company": "HEOMI",
     "location": "Casablanca",
@@ -108,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
+    "id": "rek_9",
     "title": "Ingénieur d’Études et Développement JAVA/J2EE | Casablanca (Maroc)",
     "company": "HEOMI",
     "location": "Casablanca",
@@ -120,61 +176,5 @@
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-ingenieur-detudes-et-developpement-javaj2ee-recrutement-heomi-casablanca-178861.html",
     "catId": "cat_it"
-  },
-  {
-    "id": "rek_6",
-    "title": "Chargé(e) Reporting régional | Rabat (Maroc)",
-    "company": "AKDITAL",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-chargee-reporting-regional-recrutement-akdital-rabat-179631.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_7",
-    "title": "Chargée de clientèle  service client réception dappels | Casablanca (Maroc)",
-    "company": "Telus Digital",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-chargee-de-clientele-service-client-reception-dappels-recrutement-telus-digital-casablanca-179630.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_8",
-    "title": "Enseignant Chercheur/Directeur Pédagogique (H/F) | Rabat (Maroc)",
-    "company": "Arts et Métiers Campus de Rabat",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-enseignant-chercheurdirecteur-pedagogique-hf-recrutement-arts-et-metiers-campus-de-rabat-rabat-179623.html",
-    "catId": "cat_edu"
-  },
-  {
-    "id": "rek_9",
-    "title": "Chef de projet opérationnel | Casablanca (Maroc)",
-    "company": "Groupe Label'Vie - Carrefour",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-chef-de-projet-operationnel-recrutement-groupe-labelvie---carrefour-casablanca-179629.html",
-    "catId": "cat_admin"
   }
 ]
