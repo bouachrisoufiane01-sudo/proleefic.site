@@ -39,6 +39,20 @@
   },
   {
     "id": "rek_0",
+    "title": "Ingénieur Études Structure GRC | Marrakech (Maroc)",
+    "company": "Menara Holding",
+    "location": "Marrakech",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-ingenieur-etudes-structure-grc-recrutement-menara-holding-marrakech-179849.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_1",
     "title": "Chef de projet FTTO (H/F) | Rabat (Maroc)",
     "company": "BTechnologie",
     "location": "Rabat",
@@ -52,7 +66,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_2",
     "title": "Payroll Specialist | Casablanca (Maroc)",
     "company": "Moore Casablanca",
     "location": "Casablanca",
@@ -66,7 +80,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_2",
+    "id": "rek_3",
     "title": "Responsable Comptabilité & Fiscalité Interne | Casablanca (Maroc)",
     "company": "Moore Casablanca",
     "location": "Casablanca",
@@ -80,7 +94,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_4",
     "title": "Automaticien | Casablanca (Maroc)",
     "company": "Richbond",
     "location": "Casablanca",
@@ -94,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_5",
     "title": "DataOps Engineer | Rabat (Maroc)",
     "company": "ALTEN Maroc",
     "location": "Rabat",
@@ -108,7 +122,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
+    "id": "rek_6",
     "title": "Développeur flux Oracle, SQL / PL SQL | Rabat (Maroc)",
     "company": "ALTEN Maroc",
     "location": "Casablanca",
@@ -122,7 +136,7 @@
     "catId": "cat_it"
   },
   {
-    "id": "rek_6",
+    "id": "rek_7",
     "title": "Analyste Crédit Corporate (EMEA | Casablanca (Maroc)",
     "company": "Société générale Africa Technologies & Services -SG ATS",
     "location": "Casablanca",
@@ -136,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_7",
+    "id": "rek_8",
     "title": "Data Scientist Sénior SQL/Python | Rabat (Maroc)",
     "company": "ALTEN Maroc",
     "location": "Rabat",
@@ -150,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_8",
+    "id": "rek_9",
     "title": "DATA Engineer | Rabat (Maroc)",
     "company": "ALTEN Maroc",
     "location": "Rabat",
@@ -161,20 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-data-engineer-recrutement-alten-maroc-rabat-179840.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Machine Learning Engineer | Rabat (Maroc)",
-    "company": "ALTEN Maroc",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-machine-learning-engineer-recrutement-alten-maroc-rabat-179839.html",
     "catId": "cat_admin"
   }
 ]
