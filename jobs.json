@@ -39,6 +39,48 @@
   },
   {
     "id": "rek_0",
+    "title": "comptable confirmé | Marrakech (Maroc)",
+    "company": "CASA SISTER",
+    "location": "Marrakech",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-comptable-confirme-recrutement-casa-sister-marrakech-180091.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_1",
+    "title": "Responsable Admissions Clinique (H/F) | Khouribga (Maroc)",
+    "company": "AKDITAL",
+    "location": "Maroc",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-responsable-admissions-clinique-hf-recrutement-akdital-khouribga-180090.html",
+    "catId": "cat_health"
+  },
+  {
+    "id": "rek_2",
+    "title": "Comptable (H/F) | Casablanca (Maroc)",
+    "company": "Groupe Benchrif",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-comptable-hf-recrutement-groupe-benchrif-casablanca-180085.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_3",
     "title": "Assistante Financière | Casablanca (Maroc)",
     "company": "Oppo",
     "location": "Casablanca",
@@ -52,7 +94,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_4",
     "title": "Ingénieur Méthode QOS mobile 2G/3G/4G/5G | Rabat (Maroc)",
     "company": "BTechnologie",
     "location": "Rabat",
@@ -66,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_2",
+    "id": "rek_5",
     "title": "CDP Déploiement Transport/FTTX - – Support Production Migration Réseaux | Rabat (Maroc)",
     "company": "BTechnologie",
     "location": "Rabat",
@@ -80,7 +122,7 @@
     "catId": "cat_prod"
   },
   {
-    "id": "rek_3",
+    "id": "rek_6",
     "title": "Gestionnaire de paie | Casablanca (Maroc)",
     "company": "CRIT",
     "location": "Casablanca",
@@ -94,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_7",
     "title": "Compensation & Benefits Manager | Casablanca (Maroc)",
     "company": "M-automotiv",
     "location": "Casablanca",
@@ -108,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
+    "id": "rek_8",
     "title": "Commercial | Casablanca (Maroc)",
     "company": "",
     "location": "Casablanca",
@@ -122,7 +164,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_6",
+    "id": "rek_9",
     "title": "Commercial B2B | Rabat (Maroc)",
     "company": "",
     "location": "Rabat",
@@ -134,47 +176,5 @@
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-commercial-b2b-recrutement-confidentiel-rabat-179718.html",
     "catId": "cat_sales"
-  },
-  {
-    "id": "rek_7",
-    "title": "Talent Acquisition & Development Specialist | Casablanca (Maroc)",
-    "company": "M-automotiv",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-talent-acquisition-development-specialist-recrutement-m-automotiv-casablanca-180078.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_8",
-    "title": "Chargé(e) de Paie Sénior (Expérimenté sur Sage) | Rabat (Maroc)",
-    "company": "Concentrix",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-chargee-de-paie-senior-experimente-sur-sage-recrutement-concentrix-rabat-180077.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Chargé(e) de Recrutement | Nouaceur (Maroc)",
-    "company": "",
-    "location": "Nouaceur",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-chargee-de-recrutement-recrutement-confidentiel-nouaceur-180076.html",
-    "catId": "cat_admin"
   }
 ]
