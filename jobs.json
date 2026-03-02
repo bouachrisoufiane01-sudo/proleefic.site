@@ -39,6 +39,62 @@
   },
   {
     "id": "rek_0",
+    "title": "Data Engineer H/F | Rabat (Maroc)",
+    "company": "ALTEN Maroc",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-data-engineer-hf-recrutement-alten-maroc-rabat-180324.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_1",
+    "title": "Superviseure Production / Production Supervisor | Nouaceur (Maroc)",
+    "company": "Pratt & Whitney",
+    "location": "Nouaceur",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-superviseure-production-production-supervisor-recrutement-pratt-whitney-nouaceur-180313.html",
+    "catId": "cat_prod"
+  },
+  {
+    "id": "rek_2",
+    "title": "Electricien | Casablanca (Maroc)",
+    "company": "M-automotiv",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-electricien-recrutement-m-automotiv-casablanca-180322.html",
+    "catId": "cat_tech"
+  },
+  {
+    "id": "rek_3",
+    "title": "Mécanicien | Casablanca (Maroc)",
+    "company": "M-automotiv",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-mecanicien-recrutement-m-automotiv-casablanca-180321.html",
+    "catId": "cat_tech"
+  },
+  {
+    "id": "rek_4",
     "title": "Spécialiste Administratif Polyvalent | Rabat (Maroc)",
     "company": "Ago Jobs & HR",
     "location": "Rabat",
@@ -52,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_5",
     "title": "Directeur Commercial | Maroc (Maroc)",
     "company": "",
     "location": "Maroc",
@@ -66,7 +122,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_2",
+    "id": "rek_6",
     "title": "Directeur Administratif et Financier | Maroc (Maroc)",
     "company": "",
     "location": "Maroc",
@@ -80,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_7",
     "title": "Project Pilot - Chiffrage PIV H/F | Rabat (Maroc)",
     "company": "ALTEN Maroc",
     "location": "Rabat",
@@ -94,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_8",
     "title": "Ingénieur automatisation H/F | Rabat (Maroc)",
     "company": "ALTEN Maroc",
     "location": "Rabat",
@@ -108,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
+    "id": "rek_9",
     "title": "Approvisionneur Italophone | Rabat (Maroc)",
     "company": "ALTEN Maroc",
     "location": "Rabat",
@@ -120,61 +176,5 @@
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-approvisionneur-italophone-recrutement-alten-maroc-rabat-178760.html",
     "catId": "cat_admin"
-  },
-  {
-    "id": "rek_6",
-    "title": "Assistant(e) de livraison - Tout le Royaume | Casablanca (Maroc)",
-    "company": "M-automotiv",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-assistante-de-livraison---tout-le-royaume-recrutement-m-automotiv-casablanca-180318.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_7",
-    "title": "Chef de Ventes - Automobile (Rabat, Marrakech, Tanger, Agadir) | Casablanca (Maroc)",
-    "company": "M-automotiv",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-chef-de-ventes---automobile-rabat-marrakech-tanger-agadir-recrutement-m-automotiv-casablanca-180317.html",
-    "catId": "cat_sales"
-  },
-  {
-    "id": "rek_8",
-    "title": "Chargé(e) Showroom (Agadir, Rabat, Marrakech, Tanger) | Casablanca (Maroc)",
-    "company": "M-automotiv",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-chargee-showroom-agadir-rabat-marrakech-tanger-recrutement-m-automotiv-casablanca-180316.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Conseiller Commercial en Automobile | Marrakech (Maroc)",
-    "company": "M-automotiv",
-    "location": "Marrakech",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-conseiller-commercial-en-automobile-recrutement-m-automotiv-marrakech-180315.html",
-    "catId": "cat_sales"
   }
 ]
