@@ -39,6 +39,20 @@
   },
   {
     "id": "rek_0",
+    "title": "Chargé(e) de la Logistique | Casablanca (Maroc)",
+    "company": "Disty technologies",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-chargee-de-la-logistique-recrutement-disty-technologies-casablanca-179166.html",
+    "catId": "cat_transport"
+  },
+  {
+    "id": "rek_1",
     "title": "Responsable RH | Tanger (Maroc)",
     "company": "",
     "location": "Tanger",
@@ -52,7 +66,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_2",
     "title": "Technicien BTP AUTOCAD | Casablanca (Maroc)",
     "company": "",
     "location": "Casablanca",
@@ -66,7 +80,7 @@
     "catId": "cat_tech"
   },
   {
-    "id": "rek_2",
+    "id": "rek_3",
     "title": "Conseiller Commercial en Assurances | Casablanca (Maroc)",
     "company": "Unifitel",
     "location": "Casablanca",
@@ -80,7 +94,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_3",
+    "id": "rek_4",
     "title": "Consultant Technico-Fonctionnel Salesforce CPQ (H/F) | Casablanca (Maroc)",
     "company": "Inetum",
     "location": "Casablanca",
@@ -94,7 +108,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_4",
+    "id": "rek_5",
     "title": "Coursier avec moto | Casablanca (Maroc)",
     "company": "",
     "location": "Casablanca",
@@ -108,7 +122,7 @@
     "catId": "cat_transport"
   },
   {
-    "id": "rek_5",
+    "id": "rek_6",
     "title": "Chef de Projet Ouverture  Réseau Retail | Casablanca (Maroc)",
     "company": "Sinofra Group",
     "location": "Casablanca",
@@ -122,7 +136,7 @@
     "catId": "cat_it"
   },
   {
-    "id": "rek_6",
+    "id": "rek_7",
     "title": "Media Buyer  Paid Acquisition Specialist | Fès (Maroc)",
     "company": "Sinofra Group",
     "location": "Fès",
@@ -136,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_7",
+    "id": "rek_8",
     "title": "General Manager Travel Agency GCC Market | Casablanca (Maroc)",
     "company": "Hayyak Tourism",
     "location": "Casablanca",
@@ -150,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_8",
+    "id": "rek_9",
     "title": "Assistante ADV | Bouskoura (Maroc)",
     "company": "",
     "location": "Bouskoura",
@@ -162,19 +176,5 @@
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-assistante-adv-recrutement-confidentiel-bouskoura-180563.html",
     "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Software Engineer Java | Casablanca (Maroc)",
-    "company": "Société générale Africa Technologies & Services -SG ATS",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-software-engineer-java-recrutement-societe-generale-africa-technologies-services--sg-ats-casablanca-180562.html",
-    "catId": "cat_it"
   }
 ]
