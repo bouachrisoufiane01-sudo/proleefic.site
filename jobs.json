@@ -39,6 +39,48 @@
   },
   {
     "id": "rek_0",
+    "title": "Responsable Facturation | Oujda (Maroc)",
+    "company": "AKDITAL",
+    "location": "Oujda",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-responsable-facturation-recrutement-akdital-oujda-180408.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_1",
+    "title": "Comptable Fournisseurs - Confirmé (H/F) | Rabat (Maroc)",
+    "company": "BTechnologie",
+    "location": "Rabat",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-comptable-fournisseurs---confirme-hf-recrutement-btechnologie-rabat-179639.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_2",
+    "title": "Stagiaire en Ressources Humaines (H/F) | Casablanca (Maroc)",
+    "company": "",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-stagiaire-en-ressources-humaines-hf-recrutement-confidentiel-casablanca-180798.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_3",
     "title": "Controleur·se de Gestion Junior (H/F) - Contrat ANAPEC | Casablanca (Maroc)",
     "company": "Bouygues Construction IT",
     "location": "Casablanca",
@@ -52,7 +94,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_4",
     "title": "Manager commercial trilingue (DE/FR/UK) H/F | Casablanca (Maroc)",
     "company": "Outsourcia",
     "location": "Casablanca",
@@ -66,7 +108,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_2",
+    "id": "rek_5",
     "title": "Manager commercial trilingue FR/ENG/DE | Casablanca (Maroc)",
     "company": "Outsourcia",
     "location": "Casablanca",
@@ -80,7 +122,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_3",
+    "id": "rek_6",
     "title": "Ingénieur Maintenance | Tanger (Maroc)",
     "company": "",
     "location": "Tanger",
@@ -94,7 +136,7 @@
     "catId": "cat_tech"
   },
   {
-    "id": "rek_4",
+    "id": "rek_7",
     "title": "Foundever est à la recherche d'un Team Manager francophone | Rabat (Maroc)",
     "company": "Foundever (ex Sitel Group)",
     "location": "Rabat",
@@ -108,7 +150,7 @@
     "catId": "cat_call"
   },
   {
-    "id": "rek_5",
+    "id": "rek_8",
     "title": "Commercial Expérimenté (H/F) | Casablanca (Maroc)",
     "company": "DECO VERRE",
     "location": "Casablanca",
@@ -122,7 +164,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_6",
+    "id": "rek_9",
     "title": "Acheteur Projets (F/H) | Casablanca (Maroc)",
     "company": "VINCI Energies Afrique de l'Ouest",
     "location": "Casablanca",
@@ -133,48 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-acheteur-projets-fh-recrutement-vinci-energies-afrique-de-louest-casablanca-180791.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_7",
-    "title": "Trésorier | Casablanca (Maroc)",
-    "company": "Transmel",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-tresorier-recrutement-transmel-casablanca-180790.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_8",
-    "title": "Animateurs commerciaux Contrôleurs Attachés commerciaux | Kénitra (Maroc)",
-    "company": "Groupe Label'Vie - Carrefour",
-    "location": "Kenitra",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-animateurs-commerciaux-controleurs-attaches-commerciaux-recrutement-groupe-labelvie---carrefour-kenitra-180789.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Comptable | Casablanca (Maroc)",
-    "company": "Blue Box",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-comptable-recrutement-blue-box-casablanca-180778.html",
     "catId": "cat_admin"
   }
 ]
