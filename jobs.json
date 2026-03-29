@@ -39,6 +39,48 @@
   },
   {
     "id": "rek_0",
+    "title": "Internship Offer - RFID Firmware & Mobile Application Developer | Benguerir (Maroc)",
+    "company": "UM6P - Université Mohammed VI Polytechnique",
+    "location": "Maroc",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-internship-offer---rfid-firmware-mobile-application-developer-recrutement-um6p---universite-mohammed-vi-polytechnique-benguerir-181221.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_1",
+    "title": "Agente de Facturation / caisse (SAGE) | Casablanca (Maroc)",
+    "company": "Revetou",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-agente-de-facturation-caisse-sage-recrutement-revetou-casablanca-181220.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_2",
+    "title": "Help Desk  Sage X3 H/F | Meknès (Maroc)",
+    "company": "",
+    "location": "Meknès",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-help-desk-sage-x3-hf-recrutement-confidentiel-meknes-181219.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_3",
     "title": "Commercial Immobilier | Casablanca (Maroc)",
     "company": "",
     "location": "Casablanca",
@@ -52,7 +94,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_1",
+    "id": "rek_4",
     "title": "Superviseur de Production / Shift Leader | Casablanca (Maroc)",
     "company": "Manpower Agences",
     "location": "Casablanca",
@@ -66,7 +108,7 @@
     "catId": "cat_prod"
   },
   {
-    "id": "rek_2",
+    "id": "rek_5",
     "title": "Directeur Technique – Agroalimentaire | Casablanca (Maroc)",
     "company": "ENI GROUP",
     "location": "Casablanca",
@@ -80,7 +122,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_6",
     "title": "Responsable Achats – Agroalimentaire | Casablanca (Maroc)",
     "company": "ENI GROUP",
     "location": "Casablanca",
@@ -94,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_7",
     "title": "Directeur Qualité – Agroalimentaire | Casablanca (Maroc)",
     "company": "ENI GROUP",
     "location": "Casablanca",
@@ -108,7 +150,7 @@
     "catId": "cat_prod"
   },
   {
-    "id": "rek_5",
+    "id": "rek_8",
     "title": "Manager Programme Digital | Casablanca (Maroc)",
     "company": "",
     "location": "Casablanca",
@@ -122,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_6",
+    "id": "rek_9",
     "title": "Chef de Projet AMOA | Casablanca (Maroc)",
     "company": "",
     "location": "Casablanca",
@@ -133,48 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-chef-de-projet-amoa-recrutement-confidentiel-casablanca-181212.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_7",
-    "title": "Conducteur de travaux bâtiment | Casablanca (Maroc)",
-    "company": "KOA",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-conducteur-de-travaux-batiment-recrutement-koa-casablanca-181209.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_8",
-    "title": "Technicien Informaticien | Taliouine - Askaoune (Maroc)",
-    "company": "Aya Gold & Silver",
-    "location": "Maroc",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-technicien-informaticien-recrutement-aya-gold-silver-taliouine---askaoune-181211.html",
-    "catId": "cat_tech"
-  },
-  {
-    "id": "rek_9",
-    "title": "Chargée Export | Casablanca (Maroc)",
-    "company": "Ingelec",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-chargee-export-recrutement-ingelec-casablanca-181070.html",
     "catId": "cat_admin"
   }
 ]
