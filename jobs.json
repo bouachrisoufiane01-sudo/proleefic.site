@@ -39,6 +39,34 @@
   },
   {
     "id": "rek_0",
+    "title": "Business Support Officer | Benguerir (Maroc)",
+    "company": "UM6P - Université Mohammed VI Polytechnique",
+    "location": "Maroc",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-business-support-officer-recrutement-um6p---universite-mohammed-vi-polytechnique-benguerir-181488.html",
+    "catId": "cat_prod"
+  },
+  {
+    "id": "rek_1",
+    "title": "Comptable (H/F) | Casablanca (Maroc)",
+    "company": "",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-comptable-hf-recrutement-confidentiel-casablanca-181487.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_2",
     "title": "Chef de Division Travaux Clients Particuliers | Casablanca (Maroc)",
     "company": "ORH Assessment",
     "location": "Casablanca",
@@ -52,7 +80,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_3",
     "title": "Conseiller Qualité et Sécurité | Casablanca (Maroc)",
     "company": "ORH Assessment",
     "location": "Casablanca",
@@ -66,7 +94,7 @@
     "catId": "cat_prod"
   },
   {
-    "id": "rek_2",
+    "id": "rek_4",
     "title": "Animateur Suivi des Performances | Casablanca (Maroc)",
     "company": "ORH Assessment",
     "location": "Casablanca",
@@ -80,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_5",
     "title": "Chef de Service Maintenance Electromécanique | Casablanca (Maroc)",
     "company": "ORH Assessment",
     "location": "Casablanca",
@@ -94,7 +122,7 @@
     "catId": "cat_tech"
   },
   {
-    "id": "rek_4",
+    "id": "rek_6",
     "title": "Aide Déclarante en Douane (Opératrice de Saisie) | Casablanca (Maroc)",
     "company": "ORH Assessment",
     "location": "Casablanca",
@@ -108,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
+    "id": "rek_7",
     "title": "Senior Consolidation Analyst | La Soukra (Tunisie)",
     "company": "Asteelflash",
     "location": "Maroc",
@@ -122,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_6",
+    "id": "rek_8",
     "title": "Chef de Projet Patrimoine Télécom – Radio Mobile | Rabat (Maroc)",
     "company": "BTechnologie",
     "location": "Rabat",
@@ -136,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_7",
+    "id": "rek_9",
     "title": "Comptable Confirmé – Microsoft AX / Dynamics 360 | Casablanca (Maroc)",
     "company": "",
     "location": "Casablanca",
@@ -147,34 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-comptable-confirme-microsoft-ax-dynamics-360-recrutement-confidentiel-casablanca-181480.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_8",
-    "title": "Responsable Paie (H/F) | Casablanca (Maroc)",
-    "company": "",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-responsable-paie-hf-recrutement-confidentiel-casablanca-181479.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Agent de recouvrement Terrain | Casablanca (Maroc)",
-    "company": "SDK WOOD",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-agent-de-recouvrement-terrain-recrutement-sdk-wood-casablanca-181478.html",
     "catId": "cat_admin"
   }
 ]
