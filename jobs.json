@@ -39,6 +39,76 @@
   },
   {
     "id": "rek_0",
+    "title": "Technicien en systèmes d'information | Rabat (Maroc)",
+    "company": "Société de Développement des Services Publics de distribution",
+    "location": "Rabat",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-technicien-en-systemes-dinformation-recrutement-societe-de-developpement-des-services-publics-de-distribution-rabat-181916.html",
+    "catId": "cat_tech"
+  },
+  {
+    "id": "rek_1",
+    "title": "Cadre juridique | Rabat (Maroc)",
+    "company": "Société de Développement des Services Publics de distribution",
+    "location": "Rabat",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-cadre-juridique-recrutement-societe-de-developpement-des-services-publics-de-distribution-rabat-181915.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_2",
+    "title": "Cadre financier | Rabat (Maroc)",
+    "company": "Société de Développement des Services Publics de distribution",
+    "location": "Rabat",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-cadre-financier-recrutement-societe-de-developpement-des-services-publics-de-distribution-rabat-181914.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_3",
+    "title": "Cadre financier Expérimenté | Rabat (Maroc)",
+    "company": "Société de Développement des Services Publics de distribution",
+    "location": "Rabat",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-cadre-financier-experimente-recrutement-societe-de-developpement-des-services-publics-de-distribution-rabat-181913.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_4",
+    "title": "Responsable en Electricité | Rabat (Maroc)",
+    "company": "Société de Développement des Services Publics de distribution",
+    "location": "Rabat",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-responsable-en-electricite-recrutement-societe-de-developpement-des-services-publics-de-distribution-rabat-181912.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_5",
     "title": "Responsable Maintenance des Engins | El Jadida (Maroc)",
     "company": "Meski Invest - Riva Industries",
     "location": "El Jadida",
@@ -52,7 +122,7 @@
     "catId": "cat_tech"
   },
   {
-    "id": "rek_1",
+    "id": "rek_6",
     "title": "Chargé des Ressources Humaines H/F | Meknès (Maroc)",
     "company": "",
     "location": "Meknès",
@@ -66,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_2",
+    "id": "rek_7",
     "title": "Responsable RH de proximité | Meknès (Maroc)",
     "company": "",
     "location": "Meknès",
@@ -80,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_8",
     "title": "Collaborateur Comptable / Assistant Comptable Confirmé (Offshore France) | Casablanca (Maroc)",
     "company": "Moore Casablanca",
     "location": "Casablanca",
@@ -94,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_9",
     "title": "Responsable Méthodes (H/F) | Fkih Ben Salah (Maroc)",
     "company": "Centrale Danone",
     "location": "Maroc",
@@ -105,76 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-responsable-methodes-hf-recrutement-centrale-danone-fkih-ben-salah-181908.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_5",
-    "title": "Agent de Maintenance Mécanicien | Meknès (Maroc)",
-    "company": "",
-    "location": "Meknès",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-agent-de-maintenance-mecanicien-recrutement-confidentiel-meknes-181170.html",
-    "catId": "cat_tech"
-  },
-  {
-    "id": "rek_6",
-    "title": "Directeur Administratif et Financier | Maroc (Maroc)",
-    "company": "",
-    "location": "Maroc",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-directeur-administratif-et-financier-recrutement-confidentiel-maroc-180839.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_7",
-    "title": "Commercial | Meknès (Maroc)",
-    "company": "",
-    "location": "Meknès",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-commercial-recrutement-confidentiel-meknes-181385.html",
-    "catId": "cat_sales"
-  },
-  {
-    "id": "rek_8",
-    "title": "Juriste | Tunis (Tunisie)",
-    "company": "",
-    "location": "Maroc",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-juriste-recrutement-confidentiel-tunis-181907.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Contrôleur de Gestion Junior | Casablanca (Maroc)",
-    "company": "VINCI Energies Afrique de l'Ouest",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-controleur-de-gestion-junior-recrutement-vinci-energies-afrique-de-louest-casablanca-181906.html",
     "catId": "cat_admin"
   }
 ]
