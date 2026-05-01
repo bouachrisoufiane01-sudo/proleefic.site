@@ -39,8 +39,8 @@
   },
   {
     "id": "rek_0",
-    "title": "Géologue / Hydrologue – Catastrophe Risk Modelling (EVCAT) (H/F) | Casablanca (Maroc)",
-    "company": "CAT Assurance et Réassurance",
+    "title": "Commercial | Casablanca (Maroc)",
+    "company": "Meski Invest - Riva Industries",
     "location": "Casablanca",
     "salary": "N/A",
     "posted": "Active",
@@ -48,13 +48,13 @@
     "isReal": true,
     "isDirect": false,
     "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-geologue-hydrologue-catastrophe-risk-modelling-evcat-hf-recrutement-cat-assurance-et-reassurance-casablanca-182331.html",
-    "catId": "cat_admin"
+    "link": "https://www.rekrute.com/offre-emploi-commercial-recrutement-meski-invest---riva-industries-casablanca-182355.html",
+    "catId": "cat_sales"
   },
   {
     "id": "rek_1",
-    "title": "Technicien de chantier | Marrakech (Maroc)",
-    "company": "Groupe Label'Vie - Carrefour",
+    "title": "Technicien(ne) en Maroquinerie – Contrôle Qualité & Développement Produit | Marrakech (Maroc)",
+    "company": "Jardin Majorelle",
     "location": "Marrakech",
     "salary": "N/A",
     "posted": "Active",
@@ -62,13 +62,13 @@
     "isReal": true,
     "isDirect": false,
     "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-technicien-de-chantier-recrutement-groupe-labelvie---carrefour-marrakech-182330.html",
+    "link": "https://www.rekrute.com/offre-emploi-technicienne-en-maroquinerie-controle-qualite-developpement-produit-recrutement-jardin-majorelle-marrakech-182354.html",
     "catId": "cat_tech"
   },
   {
     "id": "rek_2",
-    "title": "Superviseur contrôle | Marrakech (Maroc)",
-    "company": "Groupe Label'Vie - Carrefour",
+    "title": "Opérateur Préparation d'Échantillons | Marrakech (Maroc)",
+    "company": "SGS Maroc SA",
     "location": "Marrakech",
     "salary": "N/A",
     "posted": "Active",
@@ -76,13 +76,13 @@
     "isReal": true,
     "isDirect": false,
     "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-superviseur-controle-recrutement-groupe-labelvie---carrefour-marrakech-182329.html",
-    "catId": "cat_admin"
+    "link": "https://www.rekrute.com/offre-emploi-operateur-preparation-dechantillons-recrutement-sgs-maroc-sa-marrakech-182353.html",
+    "catId": "cat_prod"
   },
   {
     "id": "rek_3",
-    "title": "Responsable des Ressources Humaines (H/F) | Casablanca (Maroc)",
-    "company": "",
+    "title": "Assistante Administrative | Casablanca (Maroc)",
+    "company": "ORH Assessment",
     "location": "Casablanca",
     "salary": "N/A",
     "posted": "Active",
@@ -90,41 +90,41 @@
     "isReal": true,
     "isDirect": false,
     "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-responsable-des-ressources-humaines-hf-recrutement-confidentiel-casablanca-182328.html",
+    "link": "https://www.rekrute.com/offre-emploi-assistante-administrative-recrutement-orh-assessment-casablanca-182352.html",
     "catId": "cat_admin"
   },
   {
     "id": "rek_4",
-    "title": "Finance Expert - Secteur Autombile | El Jadida (Maroc)",
-    "company": "Manpower Agences",
-    "location": "El Jadida",
+    "title": "Nous cherchons des vrais commerciaux! rejoins nous !! - package atteignant 25k-30k | Tanger (Maroc)",
+    "company": "ELOAN",
+    "location": "Tanger",
     "salary": "N/A",
     "posted": "Active",
     "urgent": false,
     "isReal": true,
     "isDirect": false,
     "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-finance-expert---secteur-autombile-recrutement-manpower-agences-el-jadida-182327.html",
+    "link": "https://www.rekrute.com/offre-emploi-nous-cherchons-des-vrais-commerciaux-rejoins-nous---package-atteignant-25k-30k-recrutement-eloan-tanger-181471.html",
     "catId": "cat_admin"
   },
   {
     "id": "rek_5",
-    "title": "Superviseur RH | Marrakech (Maroc)",
-    "company": "Groupe Label'Vie - Carrefour",
-    "location": "Marrakech",
+    "title": "Conseiller Commercial en Regroupement de Crédits - Tanger | Tanger (Maroc)",
+    "company": "ELOAN",
+    "location": "Tanger",
     "salary": "N/A",
     "posted": "Active",
     "urgent": false,
     "isReal": true,
     "isDirect": false,
     "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-superviseur-rh-recrutement-groupe-labelvie---carrefour-marrakech-181383.html",
-    "catId": "cat_admin"
+    "link": "https://www.rekrute.com/offre-emploi-conseiller-commercial-en-regroupement-de-credits---tanger-recrutement-eloan-tanger-181767.html",
+    "catId": "cat_sales"
   },
   {
     "id": "rek_6",
-    "title": "Superviseur réseau ( CASA / BERRECHID / HAD SOUALEM) | Casablanca (Maroc)",
-    "company": "Groupe Label'Vie - Carrefour",
+    "title": "IT Helpdesk bilingue (français/anglais) - marché canadien | Casablanca (Maroc)",
+    "company": "Outsourcia",
     "location": "Casablanca",
     "salary": "N/A",
     "posted": "Active",
@@ -132,13 +132,13 @@
     "isReal": true,
     "isDirect": false,
     "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-superviseur-reseau-casa-berrechid-had-soualem-recrutement-groupe-labelvie---carrefour-casablanca-181467.html",
-    "catId": "cat_it"
+    "link": "https://www.rekrute.com/offre-emploi-it-helpdesk-bilingue-francaisanglais---marche-canadien-recrutement-outsourcia-casablanca-182351.html",
+    "catId": "cat_call"
   },
   {
     "id": "rek_7",
-    "title": "Chargé surveillance des risques | Casablanca (Maroc)",
-    "company": "Saham Bank",
+    "title": "Responsable d'équipe Sales bilingue (FR ou ENG + ES,IT ou NL) | Casablanca (Maroc)",
+    "company": "Outsourcia",
     "location": "Casablanca",
     "salary": "N/A",
     "posted": "Active",
@@ -146,13 +146,13 @@
     "isReal": true,
     "isDirect": false,
     "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-charge-surveillance-des-risques-recrutement-saham-bank-casablanca-182040.html",
-    "catId": "cat_admin"
+    "link": "https://www.rekrute.com/offre-emploi-responsable-dequipe-sales-bilingue-fr-ou-eng-esit-ou-nl-recrutement-outsourcia-casablanca-182350.html",
+    "catId": "cat_sales"
   },
   {
     "id": "rek_8",
-    "title": "Contrôleur financier N2 | Casablanca (Maroc)",
-    "company": "Saham Bank",
+    "title": "Manager commercial trilingue FR/ENG/DE | Casablanca (Maroc)",
+    "company": "Outsourcia",
     "location": "Casablanca",
     "salary": "N/A",
     "posted": "Active",
@@ -160,13 +160,13 @@
     "isReal": true,
     "isDirect": false,
     "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-controleur-financier-n2-recrutement-saham-bank-casablanca-182042.html",
-    "catId": "cat_admin"
+    "link": "https://www.rekrute.com/offre-emploi-manager-commercial-trilingue-frengde-recrutement-outsourcia-casablanca-182349.html",
+    "catId": "cat_sales"
   },
   {
     "id": "rek_9",
-    "title": "Contrôleur de gestion senior | Casablanca (Maroc)",
-    "company": "Saham Bank",
+    "title": "Conseiller Entreprises Senior | Casablanca (Maroc)",
+    "company": "Attijariwafa bank",
     "location": "Casablanca",
     "salary": "N/A",
     "posted": "Active",
@@ -174,7 +174,7 @@
     "isReal": true,
     "isDirect": false,
     "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-controleur-de-gestion-senior-recrutement-saham-bank-casablanca-182053.html",
+    "link": "https://www.rekrute.com/offre-emploi-conseiller-entreprises-senior-recrutement-attijariwafa-bank-casablanca-182348.html",
     "catId": "cat_admin"
   }
 ]
