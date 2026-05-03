@@ -39,6 +39,48 @@
   },
   {
     "id": "rek_0",
+    "title": "Gestionnaire Sénior (Expérimenté en centre d'appel) | Tanger (Maroc)",
+    "company": "Clinique La Vallée",
+    "location": "Tanger",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-gestionnaire-senior-experimente-en-centre-dappel-recrutement-clinique-la-vallee-tanger-182361.html",
+    "catId": "cat_call"
+  },
+  {
+    "id": "rek_1",
+    "title": "Conseillers Commerciaux en Assurances | Casablanca (Maroc)",
+    "company": "Synergie Courtage",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-conseillers-commerciaux-en-assurances-recrutement-synergie-courtage-casablanca-182360.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_2",
+    "title": "REJOIGNEZ UNE ÉQUIPE QUI TRANSFORME VOTRE PERFORMANCE EN REVENUS  | Casablanca (Maroc)",
+    "company": "Synergie Courtage",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-rejoignez-une-equipe-qui-transforme-votre-performance-en-revenus-recrutement-synergie-courtage-casablanca-182359.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_3",
     "title": "Rejoignez une équipe qui valorise votre efficacité  | casablanca (Maroc)",
     "company": "Synergie Courtage",
     "location": "Casablanca",
@@ -52,7 +94,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_4",
     "title": "ExeKutiveRejoignez une équipe qui valorise votre efficacité  | Casablanca (Maroc)",
     "company": "Synergie Courtage",
     "location": "Casablanca",
@@ -66,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_2",
+    "id": "rek_5",
     "title": "Télétechniciens francophones –  Support client pour une marque mondiale d'imprimantes | rabat (Maroc)",
     "company": "Foundever (ex Sitel Group)",
     "location": "Rabat",
@@ -80,7 +122,7 @@
     "catId": "cat_tech"
   },
   {
-    "id": "rek_3",
+    "id": "rek_6",
     "title": "Commercial | Casablanca (Maroc)",
     "company": "Meski Invest - Riva Industries",
     "location": "Casablanca",
@@ -94,7 +136,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_4",
+    "id": "rek_7",
     "title": "Technicien(ne) en Maroquinerie – Contrôle Qualité & Développement Produit | Marrakech (Maroc)",
     "company": "Jardin Majorelle",
     "location": "Marrakech",
@@ -108,7 +150,7 @@
     "catId": "cat_tech"
   },
   {
-    "id": "rek_5",
+    "id": "rek_8",
     "title": "Opérateur Préparation d'Échantillons | Marrakech (Maroc)",
     "company": "SGS Maroc SA",
     "location": "Marrakech",
@@ -122,7 +164,7 @@
     "catId": "cat_prod"
   },
   {
-    "id": "rek_6",
+    "id": "rek_9",
     "title": "Assistante Administrative | Casablanca (Maroc)",
     "company": "ORH Assessment",
     "location": "Casablanca",
@@ -134,47 +176,5 @@
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-assistante-administrative-recrutement-orh-assessment-casablanca-182352.html",
     "catId": "cat_admin"
-  },
-  {
-    "id": "rek_7",
-    "title": "Nous cherchons des vrais commerciaux! rejoins nous !! - package atteignant 25k-30k | Tanger (Maroc)",
-    "company": "ELOAN",
-    "location": "Tanger",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-nous-cherchons-des-vrais-commerciaux-rejoins-nous---package-atteignant-25k-30k-recrutement-eloan-tanger-181471.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_8",
-    "title": "Conseiller Commercial en Regroupement de Crédits - Tanger | Tanger (Maroc)",
-    "company": "ELOAN",
-    "location": "Tanger",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-conseiller-commercial-en-regroupement-de-credits---tanger-recrutement-eloan-tanger-181767.html",
-    "catId": "cat_sales"
-  },
-  {
-    "id": "rek_9",
-    "title": "IT Helpdesk bilingue (français/anglais) - marché canadien | Casablanca (Maroc)",
-    "company": "Outsourcia",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-it-helpdesk-bilingue-francaisanglais---marche-canadien-recrutement-outsourcia-casablanca-182351.html",
-    "catId": "cat_call"
   }
 ]
