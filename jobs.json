@@ -39,6 +39,34 @@
   },
   {
     "id": "rek_0",
+    "title": "Responsable RH | Tanger (Maroc)",
+    "company": "",
+    "location": "Tanger",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-responsable-rh-recrutement-confidentiel-tanger-182971.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_1",
+    "title": "Chef magasinier | Had Soualem (Maroc)",
+    "company": "Best Biscuits Maroc",
+    "location": "Maroc",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-chef-magasinier-recrutement-best-biscuits-maroc-had-soualem-183028.html",
+    "catId": "cat_sales"
+  },
+  {
+    "id": "rek_2",
     "title": "Gestionnaire Clientèle (H/F) - Tétouan / Al Houceima | Tétouan (Maroc)",
     "company": "Attijariwafa bank",
     "location": "Maroc",
@@ -52,7 +80,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_3",
     "title": "Gestionnaire Clientèle (H/F) - Tanger | Tanger (Maroc)",
     "company": "Attijariwafa bank",
     "location": "Tanger",
@@ -66,7 +94,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_2",
+    "id": "rek_4",
     "title": "Conseiller clientèle (H/F) - Tétouan / Al Houceima | Tétouan (Maroc)",
     "company": "Attijariwafa bank",
     "location": "Maroc",
@@ -80,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_5",
     "title": "Contrôleur de Gestion | Casablanca (Maroc)",
     "company": "OCS Group",
     "location": "Casablanca",
@@ -94,7 +122,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_6",
     "title": "Chargée recouvrement | CASABLANCA (Maroc)",
     "company": "OCS Group",
     "location": "Casablanca",
@@ -108,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
+    "id": "rek_7",
     "title": "Chef de mission - cabinet d'expertise comptable - comptabilité Française | Casablanca (Maroc)",
     "company": "Legacy",
     "location": "Casablanca",
@@ -122,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_6",
+    "id": "rek_8",
     "title": "Scrum Maser (F/H) | Casablanca (Maroc)",
     "company": "Sofrecom Maroc",
     "location": "Casablanca",
@@ -136,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_7",
+    "id": "rek_9",
     "title": "Topographe Conducteur de Travaux Génie Civil | Rabat (Maroc)",
     "company": "Equelec",
     "location": "Rabat",
@@ -147,34 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-topographe-conducteur-de-travaux-genie-civil-recrutement-equelec-rabat-183023.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_8",
-    "title": "Order to Cash team (France Market) On-site in Rabat | Rabat (Maroc)",
-    "company": "HCLTech",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-order-to-cash-team-france-market-on-site-in-rabat-recrutement-hcltech-rabat-181146.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Senior Customer Service Representative | Rabat (Maroc)",
-    "company": "HCLTech",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-senior-customer-service-representative-recrutement-hcltech-rabat-183022.html",
     "catId": "cat_admin"
   }
 ]
