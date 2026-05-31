@@ -39,6 +39,34 @@
   },
   {
     "id": "rek_0",
+    "title": "Senior Data Manager | Casablanca (Maroc)",
+    "company": "Smollan Morocco",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-senior-data-manager-recrutement-smollan-morocco-casablanca-183130.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_1",
+    "title": "Field Manager Merchandising | Casablanca (Maroc)",
+    "company": "Smollan Morocco",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-field-manager-merchandising-recrutement-smollan-morocco-casablanca-183129.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_2",
     "title": "AMOA projets de digitalisation des fermes- H/F | Inchaden (Maroc)",
     "company": "AZURA GROUP",
     "location": "Maroc",
@@ -52,7 +80,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_3",
     "title": "Responsable des Ressources Humaines (H/F) | Casablanca (Maroc)",
     "company": "",
     "location": "Casablanca",
@@ -66,7 +94,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_2",
+    "id": "rek_4",
     "title": "Contrôleur de Gestion Poduction- H/F | Inchaden (Maroc)",
     "company": "AZURA GROUP",
     "location": "Maroc",
@@ -80,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_5",
     "title": "Ingénieur Maintenance Matériels roulants | Taliouine - Askaoun (Maroc)",
     "company": "Aya Gold & Silver",
     "location": "Maroc",
@@ -94,7 +122,7 @@
     "catId": "cat_tech"
   },
   {
-    "id": "rek_4",
+    "id": "rek_6",
     "title": "Profil Junior Hispanophone | Casablanca (Maroc)",
     "company": "",
     "location": "Casablanca",
@@ -108,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
+    "id": "rek_7",
     "title": "Responsable Social- H/F | Inchaden (Maroc)",
     "company": "AZURA GROUP",
     "location": "Maroc",
@@ -122,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_6",
+    "id": "rek_8",
     "title": "Responsable Administratif & Paie | Rabat (Maroc)",
     "company": "BTechnologie",
     "location": "Rabat",
@@ -136,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_7",
+    "id": "rek_9",
     "title": "Lead Offre & Avant-Vente Integrated Security | Casablanca (Maroc)",
     "company": "GSM AL MAGHRIB",
     "location": "Casablanca",
@@ -148,33 +176,5 @@
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-lead-offre-avant-vente-integrated-security-recrutement-gsm-al-maghrib-casablanca-182798.html",
     "catId": "cat_sales"
-  },
-  {
-    "id": "rek_8",
-    "title": "Superviseur en assurance santé  cdi | Rabat (Maroc)",
-    "company": "ADM Value",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-superviseur-en-assurance-sante-cdi-recrutement-adm-value-rabat-183122.html",
-    "catId": "cat_health"
-  },
-  {
-    "id": "rek_9",
-    "title": "Superviseur assurance emprunteur - cdi | Rabat (Maroc)",
-    "company": "ADM Value",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-superviseur-assurance-emprunteur---cdi-recrutement-adm-value-rabat-183121.html",
-    "catId": "cat_admin"
   }
 ]
