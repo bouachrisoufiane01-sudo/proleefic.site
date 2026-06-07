@@ -39,6 +39,34 @@
   },
   {
     "id": "rek_0",
+    "title": "Chargé(e) d´assistance francophone | Casablanca (Maroc)",
+    "company": "Manpower Agences",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-chargee-dassistance-francophone-recrutement-manpower-agences-casablanca-183362.html",
+    "catId": "cat_call"
+  },
+  {
+    "id": "rek_1",
+    "title": "Pharmacien nutritionniste | Casablanca (Maroc)",
+    "company": "",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-pharmacien-nutritionniste-recrutement-confidentiel-casablanca-183361.html",
+    "catId": "cat_health"
+  },
+  {
+    "id": "rek_2",
     "title": "Chargée Marketing Casino | Marrakech (Maroc)",
     "company": "Es Saadi Marrakech Resort",
     "location": "Marrakech",
@@ -52,7 +80,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_3",
     "title": "Standardiste | Marrakech (Maroc)",
     "company": "Es Saadi Marrakech Resort",
     "location": "Marrakech",
@@ -66,7 +94,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_2",
+    "id": "rek_4",
     "title": "Directeur Administratif et Financier | Meknès (Maroc)",
     "company": "Meski Invest - Riva Industries",
     "location": "Meknès",
@@ -80,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_5",
     "title": "Gestionnaire Clientèle (H/F) | Marrakech (Maroc)",
     "company": "Attijariwafa bank",
     "location": "Marrakech",
@@ -94,7 +122,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_6",
     "title": "Collaborateur Comptable – Comptabilité française | Casablanca (Maroc)",
     "company": "",
     "location": "Casablanca",
@@ -108,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
+    "id": "rek_7",
     "title": "Back office francophone (H/F) | Casablanca (Maroc)",
     "company": "Maroc Climate and Security (MCS) - Carrier",
     "location": "Casablanca",
@@ -122,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_6",
+    "id": "rek_8",
     "title": "Assistant(e) Commercial(e)en Réception d'Appels | Casablanca (Maroc)",
     "company": "Maroc Climate and Security (MCS) - Carrier",
     "location": "Casablanca",
@@ -136,7 +164,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_7",
+    "id": "rek_9",
     "title": "Technicien Ascensoriste | Casablanca (Maroc)",
     "company": "VINCI Energies Afrique de l'Ouest",
     "location": "Casablanca",
@@ -148,33 +176,5 @@
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-technicien-ascensoriste-recrutement-vinci-energies-afrique-de-louest-casablanca-183355.html",
     "catId": "cat_tech"
-  },
-  {
-    "id": "rek_8",
-    "title": "Vendeuse | Casablanca (Maroc)",
-    "company": "Manpower Agences",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-vendeuse-recrutement-manpower-agences-casablanca-183354.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Responsable de la communication et réseaux sociaux | Rabat (Maroc)",
-    "company": "Arts et Métiers Campus de Rabat",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-responsable-de-la-communication-et-reseaux-sociaux-recrutement-arts-et-metiers-campus-de-rabat-rabat-183353.html",
-    "catId": "cat_it"
   }
 ]
