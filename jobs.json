@@ -39,6 +39,20 @@
   },
   {
     "id": "rek_0",
+    "title": "Chargé(e) de Clientèle Back-Office Bilingue (Français/Anglais) (H/F) | Rabat (Maroc)",
+    "company": "Marketing Call Center",
+    "location": "Rabat",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-chargee-de-clientele-back-office-bilingue-francaisanglais-hf-recrutement-marketing-call-center-rabat-183602.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_1",
     "title": "Acheteur | Casablanca (Maroc)",
     "company": "Aya Gold & Silver",
     "location": "Casablanca",
@@ -52,7 +66,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_2",
     "title": "Chef de Projet Exploitation (H/F) | Rabat (Maroc)",
     "company": "BTechnologie",
     "location": "Rabat",
@@ -66,7 +80,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_2",
+    "id": "rek_3",
     "title": "Technicien de maintenance réseau informatique débutant | Casablanca (Maroc)",
     "company": "GSM AL MAGHRIB",
     "location": "Casablanca",
@@ -80,7 +94,7 @@
     "catId": "cat_tech"
   },
   {
-    "id": "rek_3",
+    "id": "rek_4",
     "title": "Auditeur inspecteur | Rabat (Maroc)",
     "company": "CDG",
     "location": "Rabat",
@@ -94,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_5",
     "title": "Coordinateur Maintenance | Casablanca -  Nouasseur (Maroc)",
     "company": "Atlas Multiservices",
     "location": "Casablanca",
@@ -108,7 +122,7 @@
     "catId": "cat_tech"
   },
   {
-    "id": "rek_5",
+    "id": "rek_6",
     "title": "Product Owner - IA | Casablanca (Maroc)",
     "company": "HEOMI",
     "location": "Casablanca",
@@ -122,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_6",
+    "id": "rek_7",
     "title": "Contrôleur de gestion | Agadir (Maroc)",
     "company": "Manpower Agences",
     "location": "Agadir",
@@ -136,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_7",
+    "id": "rek_8",
     "title": "Conseillers Commerciaux en Assurance – Émission d’Appels | Casablanca (Maroc)",
     "company": "HEOMI",
     "location": "Casablanca",
@@ -150,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_8",
+    "id": "rek_9",
     "title": "Déposez votre Candidature Spontanée | Casablanca (Maroc)",
     "company": "HEOMI",
     "location": "Casablanca",
@@ -162,19 +176,5 @@
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-deposez-votre-candidature-spontanee-recrutement-heomi-casablanca-183593.html",
     "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Ingénieur d’Études et Développement JAVA/J2EE | Casablanca (Maroc)",
-    "company": "HEOMI",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-ingenieur-detudes-et-developpement-javaj2ee-recrutement-heomi-casablanca-183592.html",
-    "catId": "cat_it"
   }
 ]
