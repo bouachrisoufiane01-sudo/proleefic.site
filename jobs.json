@@ -39,6 +39,62 @@
   },
   {
     "id": "rek_0",
+    "title": "Commercial | El Jadida (Maroc)",
+    "company": "Manpower Agences",
+    "location": "El Jadida",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-commercial-recrutement-manpower-agences-el-jadida-183776.html",
+    "catId": "cat_sales"
+  },
+  {
+    "id": "rek_1",
+    "title": "Responsable RH | Fès (Maroc)",
+    "company": "AKDITAL",
+    "location": "Tanger",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-responsable-rh-recrutement-akdital-fes-183686.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_2",
+    "title": "Stagiaire RH | Casablanca (Maroc)",
+    "company": "",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-stagiaire-rh-recrutement-confidentiel-casablanca-183775.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_3",
+    "title": "Controleur Financier (H/F) | Casablanca (Maroc)",
+    "company": "Bouygues Construction IT",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-controleur-financier-hf-recrutement-bouygues-construction-it-casablanca-183774.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_4",
     "title": "Chargé(e) d'Immatriculation Automobile | Marrakech (Maroc)",
     "company": "Bouderka",
     "location": "Marrakech",
@@ -52,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_5",
     "title": "Chargé(e) ADV (Administration des Ventes) Automobile | Marrakech (Maroc)",
     "company": "Bouderka",
     "location": "Marrakech",
@@ -66,7 +122,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_2",
+    "id": "rek_6",
     "title": "Contrôleur de Gestion | Tout maroc (Maroc)",
     "company": "Bricoma",
     "location": "Rabat",
@@ -80,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_7",
     "title": "Anaplan Solution Architect (H/F) | Rabat (Maroc)",
     "company": "BTechnologie",
     "location": "Rabat",
@@ -94,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_8",
     "title": "Data Financial (F/H) | Casablanca (Maroc)",
     "company": "Sofrecom Maroc",
     "location": "Casablanca",
@@ -108,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
+    "id": "rek_9",
     "title": "Responsable infrastructure Système et Sécurité(F/H) | rabat/casa (Maroc)",
     "company": "Sofrecom Maroc",
     "location": "Casablanca",
@@ -119,62 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-responsable-infrastructure-systeme-et-securitefh-recrutement-sofrecom-maroc-rabatcasa-183172.html",
-    "catId": "cat_it"
-  },
-  {
-    "id": "rek_6",
-    "title": "Chargée développent | Casablanca (Maroc)",
-    "company": "ENI GROUP",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-chargee-developpent-recrutement-eni-group-casablanca-183162.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_7",
-    "title": "Ingénieur support PHP (F/H) | Casablanca (Maroc)",
-    "company": "Sofrecom Maroc",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-ingenieur-support-php-fh-recrutement-sofrecom-maroc-casablanca-183171.html",
-    "catId": "cat_it"
-  },
-  {
-    "id": "rek_8",
-    "title": "Comptable | Ain Sebaa (Maroc)",
-    "company": "Manpower Agences",
-    "location": "Maroc",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-comptable-recrutement-manpower-agences-ain-sebaa-183177.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Ingénieur DevOps, Frontend (F/H) | Rabat (Maroc)",
-    "company": "Sofrecom Maroc",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-ingenieur-devops-frontend-fh-recrutement-sofrecom-maroc-rabat-183169.html",
     "catId": "cat_it"
   }
 ]
