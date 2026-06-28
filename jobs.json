@@ -39,6 +39,48 @@
   },
   {
     "id": "rek_0",
+    "title": "Un(e) Responsable Développement RH | MEKNES (Maroc)",
+    "company": "",
+    "location": "Maroc",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-une-responsable-developpement-rh-recrutement-confidentiel-meknes-183985.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_1",
+    "title": "Technicien Laboratoire | Al Hoceima (Maroc)",
+    "company": "AKDITAL",
+    "location": "Maroc",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-technicien-laboratoire-recrutement-akdital-al-hoceima-183984.html",
+    "catId": "cat_tech"
+  },
+  {
+    "id": "rek_2",
+    "title": "Agent Pharmacie | Al Hoceima (Maroc)",
+    "company": "AKDITAL",
+    "location": "Maroc",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-agent-pharmacie-recrutement-akdital-al-hoceima-183983.html",
+    "catId": "cat_health"
+  },
+  {
+    "id": "rek_3",
     "title": "Commercial | Guercif (Maroc)",
     "company": "",
     "location": "Maroc",
@@ -52,7 +94,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_1",
+    "id": "rek_4",
     "title": "Chargée de Clientèle | Errachidia (Maroc)",
     "company": "",
     "location": "Maroc",
@@ -66,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_2",
+    "id": "rek_5",
     "title": "Chargée de Clientèle | Guercif (Maroc)",
     "company": "",
     "location": "Maroc",
@@ -80,7 +122,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_6",
     "title": "Assistant(e) RH | Casablanca (Maroc)",
     "company": "Auto Nejma Maroc S.A.",
     "location": "Casablanca",
@@ -94,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_7",
     "title": "Commercial(e) terrain BtoB | CASABLANCA (Maroc)",
     "company": "CRIT",
     "location": "Casablanca",
@@ -108,7 +150,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_5",
+    "id": "rek_8",
     "title": "Chargée de Support et de Coordination | Rabat (Maroc)",
     "company": "ORH Assessment",
     "location": "Rabat",
@@ -122,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_6",
+    "id": "rek_9",
     "title": "Responsable Service (H/F) | Casablanca (Maroc)",
     "company": "CAC (Centrale Automobile Chérifienne)",
     "location": "Casablanca",
@@ -134,47 +176,5 @@
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-responsable-service-hf-recrutement-cac-centrale-automobile-cherifienne-casablanca-183976.html",
     "catId": "cat_admin"
-  },
-  {
-    "id": "rek_7",
-    "title": "Associate Data Science Manager | Casablanca (Maroc)",
-    "company": "Leyton",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-associate-data-science-manager-recrutement-leyton-casablanca-183975.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_8",
-    "title": "Senior Java Software Engineer (AI Integration) | Casablanca (Maroc)",
-    "company": "Leyton",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-senior-java-software-engineer-ai-integration-recrutement-leyton-casablanca-183974.html",
-    "catId": "cat_it"
-  },
-  {
-    "id": "rek_9",
-    "title": "Responsable Comptoir | Fès (Maroc)",
-    "company": "Locamed",
-    "location": "Fès",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-responsable-comptoir-recrutement-locamed-fes-183973.html",
-    "catId": "cat_sales"
   }
 ]
