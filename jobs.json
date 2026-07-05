@@ -39,6 +39,20 @@
   },
   {
     "id": "rek_0",
+    "title": "Comptable confirmé | Tanger (Maroc)",
+    "company": "AKDITAL",
+    "location": "Tanger",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-comptable-confirme-recrutement-akdital-tanger-184220.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_1",
     "title": "Chef de Projet Télécom – Réseaux Entreprises (H/F) | Rabat (Maroc)",
     "company": "BTechnologie",
     "location": "Rabat",
@@ -52,7 +66,7 @@
     "catId": "cat_it"
   },
   {
-    "id": "rek_1",
+    "id": "rek_2",
     "title": "Stagiaire Chargé(e)s de documentation– Recettes Techniques (F/H) | Rabat (Maroc)",
     "company": "Sofrecom Maroc",
     "location": "Rabat",
@@ -66,7 +80,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_2",
+    "id": "rek_3",
     "title": "Product Owner - IA | Casablanca (Maroc)",
     "company": "HEOMI",
     "location": "Casablanca",
@@ -80,7 +94,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_4",
     "title": "Conseiller en Assurance Emprunteur | Tanger (Maroc)",
     "company": "ELOAN",
     "location": "Tanger",
@@ -94,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_5",
     "title": "Conseiller Commercial en Assurance | Tanger (Maroc)",
     "company": "ELOAN",
     "location": "Tanger",
@@ -108,7 +122,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_5",
+    "id": "rek_6",
     "title": "Chargé de Portefeuille H/F - Développez votre activité. Accompagnez vos clients. Révélez votre potentiel. | Tout le Maroc (Maroc)",
     "company": "Fondation Arrawaj",
     "location": "Fes",
@@ -122,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_6",
+    "id": "rek_7",
     "title": "Manager | Rejoignez un réseau en pleine croissance. | Tout le Maroc (Maroc)",
     "company": "Fondation Arrawaj",
     "location": "Maroc",
@@ -136,7 +150,7 @@
     "catId": "cat_it"
   },
   {
-    "id": "rek_7",
+    "id": "rek_8",
     "title": "Chef de secteur CHR | Casablanca (Maroc)",
     "company": "Sotherma",
     "location": "Casablanca",
@@ -150,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_8",
+    "id": "rek_9",
     "title": "Chargé de Trésorerie (H/F) | Rabat (Maroc)",
     "company": "Madaef",
     "location": "Rabat",
@@ -161,20 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-charge-de-tresorerie-hf-recrutement-madaef-rabat-184212.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Office Manager - Berrechid | Berrechid (Maroc)",
-    "company": "Domino HR Morocco",
-    "location": "Berrechid",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-office-manager---berrechid-recrutement-domino-hr-morocco-berrechid-184211.html",
     "catId": "cat_admin"
   }
 ]
