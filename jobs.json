@@ -39,6 +39,48 @@
   },
   {
     "id": "rek_0",
+    "title": "Commercial(e) B2C Lusophone (Portugais) – Secteur Tourisme (H/F) | Rabat (Maroc)",
+    "company": "Marketing Call Center",
+    "location": "Rabat",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-commerciale-b2c-lusophone-portugais-secteur-tourisme-hf-recrutement-marketing-call-center-rabat-184444.html",
+    "catId": "cat_sales"
+  },
+  {
+    "id": "rek_1",
+    "title": "Enseignant de Français primaire 5AP & 6AP | Oujda (Maroc)",
+    "company": "Groupe Scolaire Afdal Oujda",
+    "location": "Oujda",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-enseignant-de-francais-primaire-5ap-6ap-recrutement-groupe-scolaire-afdal-oujda-oujda-184443.html",
+    "catId": "cat_edu"
+  },
+  {
+    "id": "rek_2",
+    "title": "Assistant(e) de Direction | Casablanca (Maroc)",
+    "company": "",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-assistante-de-direction-recrutement-confidentiel-casablanca-184442.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_3",
     "title": "Data Engineer GCP | Casablanca (Maroc)",
     "company": "Capgemini",
     "location": "Casablanca",
@@ -52,7 +94,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_4",
     "title": "Business Analyst ServiceNow Senior | Casablanca (Maroc)",
     "company": "Capgemini",
     "location": "Casablanca",
@@ -66,7 +108,7 @@
     "catId": "cat_prod"
   },
   {
-    "id": "rek_2",
+    "id": "rek_5",
     "title": "Développeur ServiceNow | Rabat (Maroc)",
     "company": "ALTEN Maroc",
     "location": "Casablanca",
@@ -80,7 +122,7 @@
     "catId": "cat_it"
   },
   {
-    "id": "rek_3",
+    "id": "rek_6",
     "title": "Responsable Développement et Organisation des Pôles  (H/F) | Rabat (Maroc)",
     "company": "HUIR - L'Hôpital Universitaire International de Rabat",
     "location": "Rabat",
@@ -94,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_7",
     "title": "Agent de contrôle facturation (H/F) | Rabat (Maroc)",
     "company": "HUIR - L'Hôpital Universitaire International de Rabat",
     "location": "Rabat",
@@ -108,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
+    "id": "rek_8",
     "title": "Travel Services Agent (Temporary Contract) | Nador (Maroc)",
     "company": "Air Arabia",
     "location": "Casablanca",
@@ -122,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_6",
+    "id": "rek_9",
     "title": "Directeur Administratif et Financier | Meknès (Maroc)",
     "company": "",
     "location": "Meknès",
@@ -133,48 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-directeur-administratif-et-financier-recrutement-confidentiel-meknes-184195.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_7",
-    "title": "Formateur / Talent Developer (FR/ANG) – H/F | Rabat (Maroc)",
-    "company": "Marketing Call Center",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-formateur-talent-developer-frang-hf-recrutement-marketing-call-center-rabat-184434.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_8",
-    "title": "Dessinateur Projeteur | Casablanca (Maroc)",
-    "company": "Groupe Label'Vie - Carrefour",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-dessinateur-projeteur-recrutement-groupe-labelvie---carrefour-casablanca-182764.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Responsable Développement, Formation Continue et Relations Entreprises | Casablanca (Maroc)",
-    "company": "Université Internationale de Rabat (UIR)",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-responsable-developpement-formation-continue-et-relations-entreprises-recrutement-universite-internationale-de-rabat-uir-casablanca-184433.html",
     "catId": "cat_admin"
   }
 ]
