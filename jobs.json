@@ -39,6 +39,62 @@
   },
   {
     "id": "rek_0",
+    "title": "HR Généraliste | Casablanca (Maroc)",
+    "company": "Vital Fer",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-hr-generaliste-recrutement-vital-fer-casablanca-185212.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_1",
+    "title": "Responsable Administratif et Financier | Casablanca (Maroc)",
+    "company": "Vital Fer",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-responsable-administratif-et-financier-recrutement-vital-fer-casablanca-185211.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_2",
+    "title": "Directeur Administratif et Financier | Casablanca (Maroc)",
+    "company": "Vital Fer",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-directeur-administratif-et-financier-recrutement-vital-fer-casablanca-185210.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_3",
+    "title": "Comptable | Casablanca (Maroc)",
+    "company": "Vital Fer",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-comptable-recrutement-vital-fer-casablanca-185209.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_4",
     "title": "Directeur Pédagogique (H/F) | Oujda (Maroc)",
     "company": "Groupe Scolaire Afdal Oujda",
     "location": "Oujda",
@@ -52,21 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
-    "title": "Maître ou Maîtresse de français | Oujda (Maroc)",
-    "company": "Groupe Scolaire Afdal Oujda",
-    "location": "Oujda",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-maitre-ou-maitresse-de-francais-recrutement-groupe-scolaire-afdal-oujda-oujda-184920.html",
-    "catId": "cat_edu"
-  },
-  {
-    "id": "rek_2",
+    "id": "rek_5",
     "title": "Maître(sse) d'arabe primaire | Oujda (Maroc)",
     "company": "Groupe Scolaire Afdal Oujda",
     "location": "Oujda",
@@ -80,7 +122,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_6",
     "title": "Maître ou Maîtresse de français | Oujda (Maroc)",
     "company": "Groupe Scolaire Afdal Oujda",
     "location": "Oujda",
@@ -94,7 +136,7 @@
     "catId": "cat_edu"
   },
   {
-    "id": "rek_4",
+    "id": "rek_7",
     "title": "Directeur Pédagogique | Oujda (Maroc)",
     "company": "Groupe Scolaire Afdal Oujda",
     "location": "Oujda",
@@ -108,63 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
-    "title": "Enseignant(e) de Mathématiques Primaire | Oujda (Maroc)",
-    "company": "Groupe Scolaire Afdal Oujda",
-    "location": "Oujda",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-enseignante-de-mathematiques-primaire-recrutement-groupe-scolaire-afdal-oujda-oujda-185007.html",
-    "catId": "cat_edu"
-  },
-  {
-    "id": "rek_6",
-    "title": "Enseignant(e) d'Anglais Primaire | Oujda (Maroc)",
-    "company": "Groupe Scolaire Afdal Oujda",
-    "location": "Oujda",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-enseignante-danglais-primaire-recrutement-groupe-scolaire-afdal-oujda-oujda-185008.html",
-    "catId": "cat_edu"
-  },
-  {
-    "id": "rek_7",
-    "title": "Responsable pédagogique Collège Lycée | Oujda (Maroc)",
-    "company": "Groupe Scolaire Afdal Oujda",
-    "location": "Oujda",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-responsable-pedagogique-college-lycee-recrutement-groupe-scolaire-afdal-oujda-oujda-185011.html",
-    "catId": "cat_admin"
-  },
-  {
     "id": "rek_8",
-    "title": "Responsable Pédagogique Primaire | Oujda (Maroc)",
-    "company": "Groupe Scolaire Afdal Oujda",
-    "location": "Oujda",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-responsable-pedagogique-primaire-recrutement-groupe-scolaire-afdal-oujda-oujda-185012.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
     "title": "Educatrice / Educateur Préscolaire Français | Oujda (Maroc)",
     "company": "Groupe Scolaire Afdal Oujda",
     "location": "Oujda",
@@ -175,6 +161,20 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-educatrice-educateur-prescolaire-francais-recrutement-groupe-scolaire-afdal-oujda-oujda-185013.html",
+    "catId": "cat_edu"
+  },
+  {
+    "id": "rek_9",
+    "title": "Professeur des Ecoles H/F | Oujda (Maroc)",
+    "company": "Groupe Scolaire Afdal Oujda",
+    "location": "Fes",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-professeur-des-ecoles-hf-recrutement-groupe-scolaire-afdal-oujda-oujda-185051.html",
     "catId": "cat_edu"
   }
 ]
