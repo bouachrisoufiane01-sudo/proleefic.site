@@ -39,6 +39,34 @@
   },
   {
     "id": "rek_0",
+    "title": "Conseiller clientèle bilingue (Francais/Anglais) | Casablanca (Maroc)",
+    "company": "Atlas Online",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-conseiller-clientele-bilingue-francaisanglais-recrutement-atlas-online-casablanca-185382.html",
+    "catId": "cat_call"
+  },
+  {
+    "id": "rek_1",
+    "title": "Conseiller clientèle bilingue (Francais/Anglais) | Casablanca (Maroc)",
+    "company": "Atlas Online",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-conseiller-clientele-bilingue-francaisanglais-recrutement-atlas-online-casablanca-185383.html",
+    "catId": "cat_call"
+  },
+  {
+    "id": "rek_2",
     "title": "Service management / Run management Junior Cloud, Ops | Rabat (Maroc)",
     "company": "ALTEN Maroc",
     "location": "Rabat",
@@ -52,7 +80,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_3",
     "title": "Dessinateur Industriel Francophone (H/F) | Casablanca (Maroc)",
     "company": "Maroc Climate and Security (MCS) - Carrier",
     "location": "Casablanca",
@@ -66,7 +94,7 @@
     "catId": "cat_tech"
   },
   {
-    "id": "rek_2",
+    "id": "rek_4",
     "title": "Medical Advisor / Conseiller(ère) Commercial(e) | Casablanca (Maroc)",
     "company": "Mira Clinic",
     "location": "Casablanca",
@@ -80,7 +108,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_3",
+    "id": "rek_5",
     "title": "PPL Intelligent Connected Access Systems (secteur automobile) | Rabat (Maroc)",
     "company": "ALTEN Maroc",
     "location": "Rabat",
@@ -94,7 +122,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_6",
     "title": "QA Automation Back - Karaté DSL Sénior | Rabat (Maroc)",
     "company": "ALTEN Maroc",
     "location": "Rabat",
@@ -108,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
+    "id": "rek_7",
     "title": "Responsable Conformité Contractuelle et Réglementaire | Dakhla (Maroc)",
     "company": "ORH Assessment",
     "location": "Dakhla",
@@ -122,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_6",
+    "id": "rek_8",
     "title": "Program Buyer | Rabat (Maroc)",
     "company": "ALTEN Maroc",
     "location": "Rabat",
@@ -136,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_7",
+    "id": "rek_9",
     "title": "Agent commercial senior | Marrakech (Maroc)",
     "company": "Locamed",
     "location": "Marrakech",
@@ -148,33 +176,5 @@
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-agent-commercial-senior-recrutement-locamed-marrakech-185543.html",
     "catId": "cat_sales"
-  },
-  {
-    "id": "rek_8",
-    "title": "Coach fit20 | Casablanca (Maroc)",
-    "company": "FIT CASA",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-coach-fit20-recrutement-fit-casa-casablanca-185423.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "DevOps / SRE Administrateur GCP – Build & DevSecOps | Rabat (Maroc)",
-    "company": "ALTEN Maroc",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-devops-sre-administrateur-gcp-build-devsecops-recrutement-alten-maroc-rabat-185542.html",
-    "catId": "cat_it"
   }
 ]
