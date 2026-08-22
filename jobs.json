@@ -39,6 +39,34 @@
   },
   {
     "id": "rek_0",
+    "title": "Téléconseiller(ère) – Qualification de Fiches Secteur Énergie | Casablanca (Maroc)",
+    "company": "WOW7H24",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-teleconseillerere-qualification-de-fiches-secteur-energie-recrutement-wow7h24-casablanca-185642.html",
+    "catId": "cat_call"
+  },
+  {
+    "id": "rek_1",
+    "title": "Community Manager / Gestionnaire des réseaux sociaux F/H | Casablanca (Maroc)",
+    "company": "WOW7H24",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-community-manager-gestionnaire-des-reseaux-sociaux-fh-recrutement-wow7h24-casablanca-185641.html",
+    "catId": "cat_it"
+  },
+  {
+    "id": "rek_2",
     "title": "Conseiller Commercial en Regroupement de Crédit | Tanger (Maroc)",
     "company": "ELOAN",
     "location": "Tanger",
@@ -52,7 +80,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_1",
+    "id": "rek_3",
     "title": "RESPONSABLE LOGISTIQUE SITE | El Jadida (Maroc)",
     "company": "Meski Invest - Riva Industries",
     "location": "El Jadida",
@@ -66,7 +94,7 @@
     "catId": "cat_transport"
   },
   {
-    "id": "rek_2",
+    "id": "rek_4",
     "title": "Contrôleur de gestion | Fès (Maroc)",
     "company": "ALTEN Maroc",
     "location": "Fès",
@@ -80,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_5",
     "title": "PPL Consultant / Secteur automobile | Rabat (Maroc)",
     "company": "ALTEN Maroc",
     "location": "Rabat",
@@ -94,7 +122,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_6",
     "title": "RESPONSABLE D'AGENCE D'ASSURANCE | Kénitra (Maroc)",
     "company": "",
     "location": "Maroc",
@@ -108,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
+    "id": "rek_7",
     "title": "Business Analyst finance | Rabat (Maroc)",
     "company": "ALTEN Maroc",
     "location": "Rabat",
@@ -122,7 +150,7 @@
     "catId": "cat_prod"
   },
   {
-    "id": "rek_6",
+    "id": "rek_8",
     "title": "RESPONSABLE D'AGENCE D'ASSURANCE | Salé (Maroc)",
     "company": "",
     "location": "Salé",
@@ -136,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_7",
+    "id": "rek_9",
     "title": "RESPONSABLE D'AGENCE D'ASSURANCE | TANGER (Maroc)",
     "company": "",
     "location": "Tanger",
@@ -147,34 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-responsable-dagence-dassurance-recrutement-confidentiel-tanger-185633.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_8",
-    "title": "Directeur Pédagogique | Oujda (Maroc)",
-    "company": "Groupe Scolaire Afdal Oujda",
-    "location": "Oujda",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-directeur-pedagogique-recrutement-groupe-scolaire-afdal-oujda-oujda-185514.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Educatrice Préscolaire | Oujda (Maroc)",
-    "company": "Groupe Scolaire Afdal Oujda",
-    "location": "Oujda",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-educatrice-prescolaire-recrutement-groupe-scolaire-afdal-oujda-oujda-185515.html",
     "catId": "cat_admin"
   }
 ]
