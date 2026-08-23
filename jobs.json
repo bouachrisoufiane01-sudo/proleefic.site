@@ -39,6 +39,62 @@
   },
   {
     "id": "rek_0",
+    "title": "senior architect | Riyadh (Arabie Saoudite)",
+    "company": "MADAREK Engineering consultants",
+    "location": "Maroc",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-senior-architect-recrutement-madarek-engineering-consultants-riyadh-185646.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_1",
+    "title": "Spécialiste Marketing Digital & Génération de Leads | Casablanca (Maroc)",
+    "company": "WOW7H24",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-specialiste-marketing-digital-generation-de-leads-recrutement-wow7h24-casablanca-185645.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_2",
+    "title": "Commercial / Téléconseiller B2B | Casablanca (Maroc)",
+    "company": "WOW7H24",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-commercial-teleconseiller-b2b-recrutement-wow7h24-casablanca-185644.html",
+    "catId": "cat_sales"
+  },
+  {
+    "id": "rek_3",
+    "title": "Manager Commercial B2B | Casablanca (Maroc)",
+    "company": "WOW7H24",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-manager-commercial-b2b-recrutement-wow7h24-casablanca-185643.html",
+    "catId": "cat_sales"
+  },
+  {
+    "id": "rek_4",
     "title": "Téléconseiller(ère) – Qualification de Fiches Secteur Énergie | Casablanca (Maroc)",
     "company": "WOW7H24",
     "location": "Casablanca",
@@ -52,7 +108,7 @@
     "catId": "cat_call"
   },
   {
-    "id": "rek_1",
+    "id": "rek_5",
     "title": "Community Manager / Gestionnaire des réseaux sociaux F/H | Casablanca (Maroc)",
     "company": "WOW7H24",
     "location": "Casablanca",
@@ -66,7 +122,7 @@
     "catId": "cat_it"
   },
   {
-    "id": "rek_2",
+    "id": "rek_6",
     "title": "Conseiller Commercial en Regroupement de Crédit | Tanger (Maroc)",
     "company": "ELOAN",
     "location": "Tanger",
@@ -80,7 +136,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_3",
+    "id": "rek_7",
     "title": "RESPONSABLE LOGISTIQUE SITE | El Jadida (Maroc)",
     "company": "Meski Invest - Riva Industries",
     "location": "El Jadida",
@@ -94,7 +150,7 @@
     "catId": "cat_transport"
   },
   {
-    "id": "rek_4",
+    "id": "rek_8",
     "title": "Contrôleur de gestion | Fès (Maroc)",
     "company": "ALTEN Maroc",
     "location": "Fès",
@@ -108,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
+    "id": "rek_9",
     "title": "PPL Consultant / Secteur automobile | Rabat (Maroc)",
     "company": "ALTEN Maroc",
     "location": "Rabat",
@@ -119,62 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-ppl-consultant-secteur-automobile-recrutement-alten-maroc-rabat-185637.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_6",
-    "title": "RESPONSABLE D'AGENCE D'ASSURANCE | Kénitra (Maroc)",
-    "company": "",
-    "location": "Maroc",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-responsable-dagence-dassurance-recrutement-confidentiel-kenitra-185636.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_7",
-    "title": "Business Analyst finance | Rabat (Maroc)",
-    "company": "ALTEN Maroc",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-business-analyst-finance-recrutement-alten-maroc-rabat-185635.html",
-    "catId": "cat_prod"
-  },
-  {
-    "id": "rek_8",
-    "title": "RESPONSABLE D'AGENCE D'ASSURANCE | Salé (Maroc)",
-    "company": "",
-    "location": "Salé",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-responsable-dagence-dassurance-recrutement-confidentiel-sale-185634.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "RESPONSABLE D'AGENCE D'ASSURANCE | TANGER (Maroc)",
-    "company": "",
-    "location": "Tanger",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-responsable-dagence-dassurance-recrutement-confidentiel-tanger-185633.html",
     "catId": "cat_admin"
   }
 ]
