@@ -39,6 +39,20 @@
   },
   {
     "id": "rek_0",
+    "title": "Téléopérateur B2B / B2C F/H | Casablanca (Maroc)",
+    "company": "WOW7H24",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-teleoperateur-b2b-b2c-fh-recrutement-wow7h24-casablanca-185845.html",
+    "catId": "cat_prod"
+  },
+  {
+    "id": "rek_1",
     "title": "Magasinier  Gestion de stock et dépôt | Casablanca (Maroc)",
     "company": "Ms Smart Electro",
     "location": "Casablanca",
@@ -52,7 +66,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_1",
+    "id": "rek_2",
     "title": "Commercial Showroom | Casablanca (Maroc)",
     "company": "Ms Smart Electro",
     "location": "Casablanca",
@@ -66,7 +80,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_2",
+    "id": "rek_3",
     "title": "Foundever recrute des Conseillers client en assistance technique (réception d’appels) sur notre site à Yaacoub El Mansour. | Casablanca (Maroc)",
     "company": "Foundever (ex Sitel Group)",
     "location": "Casablanca",
@@ -80,7 +94,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_4",
     "title": "Responsable Sécurité et Développement Durable | Had Soualem (Maroc)",
     "company": "Best Biscuits Maroc",
     "location": "Maroc",
@@ -94,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_5",
     "title": "Ingénieur Analyste  - Décisionnel (H/F) | Casablanca (Maroc)",
     "company": "Disty technologies",
     "location": "Casablanca",
@@ -108,7 +122,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
+    "id": "rek_6",
     "title": "Chargé(e) de la Logistique | Casablanca (Maroc)",
     "company": "Disty technologies",
     "location": "Casablanca",
@@ -122,7 +136,7 @@
     "catId": "cat_transport"
   },
   {
-    "id": "rek_6",
+    "id": "rek_7",
     "title": "Comptable Confirmé(e) | Casablanca (Maroc)",
     "company": "Disty technologies",
     "location": "Casablanca",
@@ -136,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_7",
+    "id": "rek_8",
     "title": "Responsable Trésorerie & Financements (H/F) – 7 ans minimum d’expérience | Casablanca (Maroc)",
     "company": "Disty technologies",
     "location": "Casablanca",
@@ -150,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_8",
+    "id": "rek_9",
     "title": "Comptable | oujda (Maroc)",
     "company": "AKDITAL",
     "location": "Oujda",
@@ -161,20 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-comptable-recrutement-akdital-oujda-185836.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Calibration Project Manager | Rabat (Maroc)",
-    "company": "ALTEN Maroc",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-calibration-project-manager-recrutement-alten-maroc-rabat-185835.html",
     "catId": "cat_admin"
   }
 ]
