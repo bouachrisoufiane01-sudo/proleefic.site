@@ -39,6 +39,48 @@
   },
   {
     "id": "rek_0",
+    "title": "Assistante Administrative Polyvalente - Maarif Casa | Casablanca (Maroc)",
+    "company": "Domino HR Morocco",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-assistante-administrative-polyvalente---maarif-casa-recrutement-domino-hr-morocco-casablanca-186352.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_1",
+    "title": "Office Manager - Zone Industrielle Berrechid | Berrechid (Maroc)",
+    "company": "Domino HR Morocco",
+    "location": "Berrechid",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-office-manager---zone-industrielle-berrechid-recrutement-domino-hr-morocco-berrechid-186353.html",
+    "catId": "cat_tech"
+  },
+  {
+    "id": "rek_2",
+    "title": "Superviseur de caisse | Casablanca (Maroc)",
+    "company": "Groupe Label'Vie - Carrefour",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-superviseur-de-caisse-recrutement-groupe-labelvie---carrefour-casablanca-186661.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_3",
     "title": "After-sales Engineer (Color Sorter) | Tunis (Tunisie)",
     "company": "Hefei Meyer Optoelectronic Technology Co.",
     "location": "Maroc",
@@ -52,7 +94,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_1",
+    "id": "rek_4",
     "title": "Cadre QHSE (H/F) | Al Hoceima (Maroc)",
     "company": "AKDITAL",
     "location": "Maroc",
@@ -66,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_2",
+    "id": "rek_5",
     "title": "Consultant KPI - Reporting costumer Survey | Rabat (Maroc)",
     "company": "ALTEN Maroc",
     "location": "Rabat",
@@ -80,7 +122,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_6",
     "title": "Responsable Technique (H/F) | Meknès (Maroc)",
     "company": "Centrale Danone",
     "location": "Meknès",
@@ -94,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_7",
     "title": "Cadre QHSE (H/F) | Fès (Maroc)",
     "company": "",
     "location": "Fès",
@@ -108,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
+    "id": "rek_8",
     "title": "Gestionnaire de Paie (Paie française) - Disponibilité immédiate | Casablanca (Maroc)",
     "company": "Manpower Agences",
     "location": "Casablanca",
@@ -122,7 +164,7 @@
     "catId": "cat_edu"
   },
   {
-    "id": "rek_6",
+    "id": "rek_9",
     "title": "Animateur Commercial GSB | Témara (Maroc)",
     "company": "Ingelec",
     "location": "Casablanca",
@@ -133,48 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-animateur-commercial-gsb-recrutement-ingelec-temara-186655.html",
-    "catId": "cat_sales"
-  },
-  {
-    "id": "rek_7",
-    "title": "Technicien Elevage équin (H/F) | Marrakech (Maroc)",
-    "company": "Sorec",
-    "location": "Marrakech",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-technicien-elevage-equin-hf-recrutement-sorec-marrakech-186654.html",
-    "catId": "cat_tech"
-  },
-  {
-    "id": "rek_8",
-    "title": "General Manager – Morocco Inbound Tourism | Casablanca (Maroc)",
-    "company": "Hayyak Tourism",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-general-manager-morocco-inbound-tourism-recrutement-hayyak-tourism-casablanca-186653.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Animateur Commercial GSB | Salé (Maroc)",
-    "company": "Ingelec",
-    "location": "Tanger",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-animateur-commercial-gsb-recrutement-ingelec-sale-183855.html",
     "catId": "cat_sales"
   }
 ]
