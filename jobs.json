@@ -39,6 +39,20 @@
   },
   {
     "id": "rek_0",
+    "title": "Contrôleurs de Qualité - Intérim | Mohammedia (Maroc)",
+    "company": "ENI GROUP",
+    "location": "Mohammedia",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-controleurs-de-qualite---interim-recrutement-eni-group-mohammedia-187853.html",
+    "catId": "cat_prod"
+  },
+  {
+    "id": "rek_1",
     "title": "Buyer Matières Stratégiques - H/F |  (Maroc)",
     "company": "AZURA GROUP",
     "location": "Maroc",
@@ -52,7 +66,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_1",
+    "id": "rek_2",
     "title": "Réceptionniste de Nuit - Clinique Bouskoura | Casablanca (Maroc)",
     "company": "AKDITAL",
     "location": "Casablanca",
@@ -66,7 +80,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_2",
+    "id": "rek_3",
     "title": "Animateur HSE | Had Soualem (Maroc)",
     "company": "Best Biscuits Maroc",
     "location": "Maroc",
@@ -80,7 +94,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_4",
     "title": "Responsable HSE | Had Soualem (Maroc)",
     "company": "Best Biscuits Maroc",
     "location": "Maroc",
@@ -94,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_5",
     "title": "Adjoint responsable production | Meknès (Maroc)",
     "company": "",
     "location": "Meknès",
@@ -108,7 +122,7 @@
     "catId": "cat_prod"
   },
   {
-    "id": "rek_5",
+    "id": "rek_6",
     "title": "Aide Magasinier | Mohammédia (Maroc)",
     "company": "ENI GROUP",
     "location": "Maroc",
@@ -122,7 +136,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_6",
+    "id": "rek_7",
     "title": "Magasinier - Intérim | Mohammédia (Maroc)",
     "company": "ENI GROUP",
     "location": "Maroc",
@@ -136,7 +150,7 @@
     "catId": "cat_sales"
   },
   {
-    "id": "rek_7",
+    "id": "rek_8",
     "title": "Préparateur Physique | Rabat (Maroc)",
     "company": "APEE - Association pour la Promotion de l’Enseignement d’Excellence",
     "location": "Rabat",
@@ -150,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_8",
+    "id": "rek_9",
     "title": "Comptable Junior | Essaouira (Maroc)",
     "company": "AKDITAL",
     "location": "Maroc",
@@ -161,20 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-comptable-junior-recrutement-akdital-essaouira-187846.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "We're hiring! Foundever-Nespresso part time customer support specialist night shift | Rabat (Maroc)",
-    "company": "Foundever (ex Sitel Group)",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-were-hiring-foundever-nespresso-part-time-customer-support-specialist-night-shift-recrutement-foundever-ex-sitel-group-rabat-187845.html",
     "catId": "cat_admin"
   }
 ]
