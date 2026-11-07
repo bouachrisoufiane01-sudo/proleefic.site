@@ -39,20 +39,62 @@
   },
   {
     "id": "rek_0",
-    "title": "Chef de Département (H/F) - Hypermarché | Mobilité Nationale | Tout le maroc (Maroc)",
-    "company": "Groupe Label'Vie - Carrefour",
-    "location": "Maroc",
+    "title": "infirmière réanimation néonatale Mohammedia | 1 (Maroc)",
+    "company": "AKDITAL",
+    "location": "Mohammedia",
     "salary": "N/A",
     "posted": "Active",
     "urgent": false,
     "isReal": true,
     "isDirect": false,
     "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-chef-de-departement-hf---hypermarche-mobilite-nationale-recrutement-groupe-labelvie---carrefour-tout-le-maroc-188314.html",
-    "catId": "cat_admin"
+    "link": "https://www.rekrute.com/offre-emploi-infirmiere-reanimation-neonatale-mohammedia-recrutement-akdital-1-188317.html",
+    "catId": "cat_health"
   },
   {
     "id": "rek_1",
+    "title": "Délégué Régional (H/F) | Casablanca (Maroc)",
+    "company": "",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-delegue-regional-hf-recrutement-confidentiel-casablanca-188192.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_2",
+    "title": "Inspecteur Commercial Sédentaire H/F | Casablanca (Maroc)",
+    "company": "HEOMI",
+    "location": "Casablanca",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-inspecteur-commercial-sedentaire-hf-recrutement-heomi-casablanca-187289.html",
+    "catId": "cat_sales"
+  },
+  {
+    "id": "rek_3",
+    "title": "Cloud engineering Administrateur / SRE Kubernetes Sénior | Rabat (Maroc)",
+    "company": "ALTEN Maroc",
+    "location": "Rabat",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-cloud-engineering-administrateur-sre-kubernetes-senior-recrutement-alten-maroc-rabat-188316.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_4",
     "title": "HRBP HYPER | Tout le maroc (Maroc)",
     "company": "Groupe Label'Vie - Carrefour",
     "location": "Rabat",
@@ -66,7 +108,21 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_2",
+    "id": "rek_5",
+    "title": "Chef de Département (H/F) - Hypermarché | Mobilité Nationale | Tout le maroc (Maroc)",
+    "company": "Groupe Label'Vie - Carrefour",
+    "location": "Maroc",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-chef-de-departement-hf---hypermarche-mobilite-nationale-recrutement-groupe-labelvie---carrefour-tout-le-maroc-188314.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_6",
     "title": "Data Protection Officer | Rabat (Maroc)",
     "company": "AXA Services Maroc",
     "location": "Rabat",
@@ -80,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_7",
     "title": "Expert Technique Applicatif / BA | Rabat (Maroc)",
     "company": "ALTEN Maroc",
     "location": "Rabat",
@@ -94,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_8",
     "title": "Change management specialist Hispano (Consultant Ordonnancement - Secteur Automobile) | Tetouan (Maroc)",
     "company": "ALTEN Maroc",
     "location": "Tetouan",
@@ -108,7 +164,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
+    "id": "rek_9",
     "title": "Order Scheduler | Rabat (Maroc)",
     "company": "ALTEN Maroc",
     "location": "Rabat",
@@ -119,62 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-order-scheduler-recrutement-alten-maroc-rabat-188310.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_6",
-    "title": "Technical Lead Workspace – Portails d’accès applicatifs (F5 VPN / MyApps) | Rabat (Maroc)",
-    "company": "ALTEN Maroc",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-technical-lead-workspace-portails-dacces-applicatifs-f5-vpn-myapps-recrutement-alten-maroc-rabat-188309.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_7",
-    "title": "Data Ops Sénior – Data Platform  | Rabat (Maroc)",
-    "company": "ALTEN Maroc",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-data-ops-senior-data-platform-recrutement-alten-maroc-rabat-188308.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_8",
-    "title": "Tech Lead VoIP/Teams – Maîtrise technique de la chaîne voix TGITS | Rabat (Maroc)",
-    "company": "ALTEN Maroc",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-tech-lead-voipteams-maitrise-technique-de-la-chaine-voix-tgits-recrutement-alten-maroc-rabat-188307.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Test Lead | Rabat (Maroc)",
-    "company": "AXA Services Maroc",
-    "location": "Rabat",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-test-lead-recrutement-axa-services-maroc-rabat-188306.html",
     "catId": "cat_admin"
   }
 ]
