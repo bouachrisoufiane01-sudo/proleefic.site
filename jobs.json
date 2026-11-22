@@ -39,6 +39,34 @@
   },
   {
     "id": "rek_0",
+    "title": "Responsable BAF - Clinique | Al Hoceima (Maroc)",
+    "company": "AKDITAL",
+    "location": "Maroc",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-responsable-baf---clinique-recrutement-akdital-al-hoceima-188718.html",
+    "catId": "cat_health"
+  },
+  {
+    "id": "rek_1",
+    "title": "Secrétaire Médicale | Tanger (Maroc)",
+    "company": "AKDITAL",
+    "location": "Tanger",
+    "salary": "N/A",
+    "posted": "Active",
+    "urgent": false,
+    "isReal": true,
+    "isDirect": false,
+    "sourceName": "Rekrute",
+    "link": "https://www.rekrute.com/offre-emploi-secretaire-medicale-recrutement-akdital-tanger-188717.html",
+    "catId": "cat_admin"
+  },
+  {
+    "id": "rek_2",
     "title": "Agent Réseau 24/7 (F/H)  | Fès (Maroc)",
     "company": "CGI Technologies et Solutions Maroc",
     "location": "Fès",
@@ -52,7 +80,7 @@
     "catId": "cat_it"
   },
   {
-    "id": "rek_1",
+    "id": "rek_3",
     "title": "Consultant Senior Devops  | Casablanca (Maroc)",
     "company": "CGI Technologies et Solutions Maroc",
     "location": "Casablanca",
@@ -66,7 +94,7 @@
     "catId": "cat_it"
   },
   {
-    "id": "rek_2",
+    "id": "rek_4",
     "title": "Ingénieur IAM / CIAM | Rabat (Maroc)",
     "company": "Excel Management Conseil",
     "location": "Rabat",
@@ -80,7 +108,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_3",
+    "id": "rek_5",
     "title": "Facilities Analyst | Casablanca (Maroc)",
     "company": "Telus Digital",
     "location": "Casablanca",
@@ -94,7 +122,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_4",
+    "id": "rek_6",
     "title": "Customer Experience Manager | Casablanca (Maroc)",
     "company": "Telus Digital",
     "location": "Casablanca",
@@ -108,7 +136,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_5",
+    "id": "rek_7",
     "title": "Human Resource Manager | Casablanca (Maroc)",
     "company": "Telus Digital",
     "location": "Casablanca",
@@ -122,7 +150,7 @@
     "catId": "cat_admin"
   },
   {
-    "id": "rek_6",
+    "id": "rek_8",
     "title": "Ingénieur Marque Industrielle | Casablanca (Maroc)",
     "company": "Safran Nacelles",
     "location": "Casablanca",
@@ -136,7 +164,7 @@
     "catId": "cat_tech"
   },
   {
-    "id": "rek_7",
+    "id": "rek_9",
     "title": "Real Time Analyst | Casablanca (Maroc)",
     "company": "Telus Digital",
     "location": "Casablanca",
@@ -147,34 +175,6 @@
     "isDirect": false,
     "sourceName": "Rekrute",
     "link": "https://www.rekrute.com/offre-emploi-real-time-analyst-recrutement-telus-digital-casablanca-188709.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_8",
-    "title": "Operations Team Leader | Casablanca (Maroc)",
-    "company": "Telus Digital",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-operations-team-leader-recrutement-telus-digital-casablanca-188708.html",
-    "catId": "cat_admin"
-  },
-  {
-    "id": "rek_9",
-    "title": "Operations Quality Analyst | Casablanca (Maroc)",
-    "company": "Telus Digital",
-    "location": "Casablanca",
-    "salary": "N/A",
-    "posted": "Active",
-    "urgent": false,
-    "isReal": true,
-    "isDirect": false,
-    "sourceName": "Rekrute",
-    "link": "https://www.rekrute.com/offre-emploi-operations-quality-analyst-recrutement-telus-digital-casablanca-188707.html",
     "catId": "cat_admin"
   }
 ]
